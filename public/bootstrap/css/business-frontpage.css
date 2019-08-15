@@ -1,0 +1,41 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.ctn-home-search{
+  margin-top:-65px;
+}
+
+.ctn-home-topnavbar {
+  margin-top:-56px; 
+  padding-bottom:10px;
+  padding-top:10px;
+  background:#2c3e50;
+  font-size: 14px;
+}
+
+.ctn-museum-bg {
+  background-image: url('../asset-img/museum/asset-mue-presiden-01.jpg');
+  height:250px;
+}
+
+.ctn-museum-head {
+  width: auto;
+  padding: 5px;
+}
+
+.ctn-museum-text {
+  width: auto;
+  background: #fff;
+  padding: 5px;
+}
+
+.ctn-vr-thumbnail {
+  height:100%;
+  width:230px;
+}

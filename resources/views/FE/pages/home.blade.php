@@ -107,6 +107,15 @@
     </div>
     <!-- /.row -->
 
+    <!-- Join -->
+    <div class="jumbotron bg-warning">
+        <h3 class="display-5">Add Your Heritage and show the world, that we are rich in culture.</h3>
+        <p class="lead">Its Free...</p>
+        <hr class="my-4">
+        <a class="btn btn-light" href="#" role="button">Try it out!</a>
+    </div>
+    <!-- /.row -->
+
     <!-- List News -->
     <div class="row">
         <div class="col-md-12">

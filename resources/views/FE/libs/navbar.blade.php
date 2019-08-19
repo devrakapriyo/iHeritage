@@ -2,13 +2,28 @@
     <div class="container">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">SERVICES</a>
+                <a class="nav-link text-light" href="#">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">OUR SERVICES</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="#">NEWS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn btn-block btn-outline-warning btn-sm" href="#">LOGIN ACCOUNT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#"> | </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Language
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index:10000">
+                    <a class="dropdown-item" href="#">English</a>
+                    <a class="dropdown-item" href="#">Indonesia</a>
+                </div>
             </li>
         </ul>
     </div>
@@ -27,7 +42,7 @@
                 <a class="nav-link" href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item text-uppercase @yield('heritage-place')">
-                <a class="nav-link" href="{{url('heritage-place')}}">Heritage Place</a>
+                <a class="nav-link" href="{{url('heritage-place')}}">Heritage</a>
             </li>
             <li class="nav-item text-uppercase">
                 <a class="nav-link" href="#">Event</a>

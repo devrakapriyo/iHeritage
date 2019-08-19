@@ -55,34 +55,13 @@
 
 <!-- Page Content -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 mb-5">
-        <h2>What We Do</h2>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-        </div>
-        <div class="col-md-4 mb-5">
-        <h2>Contact Us</h2>
-        <hr>
-        <address>
-            <strong>iHeritage.id</strong>
-            <br>Jalan Berigin I No 1
-            <br>Bogor, 16720
-            <br>
-        </address>
-        <address>
-            <abbr title="Phone">P:</abbr>
-            081295982920
-            <br>
-            <abbr title="Email">E:</abbr>
-            <a href="mailto:#">info@iheritage.id</a>
-        </address>
-        </div>
-    </div>
-    <!-- /.row -->
 
+    <!-- List Museum -->
     <div class="row">
+        <div class="col-md-12">
+            <h2>Museum</h2>
+            <hr>
+        </div>
         <div class="col-md-4 mb-5">
         <div class="card h-100">
             <img class="card-img-top" src="{{url('bootstrap/asset-img/museum/asset-mue-presiden.jpg')}}" alt="" height="200" widht="400">
@@ -124,6 +103,75 @@
             </p>
             </div>
         </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- List News -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Heritage News</h2>
+            <hr>
+        </div>
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{asset('bootstrap/asset-img/museum/asset-mue-konfasiaafrika.jpg')}}" class="card-img ctn-vr-thumbnail" alt="...">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h5 class="card-title text-capitalize">MEREKAM SEJARAH KONFERENSI ASIA-AFRIKA</h5>
+                            @php
+                                $text = "The Asia-Africa Conference held in Bandung on April 18-24, 1955 was a very historic event in Indonesian foreign policy and a major event for the Indonesian people.";
+                                $limit_text = substr($text, 0, 150);
+                            @endphp
+                            <p class="card-text">{{$limit_text}} <a href="{{url('/')}}">...readmore</a></p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 day ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{asset('bootstrap/asset-img/museum/asset-mue-sribaduga.jpg')}}" class="card-img ctn-vr-thumbnail" alt="...">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h5 class="card-title text-capitalize">DIGITAL PRESERVATION OF ANCIENT ARTEFAC & NASIONAL AT SRI BADUGA MUSEUM</h5>
+                            @php
+                                $text = "The Sri Baduga Museum is managed by the West Java Provincial Government by utilizing the old building of the former Kawedanan Tegallega. Furthermore, the museum was inaugurated on June 5, 1980 by the then Minister of Education and Culture, Daoed Joesoef.";
+                                $limit_text = substr($text, 0, 150);
+                            @endphp
+                            <p class="card-text">{{$limit_text}} <a href="{{url('/')}}">...readmore</a></p>
+                            <p class="card-text"><small class="text-muted">Last updated 4 day ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{asset('bootstrap/asset-img/museum/asset-mue-nasional.jpg')}}" class="card-img ctn-vr-thumbnail" alt="...">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h5 class="card-title text-capitalize">PUBLICATION & EDUCATION EFFORTS IN THE NATIONAL MUSEUM</h5>
+                            @php
+                                $text = "Bataviaasch Genootschap van Kunsten en Wetenschappen (BG) is an independent institution established for the purpose of advancing research in the arts and sciences, especially in the fields of biology, physics, archeology, literature, ethnology and history";
+                                $limit_text = substr($text, 0, 150);
+                            @endphp
+                            <p class="card-text">{{$limit_text}} <a href="{{url('/')}}">...readmore</a></p>
+                            <p class="card-text"><small class="text-muted">Last updated 4 day ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /.row -->

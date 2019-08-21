@@ -22,6 +22,11 @@ class IndexController extends Controller
         }
     }
 
+    public function logout()
+    {
+        return redirect('/');
+    }
+
     public function dashboard()
     {
         return view('BE.pages.dashboard');

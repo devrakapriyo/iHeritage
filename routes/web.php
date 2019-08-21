@@ -20,6 +20,7 @@ Route::namespace('FE')->group(function () {
 
 Route::get('/login', 'BE\IndexController@login');
 Route::post('/login', 'BE\IndexController@login_action');
+Route::get('/logout', 'BE\IndexController@logout');
 
 Route::prefix('dashboard')->namespace('BE')->group(function () {
     Route::get('/', 'IndexController@dashboard');

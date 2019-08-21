@@ -16,7 +16,15 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="#"> | </a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item mt-2">
+                <a class="nav-switch-lang" href="#">
+                    <img src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-set-1-1/100/.svg-24-512.png" class="switch-lang">
+                </a>
+                <a class="nav-switch-lang" href="#">
+                    <img src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/117_Ensign_Flag_Nation_indonesia-512.png" class="switch-lang">
+                </a>
+            </li>
+            <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Language
                 </a>
@@ -24,7 +32,7 @@
                     <a class="dropdown-item" href="#">English</a>
                     <a class="dropdown-item" href="#">Indonesia</a>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
 </nav>

@@ -7,6 +7,21 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
+    public function login()
+    {
+        return view('BE.login');
+    }
+
+    public function login_action(Request $request)
+    {
+        if($request->email == "admin@iheritage.id" && $request->password == "admin!1" )
+        {
+            return redirect('dashboard');
+        }else{
+            return redirect('login');
+        }
+    }
+
     public function dashboard()
     {
         return view('BE.pages.dashboard');

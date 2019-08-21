@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', 'FE\InterfaceController@home');
-Route::get('/museum', 'FE\InterfaceController@museum');
-Route::get('/heritage-place', 'FE\InterfaceController@heritagePlace');
-Route::get('/vr-tour', 'FE\InterfaceController@vrTour');
+Route::namespace('FE')->group(function () {
+    Route::get('/', 'InterfaceController@home');
+    Route::get('/museum', 'InterfaceController@museum');
+    Route::get('/heritage-place', 'InterfaceController@heritagePlace');
+    Route::get('/vr-tour', 'InterfaceController@vrTour');
+});
 
-Route::get('/dashboard', 'BE\IndexController@dashboard');
+Route::get('/login', 'BE\IndexController@login');
+Route::post('/login', 'BE\IndexController@login_action');
+
+Route::prefix('dashboard')->namespace('BE')->group(function () {
+    Route::get('/', 'IndexController@dashboard');
+});

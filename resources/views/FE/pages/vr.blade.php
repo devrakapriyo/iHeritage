@@ -7,8 +7,7 @@
 <!-- Page Content -->
 <div class="container mt-5">
     <div class="jumbotron">
-        <h1 class="display-5">Join With Us</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h3 class="display-5 text-capitalize">register your museum to get virtual reality 360 facilities</h3>
         <hr class="my-4">
         <a class="btn btn-warning" href="#" role="button">Try it out!</a>
     </div>

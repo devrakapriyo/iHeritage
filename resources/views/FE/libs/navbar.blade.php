@@ -11,7 +11,7 @@
                 <a class="nav-link text-light" href="#">NEWS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-block btn-outline-warning btn-sm" href="#">LOGIN ACCOUNT</a>
+                <a class="nav-link btn btn-block btn-outline-warning btn-sm" href="{{url('login')}}">LOGIN ACCOUNT</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="#"> | </a>

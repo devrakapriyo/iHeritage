@@ -11,7 +11,13 @@
 |
 */
 
+Route::get('locale/{locale}', function($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
 Route::namespace('FE')->group(function () {
+    
     Route::get('/', 'InterfaceController@home');
     Route::get('/museum/{museum_name}/{id}', 'InterfaceController@museum');
     Route::get('/heritage-place', 'InterfaceController@heritagePlace');

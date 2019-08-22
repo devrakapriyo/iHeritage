@@ -7,11 +7,11 @@
 <!-- Page Content -->
 <div class="container mt-5">
     <div class="jumbotron">
-        <h3 class="display-5 text-capitalize">register your museum to get virtual reality 360 facilities</h3>
+        <h3 class="display-5 text-capitalize">@lang('messages.vr_banner_title')</h3>
         <hr class="my-4">
-        <a class="btn btn-warning" href="#" role="button">Try it out!</a>
+        <a class="btn btn-warning" href="#" role="button">@lang('messages.vr_banner_button')</a>
     </div>
-    <h2 class="text-capitalize mt-5">virtual reality tour 360&deg;</h2>
+    <h2 class="text-capitalize mt-5">@lang('messages.vr_title') 360&deg;</h2>
     <hr>
     <div class="row">
         <div class="col-md-6 mb-4">

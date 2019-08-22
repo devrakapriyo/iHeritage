@@ -2,27 +2,30 @@
     <div class="container">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">ABOUT US</a>
+                <a class="nav-link text-light text-uppercase" href="#">@lang('messages.head_menu_about')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">OUR SERVICES</a>
+                <a class="nav-link text-light text-uppercase" href="#">@lang('messages.head_menu_service')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">NEWS</a>
+                <a class="nav-link text-light text-uppercase" href="#">@lang('messages.head_menu_news')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-block btn-outline-warning btn-sm" href="{{url('login')}}">LOGIN ACCOUNT</a>
+                <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login')}}">@lang('messages.head_menu_login')</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="#"> | </a>
             </li>
             <li class="nav-item mt-2">
-                <a class="nav-switch-lang" href="#">
-                    <img src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-set-1-1/100/.svg-24-512.png" class="switch-lang">
-                </a>
-                <a class="nav-switch-lang" href="#">
-                    <img src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/117_Ensign_Flag_Nation_indonesia-512.png" class="switch-lang">
-                </a>
+                @if(App::isLocale('id'))
+                    <a class="nav-switch-lang" href="{{url('locale/en')}}">
+                        <img src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-set-1-1/100/.svg-24-512.png" class="switch-lang" title="Change to English?">
+                    </a>
+                @else
+                    <a class="nav-switch-lang" href="{{url('locale/id')}}">
+                        <img src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/117_Ensign_Flag_Nation_indonesia-512.png" class="switch-lang" title="Ubah ke bahasa Indonesia?">
+                    </a>
+                @endif
             </li>
             <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,19 +50,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item text-uppercase @yield('home')">
-                <a class="nav-link" href="{{url('/')}}">Home</a>
+                <a class="nav-link" href="{{url('/')}}">@lang('messages.nav_menu_home')</a>
             </li>
             <li class="nav-item text-uppercase @yield('heritage-place')">
-                <a class="nav-link" href="{{url('heritage-place')}}">Heritage</a>
+                <a class="nav-link" href="{{url('heritage-place')}}">@lang('messages.nav_menu_heritage')</a>
             </li>
             <li class="nav-item text-uppercase">
-                <a class="nav-link" href="#">Event</a>
+                <a class="nav-link" href="#">@lang('messages.nav_menu_event')</a>
             </li>
             <li class="nav-item text-uppercase">
-                <a class="nav-link" href="#">Education Program</a>
+                <a class="nav-link" href="#">@lang('messages.nav_menu_edu_pro')</a>
             </li>
             <li class="nav-item text-uppercase @yield('vr-tour')">
-                <a class="nav-link" href="{{url('vr-tour')}}">Virtual Reality Tour</a>
+                <a class="nav-link" href="{{url('vr-tour')}}">@lang('messages.nav_menu_vr')</a>
             </li>
         </ul>
         </div>

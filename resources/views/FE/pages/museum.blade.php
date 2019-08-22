@@ -12,7 +12,7 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-md-8">
-            <h2 class="text-capitalize">the history of the presidential museum</h2>
+            <h2 class="text-capitalize">the history of the museum kepresidenan</h2>
             <small>"Every President Wants Do the best for you Nation and Country"</small>
             <hr>
             <p>
@@ -58,7 +58,7 @@
             </p>
 
             <div class="form-group mt-5">
-                <h2 class="text-capitalize">gallery of presidential museums</h2>
+                <h2 class="text-capitalize">@lang('messages.museum_gallery_title') museum kepresidenan</h2>
             </div>
             <hr>
             <div class="card mb-3">
@@ -71,7 +71,7 @@
                 <img src="{{url('bootstrap/asset-img/museum/asset-mue-presiden-04.jpg')}}" class="card-img-top" alt="...">
             </div>
             <div class="form-group">
-                <button class="btn btn-block btn-outline-dark text-capitalize">see other photo collections</button>
+                <button class="btn btn-block btn-outline-dark text-capitalize">@lang('messages.museum_gallery_button')</button>
             </div>
         </div>
         <div class="col-md-4">
@@ -81,7 +81,7 @@
                 <p>Jl. Ir. H. Juanda No.1 (inside the Bogor Presidential Palace Complex)</p>
             </div>
             <div class="form-group">
-                <h5>Information</h5>
+                <h5>@lang('messages.museum_information')</h5>
                 <p>Virtual Reality Tour 360&deg; : <a href="http://museumkepresidenan.indonesiaheritage.org" target="_blank">museumkepresidenan.indonesiaheritage.org</a></p>
             </div>
             <div class="form-group">
@@ -95,35 +95,35 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Opening Hours</h5>
+                    <h5 class="card-title">@lang('messages.museum_information_opening')</h5>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        Tuesday<br>
+                        @lang('messages.museum_information_tuesday')<br>
                         <strong>09:00 - 15:00</strong>
                     </li>
                     <li class="list-group-item">
-                        Wednesday<br>
+                        @lang('messages.museum_information_wednesday')<br>
                         <strong>09:00 - 15:00</strong>
                     </li>
                     <li class="list-group-item">
-                        Thursday<br>
+                        @lang('messages.museum_information_thursday')<br>
                         <strong>09:00 - 15:00</strong>
                     </li>
                     <li class="list-group-item">
-                        Friday<br>
+                        @lang('messages.museum_information_friday')<br>
                         <strong>09:00 - 15:00</strong>
                     </li>
                     <li class="list-group-item">
-                        Saturday<br>
+                        @lang('messages.museum_information_saturday')<br>
                         <strong>09:00 - 13:00</strong>
                     </li>
                     <li class="list-group-item">
-                        Sunday<br>
+                        @lang('messages.museum_information_sunday')<br>
                         <strong>09:00 - 13:00</strong>
                     </li>
                     <li class="list-group-item">
-                        Mondays and Indonesian National Holidays
+                        @lang('messages.museum_information_close')
                         <strong class="text-danger">(CLOSE)</strong>
                     </li>
                 </ul>

@@ -8,8 +8,8 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-            <h1 class="display-4 text-white mt-5 mb-2">The Indonesian Heritage Network</h1>
-            <p class="lead mb-5 text-dark">Let us explore the extraordinary heritage of the nation to push the boundaries of understanding in the past and today.</p>
+            <h1 class="display-4 text-white mt-5 mb-2">@lang('messages.home_title')</h1>
+            <p class="lead mb-5 text-dark">@lang('messages.home_description')</p>
         </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="col-md-5">
             <div class="form-group mt-5 mb-5">
                 <select class="form-control">
-                    <option value="all">All Province in Indonesia</option>
+                    <option value="all">@lang('messages.home_select_place')</option>
                     @foreach(\App\Model\FE\place_tbl::listSearch() as $items)
                         <option value="{{$items->id}}">{{$items->place_en}}</option>
                     @endforeach
@@ -32,7 +32,7 @@
         <div class="col-md-4">
             <div class="form-group mt-5 mb-5">
                 <select class="form-control">
-                    <option>All Heritage in Indonesia</option>
+                    <option>@lang('messages.home_select_heritage')</option>
                     <option>Museum</option>
                     <option>Library</option>
                     <option>Gallery</option>
@@ -46,7 +46,7 @@
         </div>
         <div class="col-md-3">
             <div class="form-group mt-5 mb-5">
-                <button class="btn btn-block btn-dark">search</button>
+                <button class="btn btn-block btn-dark">@lang('messages.home_select_search')</button>
             </div>
         </div>
         </div>
@@ -109,17 +109,17 @@
 
     <!-- Join -->
     <div class="jumbotron bg-warning">
-        <h3 class="display-5">Add Your Heritage and show the world, that we are rich in culture.</h3>
-        <p class="lead">Its Free...</p>
+        <h3 class="display-5">@lang('messages.home_banner_title')</h3>
+        <p class="lead">@lang('messages.home_banner_description')</p>
         <hr class="my-4">
-        <a class="btn btn-light" href="#" role="button">Try it out!</a>
+        <a class="btn btn-light" href="#" role="button">@lang('messages.home_banner_button')</a>
     </div>
     <!-- /.row -->
 
     <!-- List News -->
     <div class="row">
         <div class="col-md-12">
-            <h2>Heritage News</h2>
+            <h2>@lang('messages.home_news_title')</h2>
             <hr>
         </div>
         <div class="col-md-12 mb-4">

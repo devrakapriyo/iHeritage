@@ -35,7 +35,7 @@
 
 <!-- Page Content -->
 <div class="container">
-    <h2 class="text-capitalize">heritage place</h2>
+    <h2 class="text-capitalize">@lang('messages.heritage_title')</h2>
     <hr>
     <div class="row mb-5 mt-4">
         <div class="col-md-4">

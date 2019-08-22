@@ -12,7 +12,7 @@ class InterfaceController extends Controller
         return view('FE.pages.home');
     }
 
-    public function museum()
+    public function museum($museum_name, $id)
     {
         return view('FE.pages.museum');
     }

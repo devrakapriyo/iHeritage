@@ -130,7 +130,7 @@
                     </div>
                     <div class="col-md-9">
                         <div class="card-body">
-                            <h5 class="card-title text-capitalize">MEREKAM SEJARAH KONFERENSI ASIA-AFRIKA</h5>
+                            <h5 class="card-title text-capitalize">RECORDING HISTORY OF ASIA-AFRICAN CONFERENCES</h5>
                             @php
                                 $text = "The Asia-Africa Conference held in Bandung on April 18-24, 1955 was a very historic event in Indonesian foreign policy and a major event for the Indonesian people.";
                                 $limit_text = substr($text, 0, 150);

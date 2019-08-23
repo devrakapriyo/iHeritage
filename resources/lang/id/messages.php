@@ -2,8 +2,8 @@
 
 return [
     // page home
-    'home_title' => 'Jejaring Warisan Budaya Indonesia',
-    'home_description' => 'Mari kita jelajahi warisan bangsa yang luar biasa untuk mendorong batas-batas pemahaman di masa lalu dan hari ini.',
+    'home_title' => 'Jejaring Pusaka Budaya Indonesia',
+    'home_description' => 'Mari kita jelajahi pusaka bangsa yang luar biasa untuk mendorong batas-batas pemahaman di masa lalu dan hari ini.',
     
     'head_menu_about' => 'Tentang Kita',
     'head_menu_service' => 'Layanan Kita',
@@ -11,16 +11,16 @@ return [
     'head_menu_login' => 'Masuk Akun',
 
     'nav_menu_home' => 'Beranda',
-    'nav_menu_heritage' => 'Warisan',
+    'nav_menu_heritage' => 'Pusaka',
     'nav_menu_event' => 'Acara',
     'nav_menu_edu_pro' => 'Program Pendidikan',
     'nav_menu_vr' => 'Tur Virtual Reality',
 
     'home_select_place' => 'Semua Provinsi di Indonesia',
-    'home_select_heritage' => 'Semua Warisan di Indonesia',
+    'home_select_heritage' => 'Semua Pusaka di Indonesia',
     'home_select_search' => 'Cari',
 
-    'home_banner_title' => 'Tambahkan Warisan Anda dan tunjukkan pada dunia, bahwa kita kaya akan budaya.',
+    'home_banner_title' => 'Tambahkan Pusaka Anda dan tunjukkan pada dunia, bahwa kita kaya akan budaya.',
     'home_banner_description' => 'Gratis...',
     'home_banner_button' => 'Coba sekarang!',
 

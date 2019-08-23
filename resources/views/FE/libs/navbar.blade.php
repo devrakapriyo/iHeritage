@@ -16,7 +16,7 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="#"> | </a>
             </li>
-            <li class="nav-item mt-2">
+            <!-- <li class="nav-item mt-2">
                 @if(App::isLocale('id'))
                     <a class="nav-switch-lang" href="{{url('locale/en')}}">
                         <img src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-set-1-1/100/.svg-24-512.png" class="switch-lang" title="Change to English?">
@@ -26,16 +26,16 @@
                         <img src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/117_Ensign_Flag_Nation_indonesia-512.png" class="switch-lang" title="Ubah ke bahasa Indonesia?">
                     </a>
                 @endif
-            </li>
-            <!-- <li class="nav-item dropdown">
+            </li> -->
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Language
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index:10000">
-                    <a class="dropdown-item" href="#">English</a>
-                    <a class="dropdown-item" href="#">Indonesia</a>
+                    <a class="dropdown-item" href="{{url('locale/en')}}">English</a>
+                    <a class="dropdown-item" href="{{url('locale/id')}}">Indonesia</a>
                 </div>
-            </li> -->
+            </li>
         </ul>
     </div>
 </nav>

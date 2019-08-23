@@ -10,6 +10,6 @@ class place_tbl extends Model
 
     public static function listSearch()
     {
-        return self::select('place_en','id')->orderBy('id','asc')->get();
+        return self::select('place_en','place_ind','id')->orderBy('id','asc')->get();
     }
 }

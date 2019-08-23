@@ -24,7 +24,7 @@
                 <select class="form-control">
                     <option value="all">@lang('messages.home_select_place')</option>
                     @foreach(\App\Model\FE\place_tbl::listSearch() as $items)
-                        <option value="{{$items->id}}">{{$items->place_en}}</option>
+                        <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
                     @endforeach
                 </select>
             </div>
@@ -62,48 +62,26 @@
             <h2>Museum</h2>
             <hr>
         </div>
+        @foreach($museum as $list)
         <div class="col-md-4 mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="{{url('bootstrap/asset-img/museum/asset-mue-presiden.jpg')}}" alt="" height="200" widht="400">
-            <div class="card-body">
-            <h5 class="card-title"><a href="{{url('museum')}}" class="text-dark">Museum Kepresidenan</a></h5>
-            <p class="card-text">
-                <small class="card-text text-uppercase">Jakarta</small>
-            </p>
-            <p class="card-text">
-                The presidential museum is in the area of ​​the Bogor Presidential Palace with a land area of ​​about 3,211.6m² and a building area of ​​± 5,865m² is the idea and idea of ​​President Susilo Bambang Yudhoyono which began in 2012.
-            </p>
+            <div class="card h-100">
+                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                <div class="card-body">
+                <h5 class="card-title"><a href="{{url('museum/'.$list->seo.'/'.$list->id)}}" class="text-dark">{{$list->name}}</a></h5>
+                <p class="card-text">
+                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                </p>
+                <p class="card-text">
+                    @php
+                        $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description;
+                        $limit_text = substr($text, 0, 150);
+                    @endphp
+                    {{$text}}
+                </p>
+                </div>
             </div>
         </div>
-        </div>
-        <div class="col-md-4 mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="{{url('bootstrap/asset-img/museum/asset-mue-nasional.jpg')}}" alt="" height="200" widht="400">
-            <div class="card-body">
-            <h5 class="card-title"><a href="{{url('museum')}}" class="text-dark">Museum Nasional</a></h5>
-            <p class="card-text">
-                <small class="card-text text-uppercase">Jakarta</small>
-            </p>
-            <p class="card-text">
-                The National Museum in 1862 was often called "Gedung Gajah" or "Museum Gajah" because in the front yard of the museum there was a bronze elephant statue gift from King Chulalongkorn (Rama V) of Thailand who had visited the museum in 1871.
-            </p>
-            </div>
-        </div>
-        </div>
-        <div class="col-md-4 mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="{{url('bootstrap/asset-img/museum/asset-mue-konfasiaafrika.jpg')}}" alt="" height="200" widht="400">
-            <div class="card-body">
-            <h5 class="card-title"><a href="{{url('museum')}}" class="text-dark">Museum Konfersi Asia Afrika</a></h5>
-            <p class="card-text">
-                <small class="card-text text-uppercase">Bandung</small>
-            </p>
-            <p class="card-text">
-                The idea of ​​the establishment of the Museum of the Asian-African Conference was realized by Joop Ave, as the Daily Chair of the Commemoration Committee for the 25th Anniversary of the Asian-African Conference and the Director General of Protocol and Consular of the Ministry of Foreign Affairs.
-            </p>
-            </div>
-        </div>
-        </div>
+        @endforeach
     </div>
     <!-- /.row -->
 

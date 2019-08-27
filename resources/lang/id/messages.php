@@ -5,8 +5,8 @@ return [
     'home_title' => 'Jejaring Pusaka Budaya Indonesia',
     'home_description' => 'Mari kita jelajahi pusaka bangsa yang luar biasa untuk mendorong batas-batas pemahaman di masa lalu dan hari ini.',
     
-    'head_menu_about' => 'Tentang Kita',
-    'head_menu_service' => 'Layanan Kita',
+    'head_menu_about' => 'Tentang Kami',
+    'head_menu_service' => 'Layanan Kami',
     'head_menu_news' => 'Berita',
     'head_menu_login' => 'Masuk Akun',
 
@@ -20,7 +20,7 @@ return [
     'home_select_heritage' => 'Semua Pusaka di Indonesia',
     'home_select_search' => 'Cari',
 
-    'home_banner_title' => 'Tambahkan Pusaka Anda dan tunjukkan pada dunia, bahwa kita kaya akan budaya.',
+    'home_banner_title' => 'Tambahkan pusaka anda dan tunjukkan pada dunia, bahwa kita kaya akan budaya.',
     'home_banner_description' => 'Gratis...',
     'home_banner_button' => 'Coba sekarang!',
 

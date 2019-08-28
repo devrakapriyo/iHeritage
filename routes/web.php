@@ -24,13 +24,13 @@ Route::namespace('FE')->group(function () {
     Route::get('/vr-tour', 'InterfaceController@vrTour');
 });
 
-Route::get('/login', 'BE\IndexController@login');
+Route::get('/login', 'BE\IndexController@login')->name('login');
 Route::post('/login', 'BE\IndexController@login_action');
 Route::get('/logout', 'BE\IndexController@logout');
 
 Route::get('/register', 'BE\IndexController@register');
 Route::post('/register', 'BE\IndexController@register_post');
 
-Route::prefix('dashboard')->namespace('BE')->group(function () {
+Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function () {
     Route::get('/', 'IndexController@dashboard');
 });

@@ -149,7 +149,7 @@
                 <div class="card-body">
                     <!-- <h5 class="card-title text-center">Login</h5> -->
                     <div class="d-flex justify-content-center mb-3">
-                        <img src="{{asset('bootstrap/vendor/iheritage.png')}}" style="width:200px;height:85px;">
+                        <img src="{{asset('bootstrap/vendor/iheritage_texton_pro.png')}}" style="width:200px;height:85px;">
                     </div>
                     <form class="form-signin" action="{{url('login')}}" method="post">
                         @csrf

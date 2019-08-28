@@ -27,6 +27,11 @@ class IndexController extends Controller
         return redirect('/');
     }
 
+    public function register()
+    {
+        return view('BE.register');
+    }
+
     public function dashboard()
     {
         return view('BE.pages.dashboard');

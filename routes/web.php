@@ -28,6 +28,9 @@ Route::get('/login', 'BE\IndexController@login');
 Route::post('/login', 'BE\IndexController@login_action');
 Route::get('/logout', 'BE\IndexController@logout');
 
+Route::get('/register', 'BE\IndexController@register');
+Route::post('/register', 'BE\IndexController@register_post');
+
 Route::prefix('dashboard')->namespace('BE')->group(function () {
     Route::get('/', 'IndexController@dashboard');
 });

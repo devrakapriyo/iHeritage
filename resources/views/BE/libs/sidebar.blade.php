@@ -18,12 +18,12 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
+    <!-- Heading
     <div class="sidebar-heading">
         Content Website
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    Nav Item - Pages Collapse Menu
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -39,7 +39,7 @@
         </div>
     </li>
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    Nav Item - Utilities Collapse Menu
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
@@ -54,12 +54,12 @@
         </div>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+    Divider
+    <hr class="sidebar-divider"> -->
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Addons
+        Content
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->

@@ -11,13 +11,13 @@ class InterfaceController extends Controller
 {
     public function home()
     {
-        $museum = content_tbl::where('is_active', 1)->orderBy('created_at', 'desc')->take(3)->get();
+        $museum = content_tbl::where('is_active', "Y")->orderBy('created_at', 'desc')->take(3)->get();
         return view('FE.pages.home', compact('museum'));
     }
 
     public function museum($museum_name, $id)
     {
-        $museum = content_tbl::select('id', 'name')->where('is_active', 1)->where('seo', $museum_name)->where('id', $id)->first();
+        $museum = content_tbl::select('id', 'name')->where('is_active', "Y")->where('seo', $museum_name)->where('id', $id)->first();
         return view('FE.pages.museum');
     }
 

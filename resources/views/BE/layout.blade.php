@@ -4,7 +4,8 @@
 <head>
 
   @include('BE.assets.header')
-
+  @yield('header')
+  
 </head>
 
 <body id="page-top">
@@ -74,6 +75,7 @@
   </div>
 
   @include('BE.assets.footer')
+  @yield('footer')
 
 </body>
 

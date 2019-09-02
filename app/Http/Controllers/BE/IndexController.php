@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\BE;
 
+use App\Model\category_content_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Yajra\Datatables\Datatables;
 
 use App\Model\users;
 
@@ -52,5 +54,33 @@ class IndexController extends Controller
     public function dashboard()
     {
         return view('BE.pages.dashboard');
+    }
+
+    public function category_content()
+    {
+        return view('BE.pages.category.index');
+    }
+
+    public function category_get()
+    {
+        $data = category_content_tbl::select(['*']);
+        return Datatables::of($data)
+            ->make(true);
+    }
+
+    public function category_add()
+    {
+        return view('BE.pages.category.add');
+    }
+
+    public function category_post(Request $request)
+    {
+        $simpan = new category_content_tbl;
+        $simpan->category = $request->category;
+        $simpan->category_ctn_name_en = $request->category_ctn_name_en;
+        $simpan->category_ctn_name_ind = $request->category_ctn_name_ind;
+        $simpan->save();
+
+        return redirect()->back()->with('info', "kategori berhasil tersimpan");
     }
 }

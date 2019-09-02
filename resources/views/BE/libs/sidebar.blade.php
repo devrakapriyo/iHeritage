@@ -10,7 +10,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="{{route('dashboard')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -64,43 +64,43 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+            <span>Content Pages</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse @yield('ctn-pgs')" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Museum</a>
-                <a class="collapse-item" href="#">Library</a>
-                <a class="collapse-item" href="#">Gallery</a>
-                <a class="collapse-item" href="#">Archive</a>
-                <a class="collapse-item" href="#">Temple</a>
-                <a class="collapse-item" href="#">Palace</a>
-                <a class="collapse-item" href="#">Nature</a>
-                <a class="collapse-item" href="#">Historical Building</a>
+                <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum</a>
+                <a class="collapse-item @yield('library')" href="{{route('content-pages', ['category'=>'library'])}}">Library</a>
+                <a class="collapse-item @yield('gallery')" href="{{route('content-pages', ['category'=>'gallery'])}}">Gallery</a>
+                <a class="collapse-item @yield('archive')" href="{{route('content-pages', ['category'=>'archive'])}}">Archive</a>
+                <a class="collapse-item @yield('temple')" href="{{route('content-pages', ['category'=>'temple'])}}">Temple</a>
+                <a class="collapse-item @yield('palace')" href="{{route('content-pages', ['category'=>'palace'])}}">Palace</a>
+                <a class="collapse-item @yield('nature')" href="{{route('content-pages', ['category'=>'nature'])}}">Nature</a>
+                <a class="collapse-item @yield('historical-building')" href="{{route('content-pages', ['category'=>'historical-building'])}}">Historical Building</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - VR -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item @yield('vr')">
+        <a class="nav-link" href="{{route('vr-page')}}">
             <i class="fas fa-fw fa-atlas"></i>
             <span>Virtual Reality Tour 360<sup>o<sup></span>
         </a>
     </li>
 
     <!-- Nav Item - Event -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item @yield('event')">
+        <a class="nav-link" href="{{route('event-page')}}">
             <i class="fas fa-fw fa-compass"></i>
             <span>Event</span>
         </a>
     </li>
 
     <!-- Nav Item - Education Program -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item @yield('edu-program')">
+        <a class="nav-link" href="{{route('edu-page')}}">
             <i class="fas fa-fw fa-book-reader"></i>
             <span>Education Program</span>
         </a>
@@ -116,7 +116,7 @@
 
     <!-- Nav Item - Account -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="">
             <i class="fas fa-fw fa-users"></i>
             <span>List User</span>
         </a>

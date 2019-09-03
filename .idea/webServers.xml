@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b49f8af8-c9a6-4fd9-92c1-c7ddb5b2be08" name="IHERITAGE" url="http://103.28.12.102">
+        <fileTransfer host="103.28.12.102" port="22" rootFolder="/home/iheritag/public_html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

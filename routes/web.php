@@ -63,11 +63,11 @@ Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function 
     Route::get('/event-page/delete/{id}', 'EventController@event_delete')->name('event-delete');
 
     // event
-    Route::get('/edu-page', 'EduController@edu_page')->name('edu-page');
-    Route::get('/edu-page/get', 'EduController@edu_get')->name('edu-get');
-    Route::get('/edu-page/add', 'EduController@edu_add')->name('edu-add');
-    Route::post('/edu-page/add', 'EduController@edu_post')->name('edu-post');
-    Route::get('/edu-page/edit/{id}', 'EduController@edu_edit')->name('edu-edit');
-    Route::post('/edu-page/update/{id}', 'EduController@edu_update')->name('edu-update');
-    Route::get('/edu-page/delete/{id}', 'EduController@edu_delete')->name('edu-delete');
+    Route::get('/education-program-page', 'EduController@edu_page')->name('edu-page');
+    Route::get('/education-program-page/get', 'EduController@edu_get')->name('edu-get');
+    Route::get('/education-program-page/add', 'EduController@edu_add')->name('edu-add');
+    Route::post('/education-program-page/add', 'EduController@edu_post')->name('edu-post');
+    Route::get('/education-program-page/edit/{id}', 'EduController@edu_edit')->name('edu-edit');
+    Route::post('/education-program-page/update/{id}', 'EduController@edu_update')->name('edu-update');
+    Route::get('/education-program-page/delete/{id}', 'EduController@edu_delete')->name('edu-delete');
 });

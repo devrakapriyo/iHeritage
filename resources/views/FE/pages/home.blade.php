@@ -41,6 +41,7 @@
                     <option>Palace</option>
                     <option>Nature</option>
                     <option>Historical Building</option>
+                    <option>Personal Collection</option>
                 </select>
             </div>
         </div>

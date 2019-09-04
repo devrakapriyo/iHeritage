@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/edu/add.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/edu/add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ContentController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="191" column="9" lean-forward="true" selection-start-line="185" selection-start-column="8" selection-end-line="191" selection-end-column="9" />
+            <state relative-caret-position="-834">
+              <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
               <folding>
                 <element signature="e#43#66#0#PHP" expanded="true" />
               </folding>
@@ -38,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EduController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EduController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-928">
@@ -124,10 +122,10 @@
         <option value="$PROJECT_DIR$/resources/views/BE/pages/content/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/content/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Helper/helpers.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/edu/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" />
       </list>
     </option>
   </component>
@@ -281,12 +279,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567429935603</updated>
-      <workItem from="1567429937075" duration="31397000" />
+      <workItem from="1567429937075" duration="31634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31397000" />
+    <option name="totallyTimeSpent" value="31634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -298,7 +296,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.49713877" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.49713877" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1595136" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14806867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -570,16 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="191" column="9" lean-forward="true" selection-start-line="185" selection-start-column="8" selection-end-line="191" selection-end-column="9" />
-          <folding>
-            <element signature="e#43#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/edu/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -600,6 +588,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-928">
           <caret line="53" column="105" lean-forward="false" selection-start-line="53" selection-start-column="105" selection-end-line="53" selection-end-column="105" />
+          <folding>
+            <element signature="e#43#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-834">
+          <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
           <folding>
             <element signature="e#43#66#0#PHP" expanded="true" />
           </folding>

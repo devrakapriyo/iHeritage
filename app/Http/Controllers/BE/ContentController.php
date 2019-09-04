@@ -66,7 +66,7 @@ class ContentController extends Controller
                 {
                     return redirect()->back();
                 }else{
-                    $photo = url('/img/content/'.$category.'/'.$photo);
+                    $photo = url('/img/BE/content/'.$category.'/'.$photo);
                 }
             }else{
                 $photo = 'https://via.placeholder.com/300';
@@ -136,6 +136,14 @@ class ContentController extends Controller
                 {
                     return redirect()->back();
                 }else{
+                    // delete file storage
+                    $path = content_tbl::select('photo')->where('id',$id)->first()->photo;
+                    $file = substr($path, strrpos($path, '/') + 1);
+                    if(file_exists(public_path('img/BE/content/'.$category.'/'.$file)))
+                    {
+                        unlink(public_path('img/BE/content/'.$category.'/'.$file));
+                    }
+
                     $photo = url('/img/BE/content/'.$category.'/'.$photo);
                 }
             }else{
@@ -182,15 +190,6 @@ class ContentController extends Controller
     public function content_delete($category,$id)
     {
         $category_id = category_content_tbl::select('id')->where('category',$category)->first()->id;
-
-        // delete file storage
-        $path = content_tbl::select('photo')->where('id',$id)->first()->photo;
-        $file = substr($path, strrpos($path, '/') + 1);
-        if(file_exists(public_path('img/BE/content/'.$category.'/'.$file)))
-        {
-            unlink(public_path('img/BE/content/'.$category.'/'.$file));
-        }
-
         content_tbl::where('id',$id)->where('category_ctn_id',$category_id)->update([
             'is_active'=>"N"
         ]);

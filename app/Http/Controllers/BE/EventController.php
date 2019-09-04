@@ -51,12 +51,12 @@ class EventController extends Controller
                     return redirect()->back();
                 }
 
-                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"backend/img/event");
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/BE/event");
                 if ($banner != true)
                 {
                     return redirect()->back();
                 }else{
-                    $banner = url('/backend/img/event/'.$banner);
+                    $banner = url('/img/BE/event/'.$banner);
                 }
             }else{
                 $banner = 'https://via.placeholder.com/300';
@@ -105,12 +105,20 @@ class EventController extends Controller
                     return redirect()->back();
                 }
 
-                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"backend/img/event");
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/BE/event");
                 if ($banner != true)
                 {
                     return redirect()->back();
                 }else{
-                    $banner = url('/backend/img/event/'.$banner);
+                    // delete file storage
+                    $path = content_event_tbl::select('banner')->where('id',$id)->first()->banner;
+                    $file = substr($path, strrpos($path, '/') + 1);
+                    if(file_exists(public_path('img/BE/event/'.$file)))
+                    {
+                        unlink(public_path('img/BE/event/'.$file));
+                    }
+
+                    $banner = url('/img/BE/event/'.$banner);
                 }
             }else{
                 $banner = content_event_tbl::select('banner')->where('id',$id)->first()->banner;

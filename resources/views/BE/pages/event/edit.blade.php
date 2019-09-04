@@ -23,7 +23,7 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <form method="post" action="{{route('event-update')}}" multiple="multipart/form-data">
+                        <form method="post" action="{{route('event-update')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-8">

@@ -13,8 +13,8 @@ return [
     'nav_menu_home' => 'Home',
     'nav_menu_heritage' => 'Heritage',
     'nav_menu_event' => 'Event',
-    'nav_menu_edu_pro' => 'Education Program',
-    'nav_menu_vr' => 'Virtual Reality Tour',
+    'nav_menu_edu_pro' => 'Education',
+    'nav_menu_vr' => 'Virtual Reality',
 
     'home_select_place' => 'All Province in Indonesia',
     'home_select_heritage' => 'All Heritage in Indonesia',

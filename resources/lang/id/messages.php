@@ -14,7 +14,7 @@ return [
     'nav_menu_heritage' => 'Pusaka',
     'nav_menu_event' => 'Acara',
     'nav_menu_edu_pro' => 'Program Pendidikan',
-    'nav_menu_vr' => 'Tur Virtual Reality',
+    'nav_menu_vr' => 'Virtual Reality',
 
     'home_select_place' => 'Semua Provinsi di Indonesia',
     'home_select_heritage' => 'Semua Pusaka di Indonesia',

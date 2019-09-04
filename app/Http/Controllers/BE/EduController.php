@@ -51,12 +51,12 @@ class EduController extends Controller
                     return redirect()->back();
                 }
 
-                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"backend/img/edu");
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/BE/edu");
                 if ($banner != true)
                 {
                     return redirect()->back();
                 }else{
-                    $banner = url('/backend/img/edu/'.$banner);
+                    $banner = url('/img/BE/edu/'.$banner);
                 }
             }else{
                 $banner = 'https://via.placeholder.com/300';
@@ -108,12 +108,20 @@ class EduController extends Controller
                     return redirect()->back();
                 }
 
-                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"backend/img/edu");
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/BE/edu");
                 if ($banner != true)
                 {
                     return redirect()->back();
                 }else{
-                    $banner = url('/backend/img/edu/'.$banner);
+                    // delete file storage
+                    $path = content_edu_tbl::select('banner')->where('id',$id)->first()->banner;
+                    $file = substr($path, strrpos($path, '/') + 1);
+                    if(file_exists(public_path('img/BE/edu/'.$file)))
+                    {
+                        unlink(public_path('img/BE/edu/'.$file));
+                    }
+
+                    $banner = url('/img/BE/edu/'.$banner);
                 }
             }else{
                 $banner = content_edu_tbl::select('banner')->where('id',$id)->first()->banner;

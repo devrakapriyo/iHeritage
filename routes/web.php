@@ -42,6 +42,9 @@ Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function 
     Route::get('/content-pages/{category}/edit/{id}', 'ContentController@content_edit')->name('content-edit');
     Route::post('/content-pages/{category}/update/{id}', 'ContentController@content_update')->name('content-update');
     Route::get('/content-pages/{category}/delete/{id}', 'ContentController@content_delete')->name('content-delete');
+    Route::get('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery')->name('content-gallery');
+    Route::post('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery_upload')->name('content-gallery-upload');
+    Route::get('/content-pages/{category}/gallery-delete/{id}', 'ContentController@content_gallery_delete')->name('content-gallery-delete');
 
     // category
     Route::get('/category-content', 'IndexController@category_content')->name('category-page');

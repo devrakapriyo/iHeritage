@@ -4,10 +4,12 @@ namespace App\Http\Controllers\BE;
 
 use App\Helper\helpers;
 use App\Model\content_detail_tbl;
+use App\Model\content_gallery_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Yajra\Datatables\Datatables;
 
@@ -29,11 +31,16 @@ class ContentController extends Controller
             ->where('category', $category)
             ->where('is_active', "Y");
         return Datatables::of($data)
+            ->addColumn('gallery', function ($data) use ($category) {
+                $btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-info" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
+                return $btn_gallery;
+            })
             ->addColumn('action', function ($data) use ($category) {
                 $btn_edit = '<a href="'.route('content-edit', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
                 $btn_hapus = '<a href="'.route('content-delete', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
                 return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
             })
+            ->rawColumns(['gallery','action'])
             ->make(true);
     }
 
@@ -54,12 +61,12 @@ class ContentController extends Controller
                     return redirect()->back();
                 }
 
-                $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"backend/img/content");
+                $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"img/BE/content/".$category);
                 if ($photo != true)
                 {
                     return redirect()->back();
                 }else{
-                    $photo = url('/backend/img/content/'.$photo);
+                    $photo = url('/img/content/'.$category.'/'.$photo);
                 }
             }else{
                 $photo = 'https://via.placeholder.com/300';
@@ -124,12 +131,12 @@ class ContentController extends Controller
                     return redirect()->back();
                 }
 
-                $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"backend/img/content");
+                $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"img/BE/content/".$category);
                 if ($photo != true)
                 {
                     return redirect()->back();
                 }else{
-                    $photo = url('/backend/img/content/'.$photo);
+                    $photo = url('/img/BE/content/'.$category.'/'.$photo);
                 }
             }else{
                 $photo = content_tbl::select('photo')->where('id',$id)->first()->photo;
@@ -175,10 +182,68 @@ class ContentController extends Controller
     public function content_delete($category,$id)
     {
         $category_id = category_content_tbl::select('id')->where('category',$category)->first()->id;
+
+        // delete file storage
+        $path = content_tbl::select('photo')->where('id',$id)->first()->photo;
+        $file = substr($path, strrpos($path, '/') + 1);
+        if(file_exists(public_path('img/BE/content/'.$category.'/'.$file)))
+        {
+            unlink(public_path('img/BE/content/'.$category.'/'.$file));
+        }
+
         content_tbl::where('id',$id)->where('category_ctn_id',$category_id)->update([
             'is_active'=>"N"
         ]);
 
+        return redirect()->route('content-pages',['category'=>$category]);
+    }
+
+    public function content_gallery($category,$id)
+    {
+        $gallery = content_gallery_tbl::select('id','photo')->where('content_id',$id)->get();
+        return view('BE.pages.content.gallery', compact('category','id','gallery'));
+    }
+
+    public function content_gallery_upload(Request $request,$category,$id)
+    {
+        if (!empty($request->file('photo')))
+        {
+            $valid = helpers::validationImage($request->file("photo"));
+            if ($valid != true)
+            {
+                return redirect()->back();
+            }
+
+            $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"img/BE/gallery");
+            if ($photo != true)
+            {
+                return redirect()->back();
+            }else{
+                $photo = url('/img/BE/gallery/'.$photo);
+            }
+        }else{
+            return redirect()->back();
+        }
+
+        $simpan = new content_gallery_tbl;
+        $simpan->content_id = $id;
+        $simpan->photo = $photo;
+        $simpan->save();
+
+        return redirect()->route('content-pages',['category'=>$category]);
+    }
+
+    public function content_gallery_delete($category,$id)
+    {
+        // delete file storage
+        $path = content_gallery_tbl::select('photo')->where('id',$id)->first()->photo;
+        $file = substr($path, strrpos($path, '/') + 1);
+        if(file_exists(public_path('img/BE/gallery/'.$file)))
+        {
+            unlink(public_path('img/BE/gallery/'.$file));
+        }
+
+        content_gallery_tbl::where('id',$id)->delete();
         return redirect()->route('content-pages',['category'=>$category]);
     }
 }

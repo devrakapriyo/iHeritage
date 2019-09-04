@@ -16,6 +16,11 @@ class helpers extends Model
 
         $extension = strstr($image->getClientOriginalName(), '.');
         $fileName = $name . $extension;
+
+        if (!file_exists($path))
+        {
+            mkdir($path, 0777, true);
+        }
         $image->move($path, $fileName);
 
         return $fileName;

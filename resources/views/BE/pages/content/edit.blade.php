@@ -26,7 +26,7 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <form method="post" action="{{route('content-update',['category'=>$category,'id'=>$id])}}" multiple="multipart/form-data">
+                        <form method="post" action="{{route('content-update',['category'=>$category,'id'=>$id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-8">

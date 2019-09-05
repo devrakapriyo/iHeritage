@@ -9,10 +9,17 @@ use App\Model\content_tbl;
 
 class InterfaceController extends Controller
 {
+    public function listContent($category)
+    {
+        return content_tbl::select('content.*','category_content.category')->join('category_content','category_content.id',"=",'content.category_ctn_id')->where('category', $category)->where('is_active', "Y")->orderBy('content.created_at', 'desc')->take(3)->get();
+    }
+
     public function home()
     {
-        $museum = content_tbl::where('is_active', "Y")->orderBy('created_at', 'desc')->take(3)->get();
-        return view('FE.pages.home', compact('museum'));
+        $museum = $this->listContent("museum");
+        $palace = $this->listContent("palace");
+        $nature = $this->listContent("nature");
+        return view('FE.pages.home', compact('museum','palace', 'nature'));
     }
 
     public function museum($museum_name, $id)

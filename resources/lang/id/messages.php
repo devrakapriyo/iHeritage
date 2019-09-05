@@ -24,6 +24,10 @@ return [
     'home_banner_description' => 'Gratis...',
     'home_banner_button' => 'Coba sekarang!',
 
+    'home_palace_title' => 'Kraton',
+
+    'home_nature_title' => 'Alam',
+
     'home_news_title' => 'Berita',
 
     // page heritage

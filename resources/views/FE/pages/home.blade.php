@@ -66,20 +66,22 @@
         @foreach($museum as $list)
         <div class="col-md-4 mb-5">
             <div class="card h-100">
-                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
-                <div class="card-body">
-                <h5 class="card-title"><a href="{{url('museum/'.$list->seo.'/'.$list->id)}}" class="text-dark">{{$list->name}}</a></h5>
-                <p class="card-text">
-                    <small class="card-text text-uppercase">{{$list->location}}</small>
-                </p>
-                <p class="card-text">
-                    @php
-                        $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description;
-                        $limit_text = substr($text, 0, 150);
-                    @endphp
-                    {{$text}}
-                </p>
-                </div>
+                <a href="{{url('museum/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                    <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                    <div class="card-body">
+                    <h5 class="card-title">{{$list->name}}</h5>
+                    <p class="card-text">
+                        <small class="card-text text-uppercase">{{$list->location}}</small>
+                    </p>
+                    <p class="card-text">
+                        @php
+                            $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
+                            $limit_text = substr($text, 0, 150);
+                        @endphp
+                        {{$text}}
+                    </p>
+                    </div>
+                </a>
             </div>
         </div>
         @endforeach
@@ -93,6 +95,72 @@
         <hr class="my-4">
         <a class="btn btn-light" href="#" role="button">@lang('messages.home_banner_button')</a>
     </div>
+    <!-- /.row -->
+
+    <!-- List Palace -->
+    @if(count($palace) != 0)
+    <div class="row">
+        <div class="col-md-12">
+            <h2>@lang('messages.home_palace_title')</h2>
+            <hr>
+        </div>
+        @foreach($palace as $list)
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <a href="{{url('palace/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                        <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$list->name}}</h5>
+                            <p class="card-text">
+                                <small class="card-text text-uppercase">{{$list->location}}</small>
+                            </p>
+                            <p class="card-text">
+                                @php
+                                    $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
+                                    $limit_text = substr($text, 0, 150);
+                                @endphp
+                                {{$text}}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    @endif
+    <!-- /.row -->
+
+    <!-- List Nature -->
+    @if(count($nature) != 0)
+    <div class="row">
+        <div class="col-md-12">
+            <h2>@lang('messages.home_nature_title')</h2>
+            <hr>
+        </div>
+        @foreach($nature as $list)
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <a href="{{url('nature/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                        <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$list->name}}</h5>
+                            <p class="card-text">
+                                <small class="card-text text-uppercase">{{$list->location}}</small>
+                            </p>
+                            <p class="card-text">
+                                @php
+                                    $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
+                                    $limit_text = substr($text, 0, 150);
+                                @endphp
+                                {{$text}}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    @endif
     <!-- /.row -->
 
     <!-- List News -->

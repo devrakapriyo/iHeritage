@@ -24,6 +24,10 @@ return [
     'home_banner_description' => 'Its Free...',
     'home_banner_button' => 'Try it out!',
 
+    'home_palace_title' => 'Palace',
+
+    'home_nature_title' => 'Nature',
+
     'home_news_title' => 'News',
 
     // page heritage

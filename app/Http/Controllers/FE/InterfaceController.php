@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FE;
 
+use App\Model\content_gallery_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,8 +25,9 @@ class InterfaceController extends Controller
 
     public function museum($museum_name, $id)
     {
-        $museum = content_tbl::select('id', 'name')->where('is_active', "Y")->where('seo', $museum_name)->where('id', $id)->first();
-        return view('FE.pages.museum');
+        $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $museum_name)->where('content.id', $id)->first();
+        $gallery = content_gallery_tbl::select('photo')->where('content_id', $id)->get();
+        return view('FE.pages.detail', compact('detail','gallery'));
     }
 
     public function heritagePlace()

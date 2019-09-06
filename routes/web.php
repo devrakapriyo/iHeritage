@@ -19,7 +19,7 @@ Route::get('locale/{locale}', function($locale){
 Route::namespace('FE')->group(function () {
     
     Route::get('/', 'InterfaceController@home');
-    Route::get('/museum/{museum_name}/{id}', 'InterfaceController@museum');
+    Route::get('/content/{museum_name}/{id}', 'InterfaceController@museum');
     Route::get('/heritage-place', 'InterfaceController@heritagePlace');
     Route::get('/vr-tour', 'InterfaceController@vrTour');
 });

@@ -66,7 +66,7 @@
         @foreach($museum as $list)
         <div class="col-md-4 mb-5">
             <div class="card h-100">
-                <a href="{{url('museum/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                     <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
                     <div class="card-body">
                     <h5 class="card-title">{{$list->name}}</h5>
@@ -78,7 +78,7 @@
                             $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
                             $limit_text = substr($text, 0, 150);
                         @endphp
-                        {{$text}}
+                        {{$limit_text}} ... readmore
                     </p>
                     </div>
                 </a>
@@ -107,7 +107,7 @@
         @foreach($palace as $list)
             <div class="col-md-4 mb-5">
                 <div class="card h-100">
-                    <a href="{{url('palace/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                         <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
                         <div class="card-body">
                             <h5 class="card-title">{{$list->name}}</h5>
@@ -119,7 +119,7 @@
                                     $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
                                     $limit_text = substr($text, 0, 150);
                                 @endphp
-                                {{$text}}
+                                {{$limit_text}} ... readmore
                             </p>
                         </div>
                     </a>
@@ -140,7 +140,7 @@
         @foreach($nature as $list)
             <div class="col-md-4 mb-5">
                 <div class="card h-100">
-                    <a href="{{url('nature/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                         <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
                         <div class="card-body">
                             <h5 class="card-title">{{$list->name}}</h5>
@@ -152,7 +152,7 @@
                                     $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
                                     $limit_text = substr($text, 0, 150);
                                 @endphp
-                                {{$text}}
+                                {{$limit_text}} ... readmore
                             </p>
                         </div>
                     </a>

@@ -27,9 +27,9 @@ class ContentController extends Controller
     {
         $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind'])
             ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
-            ->where('users_id', Auth::user()->id)
+            ->where('institutional_id', Auth::user()->institutional_id)
             ->where('category', $category)
-            ->where('is_active', "Y");
+            ->where('content.is_active', "Y");
         return Datatables::of($data)
             ->addColumn('gallery', function ($data) use ($category) {
                 $btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-info" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
@@ -83,7 +83,7 @@ class ContentController extends Controller
             $content->long_description_en = $request->long_description_en;
             $content->long_description_ind = $request->long_description_ind;
             $content->is_active = "Y";
-            $content->users_id = Auth::user()->id;
+            $content->institutional_id = Auth::user()->institutional_id;
             $content->save();
 
             $detail = new content_detail_tbl;

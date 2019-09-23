@@ -62,40 +62,54 @@
                     <h5 class="card-title">@lang('messages.museum_information_opening')</h5>
                 </div>
                 <ul class="list-group list-group-flush">
+                    @if(!empty($detail->opening_monday))
                     <li class="list-group-item">
                         @lang('messages.museum_information_monday')<br>
                         <strong>{{$detail->opening_monday}}</strong>
                     </li>
+                    @endif
+                    @if(!empty($detail->opening_tuesday))
                     <li class="list-group-item">
                         @lang('messages.museum_information_tuesday')<br>
                         <strong>{{$detail->opening_tuesday}}</strong>
                     </li>
+                    @endif
+                    @if(!empty($detail->opening_tuesday))
                     <li class="list-group-item">
                         @lang('messages.museum_information_wednesday')<br>
-                        <strong>{{$detail->opening_wednesday}}</strong>
+                        <strong>{{$detail->opening_tuesday}}</strong>
                     </li>
+                    @endif
+                    @if(!empty($detail->opening_thursday))
                     <li class="list-group-item">
                         @lang('messages.museum_information_thursday')<br>
                         <strong>{{$detail->opening_thursday}}</strong>
                     </li>
+                    @endif
+                    @if(!empty($detail->opening_friday))
                     <li class="list-group-item">
                         @lang('messages.museum_information_friday')<br>
                         <strong>{{$detail->opening_friday}}</strong>
                     </li>
+                    @endif
+                    @if(!empty($detail->opening_saturday))
                     <li class="list-group-item">
                         @lang('messages.museum_information_saturday')<br>
                         <strong>{{$detail->opening_saturday}}</strong>
                     </li>
+                    @endif
+                    @if(!empty($detail->opening_sunday))
                     <li class="list-group-item">
                         @lang('messages.museum_information_sunday')<br>
                         <strong>{{$detail->opening_sunday}}</strong>
                     </li>
+                    @endif
                     <li class="list-group-item">
                         @php
-                            $close = App::isLocale('id') ? $detail->close_ind : $detail->close_en;
+                            $close_shedule = App::isLocale('id') ? $detail->close_ind : $detail->close_en;
                         @endphp
-                        {{$close}}
-                        <strong class="text-danger">(CLOSE)</strong>
+                        {{$close_shedule}}
+                        <strong class="text-danger">@lang('messages.museum_close')</strong>
                     </li>
                 </ul>
             </div>

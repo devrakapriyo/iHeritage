@@ -12,7 +12,7 @@ class InterfaceController extends Controller
 {
     public function listContent($category)
     {
-        return content_tbl::select('content.*','category_content.category')->join('category_content','category_content.id',"=",'content.category_ctn_id')->where('category', $category)->where('is_active', "Y")->orderBy('content.created_at', 'desc')->take(3)->get();
+        return content_tbl::select('content.*','category_content.category')->join('category_content','category_content.id',"=",'content.category_ctn_id')->where('category', $category)->where('content.is_active', "Y")->orderBy('content.created_at', 'desc')->take(3)->get();
     }
 
     public function home()

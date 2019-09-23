@@ -53,4 +53,5 @@ return [
     'museum_information_saturday' => 'Sabtu',
     'museum_information_sunday' => 'Minggu',
     'museum_information_close' => 'Senin dan Hari Libur Nasional Indonesia',
+    'museum_close' => '(TUTUP)',
 ];

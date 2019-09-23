@@ -53,4 +53,5 @@ return [
     'museum_information_saturday' => 'Saturday',
     'museum_information_sunday' => 'Sunday',
     'museum_information_close' => 'Mondays and Indonesian National Holidays',
+    'museum_close' => '(CLOSE)',
 ];

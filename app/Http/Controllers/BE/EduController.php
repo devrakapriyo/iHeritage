@@ -23,7 +23,7 @@ class EduController extends Controller
         $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind'])
             ->join('content', 'content.id', '=', 'content_edu_program.content_id')
             ->join('place', 'place.id', '=', 'content_edu_program.place_id')
-            ->where('institutional_id', Auth::user()->id)
+            ->where('institutional_id', Auth::user()->institutional_id)
             ->where('content_edu_program.is_active', "Y");
         return DataTables::of($data)
             ->addColumn('action', function ($data) {
@@ -79,6 +79,9 @@ class EduController extends Controller
             $simpan->close_en = $request->close_en;
             $simpan->close_ind = $request->close_ind;
             $simpan->place_id = $request->place_id;
+            $simpan->map_area_detail = $request->map_area_detail;
+            $simpan->latitude_detail = $request->latitude_detail;
+            $simpan->longitude_detail = $request->longitude_detail;
             $simpan->is_active = "Y";
             $simpan->save();
 
@@ -131,6 +134,9 @@ class EduController extends Controller
                 ->update([
                     'banner'=>$banner,
                     'place_id'=>$request->place_id,
+                    'map_area_detail'=>$request->map_area_detail,
+                    'latitude_detail'=>$request->latitude_detail,
+                    'longitude_detail'=>$request->longitude_detail,
                     'description_en'=>$request->description_en,
                     'description_ind'=>$request->description_ind,
                     'opening_sunday'=>$request->opening_sunday,

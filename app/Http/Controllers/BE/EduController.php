@@ -23,7 +23,7 @@ class EduController extends Controller
         $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind'])
             ->join('content', 'content.id', '=', 'content_edu_program.content_id')
             ->join('place', 'place.id', '=', 'content_edu_program.place_id')
-            ->where('users_id', Auth::user()->id)
+            ->where('institutional_id', Auth::user()->id)
             ->where('content_edu_program.is_active', "Y");
         return DataTables::of($data)
             ->addColumn('action', function ($data) {

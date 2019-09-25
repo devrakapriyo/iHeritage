@@ -10,7 +10,7 @@ class content_tbl extends Model
 
     public static function listContent($user)
     {
-        return self::select('id','name')->where('users_id',$user)->where('is_active', "Y")->get();
+        return self::select('id','name')->where('institutional_id',$user)->where('is_active', "Y")->get();
     }
 
     public static function fieldContent($id, $field)

@@ -95,6 +95,9 @@ class ContentController extends Controller
             $detail->content_id = $content->id;
             $detail->address = $request->address;
             $detail->place_id = $request->place_id;
+            $detail->map_area_detail = $request->map_area_detail;
+            $detail->latitude_detail = $request->latitude_detail;
+            $detail->longitude_detail = $request->longitude_detail;
             $detail->url_vr = $request->url_vr;
             $detail->url_website = $request->url_website;
             $detail->phone = $request->phone;
@@ -171,6 +174,9 @@ class ContentController extends Controller
                 ->update([
                     'address'=>$request->address,
                     'place_id'=>$request->place_id,
+                    'map_area_detail'=>$request->map_area_detail,
+                    'latitude_detail'=>$request->latitude_detail,
+                    'longitude_detail'=>$request->longitude_detail,
                     'url_vr'=>$request->url_vr,
                     'url_website'=>$request->url_website,
                     'phone'=>$request->phone,

@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\BE;
 
 use App\Helper\helpers;
+use App\Model\content_collection_tbl;
 use App\Model\content_detail_tbl;
 use App\Model\content_gallery_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Yajra\Datatables\Datatables;
+use Alert;
 
 use App\Model\content_tbl;
 use App\Model\category_content_tbl;
@@ -32,15 +33,19 @@ class ContentController extends Controller
             ->where('content.is_active', "Y");
         return Datatables::of($data)
             ->addColumn('gallery', function ($data) use ($category) {
-                $btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-info" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
+                $btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
                 return $btn_gallery;
+            })
+            ->addColumn('collection', function ($data) use ($category) {
+                $btn_collection = '<a href="'.route('content-collection', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new collection?">'.content_collection_tbl::countCollectionType($data->id, "all").' collection</a>';
+                return $btn_collection;
             })
             ->addColumn('action', function ($data) use ($category) {
                 $btn_edit = '<a href="'.route('content-edit', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
                 $btn_hapus = '<a href="'.route('content-delete', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
                 return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
             })
-            ->rawColumns(['gallery','action'])
+            ->rawColumns(['gallery','collection','action'])
             ->make(true);
     }
 
@@ -198,12 +203,12 @@ class ContentController extends Controller
         return redirect()->route('content-pages',['category'=>$category]);
     }
 
+    // gallery
     public function content_gallery($category,$id)
     {
         $gallery = content_gallery_tbl::select('id','photo')->where('content_id',$id)->get();
         return view('BE.pages.content.gallery', compact('category','id','gallery'));
     }
-
     public function content_gallery_upload(Request $request,$category,$id)
     {
         if (!empty($request->file('photo')))
@@ -232,7 +237,6 @@ class ContentController extends Controller
 
         return redirect()->route('content-pages',['category'=>$category]);
     }
-
     public function content_gallery_delete($category,$id)
     {
         // delete file storage
@@ -244,6 +248,143 @@ class ContentController extends Controller
         }
 
         content_gallery_tbl::where('id',$id)->delete();
+        return redirect()->route('content-pages',['category'=>$category]);
+    }
+
+    // collection
+    public function content_collection($category,$id)
+    {
+        $collection = content_collection_tbl::where('content_id',$id)->where('is_active',"Y")->get();
+        return view('BE.pages.content.collection', compact('category','id','collection'));
+    }
+
+    function geocode($address){
+
+        // url encode the address
+        $address = urlencode($address);
+
+        // google map geocode api url
+        $url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$address."&key=".env('GOOGLE_MAPS_KEY')."";
+
+        // get the json response
+        $resp_json = file_get_contents($url);
+
+        // decode the json
+        $resp = json_decode($resp_json, true);
+
+        // response status will be 'OK', if able to geocode given address
+        if($resp['status'] == 'OK')
+        {
+
+            // get the important data
+            $lati = isset($resp['results'][0]['geometry']['location']['lat']) ? $resp['results'][0]['geometry']['location']['lat'] : "";
+            $longi = isset($resp['results'][0]['geometry']['location']['lng']) ? $resp['results'][0]['geometry']['location']['lng'] : "";
+            $formatted_address = isset($resp['results'][0]['formatted_address']) ? $resp['results'][0]['formatted_address'] : "";
+
+            // verify if data is complete
+            if($lati && $longi && $formatted_address){
+
+                // put the data in the array
+                $data_arr = array();
+
+                array_push(
+                    $data_arr,
+                    $lati,
+                    $longi,
+                    $formatted_address
+                );
+
+                return $data_arr;
+
+            }else{
+                return false;
+            }
+
+        }else{
+            echo "<strong>ERROR: {$resp['status']}</strong>";
+            return false;
+        }
+    }
+    public function get_map($location)
+    {
+        $map_location = $this->geocode($location);
+        $latitude = null;
+        $longitude = null;
+        $address = null;
+        if($map_location)
+        {
+            $latitude = $map_location[0];
+            $longitude = $map_location[1];
+            $address = $map_location[2];
+        }
+
+        return $this->get_json_latitude_longitude(200, $latitude, $longitude, $address);
+    }
+
+    public function content_collection_upload(Request $request,$category,$id)
+    {
+        if (!empty($request->file('media')))
+        {
+            if($request->media_type == "image")
+            {
+                $size = 1000000;
+                $msg = "must format jpg, jpeg or png";
+            }else if($request->media_type == "video"){
+                $size = 100000000;
+                $msg = "must format mkv, mov or mp4";
+            }else if($request->media_type == "audio"){
+                $size = 10000000;
+                $msg = "must format mp3";
+            }else if($request->media_type == "document"){
+                $size = 1000000;
+                $msg = "must format pdf";
+            }
+
+            $valid = helpers::validationMedia($request->file("media"), $request->media_type);
+            if ($valid != true)
+            {
+                Alert::error('upload unsuccessful, '.$msg);
+                return redirect()->back();
+            }
+
+            $media = helpers::uploadMedia($request->file("media"),date("Ymd").rand(100,999),"img/BE/media", $size);
+            if ($media != true)
+            {
+                return redirect()->back();
+            }else{
+                $media = url('/img/BE/media/'.$media);
+            }
+        }else{
+            return redirect()->back();
+        }
+
+        $simpan = new content_collection_tbl;
+        $simpan->content_id = $id;
+        $simpan->name = $request->name;
+        $simpan->media = $media;
+        $simpan->media_type = $request->media_type;
+        $simpan->description = $request->description;
+        $simpan->place_id = $request->place_id;
+        $simpan->map_area_detail = $request->map_area_detail;
+        $simpan->latitude_detail = $request->latitude_detail;
+        $simpan->longitude_detail = $request->longitude_detail;
+        $simpan->created_by = Auth::user()->name;
+        $simpan->save();
+
+        return redirect()->route('content-pages',['category'=>$category]);
+    }
+    public function content_collection_delete($category,$id)
+    {
+        // delete file storage
+        $path = content_collection_tbl::select('media')->where('id',$id)->first()->media;
+        $file = substr($path, strrpos($path, '/') + 1);
+        if(file_exists(public_path('img/BE/media/'.$file)))
+        {
+            unlink(public_path('img/BE/media/'.$file));
+        }
+
+        content_collection_tbl::where('id',$id)->update(['is_active'=>"N"]);
+        Alert::success('Data collection successfully deleted');
         return redirect()->route('content-pages',['category'=>$category]);
     }
 }

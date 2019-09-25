@@ -12,4 +12,9 @@ class content_tbl extends Model
     {
         return self::select('id','name')->where('users_id',$user)->where('is_active', "Y")->get();
     }
+
+    public static function fieldContent($id, $field)
+    {
+        return self::select($field)->where('id',$id)->first()->$field;
+    }
 }

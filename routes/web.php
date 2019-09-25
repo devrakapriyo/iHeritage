@@ -33,6 +33,7 @@ Route::post('/register', 'BE\IndexController@register_post');
 
 Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function () {
     Route::get('/', 'IndexController@dashboard')->name('dashboard');
+    Route::get('/map/{location}', 'ContentController@get_map');
 
     // content pages
     Route::get('/content-pages/{category}', 'ContentController@content_pages')->name('content-pages');
@@ -42,9 +43,14 @@ Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function 
     Route::get('/content-pages/{category}/edit/{id}', 'ContentController@content_edit')->name('content-edit');
     Route::post('/content-pages/{category}/update/{id}', 'ContentController@content_update')->name('content-update');
     Route::get('/content-pages/{category}/delete/{id}', 'ContentController@content_delete')->name('content-delete');
+    // gallery
     Route::get('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery')->name('content-gallery');
     Route::post('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery_upload')->name('content-gallery-upload');
     Route::get('/content-pages/{category}/gallery-delete/{id}', 'ContentController@content_gallery_delete')->name('content-gallery-delete');
+    // collection
+    Route::get('/content-pages/{category}/collection/{id}', 'ContentController@content_collection')->name('content-collection');
+    Route::post('/content-pages/{category}/collection/{id}', 'ContentController@content_collection_upload')->name('content-collection-upload');
+    Route::get('/content-pages/{category}/collection-delete/{id}', 'ContentController@content_collection_delete')->name('content-collection-delete');
 
     // category
     Route::get('/category-content', 'IndexController@category_content')->name('category-page');

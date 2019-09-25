@@ -76,7 +76,7 @@
 
   @include('BE.assets.footer')
   @yield('footer')
-
+  @include('sweet::alert')
 </body>
 
 </html>

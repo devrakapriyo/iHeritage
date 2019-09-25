@@ -34,6 +34,7 @@
                         <thead>
                             <tr>
                                 <th></th>
+                                <th></th>
                                 <th>Name</th>
                                 <th>Category</th>
                                 <th>Location</th>
@@ -62,6 +63,7 @@
             ajax: '{{route('content-get', ['category'=>$category])}}',
             columns: [
                 { data: 'gallery', name: 'gallery', orderable: false, searchable: false},
+                { data: 'collection', name: 'collection', orderable: false, searchable: false},
                 { data: 'name', name: 'name' },
                 { data: 'category_ctn_name_ind', name: 'category_content.category_ctn_name_ind' },
                 { data: 'location', name: 'location' },

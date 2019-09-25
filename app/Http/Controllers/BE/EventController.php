@@ -23,7 +23,7 @@ class EventController extends Controller
         $data = content_event_tbl::select(['content_event.*', 'content.name', 'place.place_ind'])
             ->join('content', 'content.id', '=', 'content_event.content_id')
             ->join('place', 'place.id', '=', 'content_event.place_id')
-            ->where('users_id', Auth::user()->id)
+            ->where('institutional_id', Auth::user()->institutional_id)
             ->where('content_event.is_active', "Y");
         return DataTables::of($data)
             ->addColumn('action', function ($data) {
@@ -68,6 +68,9 @@ class EventController extends Controller
             $simpan->name = $request->name;
             $simpan->seo = Str::slug($request->name);
             $simpan->place_id = $request->place_id;
+            $simpan->map_area_detail = $request->map_area_detail;
+            $simpan->latitude_detail = $request->latitude_detail;
+            $simpan->longitude_detail = $request->longitude_detail;
             $simpan->start_date = $request->start_date;
             $simpan->end_date = $request->end_date;
             $simpan->short_description_en = $request->short_description_en;
@@ -128,6 +131,9 @@ class EventController extends Controller
                 ->update([
                     'banner'=>$banner,
                     'place_id'=>$request->place_id,
+                    'map_area_detail'=>$request->map_area_detail,
+                    'latitude_detail'=>$request->latitude_detail,
+                    'longitude_detail'=>$request->longitude_detail,
                     'start_date'=>$request->start_date,
                     'end_date'=>$request->end_date,
                     'short_description_en'=>$request->short_description_en,

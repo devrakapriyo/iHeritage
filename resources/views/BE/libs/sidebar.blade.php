@@ -115,8 +115,8 @@
     </div>
 
     <!-- Nav Item - Account -->
-    <li class="nav-item">
-        <a class="nav-link" href="">
+    <li class="nav-item @yield('users')">
+        <a class="nav-link" href="{{route('users-pages')}}">
             <i class="fas fa-fw fa-users"></i>
             <span>List User</span>
         </a>

@@ -35,6 +35,15 @@ Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function 
     Route::get('/', 'IndexController@dashboard')->name('dashboard');
     Route::get('/map/{location}', 'ContentController@get_map');
 
+    // user management
+    Route::get('/users-management', 'UserController@users_pages')->name('users-pages');
+    Route::get('/users-management/get', 'UserController@users_get')->name('users-get');
+    Route::get('/users-management/add', 'UserController@users_add')->name('users-add');
+    Route::post('/users-management/add', 'UserController@users_post')->name('users-post');
+    Route::get('/users-management/edit/{id}', 'UserController@users_edit')->name('users-edit');
+    Route::post('/users-management/update/{id}', 'UserController@users_update')->name('users-update');
+    Route::get('/users-management/delete/{id}', 'UserController@users_delete')->name('users-delete');
+
     // content pages
     Route::get('/content-pages/{category}', 'ContentController@content_pages')->name('content-pages');
     Route::get('/content-pages/{category}/get', 'ContentController@content_get')->name('content-get');

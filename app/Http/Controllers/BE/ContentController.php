@@ -87,7 +87,6 @@ class ContentController extends Controller
             $content->short_description_ind = $request->short_description_ind;
             $content->long_description_en = $request->long_description_en;
             $content->long_description_ind = $request->long_description_ind;
-            $content->is_active = "Y";
             $content->institutional_id = Auth::user()->institutional_id;
             $content->save();
 
@@ -117,6 +116,7 @@ class ContentController extends Controller
             return $exception;
         }
         DB::commit();
+        Alert::success('Content uploaded successfully');
         return redirect()->route('content-pages',['category'=>$category]);
     }
 
@@ -196,6 +196,7 @@ class ContentController extends Controller
             return $exception;
         }
         DB::commit();
+        Alert::success('Content updated successfully');
         return redirect()->route('content-pages',['category'=>$category]);
     }
 
@@ -206,6 +207,7 @@ class ContentController extends Controller
             'is_active'=>"N"
         ]);
 
+        Alert::success('Content deleted successfully');
         return redirect()->route('content-pages',['category'=>$category]);
     }
 
@@ -233,6 +235,7 @@ class ContentController extends Controller
                 $photo = url('/img/BE/gallery/'.$photo);
             }
         }else{
+            Alert::error('Image hasnt been uploaded yet');
             return redirect()->back();
         }
 
@@ -360,6 +363,7 @@ class ContentController extends Controller
                     $media = url('/img/BE/media/'.$media);
                 }
             }else{
+                Alert::error('Media hasnt been uploaded yet');
                 return redirect()->back();
             }
         }else{
@@ -380,6 +384,7 @@ class ContentController extends Controller
         $simpan->created_by = Auth::user()->name;
         $simpan->save();
 
+        Alert::success('Collection uploaded successfully');
         return redirect()->route('content-pages',['category'=>$category]);
     }
     public function content_collection_delete($category,$id)

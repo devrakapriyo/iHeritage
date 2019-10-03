@@ -175,6 +175,50 @@
                                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                                 <label for="inputPassword">Password</label>
                             </div>
+
+                            <div class="form-label-group">
+                                <input type="password" name="re_password" id="inputRePassword" class="form-control" placeholder="Re Password" required>
+                                <label for="inputRePassword">Re Password</label>
+                            </div>
+
+                            <hr class="sidebar-divider d-none d-md-block">
+
+                            <div class="form-group">
+                                <label for="inputInstitutional">Institutional Name</label>
+                                <input type="text" name="institutional_name" id="inputInstitutional" class="form-control" required autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputCategory">Category</label>
+                                <select name="category" class="form-control" id="inputCategory" required>
+                                    <option value=""></option>
+                                    <option value="museum">Museum</option>
+                                    <option value="library">Library</option>
+                                    <option value="gallery">Gallery</option>
+                                    <option value="archive">Archive</option>
+                                    <option value="temple">Temple</option>
+                                    <option value="palace">Palace</option>
+                                    <option value="natural-place">Natural Place</option>
+                                    <option value="historical-building">Historical Building</option>
+                                    <option value="personal-activities">Personal Activities</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPlace">Place</label>
+                                <select name="place_id" class="form-control" id="inputPlace" required>
+                                    <option value=""></option>
+                                    @foreach(\App\Model\place_tbl::listSearch() as $item)
+                                        <option value="{{$item->id}}">{{$item->place_en}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress">Address</label>
+                                <textarea name="address" id="inputAddress" class="form-control" rows="5" required></textarea>
+                            </div>
+
                             <button class="btn btn-lg btn-warning btn-block text-uppercase">Submit Register</button>
                             <a href="{{url('login')}}" class="btn btn-lg btn-dark btn-block text-uppercase">Back</a>
                             @if(Session::has('info'))

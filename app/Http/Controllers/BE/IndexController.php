@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\BE;
 
 use App\Model\category_content_tbl;
+use App\Model\institutional;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -10,6 +12,7 @@ use Yajra\Datatables\Datatables;
 
 use App\Model\users;
 
+use Alert;
 use Auth;
 
 class IndexController extends Controller
@@ -41,12 +44,34 @@ class IndexController extends Controller
 
     public function register_post(Request $request)
     {
+        $email = User::select('email')->where('email',$request->email)->first();
+        if($email == true)
+        {
+            Alert::error('Email is already registered');
+            return redirect()->back();
+        }
+
+        if($request->password != $request->re_password)
+        {
+            Alert::error('Password incorect');
+            return redirect()->back();
+        }
+
         $simpan = new users;
         $simpan->name = $request->name;
         $simpan->email = $request->email;
         $simpan->phone = $request->phone;
         $simpan->password = Hash::make($request->password);
         $simpan->save();
+
+        $instansi = new institutional;
+        $instansi->institutional_name = $request->institutional_name;
+        $instansi->address = $request->address;
+        $instansi->place_id = $request->place_id;
+        $instansi->email = $request->email;
+        $instansi->phone = $request->phone;
+        $instansi->category = $request->category;
+        $instansi->save();
 
         return redirect()->back()->with('info', "akun anda berhasil terdaftar");
     }

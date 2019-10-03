@@ -12,4 +12,9 @@ class institutional extends Model
     {
         return self::select('id','institutional_name')->where('is_active', "Y")->get();
     }
+
+    public static function getData($parameter, $field)
+    {
+        return self::select($field)->where('id', $parameter)->where('is_active', "Y")->first();
+    }
 }

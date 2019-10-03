@@ -1,5 +1,7 @@
 <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
-
+    @php
+        $auth = \Illuminate\Support\Facades\Auth::user();
+    @endphp
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
     <div class="sidebar-brand-text mx-3">iHeritage.id</div>
@@ -70,14 +72,21 @@
         </a>
         <div id="collapsePages" class="collapse @yield('ctn-pgs')" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum</a>
-                <a class="collapse-item @yield('library')" href="{{route('content-pages', ['category'=>'library'])}}">Library</a>
-                <a class="collapse-item @yield('gallery')" href="{{route('content-pages', ['category'=>'gallery'])}}">Gallery</a>
-                <a class="collapse-item @yield('archive')" href="{{route('content-pages', ['category'=>'archive'])}}">Archive</a>
-                <a class="collapse-item @yield('temple')" href="{{route('content-pages', ['category'=>'temple'])}}">Temple</a>
-                <a class="collapse-item @yield('palace')" href="{{route('content-pages', ['category'=>'palace'])}}">Palace</a>
-                <a class="collapse-item @yield('nature')" href="{{route('content-pages', ['category'=>'nature'])}}">Nature</a>
-                <a class="collapse-item @yield('historical-building')" href="{{route('content-pages', ['category'=>'historical-building'])}}">Historical Building</a>
+                @php
+                    $category = \App\Model\institutional::getData($auth->institutional_id, "category")->category;
+                @endphp
+                @if($category == "all")
+                    <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum</a>
+                    <a class="collapse-item @yield('library')" href="{{route('content-pages', ['category'=>'library'])}}">Library</a>
+                    <a class="collapse-item @yield('gallery')" href="{{route('content-pages', ['category'=>'gallery'])}}">Gallery</a>
+                    <a class="collapse-item @yield('archive')" href="{{route('content-pages', ['category'=>'archive'])}}">Archive</a>
+                    <a class="collapse-item @yield('temple')" href="{{route('content-pages', ['category'=>'temple'])}}">Temple</a>
+                    <a class="collapse-item @yield('palace')" href="{{route('content-pages', ['category'=>'palace'])}}">Palace</a>
+                    <a class="collapse-item @yield('nature')" href="{{route('content-pages', ['category'=>'nature'])}}">Nature</a>
+                    <a class="collapse-item @yield('historical-building')" href="{{route('content-pages', ['category'=>'historical-building'])}}">Historical Building</a>
+                @else
+                    <a class="collapse-item @yield($category) text-capitalize" href="{{route('content-pages', ['category'=>$category])}}">{{str_replace("-", " ",$category)}}</a>
+                @endif
             </div>
         </div>
     </li>
@@ -106,6 +115,7 @@
         </a>
     </li>
 
+    @if(($auth->is_admin_master == "Y") && ($auth->is_admin == "Y"))
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -121,6 +131,7 @@
             <span>List User</span>
         </a>
     </li>
+    @endif
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

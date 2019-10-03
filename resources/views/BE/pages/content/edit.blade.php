@@ -45,13 +45,13 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label>Name Content : </label>
-                                        <input type="text" name="name" class="form-control" value="{{$content->name}}">
+                                        <input type="text" name="name" class="form-control" value="{{$content->name}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Category Content : </label>
-                                        <select name="category_ctn_id" class="form-control">
+                                        <select name="category_ctn_id" class="form-control" required>
                                             @foreach(App\Model\category_content_tbl::listCategory($category) as $item)
                                                 <option {{$content->category_ctn_id == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->category_ctn_name_ind}}</option>
                                             @endforeach
@@ -64,7 +64,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Banner Content : </label>
-                                        <input type="file" name="photo" class="form-control">
+                                        <input type="file" name="photo" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Place : </label>
-                                        <select name="place_id" class="form-control">
+                                        <select name="place_id" class="form-control" required>
                                             <option value=""></option>
                                             @foreach(App\Model\place_tbl::listSearch() as $item)
                                                 <option {{$detail->place_id == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->place_ind}}</option>
@@ -83,13 +83,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Location : </label>
-                                        <input type="text" name="location" class="form-control">
+                                        <input type="text" name="location" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Address:</label>
-                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$content->location}}" onchange="check_location()">
+                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$content->location}}" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude">
                                         <input type="hidden" name="longitude_detail" id="longitude">
                                     </div>
@@ -136,7 +136,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Address : </label>
-                                        <textarea name="address" class="form-control" row="3">{!! $detail->address !!}</textarea>
+                                        <textarea name="address" class="form-control" row="3" required>{!! $detail->address !!}</textarea>
                                     </div>
                                 </div>
                             </div>

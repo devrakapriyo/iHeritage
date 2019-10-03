@@ -42,13 +42,13 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label>Name Event : </label>
-                                    <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Content : </label>
-                                    <select name="content_id" class="form-control">
+                                    <select name="content_id" class="form-control" required>
                                         <option value=""></option>
                                         @foreach(App\Model\content_tbl::listContent(\Illuminate\Support\Facades\Auth::user()->institutional_id) as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
@@ -62,7 +62,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Banner Event : </label>
-                                    <input type="file" name="banner" class="form-control">
+                                    <input type="file" name="banner" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -70,14 +70,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Start Date : </label>
-                                    <input type="text" name="start_date" class="form-control">
+                                    <input type="text" name="start_date" class="form-control" required>
                                     <small class="text-danger">example value : 1 Januari 2019</small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>End Date : </label>
-                                    <input type="text" name="end_date" class="form-control">
+                                    <input type="text" name="end_date" class="form-control" required>
                                     <small class="text-danger">example value : 10 Januari 2019</small>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Place : </label>
-                                    <select name="place_id" class="form-control">
+                                    <select name="place_id" class="form-control" required>
                                         <option value=""></option>
                                         @foreach(App\Model\place_tbl::listSearch() as $item)
                                             <option value="{{$item->id}}">{{$item->place_ind}}</option>
@@ -97,7 +97,7 @@
                             <div class="col-md-9">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="Istana Bogor, Indonesia" onchange="check_location()">
+                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="Istana Bogor, Indonesia" onchange="check_location()" required>
                                     <input type="hidden" name="latitude_detail" id="latitude">
                                     <input type="hidden" name="longitude_detail" id="longitude">
                                 </div>
@@ -146,14 +146,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Price : </label>
-                                    <input type="text" name="price" class="form-control">
+                                    <label>Ticket Price : </label>
+                                    <input type="text" name="price" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Close Registration : </label>
-                                    <input type="text" name="close_registration" class="form-control">
+                                    <input type="text" name="close_registration" class="form-control" required>
                                     <small class="text-danger">example value : 11 Januari 2019</small>
                                 </div>
                             </div>

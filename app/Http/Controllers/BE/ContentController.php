@@ -329,40 +329,43 @@ class ContentController extends Controller
 
     public function content_collection_upload(Request $request,$category,$id)
     {
-        if (!empty($request->file('media')))
+        if($request->media_type != "video")
         {
-            if($request->media_type == "image")
+            if (!empty($request->file('media')))
             {
-                $size = 1000000;
-                $msg = "must format jpg, jpeg or png";
-            }else if($request->media_type == "video"){
-                $size = 100000000;
-                $msg = "must format mkv, mov or mp4";
-            }else if($request->media_type == "audio"){
-                $size = 10000000;
-                $msg = "must format mp3";
-            }else if($request->media_type == "document"){
-                $size = 1000000;
-                $msg = "must format pdf";
-            }
+                if($request->media_type == "image")
+                {
+                    $size = 1000000;
+                    $msg = "must format jpg, jpeg or png";
+                }else if($request->media_type == "audio"){
+                    $size = 10000000;
+                    $msg = "must format mp3";
+                }else if($request->media_type == "document"){
+                    $size = 1000000;
+                    $msg = "must format pdf";
+                }
 
-            $valid = helpers::validationMedia($request->file("media"), $request->media_type);
-            if ($valid != true)
-            {
-                Alert::error('upload unsuccessful, '.$msg);
-                return redirect()->back();
-            }
+                $valid = helpers::validationMedia($request->file("media"), $request->media_type);
+                if ($valid != true)
+                {
+                    Alert::error('upload unsuccessful, '.$msg);
+                    return redirect()->back();
+                }
 
-            $media = helpers::uploadMedia($request->file("media"),date("Ymd").rand(100,999),"img/BE/media", $size);
-            if ($media != true)
-            {
-                return redirect()->back();
+                $media = helpers::uploadMedia($request->file("media"),date("Ymd").rand(100,999),"img/BE/media", $size);
+                if ($media != true)
+                {
+                    return redirect()->back();
+                }else{
+                    $media = url('/img/BE/media/'.$media);
+                }
             }else{
-                $media = url('/img/BE/media/'.$media);
+                return redirect()->back();
             }
         }else{
-            return redirect()->back();
+            $media = $request->media;
         }
+
 
         $simpan = new content_collection_tbl;
         $simpan->content_id = $id;

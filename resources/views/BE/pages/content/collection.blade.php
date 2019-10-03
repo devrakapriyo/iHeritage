@@ -46,13 +46,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Name : </label>
-                                        <input type="text" name="name" class="form-control">
+                                        <input type="text" name="name" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Media Type : </label>
-                                        <select name="media_type" class="form-control">
+                                        <select name="media_type" class="form-control" id="media_type" required>
                                             <option value=""></option>
                                             <option value="image">Image</option>
                                             <option value="video">Video</option>
@@ -62,9 +62,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="form-group">
+                                    <div class="form-group" id="media_file">
                                         <label>Upload Media : </label>
-                                        <input type="file" name="media" class="form-control">
+                                        <input type="file" name="media" class="form-control" required>
+                                    </div>
+                                    <div class="form-group" id="media_link">
+                                        <label>Link Youtube : </label>
+                                        <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" required>
+                                        <small class="text-danger">paste your url from youtube</small>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +77,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Place : </label>
-                                        <select name="place_id" class="form-control">
+                                        <select name="place_id" class="form-control" required>
                                             <option value=""></option>
                                             @foreach(App\Model\place_tbl::listSearch() as $item)
                                                 <option value="{{$item->id}}">{{$item->place_ind}}</option>
@@ -83,7 +88,7 @@
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <label>Address:</label>
-                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_tbl::fieldContent($id,"name")}}, {{\App\Model\content_tbl::fieldContent($id,"location")}}" onchange="check_location()">
+                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_tbl::fieldContent($id,"name")}}, {{\App\Model\content_tbl::fieldContent($id,"location")}}" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude">
                                         <input type="hidden" name="longitude_detail" id="longitude">
                                     </div>
@@ -181,6 +186,17 @@
     <script>
         $(document).ready(function () {
             $("#gmap_canvas").hide();
+
+            $("#media_link").hide();
+            $("#media_type").on("change", function () {
+                if($("#media_type").val() === "video"){
+                    $("#media_link").show();
+                    $("#media_file").hide();
+                }else{
+                    $("#media_link").hide();
+                    $("#media_file").show();
+                }
+            });
         });
 
         function check_location() {

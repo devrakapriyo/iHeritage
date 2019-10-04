@@ -57,6 +57,13 @@ class IndexController extends Controller
             return redirect()->back();
         }
 
+        $instansi = institutional::select('institutional_name')->where('institutional_name',$request->institutional_name)->first();
+        if($instansi == true)
+        {
+            Alert::error('Institutional is already registered');
+            return redirect()->back();
+        }
+
         $simpan = new users;
         $simpan->name = $request->name;
         $simpan->email = $request->email;

@@ -115,22 +115,42 @@
         </a>
     </li>
 
-    @if(($auth->is_admin_master == "Y") && ($auth->is_admin == "Y"))
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+    @if($auth->is_admin == "Y")
+        <!-- Divider -->
+        <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Administrator
-    </div>
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Administrator
+        </div>
 
-    <!-- Nav Item - Account -->
-    <li class="nav-item @yield('users')">
-        <a class="nav-link" href="{{route('users-pages')}}">
-            <i class="fas fa-fw fa-users"></i>
-            <span>List User</span>
-        </a>
-    </li>
+        @if($auth->is_admin_master == "Y")
+            <!-- Nav Item - Account -->
+            <li class="nav-item @yield('heritage')">
+                <a class="nav-link" href="{{route('heritage-pages')}}">
+                    <i class="fas fa-fw fa-university"></i>
+                    <span>About Heritage</span>
+                </a>
+            </li>
+            <li class="nav-item @yield('our-services')">
+                <a class="nav-link" href="{{route('our-services-pages')}}">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>List Our Services</span>
+                </a>
+            </li>
+            <li class="nav-item @yield('news')">
+                <a class="nav-link" href="{{route('news-pages')}}">
+                    <i class="fas fa-fw fa-newspaper"></i>
+                    <span>List News</span>
+                </a>
+            </li>
+        @endif
+        <li class="nav-item @yield('users')">
+            <a class="nav-link" href="{{route('users-pages')}}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>List Users</span>
+            </a>
+        </li>
     @endif
 
     <!-- Divider -->

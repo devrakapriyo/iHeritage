@@ -31,6 +31,30 @@ Route::get('/logout', 'BE\IndexController@logout');
 Route::get('/register', 'BE\IndexController@register');
 Route::post('/register', 'BE\IndexController@register_post');
 
+Route::prefix('dashboard')->namespace('Admin')->middleware('auth')->group(function () {
+    // heritage
+    Route::get('/heritage', 'HeritageController@heritage_pages')->name('heritage-pages');
+    Route::post('/heritage/update/{id}/{page}', 'HeritageController@heritage_update')->name('heritage-update');
+
+    // our services
+    Route::get('/our-services', 'OurServicesController@our_services_pages')->name('our-services-pages');
+    Route::get('/our-services/get', 'OurServicesController@our_services_get')->name('our-services-get');
+    Route::get('/our-services/add', 'OurServicesController@our_services_add')->name('our-services-add');
+    Route::post('/our-services/add', 'OurServicesController@our_services_post')->name('our-services-post');
+    Route::get('/our-services/edit/{id}', 'OurServicesController@our_services_edit')->name('our-services-edit');
+    Route::post('/our-services/update/{id}', 'OurServicesController@our_services_update')->name('our-services-update');
+    Route::get('/our-services/delete/{id}', 'OurServicesController@our_services_delete')->name('our-services-delete');
+
+    // news
+    Route::get('/news', 'NewsController@news_pages')->name('news-pages');
+    Route::get('/news/get', 'NewsController@news_get')->name('news-get');
+    Route::get('/news/add', 'NewsController@news_add')->name('news-add');
+    Route::post('/news/add', 'NewsController@news_post')->name('news-post');
+    Route::get('/news/edit/{id}', 'NewsController@news_edit')->name('news-edit');
+    Route::post('/news/update/{id}', 'NewsController@news_update')->name('news-update');
+    Route::get('/news/delete/{id}', 'NewsController@news_delete')->name('news-delete');
+});
+
 Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function () {
     Route::get('/', 'IndexController@dashboard')->name('dashboard');
     Route::get('/map/{location}', 'ContentController@get_map');

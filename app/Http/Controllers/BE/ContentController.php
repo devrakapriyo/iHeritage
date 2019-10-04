@@ -26,11 +26,19 @@ class ContentController extends Controller
 
     public function content_get($category)
     {
-        $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind'])
-            ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
-            ->where('institutional_id', Auth::user()->institutional_id)
-            ->where('category', $category)
-            ->where('content.is_active', "Y");
+        if(Auth::user()->is_admin_master == "Y")
+        {
+            $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])
+                ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
+                ->where('institutional_id', Auth::user()->institutional_id)
+                ->where('category', $category);
+        }else{
+            $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])
+                ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
+                ->where('institutional_id', Auth::user()->institutional_id)
+                ->where('category', $category)
+                ->where('content.is_active', "Y");
+        }
         return Datatables::of($data)
             ->addColumn('gallery', function ($data) use ($category) {
                 $btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
@@ -43,7 +51,20 @@ class ContentController extends Controller
             ->addColumn('action', function ($data) use ($category) {
                 $btn_edit = '<a href="'.route('content-edit', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
                 $btn_hapus = '<a href="'.route('content-delete', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
-                return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                $btn_approve = '<a href="'.route('content-approve', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-primary">Approve</a>';
+
+                if(Auth::user()->is_admin_master == "Y")
+                {
+                    if($data->is_active == "N")
+                    {
+                        $btn = "<div class='btn-group'>".$btn_approve." ".$btn_edit." ".$btn_hapus."</div>";
+                    }else{
+                        $btn = "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                    }
+                }else{
+                    $btn = "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                }
+                return $btn;
             })
             ->rawColumns(['gallery','collection','action'])
             ->make(true);
@@ -205,6 +226,17 @@ class ContentController extends Controller
         $category_id = category_content_tbl::select('id')->where('category',$category)->first()->id;
         content_tbl::where('id',$id)->where('category_ctn_id',$category_id)->update([
             'is_active'=>"N"
+        ]);
+
+        Alert::success('Content deleted successfully');
+        return redirect()->route('content-pages',['category'=>$category]);
+    }
+
+    public function content_approve($category,$id)
+    {
+        $category_id = category_content_tbl::select('id')->where('category',$category)->first()->id;
+        content_tbl::where('id',$id)->where('category_ctn_id',$category_id)->update([
+            'is_active'=>"Y"
         ]);
 
         Alert::success('Content deleted successfully');

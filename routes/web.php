@@ -76,6 +76,7 @@ Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function 
     Route::get('/content-pages/{category}/edit/{id}', 'ContentController@content_edit')->name('content-edit');
     Route::post('/content-pages/{category}/update/{id}', 'ContentController@content_update')->name('content-update');
     Route::get('/content-pages/{category}/delete/{id}', 'ContentController@content_delete')->name('content-delete');
+    Route::get('/content-pages/{category}/approve/{id}', 'ContentController@content_approve')->name('content-approve');
     // gallery
     Route::get('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery')->name('content-gallery');
     Route::post('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery_upload')->name('content-gallery-upload');

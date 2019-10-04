@@ -114,4 +114,5 @@ Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function 
     Route::get('/education-program-page/edit/{id}', 'EduController@edu_edit')->name('edu-edit');
     Route::post('/education-program-page/update/{id}', 'EduController@edu_update')->name('edu-update');
     Route::get('/education-program-page/delete/{id}', 'EduController@edu_delete')->name('edu-delete');
+    Route::get('/education-program-page/approve/{id}', 'EduController@edu_approve')->name('edu-approve');
 });

@@ -20,16 +20,36 @@ class EduController extends Controller
 
     public function edu_get()
     {
-        $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind'])
-            ->join('content', 'content.id', '=', 'content_edu_program.content_id')
-            ->join('place', 'place.id', '=', 'content_edu_program.place_id')
-            ->where('institutional_id', Auth::user()->institutional_id)
-            ->where('content_edu_program.is_active', "Y");
+        if(Auth::user()->is_admin_master == "Y")
+        {
+            $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind', 'is_publish'])
+                ->join('content', 'content.id', '=', 'content_edu_program.content_id')
+                ->join('place', 'place.id', '=', 'content_edu_program.place_id');
+        }else{
+            $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind', 'is_publish'])
+                ->join('content', 'content.id', '=', 'content_edu_program.content_id')
+                ->join('place', 'place.id', '=', 'content_edu_program.place_id')
+                ->where('institutional_id', Auth::user()->institutional_id)
+                ->where('content_edu_program.is_active', "Y");
+        }
         return DataTables::of($data)
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('edu-edit', ['id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
                 $btn_hapus = '<a href="'.route('edu-delete', ['id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
-                return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                $btn_approve = '<a href="'.route('edu-approve', ['id'=>$data->id]).'" class="btn btn-xs btn-primary">Approve</a>';
+
+                if(Auth::user()->is_admin_master == "Y")
+                {
+                    if($data->is_publish == "N")
+                    {
+                        $btn = "<div class='btn-group'>".$btn_approve." ".$btn_edit." ".$btn_hapus."</div>";
+                    }else{
+                        $btn = "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                    }
+                }else{
+                    $btn = "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                }
+                return $btn;
             })
             ->make(true);
     }
@@ -162,6 +182,15 @@ class EduController extends Controller
     {
         content_edu_tbl::where('id',$id)->update([
             'is_active'=>"N"
+        ]);
+
+        return redirect()->route('edu-page');
+    }
+
+    public function edu_approve($id)
+    {
+        content_edu_tbl::where('id',$id)->update([
+            'is_publish'=>"Y"
         ]);
 
         return redirect()->route('edu-page');

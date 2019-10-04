@@ -30,7 +30,6 @@ class ContentController extends Controller
         {
             $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])
                 ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
-                ->where('institutional_id', Auth::user()->institutional_id)
                 ->where('category', $category);
         }else{
             $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])

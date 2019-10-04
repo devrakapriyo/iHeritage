@@ -9,7 +9,7 @@ class helpers extends Model
     public static function uploadImage($images, $name, $path)
     {
         $image = $images;
-        if ($image->getSize() > 1000000)
+        if ($image->getSize() > 10000000)
         {
             return false;
         }

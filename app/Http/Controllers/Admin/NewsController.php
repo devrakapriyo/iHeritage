@@ -45,12 +45,14 @@ class NewsController extends Controller
             $valid = helpers::validationImage($request->file("banner"));
             if ($valid != true)
             {
+                Alert::error("Validation banner not valid");
                 return redirect()->back();
             }
 
             $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/news");
             if ($banner != true)
             {
+                Alert::error("Banner failed to uploaded");
                 return redirect()->back();
             }else{
                 $banner = url('/img/Admin/news/'.$banner);
@@ -86,12 +88,14 @@ class NewsController extends Controller
             $valid = helpers::validationImage($request->file("banner"));
             if ($valid != true)
             {
+                Alert::error("Validation banner not valid");
                 return redirect()->back();
             }
 
             $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/news");
             if ($banner != true)
             {
+                Alert::error("Banner failed to uploaded");
                 return redirect()->back();
             }else{
                 // delete file storage

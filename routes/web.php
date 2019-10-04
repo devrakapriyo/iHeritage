@@ -104,6 +104,7 @@ Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function 
     Route::get('/event-page/edit/{id}', 'EventController@event_edit')->name('event-edit');
     Route::post('/event-page/update/{id}', 'EventController@event_update')->name('event-update');
     Route::get('/event-page/delete/{id}', 'EventController@event_delete')->name('event-delete');
+    Route::get('/event-page/approve/{id}', 'EventController@event_approve')->name('event-approve');
 
     // event
     Route::get('/education-program-page', 'EduController@edu_page')->name('edu-page');

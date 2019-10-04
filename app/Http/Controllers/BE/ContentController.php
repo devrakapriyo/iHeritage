@@ -413,6 +413,7 @@ class ContentController extends Controller
         $simpan->map_area_detail = $request->map_area_detail;
         $simpan->latitude_detail = $request->latitude_detail;
         $simpan->longitude_detail = $request->longitude_detail;
+        $simpan->is_active = "Y";
         $simpan->created_by = Auth::user()->name;
         $simpan->save();
 

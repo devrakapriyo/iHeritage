@@ -34,6 +34,56 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">collection content</h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <div class="row">
+                            @foreach($collection as $item)
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            @if($item->media_type == "image")
+                                                <div class="form-group">
+                                                    <label>Photo</label>
+                                                    <div class="alert alert-secondary" role="alert">
+                                                        <a href="{{$item->media}}" target="_blank">lihat {{$item->name}}</a>
+                                                    </div>
+                                                </div>
+                                            @elseif($item->media_type == "video")
+                                                <div class="form-group">
+                                                    <label>Video</label>
+                                                    <div class="alert alert-secondary" role="alert">
+                                                        <a href="{{$item->media}}" target="_blank">lihat {{$item->name}}</a>
+                                                    </div>
+                                                </div>
+                                            @elseif($item->media_type == "audio")
+                                                <div class="form-group">
+                                                    <label>{{$item->name}}</label>
+                                                    <audio controls>
+                                                        <source src="{{$item->media}}" type="audio/mp3">
+                                                        Your browser does not support the audio element.
+                                                    </audio>
+                                                </div>
+                                            @elseif($item->media_type == "document")
+                                                <div class="form-group">
+                                                    <label>Dokumen</label>
+                                                    <div class="alert alert-secondary" role="alert">
+                                                        <a href="{{$item->media}}" target="_blank">lihat {{$item->name}}</a>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            <a href="{{route('content-collection-delete',['category'=>$category,'id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Collection</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary text-capitalize">add new collection</h6>
                         <a href="{{route('content-pages', ['category'=>$category])}}" class="btn btn-success text-capitalize">list content {{str_replace("-", " ",$category)}}</a>
                     </div>
@@ -122,57 +172,6 @@
                                 </div>
                             </div>
                         </form>
-
-                        <div class="card shadow mb-4">
-                            <!-- Card Header - Dropdown -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary text-capitalize">collection content</h6>
-                            </div>
-                            <!-- Card Body -->
-                            <div class="card-body">
-                                <div class="row">
-                                    @foreach($collection as $item)
-                                        <div class="col-md-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    @if($item->media_type == "image")
-                                                        <div class="form-group">
-                                                            <label>Photo</label>
-                                                            <div class="alert alert-secondary" role="alert">
-                                                                <a href="{{$item->media}}" target="_blank">lihat {{$item->name}}</a>
-                                                            </div>
-                                                        </div>
-                                                    @elseif($item->media_type == "video")
-                                                        <div class="form-group">
-                                                            <label>Video</label>
-                                                            <div class="alert alert-secondary" role="alert">
-                                                                <a href="{{$item->media}}" target="_blank">lihat {{$item->name}}</a>
-                                                            </div>
-                                                        </div>
-                                                    @elseif($item->media_type == "audio")
-                                                        <div class="form-group">
-                                                            <label>{{$item->name}}</label>
-                                                            <audio controls>
-                                                                <source src="{{$item->media}}" type="audio/mp3">
-                                                                Your browser does not support the audio element.
-                                                            </audio>
-                                                        </div>
-                                                    @elseif($item->media_type == "document")
-                                                        <div class="form-group">
-                                                            <label>Dokumen</label>
-                                                            <div class="alert alert-secondary" role="alert">
-                                                                <a href="{{$item->media}}" target="_blank">lihat {{$item->name}}</a>
-                                                            </div>
-                                                        </div>
-                                                    @endif
-                                                    <a href="{{route('content-collection-delete',['category'=>$category,'id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Collection</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -39,9 +39,9 @@
                     <option>Archive</option>
                     <option>Temple</option>
                     <option>Palace</option>
-                    <option>Nature</option>
+                    <option>Natural Place</option>
                     <option>Historical Building</option>
-                    <option>Personal Collection</option>
+                    <option>Personal Activities</option>
                 </select>
             </div>
         </div>
@@ -169,66 +169,28 @@
             <h2>@lang('messages.home_news_title')</h2>
             <hr>
         </div>
+        @foreach($news as $item)
         <div class="col-md-12 mb-4">
             <div class="card">
                 <div class="row no-gutters">
                     <div class="col-md-3">
-                        <img src="{{asset('bootstrap/asset-img/museum/asset-mue-konfasiaafrika.jpg')}}" class="card-img ctn-vr-thumbnail" alt="...">
+                        <img src="{{$item->banner}}" class="card-img ctn-vr-thumbnail" alt="{{$item->banner}}">
                     </div>
                     <div class="col-md-9">
                         <div class="card-body">
-                            <h5 class="card-title text-capitalize">RECORDING HISTORY OF ASIA-AFRICAN CONFERENCES</h5>
+                            <h5 class="card-title text-capitalize">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
                             @php
-                                $text = "The Asia-Africa Conference held in Bandung on April 18-24, 1955 was a very historic event in Indonesian foreign policy and a major event for the Indonesian people.";
+                                $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
                                 $limit_text = substr($text, 0, 150);
                             @endphp
-                            <p class="card-text">{{$limit_text}} <a href="{{url('/')}}">...readmore</a></p>
+                            <p class="card-text">{{$limit_text}} <a href="{{url('news/detail/'.$item->id)}}">...readmore</a></p>
                             <p class="card-text"><small class="text-muted">Last updated 3 day ago</small></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-12 mb-4">
-            <div class="card">
-                <div class="row no-gutters">
-                    <div class="col-md-3">
-                        <img src="{{asset('bootstrap/asset-img/museum/asset-mue-sribaduga.jpg')}}" class="card-img ctn-vr-thumbnail" alt="...">
-                    </div>
-                    <div class="col-md-9">
-                        <div class="card-body">
-                            <h5 class="card-title text-capitalize">DIGITAL PRESERVATION OF ANCIENT ARTEFAC & NASIONAL AT SRI BADUGA MUSEUM</h5>
-                            @php
-                                $text = "The Sri Baduga Museum is managed by the West Java Provincial Government by utilizing the old building of the former Kawedanan Tegallega. Furthermore, the museum was inaugurated on June 5, 1980 by the then Minister of Education and Culture, Daoed Joesoef.";
-                                $limit_text = substr($text, 0, 150);
-                            @endphp
-                            <p class="card-text">{{$limit_text}} <a href="{{url('/')}}">...readmore</a></p>
-                            <p class="card-text"><small class="text-muted">Last updated 4 day ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 mb-4">
-            <div class="card">
-                <div class="row no-gutters">
-                    <div class="col-md-3">
-                        <img src="{{asset('bootstrap/asset-img/museum/asset-mue-nasional.jpg')}}" class="card-img ctn-vr-thumbnail" alt="...">
-                    </div>
-                    <div class="col-md-9">
-                        <div class="card-body">
-                            <h5 class="card-title text-capitalize">PUBLICATION & EDUCATION EFFORTS IN THE NATIONAL MUSEUM</h5>
-                            @php
-                                $text = "Bataviaasch Genootschap van Kunsten en Wetenschappen (BG) is an independent institution established for the purpose of advancing research in the arts and sciences, especially in the fields of biology, physics, archeology, literature, ethnology and history";
-                                $limit_text = substr($text, 0, 150);
-                            @endphp
-                            <p class="card-text">{{$limit_text}} <a href="{{url('/')}}">...readmore</a></p>
-                            <p class="card-text"><small class="text-muted">Last updated 4 day ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
     <!-- /.row -->
 </div>

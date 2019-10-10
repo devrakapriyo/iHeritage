@@ -23,7 +23,8 @@ class InterfaceController extends Controller
         $museum = $this->listContent("museum");
         $palace = $this->listContent("palace");
         $nature = $this->listContent("nature");
-        return view('FE.pages.home', compact('museum','palace', 'nature'));
+        $news = admin_news_tbl::where('is_active',"Y")->take(3)->get();
+        return view('FE.pages.home', compact('museum','palace', 'nature', 'news'));
     }
 
     public function museum($museum_name, $id)

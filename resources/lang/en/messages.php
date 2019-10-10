@@ -13,8 +13,8 @@ return [
     'nav_menu_home' => 'Home',
     'nav_menu_heritage' => 'Heritage',
     'nav_menu_event' => 'Event',
-    'nav_menu_edu_pro' => 'Education',
-    'nav_menu_vr' => 'Virtual Reality',
+    'nav_menu_edu_pro' => 'Education Program',
+    'nav_menu_vr' => 'Virtual Tour',
 
     'home_select_place' => 'All Province in Indonesia',
     'home_select_heritage' => 'All Heritage in Indonesia',
@@ -34,7 +34,7 @@ return [
     'heritage_title' => 'Heritage Place',
 
     // page vr
-    'vr_title' => 'Virtual Reality Tour',
+    'vr_title' => 'Virtual Tour',
 
     'vr_banner_title' => 'Register Your Museum To Get Virtual Reality 360 Facilities',
     'vr_banner_button' => 'Try it out!',

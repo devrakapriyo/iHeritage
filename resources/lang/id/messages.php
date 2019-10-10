@@ -14,7 +14,7 @@ return [
     'nav_menu_heritage' => 'Pusaka',
     'nav_menu_event' => 'Acara',
     'nav_menu_edu_pro' => 'Program Pendidikan',
-    'nav_menu_vr' => 'Virtual Reality',
+    'nav_menu_vr' => 'Tur Virtual',
 
     'home_select_place' => 'Semua Provinsi di Indonesia',
     'home_select_heritage' => 'Semua Pusaka di Indonesia',
@@ -34,7 +34,7 @@ return [
     'heritage_title' => 'Cagar Budaya',
 
     // page vr
-    'vr_title' => 'Tur Virtual Reality',
+    'vr_title' => 'Tur Virtual',
 
     'vr_banner_title' => 'Daftarkan Museum Anda Untuk Mendapatkan Fasilitas Virtual Reality 360',
     'vr_banner_button' => 'Coba sekarang!',

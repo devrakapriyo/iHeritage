@@ -70,6 +70,7 @@ class InterfaceController extends Controller
     public function newsDetail($id)
     {
         $data = admin_news_tbl::where('id',$id)->where('is_active',"Y")->first();
-        return view('FE.pages.news-detail', compact('data'));
+        $news = admin_news_tbl::where('is_active',"Y")->take(5)->get();
+        return view('FE.pages.news-detail', compact('data','news'));
     }
 }

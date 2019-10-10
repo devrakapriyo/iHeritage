@@ -20,7 +20,7 @@
                                     $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
                                     $limit_text = substr($text, 0, 150);
                                 @endphp
-                                <p class="card-text">{{$limit_text}} <a href="{{url('our-services/detail/'.$item->id)}}" class="text-white">...readmore</a></p>
+                                <p class="card-text">{{$limit_text}} <a href="{{url('news/detail/'.$item->id)}}">...readmore</a></p>
                                 <p class="card-text"><small class="text-muted text-white">Last updated 3 day ago</small></p>
                             </div>
                         </div>

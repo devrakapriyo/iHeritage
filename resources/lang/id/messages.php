@@ -54,4 +54,13 @@ return [
     'museum_information_sunday' => 'Minggu',
     'museum_information_close' => 'Senin dan Hari Libur Nasional Indonesia',
     'museum_close' => '(TUTUP)',
+
+    // page about us
+    'about_title' => 'Tentang Kami',
+
+    // page our services
+    'services_title' => 'Layanan Kami',
+
+    // page news
+    'news_title' => 'Berita',
 ];

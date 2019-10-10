@@ -2,13 +2,13 @@
     <div class="container">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link text-light text-uppercase" href="#">@lang('messages.head_menu_about')</a>
+                <a class="nav-link text-light text-uppercase" href="{{url('about-us')}}">@lang('messages.head_menu_about')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light text-uppercase" href="#">@lang('messages.head_menu_service')</a>
+                <a class="nav-link text-light text-uppercase" href="{{url('our-services')}}">@lang('messages.head_menu_service')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light text-uppercase" href="#">@lang('messages.head_menu_news')</a>
+                <a class="nav-link text-light text-uppercase" href="{{url('news')}}">@lang('messages.head_menu_news')</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login')}}">@lang('messages.head_menu_login')</a>

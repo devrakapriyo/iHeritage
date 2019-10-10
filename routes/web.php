@@ -22,6 +22,14 @@ Route::namespace('FE')->group(function () {
     Route::get('/content/{museum_name}/{id}', 'InterfaceController@museum');
     Route::get('/heritage-place', 'InterfaceController@heritagePlace');
     Route::get('/vr-tour', 'InterfaceController@vrTour');
+
+    Route::get('/about-us', 'InterfaceController@aboutUs');
+
+    Route::get('/our-services', 'InterfaceController@ourServices');
+    Route::get('/our-services/detail/{id}', 'InterfaceController@ourServicesDetail');
+
+    Route::get('/news', 'InterfaceController@news');
+    Route::get('/news/detail/{id}', 'InterfaceController@newsDetail');
 });
 
 Route::get('/login', 'BE\IndexController@login')->name('login');

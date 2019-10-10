@@ -54,4 +54,13 @@ return [
     'museum_information_sunday' => 'Sunday',
     'museum_information_close' => 'Mondays and Indonesian National Holidays',
     'museum_close' => '(CLOSE)',
+
+    // page about us
+    'about_title' => 'About Us',
+
+    // page our services
+    'services_title' => 'Our Services',
+
+    // page news
+    'news_title' => 'News',
 ];

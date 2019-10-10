@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\FE;
 
+use App\Model\admin_heritage_tbl;
+use App\Model\admin_news_tbl;
+use App\Model\admin_our_services_tbl;
 use App\Model\content_gallery_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,5 +41,35 @@ class InterfaceController extends Controller
     public function vrTour()
     {
         return view('FE.pages.vr');
+    }
+
+    public function aboutUs()
+    {
+        $data = admin_heritage_tbl::select('about_us_en','about_us_ind')->first();
+        return view('FE.pages.about-us', compact('data'));
+    }
+
+    public function ourServices()
+    {
+        $data = admin_our_services_tbl::where('is_active',"Y")->get();
+        return view('FE.pages.our-service', compact('data'));
+    }
+
+    public function ourServicesDetail($id)
+    {
+        $data = admin_our_services_tbl::where('id',$id)->where('is_active',"Y")->first();
+        return view('FE.pages.our-service-detail', compact('data'));
+    }
+
+    public function news()
+    {
+        $data = admin_news_tbl::where('is_active',"Y")->get();
+        return view('FE.pages.news', compact('data'));
+    }
+
+    public function newsDetail($id)
+    {
+        $data = admin_news_tbl::where('id',$id)->where('is_active',"Y")->first();
+        return view('FE.pages.news-detail', compact('data'));
     }
 }

@@ -21,16 +21,18 @@
             </div>
             <div class="col-md-5">
                 @foreach($news as $item)
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="{{$item->banner}}" class="card-img-top" alt="{{$item->banner}}" style="height: 75px;">
+                    <a href="{{url('news/detail/'.$item->id)}}" class="text-dark">
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="{{$item->banner}}" class="card-img-top" alt="{{$item->banner}}" style="height: 75px;">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <small>{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-8">
-                        <small>{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</small>
-                    </div>
-                </div>
+                    </a>
                 @endforeach
             </div>
         </div>

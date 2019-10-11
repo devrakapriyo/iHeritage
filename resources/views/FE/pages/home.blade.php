@@ -178,7 +178,7 @@
                     </div>
                     <div class="col-md-9">
                         <div class="card-body">
-                            <h5 class="card-title text-capitalize">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
+                            <h5 class="card-title text-capitalize"><a href="{{url('news/detail/'.$item->id)}}" class="text-dark">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</a></h5>
                             @php
                                 $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
                                 $limit_text = substr($text, 0, 150);

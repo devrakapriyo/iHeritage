@@ -30,6 +30,12 @@ Route::namespace('FE')->group(function () {
 
     Route::get('/news', 'InterfaceController@news');
     Route::get('/news/detail/{id}', 'InterfaceController@newsDetail');
+
+    Route::get('/event', 'InterfaceController@event');
+    Route::get('/event/detail/{seo}/{id}', 'InterfaceController@eventDetail');
+
+    Route::get('/education-program', 'InterfaceController@educationProgram');
+    Route::get('/education-program/detail/{seo}/{id}', 'InterfaceController@educationProgramDetail');
 });
 
 Route::get('/login', 'BE\IndexController@login')->name('login');

@@ -63,4 +63,26 @@ return [
 
     // page news
     'news_title' => 'News',
+
+    // page event
+    'event_title' => 'Event',
+    'event_free_price' => 'Free',
+    'event_information' => 'Information',
+    'event_date' => 'Date and Time',
+    'event_location' => 'Location',
+    'event_close' => 'Registration is Closed',
+
+    // page education program
+    'edu_title' => 'Education Program',
+    'edu_information' => 'Information',
+    'edu_information_opening' => 'Opening Hours',
+    'edu_information_monday' => 'Monday',
+    'edu_information_tuesday' => 'Tuesday',
+    'edu_information_wednesday' => 'Wednesday',
+    'edu_information_thursday' => 'Thursday',
+    'edu_information_friday' => 'Friday',
+    'edu_information_saturday' => 'Saturday',
+    'edu_information_sunday' => 'Sunday',
+    'edu_information_close' => 'Mondays and Indonesian National Holidays',
+    'edu_close' => '(CLOSE)',
 ];

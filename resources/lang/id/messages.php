@@ -63,4 +63,26 @@ return [
 
     // page news
     'news_title' => 'Berita',
+
+    // page event
+    'event_title' => 'Acara',
+    'event_free_price' => 'Gratis',
+    'event_information' => 'Informasi',
+    'event_date' => 'Jam dan Waktu',
+    'event_location' => 'Lokasi',
+    'event_close' => 'Pendaftaran Ditutup',
+
+    // page education program
+    'edu_title' => 'Program Pendidikan',
+    'edu_information' => 'Informasi',
+    'edu_information_opening' => 'Jam Buka',
+    'edu_information_monday' => 'Senin',
+    'edu_information_tuesday' => 'Selasa',
+    'edu_information_wednesday' => 'Rabu',
+    'edu_information_thursday' => 'Kamis',
+    'edu_information_friday' => 'Jumat',
+    'edu_information_saturday' => 'Sabtu',
+    'edu_information_sunday' => 'Minggu',
+    'edu_information_close' => 'Senin dan Hari Libur Nasional Indonesia',
+    'edu_close' => '(TUTUP)',
 ];

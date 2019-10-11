@@ -55,11 +55,11 @@
             <li class="nav-item text-uppercase @yield('heritage-place')">
                 <a class="nav-link" href="{{url('heritage-place')}}">@lang('messages.nav_menu_heritage')</a>
             </li>
-            <li class="nav-item text-uppercase">
-                <a class="nav-link" href="#">@lang('messages.nav_menu_event')</a>
+            <li class="nav-item text-uppercase @yield('event')">
+                <a class="nav-link" href="{{url('event')}}">@lang('messages.nav_menu_event')</a>
             </li>
-            <li class="nav-item text-uppercase">
-                <a class="nav-link" href="#">@lang('messages.nav_menu_edu_pro')</a>
+            <li class="nav-item text-uppercase @yield('education-program')">
+                <a class="nav-link" href="{{url('education-program')}}">@lang('messages.nav_menu_edu_pro')</a>
             </li>
             <li class="nav-item text-uppercase @yield('vr-tour')">
                 <a class="nav-link" href="{{url('vr-tour')}}">@lang('messages.nav_menu_vr')</a>

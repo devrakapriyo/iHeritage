@@ -5,6 +5,8 @@ namespace App\Http\Controllers\FE;
 use App\Model\admin_heritage_tbl;
 use App\Model\admin_news_tbl;
 use App\Model\admin_our_services_tbl;
+use App\Model\content_edu_tbl;
+use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -73,5 +75,43 @@ class InterfaceController extends Controller
         $data = admin_news_tbl::where('id',$id)->where('is_active',"Y")->first();
         $news = admin_news_tbl::where('is_active',"Y")->take(5)->get();
         return view('FE.pages.news-detail', compact('data','news'));
+    }
+
+    public function event()
+    {
+        $data = content_event_tbl::where('close_registration','>=',date('Y-m-d H:i:s'))
+            ->where('is_active',"Y")
+            ->where('is_publish',"Y")
+            ->get();
+        return view('FE.pages.event', compact('data'));
+    }
+
+    public function eventDetail($seo, $id)
+    {
+        $detail = content_event_tbl::where('seo',$seo)
+            ->where('id',$id)
+            ->where('close_registration','>=',date('Y-m-d H:i:s'))
+            ->where('is_active',"Y")
+            ->where('is_publish',"Y")
+            ->first();
+        return view('FE.pages.event-detail', compact('detail'));
+    }
+
+    public function educationProgram()
+    {
+        $data = content_edu_tbl::where('is_active',"Y")
+            ->where('is_publish',"Y")
+            ->get();
+        return view('FE.pages.edu-program', compact('data'));
+    }
+
+    public function educationProgramDetail($seo, $id)
+    {
+        $detail = content_edu_tbl::where('seo',$seo)
+            ->where('id',$id)
+            ->where('is_active',"Y")
+            ->where('is_publish',"Y")
+            ->first();
+        return view('FE.pages.edu-program-detail', compact('detail'));
     }
 }

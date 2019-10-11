@@ -103,6 +103,7 @@ class EduController extends Controller
             $simpan->latitude_detail = $request->latitude_detail;
             $simpan->longitude_detail = $request->longitude_detail;
             $simpan->is_active = "Y";
+            $simpan->created_by = Auth::user()->name;
             $simpan->save();
 
         }catch (\Exception $exception){
@@ -113,13 +114,13 @@ class EduController extends Controller
         return redirect()->route('edu-page');
     }
 
-    public function event_edit($id)
+    public function edu_edit($id)
     {
         $detail = content_edu_tbl::where('id',$id)->first();
         return view('BE.pages.edu.edit', compact('id','detail'));
     }
 
-    public function event_update(Request $request,$id)
+    public function edu_update(Request $request,$id)
     {
         DB::begintransaction();
         try{
@@ -178,7 +179,7 @@ class EduController extends Controller
         return redirect()->route('edu-page');
     }
 
-    public function event_delete($id)
+    public function edu_delete($id)
     {
         content_edu_tbl::where('id',$id)->update([
             'is_active'=>"N"

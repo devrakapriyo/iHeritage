@@ -60,7 +60,7 @@
                 { data: 'name', name: 'content.name' },
                 { data: 'name', name: 'content_edu_program.name' },
                 { data: 'close_ind', name: 'close_ind' },
-                { data: 'description', name: 'description' },
+                { data: 'description_en', name: 'description_en' },
                 { data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });

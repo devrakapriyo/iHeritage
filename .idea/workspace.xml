@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/EventController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/EventController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/event/add.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/event/add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/event/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/event/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/edu/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/edu/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +18,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="117" column="67" lean-forward="false" selection-start-line="117" selection-start-column="57" selection-end-line="117" selection-end-column="67" />
+            <state relative-caret-position="331">
+              <caret line="128" column="80" lean-forward="false" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -46,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/event/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
@@ -56,12 +55,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="EduController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="181" column="23" lean-forward="false" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/edu/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="62" column="63" lean-forward="false" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gmap_canvas</find>
-      <find>id</find>
       <find>_id</find>
       <find>users_id</find>
       <find>location</find>
@@ -90,6 +107,8 @@
       <find>news</find>
       <find>event-page</find>
       <find>event_edit</find>
+      <find>edu_edit</find>
+      <find>edu-edit</find>
     </findStrings>
     <replaceStrings>
       <replace>our_services</replace>
@@ -105,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/BE/pages/usersManagement/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/UserController.php" />
         <option value="$PROJECT_DIR$/app/Model/institutional.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php" />
@@ -142,7 +160,6 @@
         <option value="$PROJECT_DIR$/public/bootstrap/css/business-frontpage.css" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/event-detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/event.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/edu-program.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/edu-program-detail.blade.php" />
@@ -156,6 +173,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EventController.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/event/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/event/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/BE/pages/edu/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
       </list>
     </option>
   </component>
@@ -260,6 +279,15 @@
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="BE" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="edu" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BE" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="event" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -314,12 +342,12 @@
       <workItem from="1568726017631" duration="614000" />
       <workItem from="1569249794506" duration="7400000" />
       <workItem from="1569386429767" duration="14958000" />
-      <workItem from="1569897956922" duration="44701000" />
+      <workItem from="1569897956922" duration="44981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107197000" />
+    <option name="totallyTimeSpent" value="107477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -378,14 +406,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Model/admin_heritage_tbl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/admin_news_tbl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -667,14 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="104" column="37" lean-forward="true" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/libs/navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
@@ -792,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="117" column="67" lean-forward="false" selection-start-line="117" selection-start-column="57" selection-end-line="117" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -820,6 +824,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="154" column="106" lean-forward="false" selection-start-line="154" selection-start-column="106" selection-end-line="154" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/edu/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="62" column="63" lean-forward="false" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="128" column="80" lean-forward="false" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="181" column="23" lean-forward="false" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="23" />
           <folding />
         </state>
       </provider>

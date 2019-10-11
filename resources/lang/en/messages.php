@@ -63,6 +63,7 @@ return [
 
     // page news
     'news_title' => 'News',
+    'news_list_title' => 'Other News',
 
     // page event
     'event_title' => 'Event',

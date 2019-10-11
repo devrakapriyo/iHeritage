@@ -63,6 +63,7 @@ return [
 
     // page news
     'news_title' => 'Berita',
+    'news_list_title' => 'Berita Lainnya',
 
     // page event
     'event_title' => 'Acara',

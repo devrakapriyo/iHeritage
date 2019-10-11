@@ -21,7 +21,7 @@
                                     $limit_text = substr($text, 0, 150);
                                 @endphp
                                 <p class="card-text">{{$limit_text}} <a href="{{url('news/detail/'.$item->id)}}">...readmore</a></p>
-                                <p class="card-text"><small class="text-muted text-white">Last updated 3 day ago</small></p>
+                                <p class="card-text"><small class="text-muted text-white">{{$item->created_at->diffForHumans()}}</small></p>
                             </div>
                         </div>
                     </div>

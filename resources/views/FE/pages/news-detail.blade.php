@@ -9,7 +9,7 @@
                     <img src="{{$data->banner}}" class="card-img-top" alt="{{$data->banner}}">
                     <div class="card-body">
                         <h5 class="card-title">{{App::isLocale('id') ? $data->title_ind : $data->title_en}}</h5>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted">{{$data->created_at->diffForHumans()}}</small></p>
                         <p class="card-text">
                             @php
                                 $description = App::isLocale('id') ? $data->description_ind : $data->description_en;
@@ -20,6 +20,8 @@
                 </div>
             </div>
             <div class="col-md-5">
+                <h5>@lang('messages.news_list_title')</h5>
+                <hr>
                 @foreach($news as $item)
                     <a href="{{url('news/detail/'.$item->id)}}" class="text-dark">
                         <div class="row mb-3">

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/messages.php" afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/id/messages.php" afterPath="$PROJECT_DIR$/resources/lang/id/messages.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/home.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/news-detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/news-detail.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/news.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/news.blade.php" />
@@ -38,28 +40,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/news.blade.php">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="132" lean-forward="false" selection-start-line="17" selection-start-column="132" selection-end-line="17" selection-end-column="132" />
+            <state relative-caret-position="253">
+              <caret line="186" column="113" lean-forward="true" selection-start-line="186" selection-start-column="75" selection-end-line="186" selection-end-column="113" />
               <folding>
-                <marker date="1570809448996" expanded="true" signature="952:1102" ph="..." />
+                <marker date="1570810069070" expanded="true" signature="2894:3048" ph="..." />
+                <marker date="1570810069070" expanded="true" signature="4583:4745" ph="..." />
+                <marker date="1570810069070" expanded="true" signature="5979:6141" ph="..." />
+                <marker date="1570810069070" expanded="true" signature="7283:7429" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/home.blade.php">
+      <file leaf-file-name="news.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/news.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="180" column="129" lean-forward="false" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="129" />
+            <state relative-caret-position="335">
+              <caret line="23" column="128" lean-forward="false" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="128" />
               <folding>
-                <marker date="1570809448993" expanded="true" signature="2894:3048" ph="..." />
-                <marker date="1570809448993" expanded="true" signature="4583:4745" ph="..." />
-                <marker date="1570809448993" expanded="true" signature="5979:6141" ph="..." />
-                <marker date="1570809448993" expanded="true" signature="7283:7429" ph="..." />
+                <marker date="1570810124845" expanded="true" signature="952:1102" ph="..." />
               </folding>
             </state>
           </provider>
@@ -68,9 +70,41 @@
       <file leaf-file-name="news-detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/news-detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="33" column="30" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="33" selection-end-column="30" />
+            <state relative-caret-position="165">
+              <caret line="11" column="78" lean-forward="false" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/id/messages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="65" column="34" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/messages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="65" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helpers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Helper/helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="201" column="5" lean-forward="false" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
+              <folding>
+                <element signature="e#30#69#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,19 +195,19 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EventController.php" />
         <option value="$PROJECT_DIR$/app/Model/place_tbl.php" />
         <option value="$PROJECT_DIR$/app/Model/content_event_tbl.php" />
-        <option value="$PROJECT_DIR$/app/Helper/helpers.php" />
         <option value="$PROJECT_DIR$/public/bootstrap/css/business-frontpage.css" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/event-detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/event.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/edu-program.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/messages.php" />
-        <option value="$PROJECT_DIR$/resources/lang/id/messages.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/edu-program-detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Helper/helpers.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/news.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/messages.php" />
+        <option value="$PROJECT_DIR$/resources/lang/id/messages.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/news-detail.blade.php" />
       </list>
     </option>
@@ -438,12 +472,12 @@
       <workItem from="1568726017631" duration="614000" />
       <workItem from="1569249794506" duration="7400000" />
       <workItem from="1569386429767" duration="14958000" />
-      <workItem from="1569897956922" duration="43388000" />
+      <workItem from="1569897956922" duration="44070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105884000" />
+    <option name="totallyTimeSpent" value="106566000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -833,16 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Helper/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="161" column="41" lean-forward="false" selection-start-line="161" selection-start-column="27" selection-end-line="161" selection-end-column="41" />
-          <folding>
-            <element signature="e#30#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -866,14 +890,6 @@
           <folding>
             <marker date="1570808043351" expanded="true" signature="904:1046" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/id/messages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,14 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/messages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1422">
@@ -919,33 +927,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/news.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="132" lean-forward="false" selection-start-line="17" selection-start-column="132" selection-end-line="17" selection-end-column="132" />
+        <state relative-caret-position="253">
+          <caret line="186" column="113" lean-forward="true" selection-start-line="186" selection-start-column="75" selection-end-line="186" selection-end-column="113" />
           <folding>
-            <marker date="1570809448996" expanded="true" signature="952:1102" ph="..." />
+            <marker date="1570810069070" expanded="true" signature="2894:3048" ph="..." />
+            <marker date="1570810069070" expanded="true" signature="4583:4745" ph="..." />
+            <marker date="1570810069070" expanded="true" signature="5979:6141" ph="..." />
+            <marker date="1570810069070" expanded="true" signature="7283:7429" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/home.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/messages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="180" column="129" lean-forward="false" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="129" />
+        <state relative-caret-position="182">
+          <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="65" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helper/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="201" column="5" lean-forward="false" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
           <folding>
-            <marker date="1570809448993" expanded="true" signature="2894:3048" ph="..." />
-            <marker date="1570809448993" expanded="true" signature="4583:4745" ph="..." />
-            <marker date="1570809448993" expanded="true" signature="5979:6141" ph="..." />
-            <marker date="1570809448993" expanded="true" signature="7283:7429" ph="..." />
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/id/messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="65" column="34" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/news.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="23" column="128" lean-forward="false" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="128" />
+          <folding>
+            <marker date="1570810124845" expanded="true" signature="952:1102" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/news-detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="33" column="30" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="33" selection-end-column="30" />
+        <state relative-caret-position="165">
+          <caret line="11" column="78" lean-forward="false" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
           <folding />
         </state>
       </provider>

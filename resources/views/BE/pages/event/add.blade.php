@@ -70,15 +70,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Start Date : </label>
-                                    <input type="text" name="start_date" class="form-control" required>
-                                    <small class="text-danger">example value : 1 Januari 2019</small>
+                                    <input type="date" name="start_date" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>End Date : </label>
-                                    <input type="text" name="end_date" class="form-control" required>
-                                    <small class="text-danger">example value : 10 Januari 2019</small>
+                                    <input type="date" name="end_date" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -153,8 +151,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Close Registration : </label>
-                                    <input type="text" name="close_registration" class="form-control" required>
-                                    <small class="text-danger">example value : 11 Januari 2019</small>
+                                    <input type="datetime-local" name="close_registration" class="form-control" required>
                                 </div>
                             </div>
                         </div>

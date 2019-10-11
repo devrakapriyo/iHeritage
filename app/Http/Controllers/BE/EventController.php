@@ -33,6 +33,9 @@ class EventController extends Controller
                 ->where('content_event.is_active', "Y");
         }
         return DataTables::of($data)
+            ->editColumn('price', function ($data){
+                return "Rp. ".number_format($data->price);
+            })
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('event-edit', ['id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
                 $btn_hapus = '<a href="'.route('event-delete', ['id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
@@ -100,6 +103,7 @@ class EventController extends Controller
             $simpan->price = $request->price;
             $simpan->close_registration = $request->close_registration;
             $simpan->is_active = "Y";
+            $simpan->created_at = Auth::user()->name;
             $simpan->save();
 
         }catch (\Exception $exception){

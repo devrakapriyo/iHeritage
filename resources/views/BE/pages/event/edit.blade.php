@@ -36,7 +36,7 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <form method="post" action="{{route('event-update')}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('event-update', ['id'=>$id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-8">
@@ -69,15 +69,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Start Date : </label>
-                                        <input type="text" name="start_date" class="form-control" value="{{$detail->start_date}}" required>
-                                        <small class="text-danger">example value : 1 Januari 2019</small>
+                                        <input type="date" name="start_date" class="form-control" value="{{$detail->start_date}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>End Date : </label>
-                                        <input type="text" name="end_date" class="form-control" value="{{$detail->end_date}}" required>
-                                        <small class="text-danger">example value : 10 Januari 2019</small>
+                                        <input type="date" name="end_date" class="form-control" value="{{$detail->end_date}}" required>
                                     </div>
                                 </div>
                             </div>
@@ -153,8 +151,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Close Registration : </label>
-                                        <input type="text" name="close_registration" class="form-control" value="{{$detail->close_registration}}" required>
-                                        <small class="text-danger">example value : 11 Januari 2019</small>
+                                        <input type="datetime-local" name="close_registration" class="form-control" value="{{$detail->close_registration}}" required>
+                                        <small class="text-danger">value : {{$detail->close_registration}}</small>
                                     </div>
                                 </div>
                             </div>

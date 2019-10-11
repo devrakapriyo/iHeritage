@@ -401,10 +401,30 @@ class ContentController extends Controller
             $media = $request->media;
         }
 
+        if (!empty($request->file('banner')))
+        {
+            $valid = helpers::validationImage($request->file("banner"));
+            if ($valid != true)
+            {
+                return redirect()->back();
+            }
+
+            $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/BE/content/".$category);
+            if ($banner != true)
+            {
+                return redirect()->back();
+            }else{
+                $banner = url('/img/BE/content/'.$category.'/'.$banner);
+            }
+        }else{
+            $banner = 'https://via.placeholder.com/300';
+        }
+
 
         $simpan = new content_collection_tbl;
         $simpan->content_id = $id;
         $simpan->name = $request->name;
+        $simpan->banner = $banner;
         $simpan->media = $media;
         $simpan->media_type = $request->media_type;
         $simpan->description = $request->description;
@@ -422,11 +442,16 @@ class ContentController extends Controller
     public function content_collection_delete($category,$id)
     {
         // delete file storage
-        $path = content_collection_tbl::select('media')->where('id',$id)->first()->media;
-        $file = substr($path, strrpos($path, '/') + 1);
-        if(file_exists(public_path('img/BE/media/'.$file)))
+        $path = content_collection_tbl::select('media','banner')->where('id',$id)->first();
+        $file_media = substr($path->media, strrpos($path->media, '/') + 1);
+        $file_banner = substr($path->banner, strrpos($path->banner, '/') + 1);
+        if(file_exists(public_path('img/BE/media/'.$file_media)))
         {
-            unlink(public_path('img/BE/media/'.$file));
+            unlink(public_path('img/BE/media/'.$file_media));
+        }
+        if(file_exists(public_path('img/BE/media/'.$file_banner)))
+        {
+            unlink(public_path('img/BE/media/'.$file_banner));
         }
 
         content_collection_tbl::where('id',$id)->update(['is_active'=>"N"]);

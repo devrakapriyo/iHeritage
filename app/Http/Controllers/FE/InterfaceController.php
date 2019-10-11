@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FE;
 use App\Model\admin_heritage_tbl;
 use App\Model\admin_news_tbl;
 use App\Model\admin_our_services_tbl;
+use App\Model\content_collection_tbl;
 use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
@@ -38,7 +39,14 @@ class InterfaceController extends Controller
 
     public function heritagePlace()
     {
-        return view('FE.pages.heritage-place');
+        $data = content_collection_tbl::where('is_active',"Y")->get();
+        $color_media = [
+            'document'=>'primary',
+            'audio'=>'success',
+            'video'=>'danger',
+            'image'=>'warning'
+        ];
+        return view('FE.pages.heritage-place', compact('data','color_media'));
     }
 
     public function vrTour()

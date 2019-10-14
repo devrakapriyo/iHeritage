@@ -43,13 +43,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Description (bahasa indonesia) : </label>
-                                    <textarea name="description_ind" class="form-control" required></textarea>
+                                    <textarea name="description_ind" class="form-control text-editor" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Description (bahasa inggriss) : </label>
-                                    <textarea name="description_en" class="form-control" required></textarea>
+                                    <textarea name="description_en" class="form-control text-editor" required></textarea>
                                 </div>
                             </div>
                         </div>

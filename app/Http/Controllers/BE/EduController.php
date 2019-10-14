@@ -33,6 +33,14 @@ class EduController extends Controller
                 ->where('content_edu_program.is_active', "Y");
         }
         return DataTables::of($data)
+            ->editColumn('description_en', function ($data){
+                $substr = substr($data->description_en, 0, 100);
+                return $substr."<a href='".route('edu-edit', ['id'=>$data->id])."'>...readmore</a>";
+            })
+            ->editColumn('description_ind', function ($data){
+                $substr = substr($data->description_ind, 0, 100);
+                return $substr."<a href='".route('edu-edit', ['id'=>$data->id])."'>...readmore</a>";
+            })
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('edu-edit', ['id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
                 $btn_hapus = '<a href="'.route('edu-delete', ['id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
@@ -51,6 +59,7 @@ class EduController extends Controller
                 }
                 return $btn;
             })
+            ->rawColumns(['description_en','description_ind','action'])
             ->make(true);
     }
 

@@ -42,13 +42,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Title Content Home Page (bahasa indonesia) : </label>
-                                        <textarea name="description_ind" class="form-control" rows="5" required>{{$data->description_ind}}</textarea>
+                                        <textarea name="description_ind" class="form-control text-editor" rows="5" required>{{$data->description_ind}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Title Content Home Page (bahasa inggris) : </label>
-                                        <textarea name="description_en" class="form-control" rows="5" required>{{$data->description_en}}</textarea>
+                                        <textarea name="description_en" class="form-control text-editor" rows="5" required>{{$data->description_en}}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -83,13 +83,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Description Page About (bahasa indonesia) : </label>
-                                        <textarea name="about_us_ind" class="form-control" rows="5" required>{{$data->about_us_ind}}</textarea>
+                                        <textarea name="about_us_ind" class="form-control text-editor" rows="5" required>{{$data->about_us_ind}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Description Page About (bahasa inggris) : </label>
-                                        <textarea name="about_us_en" class="form-control" rows="5" required>{{$data->about_us_en}}</textarea>
+                                        <textarea name="about_us_en" class="form-control text-editor" rows="5" required>{{$data->about_us_en}}</textarea>
                                     </div>
                                 </div>
                             </div>

@@ -10,3 +10,14 @@
 
 {{--Custom script for sweetalert--}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+{{--Custome Plugin Texteditor--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+
+<script>
+    $('.text-editor').summernote({
+        tabsize: 2,
+        height: 200
+    });
+</script>

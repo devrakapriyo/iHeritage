@@ -118,13 +118,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Description (Bahasa Inggris): </label>
-                                        <textarea name="description_en" class="form-control" row="3">{!! $detail->description_en !!}</textarea>
+                                        <textarea name="description_en" class="form-control text-editor" row="3">{!! $detail->description_en !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Description (Bahasa Indonesia): </label>
-                                        <textarea name="description_ind" class="form-control" row="3">{!! $detail->description_ind !!}</textarea>
+                                        <textarea name="description_ind" class="form-control text-editor" row="3">{!! $detail->description_ind !!}</textarea>
                                     </div>
                                 </div>
                             </div>

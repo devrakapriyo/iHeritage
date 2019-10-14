@@ -12,3 +12,6 @@
 
 <!-- Custom styles for this template-->
 <link href="{{url('backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
+
+{{-- Plugin Texteditor --}}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">

@@ -43,13 +43,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Description (bahasa indonesia) : </label>
-                                        <textarea name="description_ind" class="form-control" required>{{$data->description_ind}}</textarea>
+                                        <textarea name="description_ind" class="form-control text-editor" required>{{$data->description_ind}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Description (bahasa inggriss) : </label>
-                                        <textarea name="description_en" class="form-control" required>{{$data->description_en}}</textarea>
+                                        <textarea name="description_en" class="form-control text-editor" required>{{$data->description_en}}</textarea>
                                     </div>
                                 </div>
                             </div>

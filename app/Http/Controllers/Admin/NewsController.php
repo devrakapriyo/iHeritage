@@ -21,6 +21,14 @@ class NewsController extends Controller
 
         $data = admin_news_tbl::where('is_active', "Y");
         return DataTables::of($data)
+            ->editColumn('description_en', function ($data){
+                $substr = substr($data->description_en, 0, 100);
+                return $substr."<a href='".route('news-edit', ['id'=>$data->id])."'>...readmore</a>";
+            })
+            ->editColumn('description_ind', function ($data){
+                $substr = substr($data->description_ind, 0, 100);
+                return $substr."<a href='".route('news-edit', ['id'=>$data->id])."'>...readmore</a>";
+            })
             ->editColumn('banner', function ($data){
                 return "<a href='".$data->banner."' class='btn btn-success btn-sm' target='_blank'>view banner</a>";
             })
@@ -29,7 +37,7 @@ class NewsController extends Controller
                 $btn_hapus = '<a href="'.route('news-delete', ['id'=>$data->id]).'" class="btn btn-danger">Delete</a>';
                 return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
             })
-            ->rawColumns(['banner','action'])
+            ->rawColumns(['description_en','description_ind','banner','action'])
             ->make(true);
     }
 

@@ -33,6 +33,14 @@ class EventController extends Controller
                 ->where('content_event.is_active', "Y");
         }
         return DataTables::of($data)
+            ->editColumn('long_description_en', function ($data){
+                $substr = substr($data->long_description_en, 0, 100);
+                return $substr."<a href='".route('event-edit', ['id'=>$data->id])."'>...readmore</a>";
+            })
+            ->editColumn('long_description_ind', function ($data){
+                $substr = substr($data->long_description_ind, 0, 100);
+                return $substr."<a href='".route('event-edit', ['id'=>$data->id])."'>...readmore</a>";
+            })
             ->editColumn('price', function ($data){
                 return "Rp. ".number_format($data->price);
             })
@@ -54,6 +62,7 @@ class EventController extends Controller
                 }
                 return $btn;
             })
+            ->rawColumns(['long_description_en','long_description_ind','price','action'])
             ->make(true);
     }
 

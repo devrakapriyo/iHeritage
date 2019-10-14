@@ -167,7 +167,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Description :</label>
-                                        <textarea name="description" class="form-control" rows="5"></textarea>
+                                        <textarea name="description" class="form-control text-editor" rows="5"></textarea>
                                     </div>
                                 </div>
                             </div>

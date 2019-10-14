@@ -39,6 +39,14 @@ class ContentController extends Controller
                 ->where('content.is_active', "Y");
         }
         return Datatables::of($data)
+            ->editColumn('long_description_en', function ($data) use ($category){
+                $substr = substr($data->long_description_en, 0, 100);
+                return $substr."<a href='".route('content-edit', ['category'=>$category, 'id'=>$data->id])."'>...readmore</a>";
+            })
+            ->editColumn('long_description_ind', function ($data) use ($category){
+                $substr = substr($data->long_description_ind, 0, 100);
+                return $substr."<a href='".route('content-edit', ['category'=>$category, 'id'=>$data->id])."'>...readmore</a>";
+            })
             ->addColumn('gallery', function ($data) use ($category) {
                 $btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
                 return $btn_gallery;
@@ -65,7 +73,7 @@ class ContentController extends Controller
                 }
                 return $btn;
             })
-            ->rawColumns(['gallery','collection','action'])
+            ->rawColumns(['long_description_en','long_description_ind','gallery','collection','action'])
             ->make(true);
     }
 

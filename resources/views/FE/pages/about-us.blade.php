@@ -9,7 +9,7 @@
                 @php
                     $description = App::isLocale('id') ? $data->about_us_ind : $data->about_us_en;
                 @endphp
-                {{$description}}
+                {!! $description !!}
             </div>
             <div class="col-md-6">
                 <div class="row">

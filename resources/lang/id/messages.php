@@ -11,7 +11,7 @@ return [
     'head_menu_login' => 'Masuk Akun',
 
     'nav_menu_home' => 'Beranda',
-    'nav_menu_heritage' => 'Pusaka',
+    'nav_menu_heritage' => 'Koleksi',
     'nav_menu_event' => 'Acara',
     'nav_menu_edu_pro' => 'Program Pendidikan',
     'nav_menu_vr' => 'Tur Virtual',
@@ -31,7 +31,7 @@ return [
     'home_news_title' => 'Berita',
 
     // page heritage
-    'heritage_title' => 'Cagar Budaya',
+    'heritage_title' => 'Koleksi',
 
     // page vr
     'vr_title' => 'Tur Virtual',

@@ -11,7 +11,7 @@ return [
     'head_menu_login' => 'Login Account',
     
     'nav_menu_home' => 'Home',
-    'nav_menu_heritage' => 'Heritage',
+    'nav_menu_heritage' => 'Collection',
     'nav_menu_event' => 'Event',
     'nav_menu_edu_pro' => 'Education Program',
     'nav_menu_vr' => 'Virtual Tour',
@@ -31,7 +31,7 @@ return [
     'home_news_title' => 'News',
 
     // page heritage
-    'heritage_title' => 'Heritage Place',
+    'heritage_title' => 'Collection',
 
     // page vr
     'vr_title' => 'Virtual Tour',

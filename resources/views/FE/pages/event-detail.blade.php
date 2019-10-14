@@ -15,7 +15,7 @@
                             @php
                                 $description = App::isLocale('id') ? $detail->long_description_ind : $detail->long_description_en;
                             @endphp
-                            {{$description}}
+                            {!! $description !!}
                         </p>
                     </div>
                 </div>

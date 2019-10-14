@@ -18,6 +18,7 @@
                                 <h5 class="card-title text-capitalize"><a href="{{url('news/detail/'.$item->id)}}" class="text-dark">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</a></h5>
                                 @php
                                     $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                                    $text = stripslashes($text);
                                     $limit_text = substr($text, 0, 150);
                                 @endphp
                                 <p class="card-text">{{$limit_text}} <a href="{{url('news/detail/'.$item->id)}}">...readmore</a></p>

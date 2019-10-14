@@ -19,6 +19,7 @@
                         </p>
                         @php
                             $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                            $text = stripslashes($text);
                             $limit_text = substr($text, 0, 150);
                         @endphp
                         <p class="card-text">{{$limit_text}} <a href="{{url('education-program/detail/'.$item->seo.'/'.$item->id)}}">...readmore</a></p>

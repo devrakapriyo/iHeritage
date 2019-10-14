@@ -11,7 +11,7 @@
                         @php
                             $description = App::isLocale('id') ? $data->description_ind : $data->description_en;
                         @endphp
-                        {{$description}}
+                        {!! $description !!}
                     </div>
                     <img src="{{$data->banner}}" class="card-img-top" alt="{{$data->banner}}">
                 </div>

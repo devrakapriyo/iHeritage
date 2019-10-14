@@ -14,7 +14,7 @@
                             @php
                                 $description = App::isLocale('id') ? $data->description_ind : $data->description_en;
                             @endphp
-                            {{$description}}
+                            {!! $description !!}
                         </p>
                     </div>
                 </div>

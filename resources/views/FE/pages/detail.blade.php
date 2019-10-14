@@ -21,7 +21,7 @@
             @php
                 $description = App::isLocale('id') ? $detail->long_description_ind : $detail->long_description_en;
             @endphp
-            {{$description}}
+            {!! $description !!}
 
             <div class="form-group mt-5">
                 <h2 class="text-capitalize">@lang('messages.museum_gallery_title') {{$detail->name}}</h2>

@@ -151,7 +151,9 @@
                     <div class="card-body">
                         <!-- <h5 class="card-title text-center">Login</h5> -->
                         <div class="d-flex justify-content-center mb-3">
-                            <img src="{{asset('bootstrap/vendor/iheritage.png')}}" style="width:200px;height:85px;">
+                            <a href="{{url('/')}}">
+                                <img src="{{asset('bootstrap/vendor/iheritage.png')}}" style="width:200px;height:85px;">
+                            </a>
                         </div>
                         <h3 class="mb-3 text-center">Register Form</h3>
                         <form class="form-signin" action="{{url('register')}}" method="post">

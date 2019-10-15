@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/content/collection.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/content/collection.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/libs/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/libs/sidebar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/register.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,12 +35,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-122">
-              <caret line="441" column="33" lean-forward="true" selection-start-line="441" selection-start-column="33" selection-end-line="441" selection-end-column="33" />
+            <state relative-caret-position="253">
+              <caret line="466" column="9" lean-forward="true" selection-start-line="466" selection-start-column="9" selection-end-line="466" selection-end-column="9" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/BE/libs/sidebar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="92" lean-forward="false" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/BE/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="153" column="47" lean-forward="false" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/BE/register.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="153" column="28" lean-forward="false" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="51" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,7 +82,7 @@
       <file leaf-file-name="collection.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/content/collection.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-879">
+            <state relative-caret-position="1935">
               <caret line="129" column="94" lean-forward="false" selection-start-line="129" selection-start-column="94" selection-end-line="129" selection-end-column="94" />
               <folding />
             </state>
@@ -103,9 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Model/admin_news_tbl.php" />
-        <option value="$PROJECT_DIR$/app/Model/admin_our_services_tbl.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HeritageController.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/adminOurServices/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/adminNews/index.blade.php" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -154,6 +186,9 @@
         <option value="$PROJECT_DIR$/resources/lang/en/messages.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/content/collection.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/BE/libs/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/BE/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/BE/login.blade.php" />
       </list>
     </option>
   </component>
@@ -270,6 +305,14 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="BE" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="libs" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BE" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -358,12 +401,12 @@
       <workItem from="1569249794506" duration="7400000" />
       <workItem from="1569386429767" duration="14958000" />
       <workItem from="1569897956922" duration="47761000" />
-      <workItem from="1571018734224" duration="8433000" />
+      <workItem from="1571018734224" duration="8586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118690000" />
+    <option name="totallyTimeSpent" value="118843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -422,33 +465,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Model/content_event_tbl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/place_tbl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="40" />
-          <folding>
-            <element signature="e#29#68#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Helper/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="201" column="5" lean-forward="false" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#69#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/event/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -842,19 +858,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="466" column="9" lean-forward="true" selection-start-line="466" selection-start-column="9" selection-end-line="466" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/BE/libs/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="92" lean-forward="false" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/content/collection.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-879">
+        <state relative-caret-position="1935">
           <caret line="129" column="94" lean-forward="false" selection-start-line="129" selection-start-column="94" selection-end-line="129" selection-end-column="94" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/BE/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="441" column="33" lean-forward="true" selection-start-line="441" selection-start-column="33" selection-end-line="441" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="254">
+          <caret line="153" column="28" lean-forward="false" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/BE/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="153" column="47" lean-forward="false" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

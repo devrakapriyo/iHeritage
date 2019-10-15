@@ -435,7 +435,15 @@ class ContentController extends Controller
         $simpan->banner = $banner;
         $simpan->media = $media;
         $simpan->media_type = $request->media_type;
+        $simpan->creator = $request->creator;
+        $simpan->created_year = $request->created_year;
+        $simpan->lang = $request->lang;
+        $simpan->topic = $request->topic;
+        $simpan->physical_description = $request->physical_description;
         $simpan->description = $request->description;
+        $simpan->publisher = $request->publisher;
+        $simpan->institution_owner = $request->institution_owner;
+        $simpan->link_url = $request->link_url;
         $simpan->place_id = $request->place_id;
         $simpan->map_area_detail = $request->map_area_detail;
         $simpan->latitude_detail = $request->latitude_detail;

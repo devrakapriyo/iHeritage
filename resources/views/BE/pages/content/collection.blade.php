@@ -95,7 +95,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Name : </label>
+                                        <label>Title : </label>
                                         <input type="text" name="name" class="form-control" required>
                                     </div>
                                 </div>
@@ -120,6 +120,68 @@
                                         <label>Link Youtube : </label>
                                         <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" required>
                                         <small class="text-danger">paste your url from youtube</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Creator : </label>
+                                        <input type="text" name="creator" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Created Year : </label>
+                                        <input type="text" name="created_year" class="form-control" placeholder="2019" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Language : </label>
+                                        <input type="text" name="lang" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Topic : </label>
+                                        <input type="text" name="topic" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Publisher : </label>
+                                        <input type="text" name="publisher" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Institution Owner : </label>
+                                        <input type="text" name="institution_owner" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Link Url : </label>
+                                        <input type="text" name="link_url" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description :</label>
+                                        <textarea name="description" class="form-control text-editor" rows="5" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Physical Description :</label>
+                                        <textarea name="physical_description" class="form-control text-editor" rows="5"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -161,14 +223,6 @@
                                 <div class="col-md-12">
                                     <div id="gmap_canvas">Loading map...</div>
                                     <div id='map-label'>Map shows approximate location.</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Description :</label>
-                                        <textarea name="description" class="form-control text-editor" rows="5"></textarea>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">

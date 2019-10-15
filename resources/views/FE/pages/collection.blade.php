@@ -1,5 +1,5 @@
 @extends('FE.layout')
-@section('heritage-place')
+@section('collection')
     active
 @endsection
 @section('content')

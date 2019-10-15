@@ -52,8 +52,8 @@
             <li class="nav-item text-uppercase @yield('home')">
                 <a class="nav-link" href="{{url('/')}}">@lang('messages.nav_menu_home')</a>
             </li>
-            <li class="nav-item text-uppercase @yield('heritage-place')">
-                <a class="nav-link" href="{{url('heritage-place')}}">@lang('messages.nav_menu_heritage')</a>
+            <li class="nav-item text-uppercase @yield('collection')">
+                <a class="nav-link" href="{{url('collection')}}">@lang('messages.nav_menu_heritage')</a>
             </li>
             <li class="nav-item text-uppercase @yield('event')">
                 <a class="nav-link" href="{{url('event')}}">@lang('messages.nav_menu_event')</a>

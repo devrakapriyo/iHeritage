@@ -37,7 +37,7 @@ class InterfaceController extends Controller
         return view('FE.pages.detail', compact('detail','gallery'));
     }
 
-    public function heritagePlace()
+    public function collection()
     {
         $data = content_collection_tbl::where('is_active',"Y")->get();
         $color_media = [
@@ -46,7 +46,7 @@ class InterfaceController extends Controller
             'video'=>'danger',
             'image'=>'warning'
         ];
-        return view('FE.pages.heritage-place', compact('data','color_media'));
+        return view('FE.pages.collection', compact('data','color_media'));
     }
 
     public function vrTour()

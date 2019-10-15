@@ -20,7 +20,7 @@ Route::namespace('FE')->group(function () {
     
     Route::get('/', 'InterfaceController@home');
     Route::get('/content/{museum_name}/{id}', 'InterfaceController@museum');
-    Route::get('/heritage-place', 'InterfaceController@heritagePlace');
+    Route::get('/collection', 'InterfaceController@collection');
     Route::get('/vr-tour', 'InterfaceController@vrTour');
 
     Route::get('/about-us', 'InterfaceController@aboutUs');

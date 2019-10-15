@@ -5,14 +5,14 @@ return [
     'home_title' => 'The Indonesian Heritage Network',
     'home_description' => 'Let us explore the extraordinary heritage of the nation to push the boundaries of understanding in the past and today.',
     
-    'head_menu_about' => 'About Us',
-    'head_menu_service' => 'Our Services',
+    'head_menu_about' => 'About',
+    'head_menu_service' => 'Services',
     'head_menu_news' => 'News',
     'head_menu_login' => 'Login Account',
     
     'nav_menu_home' => 'Home',
-    'nav_menu_heritage' => 'Collection',
-    'nav_menu_event' => 'Event',
+    'nav_menu_heritage' => 'Collections',
+    'nav_menu_event' => 'Events',
     'nav_menu_edu_pro' => 'Education Program',
     'nav_menu_vr' => 'Virtual Tour',
 
@@ -30,8 +30,8 @@ return [
 
     'home_news_title' => 'News',
 
-    // page heritage
-    'heritage_title' => 'Collection',
+    // page collection
+    'heritage_title' => 'Collections',
 
     // page vr
     'vr_title' => 'Virtual Tour',
@@ -66,7 +66,7 @@ return [
     'news_list_title' => 'Other News',
 
     // page event
-    'event_title' => 'Event',
+    'event_title' => 'Events',
     'event_free_price' => 'Free',
     'event_information' => 'Information',
     'event_date' => 'Date and Time',

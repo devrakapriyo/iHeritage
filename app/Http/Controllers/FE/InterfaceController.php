@@ -49,6 +49,12 @@ class InterfaceController extends Controller
         return view('FE.pages.collection', compact('data','color_media'));
     }
 
+    public function collectionDetail($id)
+    {
+        $detail = content_collection_tbl::where('id',$id)->where('is_active',"Y")->first();
+        return view('FE.pages.collection-detail', compact('detail'));
+    }
+
     public function vrTour()
     {
         return view('FE.pages.vr');

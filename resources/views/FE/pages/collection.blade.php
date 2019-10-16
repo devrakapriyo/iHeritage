@@ -47,7 +47,7 @@
                     <p class="card-text">
                         <small class="card-text text-uppercase">{{\App\Model\place_tbl::placeNameLang($item->place_id)}}</small>
                     </p>
-                    <a href="" class="btn btn-block btn-{{$color_media[$item->media_type]}} text-uppercase">{{$item->media_type}}</a>
+                    <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="btn btn-block btn-{{$color_media[$item->media_type]}} text-uppercase">{{$item->media_type}}</a>
                 </div>
             </div>
         </div>

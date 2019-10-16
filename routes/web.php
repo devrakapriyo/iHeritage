@@ -21,6 +21,7 @@ Route::namespace('FE')->group(function () {
     Route::get('/', 'InterfaceController@home');
     Route::get('/content/{museum_name}/{id}', 'InterfaceController@museum');
     Route::get('/collection', 'InterfaceController@collection');
+    Route::get('/collection/detail/{id}', 'InterfaceController@collectionDetail')->name('collection-detail');
     Route::get('/vr-tour', 'InterfaceController@vrTour');
 
     Route::get('/about-us', 'InterfaceController@aboutUs');

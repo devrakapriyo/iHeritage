@@ -30,8 +30,19 @@ return [
 
     'home_news_title' => 'Berita',
 
-    // page heritage
+    // page collection
     'heritage_title' => 'Koleksi',
+    'collection_address' => 'Alamat',
+    'collection_creator' => 'Pembuat',
+    'collection_year' => 'Tahun Pembuatan',
+    'collection_type' => 'Jenis Koleksi',
+    'collection_lang' => 'Bahasa',
+    'collection_topic' => 'Topik',
+    'collection_place' => 'Provinsi',
+    'collection_physical' => 'Deskripsi Fisik',
+    'collection_publisher' => 'Penerbit',
+    'collection_institution' => 'Institusi Pemilik',
+    'collection_link' => 'Tautan URL',
 
     // page vr
     'vr_title' => 'Tur Virtual',

@@ -32,6 +32,17 @@ return [
 
     // page collection
     'heritage_title' => 'Collections',
+    'collection_address' => 'Address',
+    'collection_creator' => 'Creator',
+    'collection_year' => 'Created Year',
+    'collection_type' => 'Type of Collection',
+    'collection_lang' => 'Language',
+    'collection_topic' => 'Topic',
+    'collection_place' => 'Place/Provice',
+    'collection_physical' => 'Physical Description',
+    'collection_publisher' => 'Publisher',
+    'collection_institution' => 'Institution Owner',
+    'collection_link' => 'Link URL',
 
     // page vr
     'vr_title' => 'Virtual Tour',

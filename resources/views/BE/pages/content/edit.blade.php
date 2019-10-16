@@ -122,13 +122,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Contact Phone : </label>
-                                        <input type="text" name="phone" class="form-control" value="{{$detail->phone}}">
+                                        <input type="text" name="phone" class="form-control" value="{{$detail->phone}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Contact Email : </label>
-                                        <input type="email" name="email" class="form-control" value="{{$detail->email}}">
+                                        <input type="email" name="email" class="form-control" value="{{$detail->email}}" required>
                                     </div>
                                 </div>
                             </div>
@@ -144,13 +144,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Short Description (Bahasa Indonesia): </label>
-                                        <textarea name="short_description_ind" class="form-control" row="3">{!! $content->short_description_ind !!}</textarea>
+                                        <textarea name="short_description_ind" class="form-control" row="3" required>{!! $content->short_description_ind !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Short Description (Bahasa Inggris): </label>
-                                        <textarea name="short_description_en" class="form-control" row="3">{!! $content->short_description_en !!}</textarea>
+                                        <textarea name="short_description_en" class="form-control" row="3" required>{!! $content->short_description_en !!}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -158,13 +158,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Long Description (Bahasa Indonesia): </label>
-                                        <textarea name="long_description_ind" class="form-control text-editor" row="5">{!! $content->long_description_ind !!}</textarea>
+                                        <textarea name="long_description_ind" class="form-control text-editor" row="5" required>{!! $content->long_description_ind !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Long Description (Bahasa Inggris): </label>
-                                        <textarea name="long_description_en" class="form-control text-editor" row="5">{!! $content->long_description_en !!}</textarea>
+                                        <textarea name="long_description_en" class="form-control text-editor" row="5" required>{!! $content->long_description_en !!}</textarea>
                                     </div>
                                 </div>
                             </div>

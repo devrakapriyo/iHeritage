@@ -123,13 +123,13 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Contact Phone : </label>
-                                    <input type="text" name="phone" class="form-control">
+                                    <input type="text" name="phone" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Contact Email : </label>
-                                    <input type="email" name="email" class="form-control">
+                                    <input type="email" name="email" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -145,13 +145,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Short Description (Bahasa Indonesia): </label>
-                                    <textarea name="short_description_ind" class="form-control" row="3"></textarea>
+                                    <textarea name="short_description_ind" class="form-control" row="3" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Short Description (Bahasa Inggris): </label>
-                                    <textarea name="short_description_en" class="form-control" row="3"></textarea>
+                                    <textarea name="short_description_en" class="form-control" row="3" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -159,13 +159,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Long Description (Bahasa Indonesia): </label>
-                                    <textarea name="long_description_ind" class="form-control text-editor" row="5"></textarea>
+                                    <textarea name="long_description_ind" class="form-control text-editor" row="5" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Long Description (Bahasa Inggris): </label>
-                                    <textarea name="long_description_en" class="form-control text-editor" row="5"></textarea>
+                                    <textarea name="long_description_en" class="form-control text-editor" row="5" required></textarea>
                                 </div>
                             </div>
                         </div>

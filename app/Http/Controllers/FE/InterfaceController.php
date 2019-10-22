@@ -6,6 +6,7 @@ use App\Model\admin_heritage_tbl;
 use App\Model\admin_news_tbl;
 use App\Model\admin_our_services_tbl;
 use App\Model\content_collection_tbl;
+use App\Model\content_detail_tbl;
 use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
@@ -57,7 +58,11 @@ class InterfaceController extends Controller
 
     public function vrTour()
     {
-        return view('FE.pages.vr');
+        $data = content_detail_tbl::join('content', 'content_detail.content_id', '=', 'content.id')
+            ->select('name', 'photo', 'url_vr', 'place_id')
+            ->where('url_vr', '!=', "")
+            ->get();
+        return view('FE.pages.vr', compact('data'));
     }
 
     public function aboutUs()

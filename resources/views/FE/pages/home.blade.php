@@ -93,7 +93,7 @@
         <h3 class="display-5">@lang('messages.home_banner_title')</h3>
         <p class="lead">@lang('messages.home_banner_description')</p>
         <hr class="my-4">
-        <a class="btn btn-light" href="#" role="button">@lang('messages.home_banner_button')</a>
+        <a class="btn btn-light" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
     </div>
     <!-- /.row -->
 

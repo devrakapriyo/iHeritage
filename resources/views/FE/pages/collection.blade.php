@@ -17,11 +17,12 @@
                     <h5 class="card-title text-uppercase">
                         <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{$item->name}}</a>
                     </h5>
-                    <p class="card-text">
-                        institutional : {{\App\Model\institutional::getName($item->content_id)}}<br>
-                        place : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
+                    <small class="card-text">
+                        @lang('messages.collection_institution') : {{\App\Model\institutional::getName($item->content_id)}}<br>
+                        @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
                         media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type}}</span>
-                    </p>
+                    </small>
+                    <hr>
                     <p class="card-text">
                         @php
                             $text = App::isLocale('id') ? $item->description_ind : $item->description_en;

@@ -10,13 +10,14 @@
                     @foreach($data as $item)
                         <div class="col-md-12 mb-4">
                             <div class="card text-white bg-secondary">
+                                <a href="{{url('our-services/detail/'.$item->id)}}" class="text-white">
                                 <div class="row no-gutters">
                                     <div class="col-md-3">
                                         <img src="{{$item->banner}}" class="card-img" height="230" width="350" alt="...">
                                     </div>
                                     <div class="col-md-9">
                                         <div class="card-body">
-                                            <h5 class="card-title text-capitalize"><a href="{{url('our-services/detail/'.$item->id)}}" class="text-white">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</a></h5>
+                                            <h5 class="card-title text-capitalize">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
                                             @php
                                                 $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
                                             @endphp
@@ -24,6 +25,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                </a>
                             </div>
                         </div>
                     @endforeach

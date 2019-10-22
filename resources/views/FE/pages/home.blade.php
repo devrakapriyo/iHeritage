@@ -76,9 +76,9 @@
                     <p class="card-text">
                         @php
                             $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
-                            $limit_text = substr($text, 0, 150);
+                            $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
                         @endphp
-                        {{$limit_text}} ... readmore
+                        {!! $limit_text !!}
                     </p>
                     </div>
                 </a>
@@ -117,9 +117,9 @@
                             <p class="card-text">
                                 @php
                                     $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
-                                    $limit_text = substr($text, 0, 150);
+                                    $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
                                 @endphp
-                                {{$limit_text}} ... readmore
+                                {!! $limit_text !!}
                             </p>
                         </div>
                     </a>
@@ -150,9 +150,9 @@
                             <p class="card-text">
                                 @php
                                     $text = App::isLocale('id') ? $list->short_description_ind : $list->short_description_en;
-                                    $limit_text = substr($text, 0, 150);
+                                    $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
                                 @endphp
-                                {{$limit_text}} ... readmore
+                                {!! $limit_text !!}
                             </p>
                         </div>
                     </a>
@@ -174,7 +174,9 @@
             <div class="card">
                 <div class="row no-gutters">
                     <div class="col-md-3">
-                        <img src="{{$item->banner}}" class="card-img ctn-vr-thumbnail" alt="{{$item->banner}}">
+                        <a href="{{url('news/detail/'.$item->id)}}" class="text-dark">
+                            <img src="{{$item->banner}}" class="card-img ctn-vr-thumbnail" alt="{{$item->banner}}">
+                        </a>
                     </div>
                     <div class="col-md-9">
                         <div class="card-body">
@@ -182,9 +184,9 @@
                             @php
                                 $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
                                 $text = stripslashes($text);
-                                $limit_text = substr($text, 0, 150);
+                                $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('news/detail/'.$item->id)."'> ...readmore</a>" : $text;
                             @endphp
-                            <p class="card-text">{{$limit_text}} <a href="{{url('news/detail/'.$item->id)}}">...readmore</a></p>
+                            <p class="card-text">{!! $limit_text !!}</p>
                             <p class="card-text"><small class="text-muted">{{$item->created_at->diffForHumans()}}</small></p>
                         </div>
                     </div>

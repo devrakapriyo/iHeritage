@@ -222,7 +222,8 @@
                             </div>
 
                             <button class="btn btn-lg btn-warning btn-block text-uppercase">Submit Register</button>
-                            <a href="{{url('login')}}" class="btn btn-lg btn-dark btn-block text-uppercase">Back</a>
+                            <hr class="my-4">
+                            <a href="{{url('login')}}" class="btn btn-lg btn-dark btn-block text-uppercase">Login</a>
                             @if(Session::has('info'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{Session::get('info')}}

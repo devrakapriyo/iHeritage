@@ -9,6 +9,7 @@ return [
     'head_menu_service' => 'Services',
     'head_menu_news' => 'News',
     'head_menu_login' => 'Login Account',
+    'head_menu_join' => 'Interested in Participating? Register Now!',
     
     'nav_menu_home' => 'Home',
     'nav_menu_heritage' => 'Collections',

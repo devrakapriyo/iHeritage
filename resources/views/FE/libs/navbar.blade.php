@@ -18,11 +18,12 @@
                             Hai, {{auth('visitor')->user()->name}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop" style="z-index: 10000">
+                            <a class="dropdown-item" href="{{\App\User::where('email', auth('visitor')->user()->email)->first() == true ? url('login') : url('register')}}">@lang('messages.head_menu_join')</a>
                             <a class="dropdown-item" href="{{url('logout')}}">Logout</a>
                         </div>
                     </div>
                 @else
-                    <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login')}}">@lang('messages.head_menu_login')</a>
+                    <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login-visitor')}}">@lang('messages.head_menu_login')</a>
                 @endif
             </li>
             <li class="nav-item">

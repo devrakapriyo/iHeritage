@@ -9,6 +9,7 @@ return [
     'head_menu_service' => 'Layanan Kami',
     'head_menu_news' => 'Berita',
     'head_menu_login' => 'Masuk Akun',
+    'head_menu_join' => 'Tertarik Berpartisipasi? Daftar Sekarang!',
 
     'nav_menu_home' => 'Beranda',
     'nav_menu_heritage' => 'Koleksi',

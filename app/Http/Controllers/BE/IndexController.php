@@ -5,6 +5,7 @@ namespace App\Http\Controllers\BE;
 use App\Model\category_content_tbl;
 use App\Model\institutional;
 use App\User;
+use App\UserVisitor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -21,27 +22,58 @@ class IndexController extends Controller
     {
         return view('BE.login');
     }
-
     public function login_action(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('/dashboard');
-        } else {
-            return redirect('/login');
+        $email = User::select('email')->where('email',$request->email)->first();
+        if($email == true)
+        {
+            $auth = auth('admin');
+            if ($auth->attempt(['email' => $request->email, 'password' => $request->password])) {
+                return redirect('dashboard');
+            } else {
+                Alert::error('Password wrong');
+                return redirect()->back();
+            }
+        }else{
+            Alert::error('Account not registered');
+            return redirect()->back();
+        }
+
+    }
+
+    public function login_visitor()
+    {
+        return view('BE.login-visitor');
+    }
+    public function login_visitor_action(Request $request)
+    {
+        $email = UserVisitor::select('email')->where('email',$request->email)->first();
+        if($email == true)
+        {
+            $auth = auth('visitor');
+            if ($auth->attempt(['email' => $request->email, 'password' => $request->password])) {
+                return redirect('/');
+            } else {
+                Alert::error('Password wrong');
+                return redirect()->back();
+            }
+        }else{
+            Alert::error('Account not registered');
+            return redirect()->back();
         }
     }
 
     public function logout()
     {
-        Auth::logout();
-        return redirect('login');
+        auth('visitor')->logout();
+        auth('admin')->logout();
+        return redirect()->back();
     }
 
     public function register()
     {
         return view('BE.register');
     }
-
     public function register_post(Request $request)
     {
         $email = User::select('email')->where('email',$request->email)->first();
@@ -81,6 +113,44 @@ class IndexController extends Controller
         $instansi->save();
 
         return redirect()->back()->with('info', "akun anda berhasil terdaftar");
+    }
+
+    public function register_visitor()
+    {
+        return view('BE.register-visitor');
+    }
+    public function register_visitor_post(Request $request)
+    {
+        $email = UserVisitor::select('email')->where('email',$request->email)->first();
+        if($email == true)
+        {
+            Alert::error('Email is already registered');
+            return redirect()->back();
+        }
+
+        if($request->password != $request->re_password)
+        {
+            Alert::error('Password incorect');
+            return redirect()->back();
+        }
+
+        $simpan = new UserVisitor;
+        $simpan->name = $request->name;
+        $simpan->email = $request->email;
+        $simpan->phone = $request->phone;
+        $simpan->is_active = "Y";
+        $simpan->password = Hash::make($request->password);
+        $simpan->save();
+
+        $auth = auth('visitor');
+        if ($auth->attempt(['email' => $request->email, 'password' => $request->password]))
+        {
+            Alert::success('success', 'congratulations your account has been registered');
+            return redirect('/');
+        } else {
+            Alert::error('Opps something wrong');
+            return redirect('/login-visitor');
+        }
     }
 
     public function dashboard()

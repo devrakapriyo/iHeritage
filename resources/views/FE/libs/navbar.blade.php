@@ -11,7 +11,19 @@
                 <a class="nav-link text-light text-uppercase" href="{{url('news')}}">@lang('messages.head_menu_news')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login')}}">@lang('messages.head_menu_login')</a>
+                @if(auth('visitor')->check())
+                    {{--<a class="nav-link btn-warning btn-block btn-sm text-uppercase">Hai, {{auth('visitor')->user()->name}}</a>--}}
+                    <div class="btn-group-md" role="group">
+                        <button id="btnGroupDrop" type="button" class="btn btn-light btn-block dropdown-toggle text-capitalize" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Hai, {{auth('visitor')->user()->name}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop" style="z-index: 10000">
+                            <a class="dropdown-item" href="{{url('logout')}}">Logout</a>
+                        </div>
+                    </div>
+                @else
+                    <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login')}}">@lang('messages.head_menu_login')</a>
+                @endif
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="#"> | </a>

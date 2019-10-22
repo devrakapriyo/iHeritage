@@ -1,7 +1,7 @@
 <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 <html>
     <head>
-        <title>iHeritage.id | Login</title>
+        <title>iHeritage.id | Login Visitor</title>
         <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" type="text/css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <style>
@@ -155,7 +155,7 @@
                             <img src="{{asset('bootstrap/vendor/iheritage.png')}}" style="width:200px;height:85px;">
                         </a>
                     </div>
-                    <form class="form-signin" action="{{url('login')}}" method="post">
+                    <form class="form-signin" action="{{url('login-visitor')}}" method="post">
                         @csrf
                         <div class="form-label-group">
                             <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -175,7 +175,7 @@
                         <!-- <hr class="my-4"> -->
                         <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
                         <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
-                        <a href="{{url('register')}}" class="btn btn-lg btn-dark btn-block text-uppercase">Register</a>
+                        <a href="{{url('register-visitor')}}" class="btn btn-lg btn-dark btn-block text-uppercase">Register</a>
                     </form>
                 </div>
                 </div>
@@ -184,7 +184,6 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-        {{--Custom script for sweetalert--}}
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         @include('sweet::alert')
     </body>

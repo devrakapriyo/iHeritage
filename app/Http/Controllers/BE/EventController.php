@@ -6,7 +6,6 @@ use App\Helper\helpers;
 use App\Model\content_event_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Yajra\DataTables\DataTables;
@@ -20,7 +19,7 @@ class EventController extends Controller
 
     public function event_get()
     {
-        if(Auth::user()->is_admin_master == "Y")
+        if(auth('admin')->user()->is_admin_master == "Y")
         {
             $data = content_event_tbl::select(['content_event.*', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_event.content_id')
@@ -29,7 +28,7 @@ class EventController extends Controller
             $data = content_event_tbl::select(['content_event.*', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_event.content_id')
                 ->join('place', 'place.id', '=', 'content_event.place_id')
-                ->where('institutional_id', Auth::user()->institutional_id)
+                ->where('institutional_id', auth('admin')->user()->institutional_id)
                 ->where('content_event.is_active', "Y");
         }
         return DataTables::of($data)
@@ -49,7 +48,7 @@ class EventController extends Controller
                 $btn_hapus = '<a href="'.route('event-delete', ['id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
                 $btn_approve = '<a href="'.route('event-approve', ['id'=>$data->id]).'" class="btn btn-xs btn-primary">Approve</a>';
 
-                if(Auth::user()->is_admin_master == "Y")
+                if(auth('admin')->user()->is_admin_master == "Y")
                 {
                     if($data->is_publish == "N")
                     {
@@ -112,7 +111,7 @@ class EventController extends Controller
             $simpan->price = $request->price;
             $simpan->close_registration = $request->close_registration;
             $simpan->is_active = "Y";
-            $simpan->created_at = Auth::user()->name;
+            $simpan->created_at = auth('admin')->user()->name;
             $simpan->save();
 
         }catch (\Exception $exception){

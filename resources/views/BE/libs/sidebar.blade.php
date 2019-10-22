@@ -1,6 +1,6 @@
 <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
     @php
-        $auth = \Illuminate\Support\Facades\Auth::user();
+        $auth = auth('admin')->user();
     @endphp
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">

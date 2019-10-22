@@ -5,7 +5,6 @@ namespace App\Http\Controllers\BE;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
 use Alert;
@@ -20,7 +19,7 @@ class UserController extends Controller
     public function users_get()
     {
 
-        if(Auth::user()->is_admin_master == "Y")
+        if(auth('admin')->user()->is_admin_master == "Y")
         {
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
@@ -28,7 +27,7 @@ class UserController extends Controller
         }else{
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
-                ->where('institutional_id', Auth::user()->institutional_id)
+                ->where('institutional_id', auth('admin')->user()->institutional_id)
                 ->where('user_admin.is_active', "Y");
         }
         return DataTables::of($data)
@@ -41,7 +40,7 @@ class UserController extends Controller
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('users-edit', ['id'=>$data->id]).'" class="btn btn-warning">Edit</a>';
                 $btn_hapus = '<a href="'.route('users-delete', ['id'=>$data->id]).'" class="btn btn-danger">Hapus</a>';
-                if((Auth::user()->is_admin == "Y") || (Auth::user()->is_admin_master == "Y"))
+                if((auth('admin')->user()->is_admin == "Y") || (auth('admin')->user()->is_admin_master == "Y"))
                 {
                     return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
                 }
@@ -57,7 +56,7 @@ class UserController extends Controller
 
     public function users_post(Request $request)
     {
-        $data = User::select('id')->where('institutional_id',Auth::user()->is_admin_master == "Y" ? $request->institutional : Auth::user()->institutional_id)->count();
+        $data = User::select('id')->where('institutional_id',auth('admin')->user()->is_admin_master == "Y" ? $request->institutional : auth('admin')->user()->institutional_id)->count();
         if($data > 4)
         {
             Alert::error('Limit user only 3 account admin');
@@ -83,7 +82,7 @@ class UserController extends Controller
         $simpan->phone = $request->phone;
         $simpan->password = Hash::make($request->password);
         $simpan->none_has_pass = $request->password;
-        $simpan->institutional_id = Auth::user()->is_admin_master == "Y" ? $request->institutional : Auth::user()->institutional_id;
+        $simpan->institutional_id = auth('admin')->user()->is_admin_master == "Y" ? $request->institutional : auth('admin')->user()->institutional_id;
         $simpan->is_active = "Y";
         $simpan->created_at = date("Y-m-d H:i:s");
         $simpan->save();

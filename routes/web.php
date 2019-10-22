@@ -41,12 +41,16 @@ Route::namespace('FE')->group(function () {
 
 Route::get('/login', 'BE\IndexController@login')->name('login');
 Route::post('/login', 'BE\IndexController@login_action');
+Route::get('/login-visitor', 'BE\IndexController@login_visitor')->name('login-visitor');
+Route::post('/login-visitor', 'BE\IndexController@login_visitor_action');
 Route::get('/logout', 'BE\IndexController@logout');
 
 Route::get('/register', 'BE\IndexController@register');
 Route::post('/register', 'BE\IndexController@register_post');
+Route::get('/register-visitor', 'BE\IndexController@register_visitor');
+Route::post('/register-visitor', 'BE\IndexController@register_visitor_post');
 
-Route::prefix('dashboard')->namespace('Admin')->middleware('auth')->group(function () {
+Route::prefix('dashboard')->namespace('Admin')->middleware('admin')->group(function () {
     // heritage
     Route::get('/heritage', 'HeritageController@heritage_pages')->name('heritage-pages');
     Route::post('/heritage/update/{id}/{page}', 'HeritageController@heritage_update')->name('heritage-update');
@@ -70,7 +74,7 @@ Route::prefix('dashboard')->namespace('Admin')->middleware('auth')->group(functi
     Route::get('/news/delete/{id}', 'NewsController@news_delete')->name('news-delete');
 });
 
-Route::prefix('dashboard')->namespace('BE')->middleware('auth')->group(function () {
+Route::prefix('dashboard')->namespace('BE')->middleware('admin')->group(function () {
     Route::get('/', 'IndexController@dashboard')->name('dashboard');
     Route::get('/map/{location}', 'ContentController@get_map');
 

@@ -6,7 +6,6 @@ use App\Helper\helpers;
 use App\Model\content_edu_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Yajra\DataTables\DataTables;
@@ -20,7 +19,7 @@ class EduController extends Controller
 
     public function edu_get()
     {
-        if(Auth::user()->is_admin_master == "Y")
+        if(auth('admin')->user()->is_admin_master == "Y")
         {
             $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_edu_program.content_id')
@@ -29,7 +28,7 @@ class EduController extends Controller
             $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_edu_program.content_id')
                 ->join('place', 'place.id', '=', 'content_edu_program.place_id')
-                ->where('institutional_id', Auth::user()->institutional_id)
+                ->where('institutional_id', auth('admin')->user()->institutional_id)
                 ->where('content_edu_program.is_active', "Y");
         }
         return DataTables::of($data)
@@ -46,7 +45,7 @@ class EduController extends Controller
                 $btn_hapus = '<a href="'.route('edu-delete', ['id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
                 $btn_approve = '<a href="'.route('edu-approve', ['id'=>$data->id]).'" class="btn btn-xs btn-primary">Approve</a>';
 
-                if(Auth::user()->is_admin_master == "Y")
+                if(auth('admin')->user()->is_admin_master == "Y")
                 {
                     if($data->is_publish == "N")
                     {
@@ -112,7 +111,7 @@ class EduController extends Controller
             $simpan->latitude_detail = $request->latitude_detail;
             $simpan->longitude_detail = $request->longitude_detail;
             $simpan->is_active = "Y";
-            $simpan->created_by = Auth::user()->name;
+            $simpan->created_by = auth('admin')->user()->name;
             $simpan->save();
 
         }catch (\Exception $exception){

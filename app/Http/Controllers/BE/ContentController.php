@@ -8,7 +8,6 @@ use App\Model\content_detail_tbl;
 use App\Model\content_gallery_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Yajra\Datatables\Datatables;
@@ -26,7 +25,7 @@ class ContentController extends Controller
 
     public function content_get($category)
     {
-        if(Auth::user()->is_admin_master == "Y")
+        if(auth('admin')->user()->is_admin_master == "Y")
         {
             $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])
                 ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
@@ -34,7 +33,7 @@ class ContentController extends Controller
         }else{
             $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])
                 ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
-                ->where('institutional_id', Auth::user()->institutional_id)
+                ->where('institutional_id', auth('admin')->user()->institutional_id)
                 ->where('category', $category)
                 ->where('content.is_active', "Y");
         }
@@ -60,7 +59,7 @@ class ContentController extends Controller
                 $btn_hapus = '<a href="'.route('content-delete', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
                 $btn_approve = '<a href="'.route('content-approve', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-primary">Approve</a>';
 
-                if(Auth::user()->is_admin_master == "Y")
+                if(auth('admin')->user()->is_admin_master == "Y")
                 {
                     if($data->is_active == "N")
                     {
@@ -115,7 +114,7 @@ class ContentController extends Controller
             $content->short_description_ind = $request->short_description_ind;
             $content->long_description_en = $request->long_description_en;
             $content->long_description_ind = $request->long_description_ind;
-            $content->institutional_id = Auth::user()->institutional_id;
+            $content->institutional_id = auth('admin')->user()->institutional_id;
             $content->save();
 
             $detail = new content_detail_tbl;
@@ -449,7 +448,7 @@ class ContentController extends Controller
         $simpan->latitude_detail = $request->latitude_detail;
         $simpan->longitude_detail = $request->longitude_detail;
         $simpan->is_active = "Y";
-        $simpan->created_by = Auth::user()->name;
+        $simpan->created_by = auth('admin')->user()->name;
         $simpan->save();
 
         Alert::success('Collection uploaded successfully');

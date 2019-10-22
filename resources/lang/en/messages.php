@@ -47,8 +47,8 @@ return [
     // page vr
     'vr_title' => 'Virtual Tour',
 
-    'vr_banner_title' => 'Register Your Museum To Get Virtual Reality 360 Facilities',
-    'vr_banner_button' => 'Try it out!',
+    'vr_banner_title' => 'You have to login for access Virtual Tour ... It’s free',
+    'vr_banner_button' => 'Login Now',
 
     // page museum
     'museum_gallery_title' => 'Gallery Of',

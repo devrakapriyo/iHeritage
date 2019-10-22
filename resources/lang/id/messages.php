@@ -47,8 +47,8 @@ return [
     // page vr
     'vr_title' => 'Tur Virtual',
 
-    'vr_banner_title' => 'Daftarkan Museum Anda Untuk Mendapatkan Fasilitas Virtual Reality 360',
-    'vr_banner_button' => 'Coba sekarang!',
+    'vr_banner_title' => 'Anda harus masuk untuk mengakses Tur Virtual ... Ini gratis',
+    'vr_banner_button' => 'Masuk Sekarang',
 
     // page museum
     'museum_gallery_title' => 'Galeri',

@@ -1,6 +1,14 @@
 <?php
 
 return [
+    // page login and register
+    'btn_login' => 'Login',
+    'btn_register' => 'Register',
+    'login_visitor' => 'Login as Visitor',
+    'register_visitor' => 'Register as Visitor',
+    'login_admin' => 'Login as Administrator',
+    'register_admin' => 'Register as Administrator',
+
     // page home
     'home_title' => 'The Indonesian Heritage Network',
     'home_description' => 'Let us explore the extraordinary heritage of the nation to push the boundaries of understanding in the past and today.',

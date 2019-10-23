@@ -1,6 +1,14 @@
 <?php
 
 return [
+    // page login and register
+    'btn_login' => 'Masuk',
+    'btn_register' => 'Daftar',
+    'login_visitor' => 'Masuk Sebagai Pengunjung',
+    'register_visitor' => 'Daftar Sebagai Pengunjung',
+    'login_admin' => 'Masuk Sebagai Pengelolah',
+    'register_admin' => 'Masuk Sebagai Pengelolah',
+
     // page home
     'home_title' => 'Jejaring Pusaka Budaya Indonesia',
     'home_description' => 'Mari kita jelajahi pusaka bangsa yang luar biasa untuk mendorong batas-batas pemahaman di masa lalu dan hari ini.',

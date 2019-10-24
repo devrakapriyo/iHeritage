@@ -36,23 +36,24 @@
                 <h3 class="text-center mb-3 text-uppercase">Get in touch with Us</h3>
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form action="{{url('form-question')}}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <label for="exampleInputName">Name</label>
-                                <input type="text" class="form-control" id="exampleInputName" placeholder="">
+                                <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputSubject">Subject</label>
-                                <input type="text" class="form-control" id="exampleInputSubject" placeholder="">
+                                <input type="text" name="subject" class="form-control" id="exampleInputSubject" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputMessage">Messages</label>
-                                <textarea class="form-control" id="exampleInputMessage" rows="8"></textarea>
+                                <textarea name="messages" class="form-control" id="exampleInputMessage" rows="8"></textarea>
                             </div>
                             <button class="btn btn-warning float-right">SUBMIT</button>
                         </form>

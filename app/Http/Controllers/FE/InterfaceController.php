@@ -10,10 +10,13 @@ use App\Model\content_detail_tbl;
 use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
+use App\Model\form_question_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Model\content_tbl;
+
+use Alert;
 
 class InterfaceController extends Controller
 {
@@ -90,6 +93,19 @@ class InterfaceController extends Controller
     {
         $data = admin_our_services_tbl::where('id',$id)->where('is_active',"Y")->first();
         return view('FE.pages.our-service-detail', compact('data'));
+    }
+
+    public function formQuestion(Request $request)
+    {
+        $simpan = new form_question_tbl;
+        $simpan->name = $request->name;
+        $simpan->email = $request->email;
+        $simpan->subject = $request->subject;
+        $simpan->messages = $request->messages;
+        $simpan->save();
+
+        Alert::success('question sent successfully');
+        return redirect()->back();
     }
 
     public function news()

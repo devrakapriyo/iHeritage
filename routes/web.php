@@ -28,6 +28,8 @@ Route::namespace('FE')->group(function () {
 
     Route::get('/our-services', 'InterfaceController@ourServices');
     Route::get('/our-services/detail/{id}', 'InterfaceController@ourServicesDetail');
+    // form question
+    Route::post('/form-question', 'InterfaceController@formQuestion');
 
     Route::get('/news', 'InterfaceController@news');
     Route::get('/news/detail/{id}', 'InterfaceController@newsDetail');

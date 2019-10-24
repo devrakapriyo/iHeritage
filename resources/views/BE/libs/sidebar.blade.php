@@ -144,6 +144,12 @@
                     <span>List News</span>
                 </a>
             </li>
+            <li class="nav-item @yield('form-question')">
+                <a class="nav-link" href="{{route('form-question-pages')}}">
+                    <i class="fas fa-fw fa-question-circle"></i>
+                    <span>List Form Question</span>
+                </a>
+            </li>
         @endif
         <li class="nav-item @yield('users')">
             <a class="nav-link" href="{{route('users-pages')}}">

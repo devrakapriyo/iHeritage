@@ -4,10 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helper\helpers;
 use App\Model\admin_our_services_tbl;
+use App\Model\form_question_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\DataTables;
+
 use Alert;
+
+use Illuminate\Support\Facades\Mail;
 
 class OurServicesController extends Controller
 {
@@ -136,5 +140,55 @@ class OurServicesController extends Controller
 
         Alert::success('Service nonactive');
         return redirect()->route('our-services-pages');
+    }
+
+    public function form_question()
+    {
+        return view('BE.pages.adminFormQuestion.index');
+    }
+
+    public function form_question_get()
+    {
+        $data = form_question_tbl::orderBy('id', "desc");
+        return DataTables::of($data)
+            ->addColumn('action', function ($data) {
+                return '<a href="'.route('form-question-detail', ['id'=>$data->id]).'" class="btn btn-warning">View</a>';
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+    }
+
+    public function form_question_detail($id)
+    {
+        $data = form_question_tbl::find($id);
+        return view('BE.pages.adminFormQuestion.edit', compact('data','id'));
+    }
+
+    public function form_question_update(Request $request, $id)
+    {
+        $data = form_question_tbl::where('id',$id);
+
+//        $data->update([
+//            'status' => $request->status,
+//            'messages_response' => $request->messages_response
+//        ]);
+
+        if($request->status == "response")
+        {
+            Mail::send('BE.email.form-question', [
+                'judul_pertanyaan' => $data->first()->subject,
+                'nama' => $data->first()->name,
+                'pertanyaan' => $data->first()->messages,
+                'response' => $data->first()->messages_response,
+            ], function ($m) use ($data) {
+                $m->from('raka.develop@gmail.com', 'iHeritage.id');
+                $m->to($data->first()->email, $data->first()->nama)->subject('iHeritage.id - reply to the question '.$data->first()->subject);
+            });
+            Alert::success('messages succesfuly send to email');
+        }else{
+            Alert::success('messages succesfuly deleted');
+        }
+
+        return redirect()->route('form-question-pages');
     }
 }

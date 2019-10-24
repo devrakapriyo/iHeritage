@@ -66,6 +66,12 @@ Route::prefix('dashboard')->namespace('Admin')->middleware('admin')->group(funct
     Route::post('/our-services/update/{id}', 'OurServicesController@our_services_update')->name('our-services-update');
     Route::get('/our-services/delete/{id}', 'OurServicesController@our_services_delete')->name('our-services-delete');
 
+    // form question
+    Route::get('/form-question', 'OurServicesController@form_question')->name('form-question-pages');
+    Route::get('/form-question/get', 'OurServicesController@form_question_get')->name('form-question-get');
+    Route::get('/form-question/detail/{id}', 'OurServicesController@form_question_detail')->name('form-question-detail');
+    Route::post('/form-question/update/{id}', 'OurServicesController@form_question_update')->name('form-question-update');
+
     // news
     Route::get('/news', 'NewsController@news_pages')->name('news-pages');
     Route::get('/news/get', 'NewsController@news_get')->name('news-get');

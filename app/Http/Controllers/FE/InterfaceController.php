@@ -34,8 +34,17 @@ class InterfaceController extends Controller
     public function museum($museum_name, $id)
     {
         $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $museum_name)->where('content.id', $id)->first();
-        $gallery = content_gallery_tbl::select('photo')->where('content_id', $id)->get();
-        return view('FE.pages.detail', compact('detail','gallery'));
+        $collection = content_collection_tbl::select('id','name','banner','media_type','description_ind','description_en','place_id','media_type')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
+        $color_media = [
+            'document'=>'primary',
+            'audio'=>'success',
+            'video'=>'danger',
+            'image'=>'warning'
+        ];
+        $education = content_edu_tbl::select('id','name','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
+        $event = content_event_tbl::select('id','name','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('close_registration','>=',date('Y-m-d H:i:s'))->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
+        $gallery = content_gallery_tbl::select('photo','id')->where('content_id', $id)->orderBy('id','desc')->take(3)->get();
+        return view('FE.pages.detail', compact('detail','collection','color_media','education','event','gallery'));
     }
 
     public function collection()

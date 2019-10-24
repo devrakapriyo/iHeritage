@@ -23,19 +23,145 @@
             @endphp
             {!! $description !!}
 
-            <div class="form-group mt-5">
-                <h2 class="text-capitalize">@lang('messages.museum_gallery_title') {{$detail->name}}</h2>
-            </div>
-            <hr>
-            @foreach($gallery as $item)
-                <div class="card mb-3">
-                    <img src="{{$item->photo}}" class="card-img-top" alt="...">
+            {{--collection--}}
+            @if(count($collection) > 0)
+                <div class="form-group mt-5">
+                    <h2 class="text-capitalize">@lang('messages.heritage_title')</h2>
                 </div>
-            @endforeach
+                <hr>
+                <div class="row">
+                    @foreach($collection as $item)
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="{{route('collection-detail', ['id'=>$item->id])}}">
+                                    <img class="card-img-top" src="{{$item->banner}}" alt="{{$item->banner}}" height="200" widht="200">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase">
+                                            <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{$item->name}}</a>
+                                        </h5>
+                                        <small class="card-text">
+                                            @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
+                                            media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type}}</span>
+                                        </small>
+                                        <hr>
+                                        <p class="card-text">
+                                            @php
+                                                $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                                                $limit_text = strlen($text) > 150 ? substr($text, 0, 150)." ...readmore" : $text;
+                                            @endphp
+                                            {!! $limit_text !!}
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+            {{--education--}}
+            @if(count($education) > 0)
+                <div class="form-group mt-5">
+                    <h2 class="text-capitalize">@lang('messages.edu_title')}</h2>
+                </div>
+                <hr>
+                <div class="row">
+                    @foreach($education as $item)
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <a href="{{url('education-program/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
+                                    <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$item->name}}</h5>
+                                        <p class="card-text">
+                                            <small class="card-text text-uppercase">{{$item->map_area_detail}}</small>
+                                        </p>
+                                        @php
+                                            $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                                            $text = stripslashes($text);
+                                            $limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('education-program/detail/'.$item->seo.'/'.$item->id)."'> ...readmore</a>" : $text;
+                                        @endphp
+                                        <p class="card-text">{!! $limit_text !!}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+            {{--event--}}
+            @if(count($event) > 0)
+                <div class="form-group mt-5">
+                    <h2 class="text-capitalize">@lang('messages.events_title')}</h2>
+                </div>
+                <hr>
+                <div class="row">
+                    @foreach($event as $item)
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <a href="{{url('event/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
+                                    <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">
+                                    <div class="card-body">
+                                        <div class="row mb-3">
+                                            <div class="col-md-7">
+                                                <p class="card-text text-secondary">
+                                                    {{\App\Helper\helpers::dateFormat($item->start_date)}}
+                                                </p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <p class="card-text">
+                                                    <small class="btn btn-sm btn-success float-right text-capitalize">{{$item->price == 0 ? App::isLocale('id') ? "Gratis" : "Free" : "Rp. ".number_format($item->price) }}</small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <h5 class="card-title">{{$item->name}}</h5>
+                                        <small class="card-text" title="{{$item->map_area_detail}}">
+                                            @php
+                                                $text = $item->map_area_detail;
+                                                $limit_text = substr($text, 0, 48);
+                                                $more = strlen($text) <= 48 ? "" : "...";
+                                            @endphp
+                                            {{$limit_text}}{{$more}}
+                                        </small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+            {{--gallery--}}
+            @if(count($gallery) > 0)
+                <div class="form-group mt-5">
+                    <h2 class="text-capitalize">@lang('messages.museum_gallery_title') {{$detail->name}}</h2>
+                </div>
+                <hr>
+                <div class="row">
+                    @foreach($gallery as $item)
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}" height="150" data-toggle="modal" data-target=".bd-example-modal-xl-{{$item->id}}">
+                            </div>
+                        </div>
+
+                        {{--modal--}}
+                        <div class="modal fade bd-example-modal-xl-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}">
+                                </div>
+                            </div>
+                        </div>
+                        {{--end modal--}}
+                    @endforeach
+                </div>
+            @endif
             @if(count($gallery) > 3)
-            <div class="form-group">
-                <button class="btn btn-block btn-outline-dark text-capitalize">@lang('messages.museum_gallery_button')</button>
-            </div>
+                <div class="form-group">
+                    <button class="btn btn-block btn-outline-dark text-capitalize">@lang('messages.museum_gallery_button')</button>
+                </div>
             @endif
         </div>
         <div class="col-md-4">
@@ -44,10 +170,6 @@
                 <h5>{{$detail->name}}</h5>
                 <span class="font-weight-lighter">{{$detail->address}}<br>
                     {{\App\Model\place_tbl::placeNameLang($detail->place_id)}}</span>
-            </div>
-            <div class="form-group">
-                <h5>@lang('messages.museum_information')</h5>
-                <p>Virtual Reality Tour 360&deg; : <a href="{{$detail->url_vr}}" target="_blank">{{\Illuminate\Support\Str::replaceArray('http://', [""], $detail->url_vr)}}</a></p>
             </div>
             <div class="form-group">
                 <p>Website : <a href="{{$detail->url_website}}" target="_blank">{{\Illuminate\Support\Str::replaceArray('http://', [""], $detail->url_website)}}</a></p>

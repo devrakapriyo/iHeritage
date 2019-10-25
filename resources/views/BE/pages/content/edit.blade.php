@@ -34,44 +34,33 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">edit content</h6>
-                        <a href="{{route('content-pages', ['category'=>$category])}}" class="btn btn-success text-capitalize">list content {{str_replace("-", " ",$category)}}</a>
+                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">edit institution</h6>
+                        <a href="{{route('content-pages', ['category'=>$category])}}" class="btn btn-success text-capitalize">list institution {{str_replace("-", " ",$category)}}</a>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <form method="post" action="{{route('content-update',['category'=>$category,'id'=>$id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Name Content : </label>
+                                        <label>Name : </label>
                                         <input type="text" name="name" class="form-control" value="{{$content->name}}" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Category Content : </label>
-                                        <select name="category_ctn_id" class="form-control" required>
-                                            @foreach(App\Model\category_content_tbl::listCategory($category) as $item)
-                                                <option {{$content->category_ctn_id == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->category_ctn_name_ind}}</option>
-                                            @endforeach
-                                        </select>
-                                        <a href="{{route('category-page')}}">Content categories are not yet available, click here...</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Banner Content : </label>
-                                        <input type="file" name="photo" class="form-control" required>
+                                        <label>Banner : </label>
+                                        <input type="file" name="photo" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Place : </label>
+                                        <label>Province : </label>
                                         <select name="place_id" class="form-control" required>
                                             <option value=""></option>
                                             @foreach(App\Model\place_tbl::listSearch() as $item)
@@ -82,19 +71,19 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Location : </label>
+                                        <label>Town Location : </label>
                                         <input type="text" name="location" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Address:</label>
+                                        <label>Name Location :</label>
                                         <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$content->location}}" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude">
                                         <input type="hidden" name="longitude_detail" id="longitude">
                                     </div>
                                     <div id='address-examples'>
-                                        <div>Address examples:</div>
+                                        <div>Name location examples :</div>
                                         <div>1. Istana Bogor, Indonesia</div>
                                         <div>2. Museum Nasional Indonesia</div>
                                     </div>
@@ -107,18 +96,28 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Street Address : </label>
+                                        <textarea name="address" class="form-control" row="3" required>{!! $detail->address !!}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Link Website : </label>
                                         <input type="text" name="url_website" class="form-control" value="{{$detail->url_website}}">
                                     </div>
                                 </div>
+                                @if(auth('admin')->user()->is_admin_master == true)
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Link Virtual Reality : </label>
                                         <input type="text" name="url_vr" class="form-control" value="{{$detail->url_vr}}">
                                     </div>
                                 </div>
+                                @endif
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Contact Phone : </label>
@@ -129,14 +128,6 @@
                                     <div class="form-group">
                                         <label>Contact Email : </label>
                                         <input type="email" name="email" class="form-control" value="{{$detail->email}}" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Address : </label>
-                                        <textarea name="address" class="form-control" row="3" required>{!! $detail->address !!}</textarea>
                                     </div>
                                 </div>
                             </div>

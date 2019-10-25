@@ -27,11 +27,11 @@ class ContentController extends Controller
     {
         if(auth('admin')->user()->is_admin_master == "Y")
         {
-            $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])
+            $data = content_tbl::select(['content.id', 'name', 'location', 'short_description_ind', 'content.is_active'])
                 ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
                 ->where('category', $category);
         }else{
-            $data = content_tbl::select(['content.id', 'name', 'category_content.category_ctn_name_ind', 'location', 'short_description_ind', 'content.is_active'])
+            $data = content_tbl::select(['content.id', 'name', 'location', 'short_description_ind', 'content.is_active'])
                 ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
                 ->where('institutional_id', auth('admin')->user()->institutional_id)
                 ->where('category', $category)
@@ -90,12 +90,14 @@ class ContentController extends Controller
                 $valid = helpers::validationImage($request->file("photo"));
                 if ($valid != true)
                 {
+                    Alert::info('format photo not valid');
                     return redirect()->back();
                 }
 
                 $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"img/BE/content/".$category);
                 if ($photo != true)
                 {
+                    Alert::info('photo failed to upload');
                     return redirect()->back();
                 }else{
                     $photo = url('/img/BE/content/'.$category.'/'.$photo);
@@ -108,7 +110,7 @@ class ContentController extends Controller
             $content->photo = $photo;
             $content->name = $request->name;
             $content->seo = Str::slug($request->name);
-            $content->category_ctn_id = $request->category_ctn_id;
+            $content->category_ctn_id = category_content_tbl::getIDCategoryContent($category);
             $content->location = $request->location;
             $content->short_description_en = $request->short_description_en;
             $content->short_description_ind = $request->short_description_ind;
@@ -163,12 +165,14 @@ class ContentController extends Controller
                 $valid = helpers::validationImage($request->file("photo"));
                 if ($valid != true)
                 {
+                    Alert::info('format photo not valid');
                     return redirect()->back();
                 }
 
                 $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"img/BE/content/".$category);
                 if ($photo != true)
                 {
+                    Alert::info('photo failed to upload');
                     return redirect()->back();
                 }else{
                     // delete file storage
@@ -189,7 +193,7 @@ class ContentController extends Controller
                 ->update([
                     'name'=>$request->name,
                     'photo'=>$photo,
-                    'category_ctn_id'=>$request->category_ctn_id,
+                    'category_ctn_id'=>category_content_tbl::getIDCategoryContent($category),
                     'location'=>$request->location,
                     'short_description_en'=>$request->short_description_en,
                     'short_description_ind'=>$request->short_description_ind,
@@ -229,8 +233,8 @@ class ContentController extends Controller
 
     public function content_delete($category,$id)
     {
-        $category_id = category_content_tbl::select('id')->where('category',$category)->first()->id;
-        content_tbl::where('id',$id)->where('category_ctn_id',$category_id)->update([
+        $category_id = category_content_tbl::getIDCategoryContent($category);
+        content_tbl::where('id',$id)->update([
             'is_active'=>"N"
         ]);
 
@@ -240,8 +244,8 @@ class ContentController extends Controller
 
     public function content_approve($category,$id)
     {
-        $category_id = category_content_tbl::select('id')->where('category',$category)->first()->id;
-        content_tbl::where('id',$id)->where('category_ctn_id',$category_id)->update([
+        $category_id = category_content_tbl::getIDCategoryContent($category);
+        content_tbl::where('id',$id)->update([
             'is_active'=>"Y"
         ]);
 
@@ -262,12 +266,14 @@ class ContentController extends Controller
             $valid = helpers::validationImage($request->file("photo"));
             if ($valid != true)
             {
+                Alert::info('format photo not valid');
                 return redirect()->back();
             }
 
             $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"img/BE/gallery");
             if ($photo != true)
             {
+                Alert::info('photo failed to upload');
                 return redirect()->back();
             }else{
                 $photo = url('/img/BE/gallery/'.$photo);

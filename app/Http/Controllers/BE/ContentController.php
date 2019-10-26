@@ -126,7 +126,7 @@ class ContentController extends Controller
             $detail->map_area_detail = $request->map_area_detail;
             $detail->latitude_detail = $request->latitude_detail;
             $detail->longitude_detail = $request->longitude_detail;
-            $detail->url_vr = $request->url_vr;
+            $detail->url_vr = auth('admin')->user()->is_admin_master == "Y" ? $request->url_vr : "";
             $detail->url_website = $request->url_website;
             $detail->phone = $request->phone;
             $detail->email = $request->email;
@@ -208,7 +208,7 @@ class ContentController extends Controller
                     'map_area_detail'=>$request->map_area_detail,
                     'latitude_detail'=>$request->latitude_detail,
                     'longitude_detail'=>$request->longitude_detail,
-                    'url_vr'=>$request->url_vr,
+                    'url_vr'=>auth('admin')->user()->is_admin_master == "Y" ? $request->url_vr : "",
                     'url_website'=>$request->url_website,
                     'phone'=>$request->phone,
                     'email'=>$request->email,

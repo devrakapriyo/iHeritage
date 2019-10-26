@@ -110,7 +110,7 @@
                                     <input type="text" name="url_website" class="form-control">
                                 </div>
                             </div>
-                            @if(auth('admin')->user()->is_admin_master == true)
+                            @if(auth('admin')->user()->is_admin_master == "Y")
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Link Virtual Reality : </label>

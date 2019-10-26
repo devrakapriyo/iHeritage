@@ -25,7 +25,7 @@
                     <hr>
                     <p class="card-text">
                         @php
-                            $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                            $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
                             $limit_text = strlen($text) > 250 ? substr($text, 0, 250)." ...readmore" : $text;
                         @endphp
                         {!! $limit_text !!}

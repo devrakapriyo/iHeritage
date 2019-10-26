@@ -19,7 +19,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title text-capitalize">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
                                             @php
-                                                $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                                                $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : ($item->description_en);
                                             @endphp
                                             <p class="card-text">{!! $text !!}</p>
                                         </div>

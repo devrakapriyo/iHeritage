@@ -36,7 +36,7 @@
                 </div>
                 <!-- /.row -->
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 mb-5">
                 <h3 class="text-center mb-3 text-uppercase">Get in touch with Us</h3>
                 <div class="card">
                     <div class="card-body">

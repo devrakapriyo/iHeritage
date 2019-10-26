@@ -60,8 +60,10 @@ return [
     'vr_banner_button' => 'Masuk Sekarang',
 
     // page museum
-    'museum_gallery_title' => 'Galeri',
+    'museum_gallery_title' => 'Foto',
     'museum_gallery_button' => 'lihat koleksi foto lainnya',
+    'museum_btn_loadmore' => 'muat lebih banyak...',
+    'museum_btn_hide_loadmore' => 'tutup muat lebih banyak',
 
     'museum_information' => 'Informasi',
     'museum_information_opening' => 'Jam Buka',

@@ -19,9 +19,13 @@
             <small>{{$text}}</small>
             <hr>
             @php
-                $description = App::isLocale('id') ? $detail->long_description_ind : $detail->long_description_en;
+                $text = App::isLocale('id') ? htmlspecialchars_decode($detail->long_description_ind) : htmlspecialchars_decode($detail->long_description_en);
+                $btn_loadmore = App::isLocale('id') ? "muat lebih banyak" : "loadmore";
+                $limit_text = strlen($text) > 1000 ? substr($text, 0, 1000)."<a class='btn btn-block btn-warning mt-3 text-uppercase' id='btn-loadmore'>".$btn_loadmore."</a>" : $text;
+                $next_text = substr($text, 1000);
             @endphp
-            {!! $description !!}
+            {!! $limit_text !!}<span id="page-loadmore">{!! $next_text !!}</span>
+            <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='btn-hide-loadmore'>@lang('messages.museum_btn_hide_loadmore')</a>
 
             {{--collection--}}
             @if(count($collection) > 0)
@@ -46,7 +50,7 @@
                                         <hr>
                                         <p class="card-text">
                                             @php
-                                                $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                                                $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
                                                 $limit_text = strlen($text) > 150 ? substr($text, 0, 150)." ...readmore" : $text;
                                             @endphp
                                             {!! $limit_text !!}
@@ -77,7 +81,7 @@
                                             <small class="card-text text-uppercase">{{$item->map_area_detail}}</small>
                                         </p>
                                         @php
-                                            $text = App::isLocale('id') ? $item->description_ind : $item->description_en;
+                                            $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
                                             $text = stripslashes($text);
                                             $limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('education-program/detail/'.$item->seo.'/'.$item->id)."'> ...readmore</a>" : $text;
                                         @endphp
@@ -119,8 +123,8 @@
                                         <small class="card-text" title="{{$item->map_area_detail}}">
                                             @php
                                                 $text = $item->map_area_detail;
-                                                $limit_text = substr($text, 0, 48);
-                                                $more = strlen($text) <= 48 ? "" : "...";
+                                                $limit_text = substr($text, 0, 150);
+                                                $more = strlen($text) <= 150 ? "" : "...";
                                             @endphp
                                             {{$limit_text}}{{$more}}
                                         </small>
@@ -135,7 +139,7 @@
             {{--gallery--}}
             @if(count($gallery) > 0)
                 <div class="form-group mt-5">
-                    <h2 class="text-capitalize">@lang('messages.museum_gallery_title') {{$detail->name}}</h2>
+                    <h2 class="text-capitalize">@lang('messages.museum_gallery_title')</h2>
                 </div>
                 <hr>
                 <div class="row">
@@ -242,4 +246,25 @@
 
 </div>
 <!-- /.container -->
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function () {
+            $("#page-loadmore").hide();
+            $("#btn-hide-loadmore").hide();
+            $("#btn-loadmore").show();
+
+            $("#btn-loadmore").on("click", function () {
+                $("#page-loadmore").show();
+                $("#btn-hide-loadmore").show();
+                $("#btn-loadmore").hide();
+            });
+
+            $("#btn-hide-loadmore").on("click", function () {
+                $("#page-loadmore").hide();
+                $("#btn-hide-loadmore").hide();
+                $("#btn-loadmore").show();
+            });
+        });
+    </script>
 @endsection

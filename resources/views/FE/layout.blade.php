@@ -16,6 +16,7 @@
   @include('FE.libs.footer')
 
   @include('FE.assets.footer')
+  @yield('footer')
 
 </body>
 

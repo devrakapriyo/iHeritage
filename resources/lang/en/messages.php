@@ -60,8 +60,10 @@ return [
     'vr_banner_button' => 'Login Now',
 
     // page museum
-    'museum_gallery_title' => 'Gallery Of',
+    'museum_gallery_title' => 'Gallery Photo ',
     'museum_gallery_button' => 'see other photo collections',
+    'museum_btn_loadmore' => 'loadmore...',
+    'museum_btn_hide_loadmore' => 'close loadmore',
 
     'museum_information' => 'Information',
     'museum_information_opening' => 'Opening Hours',

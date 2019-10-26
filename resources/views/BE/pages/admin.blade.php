@@ -77,8 +77,16 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <form method="post" action="{{route('heritage-update', ['id'=>1, 'page'=>"about"])}}">
+                        <form method="post" action="{{route('heritage-update', ['id'=>1, 'page'=>"about"])}}" enctype="multipart/form-data">
                             @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Banner : </label>
+                                        <input type="file" name="banner" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">

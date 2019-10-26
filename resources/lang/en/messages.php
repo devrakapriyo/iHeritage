@@ -82,6 +82,7 @@ return [
 
     // page our services
     'services_title' => 'Our Services',
+    'services_btn_back' => 'return to our service page',
 
     // page news
     'news_title' => 'News',

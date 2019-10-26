@@ -82,6 +82,7 @@ return [
 
     // page our services
     'services_title' => 'Layanan Kami',
+    'services_btn_back' => 'kembali ke halaman layanan kami',
 
     // page news
     'news_title' => 'Berita',

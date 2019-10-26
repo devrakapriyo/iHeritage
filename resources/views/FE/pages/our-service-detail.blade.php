@@ -15,6 +15,7 @@
                     </div>
                     <img src="{{$data->banner}}" class="card-img-top" alt="{{$data->banner}}">
                 </div>
+                <a href="{{url('our-services')}}" class="btn btn-danger btn-block text-uppercase mt-3">@lang('messages.services_btn_back')</a>
             </div>
         </div>
         <!-- /.row -->

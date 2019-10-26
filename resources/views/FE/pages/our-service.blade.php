@@ -1,4 +1,7 @@
 @extends('FE.layout')
+@section('header')
+    {!! ReCaptcha::htmlScriptTagJsApi() !!}
+@endsection
 @section('content')
 
     <!-- Page Content -->
@@ -63,8 +66,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="captcha">Captcha</label>
-                                {!! NoCaptcha::renderJs() !!}
-                                {!! NoCaptcha::display() !!}
+                                {!! htmlFormSnippet() !!}
                                 <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
                             </div>
                             <button class="btn btn-warning float-right">SUBMIT</button>

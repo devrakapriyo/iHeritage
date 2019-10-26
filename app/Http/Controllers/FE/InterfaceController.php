@@ -103,7 +103,7 @@ class InterfaceController extends Controller
             'email' => 'required',
             'subject' => 'required',
             'messages' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
+            recaptchaFieldName() => recaptchaRuleName()
         ]);
 
         if ($validator->fails()) {

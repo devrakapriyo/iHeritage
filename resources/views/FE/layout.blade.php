@@ -3,6 +3,7 @@
 
 <head>
   @include('FE.assets.header')
+  @yield('header')
 </head>
 
 <body>

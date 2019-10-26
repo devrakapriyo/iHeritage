@@ -168,10 +168,10 @@ class OurServicesController extends Controller
     {
         $data = form_question_tbl::where('id',$id);
 
-//        $data->update([
-//            'status' => $request->status,
-//            'messages_response' => $request->messages_response
-//        ]);
+        $data->update([
+            'status' => $request->status,
+            'messages_response' => $request->messages_response
+        ]);
 
         if($request->status == "response")
         {
@@ -181,7 +181,7 @@ class OurServicesController extends Controller
                 'pertanyaan' => $data->first()->messages,
                 'response' => $data->first()->messages_response,
             ], function ($m) use ($data) {
-                $m->from('raka.develop@gmail.com', 'iHeritage.id');
+                $m->from('info@iheritage.id', 'Info iHeritage ID');
                 $m->to($data->first()->email, $data->first()->nama)->subject('iHeritage.id - reply to the question '.$data->first()->subject);
             });
             Alert::success('messages succesfuly send to email');

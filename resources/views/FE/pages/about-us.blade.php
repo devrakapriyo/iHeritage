@@ -12,25 +12,7 @@
                 {!! $description !!}
             </div>
             <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <img src="{{asset('bootstrap/asset-img/heritage-place/borobudur.jpg')}}" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <img src="{{asset('bootstrap/asset-img/heritage-place/prambanan.jpg')}}" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <img src="{{asset('bootstrap/asset-img/heritage-place/bromo-tengger-semeru.jpg')}}" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-                </div>
+                <img src="{{$data->banner}}" class="img-fluid" alt="{{$data->banner}}">
             </div>
         </div>
         <!-- /.row -->

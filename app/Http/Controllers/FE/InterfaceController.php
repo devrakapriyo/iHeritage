@@ -80,7 +80,7 @@ class InterfaceController extends Controller
 
     public function aboutUs()
     {
-        $data = admin_heritage_tbl::select('about_us_en','about_us_ind')->first();
+        $data = admin_heritage_tbl::select('about_us_en','about_us_ind','banner')->first();
         return view('FE.pages.about-us', compact('data'));
     }
 

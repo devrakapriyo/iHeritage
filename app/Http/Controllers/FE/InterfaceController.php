@@ -13,6 +13,7 @@ use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 use App\Model\content_tbl;
 
@@ -97,6 +98,20 @@ class InterfaceController extends Controller
 
     public function formQuestion(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'messages' => 'required',
+            'g-recaptcha-response' => 'required|captcha',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('our-services')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $simpan = new form_question_tbl;
         $simpan->name = $request->name;
         $simpan->email = $request->email;

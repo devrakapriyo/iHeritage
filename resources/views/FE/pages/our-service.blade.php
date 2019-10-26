@@ -1,4 +1,8 @@
 @extends('FE.layout')
+@section('footer')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+@endsection
 @section('content')
 
     <!-- Page Content -->
@@ -9,24 +13,24 @@
                 <div class="row">
                     @foreach($data as $item)
                         <div class="col-md-12 mb-4">
-                            <div class="card text-white bg-secondary">
-                                <a href="{{url('our-services/detail/'.$item->id)}}" class="text-white">
-                                <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                        <img src="{{$item->banner}}" class="card-img" height="230" width="350" alt="...">
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-capitalize">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
-                                            @php
-                                                $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : ($item->description_en);
-                                            @endphp
-                                            <p class="card-text">{!! $text !!}</p>
+                            <a href="{{url('our-services/detail/'.$item->id)}}">
+                                <div class="card bg-light">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="{{$item->banner}}" class="card-img" alt="..." style="height: 100%">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-capitalize text-dark">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
+                                                @php
+                                                    $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : ($item->description_en);
+                                                @endphp
+                                                <p class="card-text text-dark">{!! $text !!}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                </a>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
@@ -41,19 +45,29 @@
                             <div class="form-group">
                                 <label for="exampleInputName">Name</label>
                                 <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="">
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail">Email address</label>
                                 <input type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputSubject">Subject</label>
                                 <input type="text" name="subject" class="form-control" id="exampleInputSubject" placeholder="">
+                                <span class="text-danger">{{ $errors->first('subject') }}</span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputMessage">Messages</label>
                                 <textarea name="messages" class="form-control" id="exampleInputMessage" rows="8"></textarea>
+                                <span class="text-danger">{{ $errors->first('subject') }}</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="captcha">Captcha</label>
+                                {!! NoCaptcha::renderJs() !!}
+                                {!! NoCaptcha::display() !!}
+                                <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
                             </div>
                             <button class="btn btn-warning float-right">SUBMIT</button>
                         </form>

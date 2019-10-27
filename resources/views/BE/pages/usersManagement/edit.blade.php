@@ -19,7 +19,7 @@
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary text-capitalize">edit user</h6>
-                        @if(Auth::user()->is_admin == "Y")
+                        @if(auth('admin')->user()->is_admin == "Y")
                             <a href="{{route('users-pages')}}" class="btn btn-success text-capitalize">list users</a>
                         @endif
                     </div>

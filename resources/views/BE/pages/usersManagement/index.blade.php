@@ -24,7 +24,7 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary text-capitalize">data users</h6>
                     @php
-                        $auth = \Illuminate\Support\Facades\Auth::user();
+                        $auth = auth('admin')->user();
                     @endphp
                     @if(($auth->is_admin == "Y") || ($auth->is_admin_master == "Y"))
                         <a href="{{route('users-add')}}" class="btn btn-primary">Add new user</a>

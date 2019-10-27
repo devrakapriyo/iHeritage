@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         @php
-                            $auth = \Illuminate\Support\Facades\Auth::user();
+                            $auth = auth('admin')->user();
                         @endphp
                         @if($auth->is_admin_master == "Y")
                         <div class="row">

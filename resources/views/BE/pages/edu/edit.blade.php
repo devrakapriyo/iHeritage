@@ -47,9 +47,9 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Content : </label>
+                                        <label>Institution : </label>
                                         <select name="content_id" class="form-control" required>
-                                            @foreach(App\Model\content_tbl::listContent(\Illuminate\Support\Facades\Auth::user()->institutional_id) as $item)
+                                            @foreach(App\Model\content_tbl::listContent(auth('admin')->user()->institutional_id) as $item)
                                                 <option {{$detail->content_id == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
                                             @endforeach
                                         </select>
@@ -60,8 +60,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Banner Event : </label>
-                                        <input type="file" name="banner" class="form-control" required>
+                                        <label>Banner Education Program : </label>
+                                        <input type="file" name="banner" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Place : </label>
+                                        <label>Province : </label>
                                         <select name="place_id" class="form-control" required>
                                             <option value=""></option>
                                             @foreach(App\Model\place_tbl::listSearch() as $item)
@@ -95,13 +95,13 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label>Address:</label>
+                                        <label>Name Location :</label>
                                         <input type="text" name="map_area_detail" class="form-control" id="location" value="Istana Bogor, Indonesia" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude">
                                         <input type="hidden" name="longitude_detail" id="longitude">
                                     </div>
                                     <div id='address-examples'>
-                                        <div>Address examples:</div>
+                                        <div>Name Location examples :</div>
                                         <div>1. Istana Bogor, Indonesia</div>
                                         <div>2. Museum Nasional Indonesia</div>
                                     </div>

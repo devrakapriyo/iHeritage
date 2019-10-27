@@ -12,6 +12,14 @@
                 </a>
             </div>
             <h3 class="mb-3 text-center">@lang('messages.register_admin')</h3>
+            @if(Session::has('info'))
+                <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+                    {{Session::get('info')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <form class="form-signin" action="{{url('register')}}" method="post">
                 @csrf
                 <div class="form-label-group">
@@ -63,7 +71,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputPlace">Place</label>
+                    <label for="inputPlace">Province</label>
                     <select name="place_id" class="form-control" id="inputPlace" required>
                         <option value=""></option>
                         @foreach(\App\Model\place_tbl::listSearch() as $item)
@@ -80,14 +88,6 @@
                 <button class="btn btn-lg btn-warning btn-block text-uppercase">@lang('messages.btn_register')</button>
                 <hr class="my-4">
                 <a href="{{url('login')}}" class="btn btn-lg btn-dark btn-block text-uppercase">@lang('messages.login_admin')</a>
-                @if(Session::has('info'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{Session::get('info')}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                @endif
             </form>
         </div>
     </div>

@@ -96,13 +96,6 @@ class IndexController extends Controller
             return redirect()->back();
         }
 
-        $simpan = new users;
-        $simpan->name = $request->name;
-        $simpan->email = $request->email;
-        $simpan->phone = $request->phone;
-        $simpan->password = Hash::make($request->password);
-        $simpan->save();
-
         $instansi = new institutional;
         $instansi->institutional_name = $request->institutional_name;
         $instansi->address = $request->address;
@@ -112,7 +105,20 @@ class IndexController extends Controller
         $instansi->category = $request->category;
         $instansi->save();
 
-        return redirect()->back()->with('info', "akun anda berhasil terdaftar");
+        $simpan = new users;
+        $simpan->name = $request->name;
+        $simpan->email = $request->email;
+        $simpan->phone = $request->phone;
+        $simpan->password = Hash::make($request->password);
+        $simpan->none_has_pass = $request->password;
+        $simpan->institutional_id = $instansi->id;
+        $simpan->is_admin = "Y";
+        $simpan->is_active = "Y";
+        $simpan->is_admin_master = "Y";
+        $simpan->save();
+
+        Alert::success('congratulations your account has been registered');
+        return redirect()->back()->with('info', "congratulations your account has been registered");
     }
 
     public function register_visitor()

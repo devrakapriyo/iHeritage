@@ -103,6 +103,7 @@ class IndexController extends Controller
         $instansi->email = $request->email;
         $instansi->phone = $request->phone;
         $instansi->category = $request->category;
+        $instansi->is_active = "Y";
         $instansi->save();
 
         $simpan = new users;
@@ -114,7 +115,6 @@ class IndexController extends Controller
         $simpan->institutional_id = $instansi->id;
         $simpan->is_admin = "Y";
         $simpan->is_active = "Y";
-        $simpan->is_admin_master = "Y";
         $simpan->save();
 
         Alert::success('congratulations your account has been registered');

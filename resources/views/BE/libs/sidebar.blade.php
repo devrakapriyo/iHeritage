@@ -75,7 +75,7 @@
                 @php
                     $category = \App\Model\institutional::getData($auth->institutional_id, "category")->category;
                 @endphp
-                @if($category == "all")
+                @if($auth->is_admin_master == "Y")
                     <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum</a>
                     <a class="collapse-item @yield('library')" href="{{route('content-pages', ['category'=>'library'])}}">Library</a>
                     <a class="collapse-item @yield('gallery')" href="{{route('content-pages', ['category'=>'gallery'])}}">Gallery</a>

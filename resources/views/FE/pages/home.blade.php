@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group mt-3">
-                            <select name="place_id"  class="form-control">
+                            <select name="place_id" class="form-control">
                                 <option value="all">@lang('messages.home_select_place')</option>
                                 @foreach(\App\Model\place_tbl::listSearch() as $items)
                                     <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>

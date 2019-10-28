@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group mt-3">
-                            <select class="form-control search-place">
+                            <select name="place_id" class="form-control">
                                 <option value="all">@lang('messages.home_select_place')</option>
                                 @foreach(\App\Model\place_tbl::listSearch() as $items)
                                     <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <select class="form-control search-category">
+                            <select name="category" class="form-control">
                                 <option value="all">@lang('messages.home_select_heritage')</option>
                                 <option value="museum">Museum</option>
                                 <option value="library">Library</option>

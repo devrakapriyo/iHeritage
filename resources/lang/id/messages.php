@@ -9,9 +9,14 @@ return [
     'login_admin' => 'Masuk Sebagai Pengelolah',
     'register_admin' => 'Masuk Sebagai Pengelolah',
 
+    // search
+    'title_search' => 'Maaf,',
+    'msg_search' => 'Data yang anda cari belum ditemukan',
+
     // page home
     'home_title' => 'Jejaring Pusaka Budaya Indonesia',
     'home_description' => 'Mari kita jelajahi pusaka bangsa yang luar biasa untuk mendorong batas-batas pemahaman di masa lalu dan hari ini.',
+    'home_result_search' => 'Hasil Pencarian...',
     
     'head_menu_about' => 'Tentang Kami',
     'head_menu_service' => 'Layanan Kami',
@@ -40,11 +45,15 @@ return [
     'home_news_title' => 'Berita',
 
     // page collection
-    'heritage_title' => 'Koleksi',
+    'heritage_title' => 'Pencarian Koleksi',
     'collection_address' => 'Alamat',
     'collection_creator' => 'Pembuat',
     'collection_year' => 'Tahun Pembuatan',
     'collection_type' => 'Jenis Koleksi',
+    'collection_type_document' => 'Dokumen',
+    'collection_type_audio' => 'Audio',
+    'collection_type_image' => 'Gambar',
+    'collection_type_video' => 'Video',
     'collection_lang' => 'Bahasa',
     'collection_topic' => 'Topik',
     'collection_place' => 'Provinsi',
@@ -89,15 +98,17 @@ return [
     'news_list_title' => 'Berita Lainnya',
 
     // page event
-    'event_title' => 'Acara',
+    'event_title' => 'Pencarian Acara',
+    'event_category_ticket' => 'Kategori Tiket',
     'event_free_price' => 'Gratis',
+    'event_paid_price' => 'Berbayar',
     'event_information' => 'Informasi',
     'event_date' => 'Jam dan Waktu',
     'event_location' => 'Lokasi',
     'event_close' => 'Pendaftaran Ditutup',
 
     // page education program
-    'edu_title' => 'Program Pendidikan',
+    'edu_title' => 'Pencarian Program Pendidikan',
     'edu_information' => 'Informasi',
     'edu_information_opening' => 'Jam Buka',
     'edu_information_monday' => 'Senin',

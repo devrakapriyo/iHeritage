@@ -11,6 +11,7 @@ use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
+use App\Model\institutional;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -35,9 +36,29 @@ class InterfaceController extends Controller
         return view('FE.pages.home', compact('museum','palace', 'nature', 'news'));
     }
 
-    public function museum($museum_name, $id)
+    public function search(Request $request)
     {
-        $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $museum_name)->where('content.id', $id)->first();
+        $query = content_tbl::select('content.*','content_detail.place_id', 'institutional.category')
+            ->join('institutional','institutional.id',"=",'content.institutional_id')
+            ->join('content_detail','content_detail.content_id',"=",'content.id');
+
+        $query->when($request->category != "all", function ($q) use ($request) {
+            return $q->where('institutional.category', $request->category);
+        });
+
+        $query->when($request->place_id != "all", function ($q) use ($request) {
+            return $q->where('content_detail.place_id', $request->place_id);
+        });
+
+        $data = $query->where('content.is_active', "Y")
+            ->orderBy('content.created_at', 'desc')
+            ->get();
+        return view('FE.pages.search', compact('data'));
+    }
+
+    public function detailContent($seo, $id)
+    {
+        $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $seo)->where('content.id', $id)->first();
         $collection = content_collection_tbl::select('id','name','banner','media_type','description_ind','description_en','place_id','media_type')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
         $color_media = [
             'document'=>'primary',
@@ -54,6 +75,35 @@ class InterfaceController extends Controller
     public function collection()
     {
         $data = content_collection_tbl::where('is_active',"Y")->get();
+        $color_media = [
+            'document'=>'primary',
+            'audio'=>'success',
+            'video'=>'danger',
+            'image'=>'warning'
+        ];
+        return view('FE.pages.collection', compact('data','color_media'));
+    }
+
+    public function collectionSearch(Request $request)
+    {
+        $query = content_collection_tbl::join('content', 'content_collection.content_id', '=', 'content.id')
+            ->select('content_collection.*', 'content.institutional_id');
+
+        $query->when($request->media_type != "all", function ($q) use ($request) {
+            return $q->where('media_type', $request->media_type);
+        });
+
+        $query->when($request->place_id != "all", function ($q) use ($request) {
+            return $q->where('place_id', $request->place_id);
+        });
+
+        $query->when($request->institutional_id != "all", function ($q) use ($request) {
+            return $q->where('institutional_id', $request->institutional_id);
+        });
+
+        $data = $query->where('content_collection.is_active',"Y")
+            ->get();
+
         $color_media = [
             'document'=>'primary',
             'audio'=>'success',
@@ -145,6 +195,35 @@ class InterfaceController extends Controller
         return view('FE.pages.event', compact('data'));
     }
 
+    public function eventSearch(Request $request)
+    {
+        $query = content_event_tbl::join('content', 'content_event.content_id', '=', 'content.id')
+            ->select('content_event.*', 'content.institutional_id');
+
+        $query->when($request->price != "all", function ($q) use ($request) {
+            if($request->price == "free")
+            {
+                return $q->where('price', 0);
+            }elseif($request->price == "paid"){
+                return $q->where('price', "!=", 0);
+            }
+        });
+
+        $query->when($request->place_id != "all", function ($q) use ($request) {
+            return $q->where('place_id', $request->place_id);
+        });
+
+        $query->when($request->institutional_id != "all", function ($q) use ($request) {
+            return $q->where('institutional_id', $request->institutional_id);
+        });
+
+        $data = $query->where('close_registration','>=',date('Y-m-d H:i:s'))
+            ->where('content_event.is_active',"Y")
+            ->where('is_publish',"Y")
+            ->get();
+        return view('FE.pages.event', compact('data'));
+    }
+
     public function eventDetail($seo, $id)
     {
         $detail = content_event_tbl::where('seo',$seo)
@@ -159,6 +238,25 @@ class InterfaceController extends Controller
     public function educationProgram()
     {
         $data = content_edu_tbl::where('is_active',"Y")
+            ->where('is_publish',"Y")
+            ->get();
+        return view('FE.pages.edu-program', compact('data'));
+    }
+
+    public function educationProgramSearch(Request $request)
+    {
+       $query = content_edu_tbl::join('content', 'content_edu_program.content_id', '=', 'content.id')
+            ->select('content_edu_program.*', 'content.institutional_id');
+
+        $query->when($request->place_id != "all", function ($q) use ($request) {
+            return $q->where('place_id', $request->place_id);
+        });
+
+        $query->when($request->institutional_id != "all", function ($q) use ($request) {
+            return $q->where('institutional_id', $request->institutional_id);
+        });
+
+        $data = $query->where('content_edu_program.is_active',"Y")
             ->where('is_publish',"Y")
             ->get();
         return view('FE.pages.edu-program', compact('data'));

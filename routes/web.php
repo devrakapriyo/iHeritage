@@ -19,8 +19,11 @@ Route::get('locale/{locale}', function($locale){
 Route::namespace('FE')->group(function () {
     
     Route::get('/', 'InterfaceController@home');
-    Route::get('/content/{museum_name}/{id}', 'InterfaceController@museum');
+    Route::get('/search', 'InterfaceController@search');
+    Route::get('/content/{seo}/{id}', 'InterfaceController@detailContent');
+
     Route::get('/collection', 'InterfaceController@collection');
+    Route::get('/collection-search', 'InterfaceController@collectionSearch');
     Route::get('/collection/detail/{id}', 'InterfaceController@collectionDetail')->name('collection-detail');
     Route::get('/vr-tour', 'InterfaceController@vrTour');
 
@@ -35,9 +38,11 @@ Route::namespace('FE')->group(function () {
     Route::get('/news/detail/{id}', 'InterfaceController@newsDetail');
 
     Route::get('/event', 'InterfaceController@event');
+    Route::get('/event-search', 'InterfaceController@eventSearch');
     Route::get('/event/detail/{seo}/{id}', 'InterfaceController@eventDetail');
 
     Route::get('/education-program', 'InterfaceController@educationProgram');
+    Route::get('/education-program-search', 'InterfaceController@educationProgramSearch');
     Route::get('/education-program/detail/{seo}/{id}', 'InterfaceController@educationProgramDetail');
 });
 

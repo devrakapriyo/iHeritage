@@ -9,9 +9,14 @@ return [
     'login_admin' => 'Login as Administrator',
     'register_admin' => 'Register as Administrator',
 
+    // search
+    'title_search' => 'Sorry,',
+    'msg_search' => 'The data you are looking for has not been found',
+
     // page home
     'home_title' => 'The Indonesian Heritage Network',
     'home_description' => 'Let us explore the extraordinary heritage of the nation to push the boundaries of understanding in the past and today.',
+    'home_result_search' => 'Result Search...',
     
     'head_menu_about' => 'About',
     'head_menu_service' => 'Services',
@@ -40,11 +45,15 @@ return [
     'home_news_title' => 'News',
 
     // page collection
-    'heritage_title' => 'Collections',
+    'heritage_title' => 'Collection Search',
     'collection_address' => 'Address',
     'collection_creator' => 'Creator',
     'collection_year' => 'Created Year',
     'collection_type' => 'Type of Collection',
+    'collection_type_document' => 'Document',
+    'collection_type_audio' => 'Audio',
+    'collection_type_image' => 'Image',
+    'collection_type_video' => 'Video',
     'collection_lang' => 'Language',
     'collection_topic' => 'Topic',
     'collection_place' => 'Place/Provice',
@@ -89,15 +98,17 @@ return [
     'news_list_title' => 'Other News',
 
     // page event
-    'event_title' => 'Events',
+    'event_title' => 'Search Event',
+    'event_category_ticket' => 'Ticket Category',
     'event_free_price' => 'Free',
+    'event_paid_price' => 'Paid',
     'event_information' => 'Information',
     'event_date' => 'Date and Time',
     'event_location' => 'Location',
     'event_close' => 'Registration is Closed',
 
     // page education program
-    'edu_title' => 'Education Program',
+    'edu_title' => 'Search Education Program',
     'edu_information' => 'Information',
     'edu_information_opening' => 'Opening Hours',
     'edu_information_monday' => 'Monday',

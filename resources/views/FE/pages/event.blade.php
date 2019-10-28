@@ -5,10 +5,108 @@
 @section('content')
 
     <div class="container">
-        <h2 class="text-capitalize mt-5">@lang('messages.event_title')</h2>
-        <hr>
+        <!-- Page Search Desktop-->
+        <div class="mt-5 mb-2 d-none d-lg-block">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h3 class="card-title mb-3">
+                        @lang('messages.event_title')
+                    </h3>
+                    <form method="get" action="{{url('event-search')}}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select name="price" class="form-control">
+                                        <option value="all">@lang('messages.event_category_ticket')</option>
+                                        <option value="free">@lang('messages.event_free_price')</option>
+                                        <option value="paid">@lang('messages.event_paid_price')</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select name="place_id" class="form-control">
+                                        <option value="all">@lang('messages.home_select_place')</option>
+                                        @foreach(\App\Model\place_tbl::listSearch() as $items)
+                                            <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select name="institutional_id" class="form-control">
+                                        <option value="all">@lang('messages.collection_institution')</option>
+                                        @foreach(\App\Model\institutional::listInstitutional() as $items)
+                                            <option value="{{$items->id}}">{{$items->institutional_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-md-8 col-md-4">
+                                <div class="form-group">
+                                    <button class="btn btn-block btn-warning">@lang('messages.home_select_search')</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {{--mobile view--}}
+        <div class="mt-3 mb-2 d-lg-none">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title mb-3">
+                        @lang('messages.event_title')
+                    </h3>
+                    <form method="get" action="{{url('event-search')}}">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mt-3">
+                                    <select name="price" class="form-control">
+                                        <option value="all">@lang('messages.event_category_ticket')</option>
+                                        <option value="free">@lang('messages.event_free_price')</option>
+                                        <option value="paid">@lang('messages.event_paid_price')</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select name="place_id" class="form-control">
+                                        <option value="all">@lang('messages.home_select_place')</option>
+                                        @foreach(\App\Model\place_tbl::listSearch() as $items)
+                                            <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select name="institutional_id" class="form-control">
+                                        <option value="all">@lang('messages.collection_institution')</option>
+                                        @foreach(\App\Model\institutional::listInstitutional() as $items)
+                                            <option value="{{$items->id}}">{{$items->institutional_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button class="btn btn-block btn-dark text-uppercase">@lang('messages.home_select_search')</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="row mb-5 mt-4">
-            @foreach($data as $item)
+            @forelse($data as $item)
             <div class="col-md-4">
                 <div class="card h-100">
                     <a href="{{url('event/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
@@ -39,7 +137,16 @@
                     </a>
                 </div>
             </div>
-            @endforeach
+            @empty
+                <div class="col-md-12">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h1 class="display-4">@lang('messages.title_search')</h1>
+                            <p class="lead">@lang('messages.msg_search')</p>
+                        </div>
+                    </div>
+                </div>
+            @endforelse
         </div>
         <!-- /.row -->
     </div>

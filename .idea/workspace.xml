@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/login-visitor.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/login-visitor.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/adminNews/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/adminNews/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/adminOurServices/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/adminOurServices/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,18 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+            <state relative-caret-position="595">
+              <caret line="257" column="39" lean-forward="false" selection-start-line="257" selection-start-column="39" selection-end-line="257" selection-end-column="39" />
               <folding>
-                <element signature="e#0#14465#0#Blade" expanded="false" />
-                <marker date="1572160363849" expanded="true" signature="657:1087" ph="..." />
-                <marker date="1572160363849" expanded="true" signature="674:1087" ph="..." />
-                <marker date="1572160363849" expanded="true" signature="2985:3242" ph="..." />
-                <marker date="1572160363849" expanded="true" signature="4751:5153" ph="..." />
-                <marker date="1572160363849" expanded="true" signature="7438:7645" ph="..." />
+                <element signature="e#0#14291#0#Blade" expanded="false" />
+                <element signature="e#0#14291#0#Blade" expanded="false" />
+                <element signature="e#0#14291#0#Blade" expanded="false" />
+                <element signature="e#0#14291#0#Blade" expanded="false" />
+                <element signature="e#9502#13583#0#HTML" expanded="false" />
+                <marker date="1572342832397" expanded="true" signature="675:875" ph="..." />
+                <marker date="1572342832397" expanded="true" signature="2830:3087" ph="..." />
+                <marker date="1572342832397" expanded="true" signature="4596:4998" ph="..." />
+                <marker date="1572342832397" expanded="true" signature="7283:7490" ph="..." />
               </folding>
             </state>
           </provider>
@@ -77,16 +79,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
               <caret line="34" column="72" lean-forward="false" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/adminOurServices/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="59" column="93" lean-forward="false" selection-start-line="59" selection-start-column="93" selection-end-line="59" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -176,7 +168,6 @@
         <option value="$PROJECT_DIR$/resources/views/BE/pages/event/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/event/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/register.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
         <option value="&lt;b49f8af8-c9a6-4fd9-92c1-c7ddb5b2be08&gt;/resources/views/BE/libs/sidebar.blade.php" />
         <option value="&lt;b49f8af8-c9a6-4fd9-92c1-c7ddb5b2be08&gt;/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/IndexController.php" />
@@ -194,6 +185,7 @@
         <option value="$PROJECT_DIR$/resources/views/BE/login-visitor.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/adminNews/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/adminOurServices/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
       </list>
     </option>
   </component>
@@ -291,15 +283,6 @@
               <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BE" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="adminOurServices" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="FE" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -368,12 +351,12 @@
       <workItem from="1569897956922" duration="47761000" />
       <workItem from="1571018734224" duration="15534000" />
       <workItem from="1571639038337" duration="58448000" />
-      <workItem from="1572227523504" duration="16576000" />
+      <workItem from="1572227523504" duration="18713000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200815000" />
+    <option name="totallyTimeSpent" value="202952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -650,21 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#14465#0#Blade" expanded="false" />
-            <marker date="1572160363849" expanded="true" signature="657:1087" ph="..." />
-            <marker date="1572160363849" expanded="true" signature="674:1087" ph="..." />
-            <marker date="1572160363849" expanded="true" signature="2985:3242" ph="..." />
-            <marker date="1572160363849" expanded="true" signature="4751:5153" ph="..." />
-            <marker date="1572160363849" expanded="true" signature="7438:7645" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -807,6 +775,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/adminOurServices/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="59" column="93" lean-forward="false" selection-start-line="59" selection-start-column="93" selection-end-line="59" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/login-visitor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -815,11 +791,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/adminOurServices/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="59" column="93" lean-forward="false" selection-start-line="59" selection-start-column="93" selection-end-line="59" selection-end-column="93" />
-          <folding />
+        <state relative-caret-position="595">
+          <caret line="257" column="39" lean-forward="false" selection-start-line="257" selection-start-column="39" selection-end-line="257" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#14291#0#Blade" expanded="false" />
+            <element signature="e#0#14291#0#Blade" expanded="false" />
+            <element signature="e#0#14291#0#Blade" expanded="false" />
+            <element signature="e#0#14291#0#Blade" expanded="false" />
+            <element signature="e#9502#13583#0#HTML" expanded="false" />
+            <marker date="1572342832397" expanded="true" signature="675:875" ph="..." />
+            <marker date="1572342832397" expanded="true" signature="2830:3087" ph="..." />
+            <marker date="1572342832397" expanded="true" signature="4596:4998" ph="..." />
+            <marker date="1572342832397" expanded="true" signature="7283:7490" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

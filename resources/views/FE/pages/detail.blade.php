@@ -18,14 +18,20 @@
             @endphp
             <small>{{$text}}</small>
             <hr>
+
             @php
-                $text = App::isLocale('id') ? htmlspecialchars_decode($detail->long_description_ind) : htmlspecialchars_decode($detail->long_description_en);
-                $btn_loadmore = App::isLocale('id') ? "muat lebih banyak" : "loadmore";
-                $limit_text = strlen($text) > 1000 ? substr($text, 0, 1000)."<a class='btn btn-block btn-warning mt-3 text-uppercase' id='btn-loadmore'>".$btn_loadmore."</a>" : $text;
-                $next_text = substr($text, 1000);
+                $text = App::isLocale('id') ? strip_tags($detail->long_description_ind) : strip_tags($detail->long_description_en);
+                $short_text = strlen($text) > 1000 ? substr($text, 0, 1000) : $text;
             @endphp
-            {!! $limit_text !!}<span id="page-loadmore">{!! $next_text !!}</span>
-            <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='btn-hide-loadmore'>@lang('messages.museum_btn_hide_loadmore')</a>
+            <div id="short">
+                {{$short_text}}
+            </div>
+            <div id="long">
+                {!! $text !!}
+            </div>
+
+            <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='hide'>-</a>
+            <a class='btn btn-block btn-warning mt-3 text-uppercase' id='show'>+</a>
 
             {{--collection--}}
             @if(count($collection) > 0)
@@ -250,20 +256,27 @@
 @section('footer')
     <script>
         $(document).ready(function () {
-            $("#page-loadmore").hide();
-            $("#btn-hide-loadmore").hide();
-            $("#btn-loadmore").show();
 
-            $("#btn-loadmore").on("click", function () {
-                $("#page-loadmore").show();
-                $("#btn-hide-loadmore").show();
-                $("#btn-loadmore").hide();
+            $("#long").hide();
+            $("#short").show();
+
+            $("#hide").hide();
+            $("#show").show();
+
+            $("#hide").click(function(){
+                $("#long").hide();
+                $("#short").show();
+
+                $("#hide").hide();
+                $("#show").show();
             });
 
-            $("#btn-hide-loadmore").on("click", function () {
-                $("#page-loadmore").hide();
-                $("#btn-hide-loadmore").hide();
-                $("#btn-loadmore").show();
+            $("#show").click(function(){
+                $("#long").show();
+                $("#short").hide();
+
+                $("#hide").show();
+                $("#show").hide();
             });
         });
     </script>

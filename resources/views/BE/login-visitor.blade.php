@@ -32,7 +32,8 @@
                 <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
                 <a href="{{url('register-visitor')}}" class="btn btn-lg btn-dark btn-block text-uppercase">@lang('messages.register_visitor')</a>
                 <hr class="my-4">
-                <a href="{{url('register')}}" class="btn btn-lg btn-primary btn-block text-uppercase">@lang('messages.register_admin')</a>
+                <a href="{{url('login')}}" class="btn btn-lg btn-primary btn-block text-uppercase">@lang('messages.login_admin')</a>
+                <a href="{{url('register')}}" class="btn btn-lg btn-light btn-block text-uppercase">@lang('messages.register_admin')</a>
             </form>
         </div>
     </div>

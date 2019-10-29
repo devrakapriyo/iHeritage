@@ -57,7 +57,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Banner : </label>
-                                        <input type="file" name="banner" class="form-control" required>
+                                        <input type="file" name="banner" class="form-control">
                                     </div>
                                 </div>
                             </div>

@@ -15,12 +15,12 @@
                             <div class="card bg-light">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
-                                        <a href="{{url('our-services/detail/'.$item->id)}}">
+                                        {{--<a href="{{url('our-services/detail/'.$item->id)}}">--}}
                                             <img src="{{$item->banner}}" class="card-img" alt="..." style="height: 100%">
-                                        </a>
+                                        {{--</a>--}}
                                     </div>
                                     <div class="col-md-8">
-                                        <a href="{{url('our-services/detail/'.$item->id)}}">
+                                        {{--<a href="{{url('our-services/detail/'.$item->id)}}">--}}
                                             <div class="card-body">
                                                 <h5 class="card-title text-capitalize text-dark">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
                                                 @php
@@ -28,7 +28,7 @@
                                                 @endphp
                                                 <p class="card-text text-dark">{!! $text !!}</p>
                                             </div>
-                                        </a>
+                                        {{--</a>--}}
                                     </div>
                                 </div>
                             </div>

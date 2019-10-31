@@ -97,7 +97,7 @@
                                     <small class="card-text text-uppercase">{{$item->map_area_detail}}</small>
                                 </p>
                                 @php
-                                    $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
+                                    $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);
                                     $text = stripslashes($text);
                                     $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('education-program/detail/'.$item->seo.'/'.$item->id)."'> ...readmore</a>" : $text;
                                 @endphp

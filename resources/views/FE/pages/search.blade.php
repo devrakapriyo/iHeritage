@@ -119,7 +119,7 @@
                                 </p>
                                 <p class="card-text mt-2">
                                     @php
-                                        $text = App::isLocale('id') ? htmlspecialchars_decode($list->short_description_ind) : htmlspecialchars_decode($list->short_description_en);
+                                        $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
                                         $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
                                     @endphp
                                     {!! $limit_text !!}

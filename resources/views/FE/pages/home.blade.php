@@ -118,7 +118,7 @@
                                 </p>
                                 <p class="card-text">
                                     @php
-                                        $text = App::isLocale('id') ? htmlspecialchars_decode($list->short_description_ind) : htmlspecialchars_decode($list->short_description_en);
+                                        $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
                                         $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
                                     @endphp
                                     {!! $limit_text !!}
@@ -159,7 +159,7 @@
                                     </p>
                                     <p class="card-text">
                                         @php
-                                            $text = App::isLocale('id') ? htmlspecialchars_decode($list->short_description_ind) : htmlspecialchars_decode($list->short_description_en);
+                                            $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
                                             $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
                                         @endphp
                                         {!! $limit_text !!}
@@ -192,7 +192,7 @@
                                     </p>
                                     <p class="card-text">
                                         @php
-                                            $text = App::isLocale('id') ? htmlspecialchars_decode($list->short_description_ind) : htmlspecialchars_decode($list->short_description_en);
+                                            $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
                                             $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
                                         @endphp
                                         {!! $limit_text !!}
@@ -226,7 +226,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title text-capitalize"><a href="{{url('news/detail/'.$item->id)}}" class="text-dark">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</a></h5>
                                     @php
-                                        $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
+                                        $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);
                                         $text = stripslashes($text);
                                         $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('news/detail/'.$item->id)."'> ...readmore</a>" : $text;
                                     @endphp
@@ -250,7 +250,7 @@
                                 </p>
                                 <p class="card-text">
                                     @php
-                                        $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
+                                        $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);
                                         $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('news/detail/'.$item->id)."'> ...readmore</a>" : $text;
                                     @endphp
                                     {!! $limit_text !!}

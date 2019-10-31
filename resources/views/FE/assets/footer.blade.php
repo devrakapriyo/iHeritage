@@ -3,4 +3,5 @@
 <script src="{{url('bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 {{--Custom script for sweetalert--}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{--Custome script share sosmed--}}
 @include('sweet::alert')

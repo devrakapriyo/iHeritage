@@ -190,6 +190,77 @@
         ]
     },
     {
+        "name": "chencha/share",
+        "version": "5.4.0",
+        "version_normalized": "5.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/prodeveloper/social-share.git",
+            "reference": "bd1361dc70dd7879c80d325d5e8e2aaf1d5d9a81"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/prodeveloper/social-share/zipball/bd1361dc70dd7879c80d325d5e8e2aaf1d5d9a81",
+            "reference": "bd1361dc70dd7879c80d325d5e8e2aaf1d5d9a81",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "^5.0|^6.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "guzzlehttp/guzzle": ">=5.3",
+            "mockery/mockery": "^0.9.4",
+            "orchestra/testbench": "~3.0"
+        },
+        "time": "2019-09-12T10:09:16+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Chencha\\Share\\ShareServiceProvider"
+                ],
+                "aliases": {
+                    "Share": "Chencha\\Share\\ShareFacade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Chencha\\Share": "src/"
+            },
+            "classmap": [
+                "tests/TestCase.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "thujohn",
+                "email": "jonathan.thuau@gmail.com"
+            },
+            {
+                "name": "chencha",
+                "email": "jacob@chenchatech.com"
+            },
+            {
+                "name": "datashaman",
+                "email": "marlinf@datashaman.com"
+            }
+        ],
+        "description": "Share links with Laravel 5/6",
+        "keywords": [
+            "laravel",
+            "laravel5",
+            "laravel6",
+            "share"
+        ]
+    },
+    {
         "name": "dnoegel/php-xdg-base-dir",
         "version": "0.1",
         "version_normalized": "0.1.0.0",
@@ -353,30 +424,32 @@
     },
     {
         "name": "doctrine/lexer",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/lexer.git",
-            "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8"
+            "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
-            "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+            "url": "https://api.github.com/repos/doctrine/lexer/zipball/e17f069ede36f7534b95adec71910ed1b49c74ea",
+            "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.2"
+            "php": "^7.2"
         },
         "require-dev": {
-            "phpunit/phpunit": "^4.5"
+            "doctrine/coding-standard": "^6.0",
+            "phpstan/phpstan": "^0.11.8",
+            "phpunit/phpunit": "^8.2"
         },
-        "time": "2019-06-08T11:03:04+00:00",
+        "time": "2019-07-30T19:33:28+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.0.x-dev"
+                "dev-master": "1.1.x-dev"
             }
         },
         "installation-source": "dist",
@@ -391,12 +464,12 @@
         ],
         "authors": [
             {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
                 "name": "Guilherme Blanco",
                 "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
             },
             {
                 "name": "Johannes Schmitt",
@@ -746,60 +819,6 @@
             "data",
             "faker",
             "fixtures"
-        ]
-    },
-    {
-        "name": "greggilbert/recaptcha",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/greggilbert/recaptcha.git",
-            "reference": "9e4703273fb4845effdd07cf20de317ac8834a6b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/greggilbert/recaptcha/zipball/9e4703273fb4845effdd07cf20de317ac8834a6b",
-            "reference": "9e4703273fb4845effdd07cf20de317ac8834a6b",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "~5.1",
-            "php": ">=5.3.0"
-        },
-        "time": "2019-09-06T02:09:37+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.2-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "classmap": [
-                "src/migrations"
-            ],
-            "psr-4": {
-                "Greggilbert\\Recaptcha\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Greg Gilbert",
-                "email": "greg@greg-gilbert.com"
-            }
-        ],
-        "description": "reCAPTCHA Validator for Laravel 5",
-        "homepage": "http://github.com/greggilbert/recaptcha",
-        "keywords": [
-            "captcha",
-            "laravel",
-            "laravel5",
-            "recaptcha"
         ]
     },
     {
@@ -1707,17 +1726,17 @@
     },
     {
         "name": "nikic/php-parser",
-        "version": "v4.2.4",
-        "version_normalized": "4.2.4.0",
+        "version": "v4.2.5",
+        "version_normalized": "4.2.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/nikic/PHP-Parser.git",
-            "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4"
+            "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/97e59c7a16464196a8b9c77c47df68e4a39a45c4",
-            "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4",
+            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
+            "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
             "shasum": ""
         },
         "require": {
@@ -1725,9 +1744,10 @@
             "php": ">=7.0"
         },
         "require-dev": {
+            "ircmaxell/php-yacc": "0.0.4",
             "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
         },
-        "time": "2019-09-01T07:51:21+00:00",
+        "time": "2019-10-25T18:33:07+00:00",
         "bin": [
             "bin/php-parse"
         ],
@@ -2577,17 +2597,17 @@
     },
     {
         "name": "phpunit/phpunit",
-        "version": "7.5.16",
-        "version_normalized": "7.5.16.0",
+        "version": "7.5.17",
+        "version_normalized": "7.5.17.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "316afa6888d2562e04aeb67ea7f2017a0eb41661"
+            "reference": "4c92a15296e58191a4cd74cff3b34fc8e374174a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/316afa6888d2562e04aeb67ea7f2017a0eb41661",
-            "reference": "316afa6888d2562e04aeb67ea7f2017a0eb41661",
+            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4c92a15296e58191a4cd74cff3b34fc8e374174a",
+            "reference": "4c92a15296e58191a4cd74cff3b34fc8e374174a",
             "shasum": ""
         },
         "require": {
@@ -2626,7 +2646,7 @@
             "ext-xdebug": "*",
             "phpunit/php-invoker": "^2.0"
         },
-        "time": "2019-09-14T09:08:39+00:00",
+        "time": "2019-10-28T10:37:36+00:00",
         "bin": [
             "phpunit"
         ],

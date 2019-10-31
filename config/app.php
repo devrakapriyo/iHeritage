@@ -169,6 +169,7 @@ return [
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+        Chencha\Share\ShareServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +233,7 @@ return [
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
+        'Share' => Chencha\Share\ShareFacade::class,
 
     ],
 

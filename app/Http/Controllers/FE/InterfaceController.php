@@ -11,7 +11,6 @@ use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
-use App\Model\institutional;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -19,6 +18,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Model\content_tbl;
 
 use Alert;
+use Share;
 
 class InterfaceController extends Controller
 {
@@ -116,7 +116,9 @@ class InterfaceController extends Controller
     public function collectionDetail($id)
     {
         $detail = content_collection_tbl::where('id',$id)->where('is_active',"Y")->first();
-        return view('FE.pages.collection-detail', compact('detail'));
+        $facebook = Share::load(route('collection-detail', ['id'=>$id]), "iHeritage.id - ".$detail->name)->facebook();
+        $twitter = Share::load(route('collection-detail', ['id'=>$id]), "iHeritage.id - ".$detail->name)->twitter();
+        return view('FE.pages.collection-detail', compact('detail', 'facebook', 'twitter'));
     }
 
     public function vrTour()

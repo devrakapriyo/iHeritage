@@ -48,3 +48,13 @@ body {
   width:25px;
   height:25px;
 }
+
+.btn-facebook {
+  background: #1778f2;
+  color: #fff;
+}
+
+.btn-twitter {
+  background: #08a0e9;
+  color: #fff;
+}

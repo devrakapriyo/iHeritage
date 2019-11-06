@@ -10,3 +10,5 @@
 
 <!-- Custom styles for this template -->
 <link href="{{url('bootstrap/css/business-frontpage.css')}}" rel="stylesheet">
+
+<link href="{{url('font-awesome/css/font-awesome.css')}}" rel="stylesheet" type="text/css">

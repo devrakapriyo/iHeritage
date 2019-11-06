@@ -10,10 +10,10 @@
                     <a href="" class="btn btn-warning btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#exampleModal">view collection</a>
                     <div class="row mt-2">
                         <div class="col-md-6">
-                            <a href="{{$facebook}}" class="btn btn-sm btn-primary btn-block" target="_blank">share facebook</a>
+                            <a href="{{$facebook}}" class="btn btn-sm btn-facebook btn-block" target="_blank" title="share facebook"><i class="fa fa-facebook"></i></a>
                         </div>
                         <div class="col-md-6">
-                            <a href="{{$twitter}}" class="btn btn-sm btn-info btn-block" target="_blank">share twitter</a>
+                            <a href="{{$twitter}}" class="btn btn-sm btn-twitter btn-block" target="_blank" title="share twitter"><i class="fa fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>

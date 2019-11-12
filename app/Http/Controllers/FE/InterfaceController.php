@@ -32,7 +32,7 @@ class InterfaceController extends Controller
         $museum = $this->listContent("museum");
         $palace = $this->listContent("palace");
         $nature = $this->listContent("nature");
-        $news = admin_news_tbl::where('is_active',"Y")->take(3)->get();
+        $news = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->take(4)->get();
         return view('FE.pages.home', compact('museum','palace', 'nature', 'news'));
     }
 
@@ -177,14 +177,14 @@ class InterfaceController extends Controller
 
     public function news()
     {
-        $data = admin_news_tbl::where('is_active',"Y")->get();
+        $data = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->get();
         return view('FE.pages.news', compact('data'));
     }
 
     public function newsDetail($id)
     {
         $data = admin_news_tbl::where('id',$id)->where('is_active',"Y")->first();
-        $news = admin_news_tbl::where('is_active',"Y")->take(5)->get();
+        $news = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->take(5)->get();
         return view('FE.pages.news-detail', compact('data','news'));
     }
 

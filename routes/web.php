@@ -117,6 +117,13 @@ Route::prefix('dashboard')->namespace('BE')->middleware('admin')->group(function
     Route::get('/content-pages/{category}/collection/{id}', 'ContentController@content_collection')->name('content-collection');
     Route::post('/content-pages/{category}/collection/{id}', 'ContentController@content_collection_upload')->name('content-collection-upload');
     Route::get('/content-pages/{category}/collection-delete/{id}', 'ContentController@content_collection_delete')->name('content-collection-delete');
+    // collection personal
+    Route::get('/collection-pages', 'CollectionController@collection_peges')->name('collection-pages');
+    Route::get('/collection-pages/get', 'CollectionController@collection_get')->name('collection-get');
+    Route::get('/collection-pages/add', 'CollectionController@collection_add')->name('collection-add');
+    Route::post('/collection-pages/add', 'CollectionController@collection_post')->name('collection-post');
+    Route::get('/collection/edit/{id}', 'CollectionController@collection_edit')->name('collection-edit');
+    Route::post('/collection/update/{id}', 'CollectionController@collection_update')->name('collection-update');
 
     // category
     Route::get('/category-content', 'IndexController@category_content')->name('category-page');

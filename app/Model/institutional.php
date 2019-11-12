@@ -15,7 +15,7 @@ class institutional extends Model
 
     public static function getData($parameter, $field)
     {
-        return self::select($field)->where('id', $parameter)->where('is_active', "Y")->first();
+        return self::select($field)->where('id', $parameter)->first();
     }
 
     public static function getName($id)

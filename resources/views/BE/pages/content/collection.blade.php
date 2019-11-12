@@ -170,10 +170,16 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Description :</label>
-                                        <textarea name="description" class="form-control text-editor" rows="5" required></textarea>
+                                        <label>Description (bahasa indonesia):</label>
+                                        <textarea name="description_ind" class="form-control text-editor" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Description (bahasa inggris):</label>
+                                        <textarea name="description_en" class="form-control text-editor" rows="5"></textarea>
                                     </div>
                                 </div>
                             </div>

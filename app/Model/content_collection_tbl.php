@@ -17,4 +17,9 @@ class content_collection_tbl extends Model
             return self::select('name')->where('content_id',$content_id)->where('media_typle',$type)->where('is_active', "Y")->count();
         }
     }
+
+    public static function fieldContent($id, $field)
+    {
+        return self::select($field)->where('id',$id)->first()->$field;
+    }
 }

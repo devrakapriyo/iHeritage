@@ -445,7 +445,8 @@ class ContentController extends Controller
         $simpan->lang = $request->lang;
         $simpan->topic = $request->topic;
         $simpan->physical_description = $request->physical_description;
-        $simpan->description = $request->description;
+        $simpan->description_ind = $request->description_ind;
+        $simpan->description_en = $request->description_en;
         $simpan->publisher = $request->publisher;
         $simpan->institution_owner = $request->institution_owner;
         $simpan->link_url = $request->link_url;

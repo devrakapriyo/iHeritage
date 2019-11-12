@@ -91,11 +91,19 @@
         </div>
     </li>
 
+    <!-- Nav Item - Collection -->
+    <li class="nav-item @yield('collection')">
+        <a class="nav-link" href="{{route('collection-add')}}">
+            <i class="fas fa-fw fa-atlas"></i>
+            <span>Collection</span>
+        </a>
+    </li>
+
     <!-- Nav Item - VR -->
     <li class="nav-item @yield('vr')">
         <a class="nav-link" href="{{route('vr-page')}}">
             <i class="fas fa-fw fa-atlas"></i>
-            <span>Virtual Reality Tour 360<sup>o<sup></span>
+            <span>Virtual Reality Tour 360<sup>o</sup></span>
         </a>
     </li>
 

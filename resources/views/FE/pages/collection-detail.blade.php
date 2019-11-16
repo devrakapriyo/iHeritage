@@ -19,9 +19,6 @@
                 </div>
             </div>
             <div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:350px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:350px;}</style></div>
-            <div class="form-group mt-3">
-                <span class="font-weight-lighter">@lang('messages.collection_address') :<br>{{$detail->address}}</span>
-            </div>
         </div>
         <div class="col-md-8">
             <h2 class="text-capitalize">{{$detail->name}}</h2>

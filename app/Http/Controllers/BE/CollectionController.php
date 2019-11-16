@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BE;
 
 use App\Helper\helpers;
 use App\Model\content_collection_tbl;
+use App\Model\content_detail_tbl;
 use App\Model\content_tbl;
 use App\Model\institutional;
 use Illuminate\Http\Request;
@@ -118,6 +119,24 @@ class CollectionController extends Controller
             $banner = 'https://via.placeholder.com/300';
         }
 
+        if($request->place_id)
+        {
+            $place_id = $request->place_id;
+        }else{
+            $place_id = content_detail_tbl::fieldContent($request->content_id, "place_id");
+        }
+
+        if($request->map_area_detail)
+        {
+            $map_area_detail = $request->map_area_detail;
+            $latitude_detail = $request->latitude_detail;
+            $longitude_detail = $request->longitude_detail;
+        }else{
+            $map_area_detail = content_detail_tbl::fieldContent($request->content_id, "map_area_detail");
+            $latitude_detail = content_detail_tbl::fieldContent($request->content_id, "latitude_detail");
+            $longitude_detail = content_detail_tbl::fieldContent($request->content_id, "longitude_detail");
+        }
+
         $simpan = new content_collection_tbl;
         $simpan->content_id = $request->content_id;
         $simpan->name = $request->name;
@@ -134,10 +153,10 @@ class CollectionController extends Controller
         $simpan->publisher = $request->publisher;
         $simpan->institution_owner = $request->institution_owner;
         $simpan->link_url = $request->link_url;
-        $simpan->place_id = $request->place_id;
-        $simpan->map_area_detail = $request->map_area_detail;
-        $simpan->latitude_detail = $request->latitude_detail;
-        $simpan->longitude_detail = $request->longitude_detail;
+        $simpan->place_id = $place_id;
+        $simpan->map_area_detail = $map_area_detail;
+        $simpan->latitude_detail = $latitude_detail;
+        $simpan->longitude_detail = $longitude_detail;
         $simpan->is_active = "Y";
         $simpan->created_by = auth('admin')->user()->name;
         $simpan->save();
@@ -205,6 +224,24 @@ class CollectionController extends Controller
             $banner = content_collection_tbl::fieldContent($id, "banner");
         }
 
+        if($request->place_id)
+        {
+            $place_id = $request->place_id;
+        }else{
+            $place_id = content_detail_tbl::fieldContent($request->content_id, "place_id");
+        }
+
+        if($request->map_area_detail)
+        {
+            $map_area_detail = $request->map_area_detail;
+            $latitude_detail = $request->latitude_detail;
+            $longitude_detail = $request->longitude_detail;
+        }else{
+            $map_area_detail = content_detail_tbl::fieldContent($request->content_id, "map_area_detail");
+            $latitude_detail = content_detail_tbl::fieldContent($request->content_id, "latitude_detail");
+            $longitude_detail = content_detail_tbl::fieldContent($request->content_id, "longitude_detail");
+        }
+
         content_collection_tbl::where('id',$id)
             ->update([
                 'name'=>$request->name,
@@ -220,10 +257,10 @@ class CollectionController extends Controller
                 'publisher'=>$request->publisher,
                 'institution_owner'=>$request->institution_owner,
                 'link_url'=>$request->link_url,
-                'place_id'=>$request->place_id,
-                'map_area_detail'=>$request->map_area_detail,
-                'latitude_detail'=>$request->latitude_detail,
-                'longitude_detail'=>$request->longitude_detail
+                'place_id'=>$place_id,
+                'map_area_detail'=>$map_area_detail,
+                'latitude_detail'=>$latitude_detail,
+                'longitude_detail'=>$longitude_detail
             ]);
 
         Alert::success('Collection updated successfully');

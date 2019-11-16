@@ -95,7 +95,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Created Year : </label>
-                                    <input type="text" name="created_year" class="form-control" placeholder="2019" required>
+                                    <input type="text" name="created_year" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -135,7 +135,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Place : </label>
-                                    <select name="place_id" class="form-control" required>
+                                    <select name="place_id" class="form-control">
                                         <option value=""></option>
                                         @foreach(App\Model\place_tbl::listSearch() as $item)
                                             <option value="{{$item->id}}">{{$item->place_ind}}</option>
@@ -146,7 +146,7 @@
                             <div class="col-md-9">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="" onchange="check_location()" required>
+                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="" onchange="check_location()">
                                     <input type="hidden" name="latitude_detail" id="latitude">
                                     <input type="hidden" name="longitude_detail" id="longitude">
                                 </div>
@@ -164,6 +164,14 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Physical Description :</label>
+                                    <input type="text" name="physical_description" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Description (bahasa indonesia):</label>
@@ -174,14 +182,6 @@
                                 <div class="form-group">
                                     <label>Description (bahasa inggris):</label>
                                     <textarea name="description_en" class="form-control text-editor" rows="5"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Physical Description :</label>
-                                    <textarea name="physical_description" class="form-control text-editor" rows="5"></textarea>
                                 </div>
                             </div>
                         </div>

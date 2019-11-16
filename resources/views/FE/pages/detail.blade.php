@@ -20,14 +20,15 @@
             <hr>
 
             @php
+                $text_nonrender = App::isLocale('id') ? $detail->long_description_ind : $detail->long_description_en;
                 $text = App::isLocale('id') ? strip_tags($detail->long_description_ind) : strip_tags($detail->long_description_en);
-                $short_text = strlen($text) > 1000 ? substr($text, 0, 1000) : $text;
+                $short_text = strlen($text) > 1000 ? substr($text, 0, 1000) : $text_nonrender;
             @endphp
             <div id="short">
-                {{$short_text}}
+                {!! $short_text !!}
             </div>
             <div id="long">
-                {!! $text !!}
+                {!! $text_nonrender !!}
             </div>
 
             <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='hide'>-</a>

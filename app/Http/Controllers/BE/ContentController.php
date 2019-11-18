@@ -117,6 +117,7 @@ class ContentController extends Controller
             $content->long_description_en = $request->long_description_en;
             $content->long_description_ind = $request->long_description_ind;
             $content->institutional_id = auth('admin')->user()->institutional_id;
+            $content->created_by = auth('admin')->user()->id;
             $content->save();
 
             $detail = new content_detail_tbl;

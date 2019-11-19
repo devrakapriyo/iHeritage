@@ -111,21 +111,25 @@
                     <div class="card h-100">
                         <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                             <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$list->name}}</h5>
-                                <p class="card-text">
-                                    <span class="badge badge-warning text-uppercase">{{$list->location}}</span> |
-                                    <span class="badge badge-secondary text-uppercase">{{$list->category}}</span>
-                                </p>
-                                <p class="card-text mt-2">
-                                    @php
-                                        $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
-                                        $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
-                                    @endphp
-                                    {!! $limit_text !!}
-                                </p>
-                            </div>
                         </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                    {{$list->name}}
+                                </a>
+                            </h5>
+                            <p class="card-text">
+                                <span class="badge badge-warning text-uppercase">{{$list->location}}</span> |
+                                <span class="badge badge-secondary text-uppercase">{{$list->category}}</span>
+                            </p>
+                            <p class="card-text mt-2">
+                                @php
+                                    $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
+                                    $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
+                                @endphp
+                                {!! $limit_text !!}
+                            </p>
+                        </div>
                     </div>
                 </div>
             @empty

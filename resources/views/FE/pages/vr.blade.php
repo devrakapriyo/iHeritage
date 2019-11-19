@@ -30,7 +30,7 @@
                                 <h5 class="card-title text-uppercase">
                                     {{$item->name}}
                                 </h5>
-                                <p class="card-text">virtual reality tour 360&deg;<br> <small>{{\Illuminate\Support\Str::replaceArray('http://', [""], $item->url_vr)}}</small></p>
+                                {{--<p class="card-text">virtual reality tour 360&deg;<br> <small>{{\Illuminate\Support\Str::replaceArray('http://', [""], $item->url_vr)}}</small></p>--}}
                                 <p class="card-text"><small class="text-muted">{{\App\Model\place_tbl::placeNameLang($item->place_id)}}</small></p>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                     <img class="card-img-top" src="{{$item->photo}}" alt="" height="200" widht="400">
                     <div class="card-body">
                         <h5 class="card-title">{{$item->name}}</h5>
-                        <p class="card-text">virtual reality tour 360&deg;<br> <small>{{\Illuminate\Support\Str::replaceArray('http://', [""], $item->url_vr)}}</small></p>
+                        {{--<p class="card-text">virtual reality tour 360&deg;<br> <small>{{\Illuminate\Support\Str::replaceArray('http://', [""], $item->url_vr)}}</small></p>--}}
                         <p class="card-text"><small class="text-muted">{{\App\Model\place_tbl::placeNameLang($item->place_id)}}</small></p>
                     </div>
                 </a>

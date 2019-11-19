@@ -17,4 +17,19 @@ class content_tbl extends Model
     {
         return self::select($field)->where('id',$id)->first()->$field;
     }
+
+    public static function countWaitingAppr($category)
+    {
+        $data = self::select('category')
+            ->join('institutional', 'institutional.id', '=', 'content.institutional_id')
+            ->where('category',$category)
+            ->where('content.is_active',"N");
+
+        if(empty($data->first()))
+        {
+            return 0;
+        }else{
+            return $data->count();
+        }
+    }
 }

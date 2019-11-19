@@ -72,13 +72,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Town Location : </label>
-                                        <input type="text" name="location" class="form-control" required>
+                                        <input type="text" name="location" class="form-control" value="{{$content->location}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Name Location :</label>
-                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$content->location}}" onchange="check_location()" required>
+                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude">
                                         <input type="hidden" name="longitude_detail" id="longitude">
                                     </div>

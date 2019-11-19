@@ -26,7 +26,17 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary text-capitalize">data content</h6>
-                    <a href="{{route('content-add', ['category'=>$category])}}" class="btn btn-primary">Add new content</a>
+                    @php
+                        $auth = auth('admin')->user();
+                        $content = App\Model\content_tbl::select('institutional_id')->where('institutional_id', $auth->institutional_id)->first();
+                    @endphp
+                    @if($auth->is_admin_master == "Y")
+                        <a href="{{route('content-add', ['category'=>$category])}}" class="btn btn-primary">Add new content</a>
+                    @else
+                        @if(empty($content))
+                            <a href="{{route('content-add', ['category'=>$category])}}" class="btn btn-primary">Add new content</a>
+                        @endif
+                    @endif
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">

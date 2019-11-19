@@ -1,7 +1,7 @@
 @extends('FE.layout')
 @section('content')
 <!-- Header -->
-<header class="ctn-museum-bg py-5" style="background-image: url('{{$detail->photo}}')">
+<header class="ctn-museum-bg py-5" style="background-image: url('{{$detail->photo}}') no-repeat center center fixed">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
         </div>

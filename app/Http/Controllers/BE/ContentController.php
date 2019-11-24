@@ -377,7 +377,7 @@ class ContentController extends Controller
 
     public function content_collection_upload(Request $request,$category,$id)
     {
-        if($request->media_type != "video")
+        if (($request->media_type != "video") || ($request->media_type != "url"))
         {
             if (!empty($request->file('media')))
             {

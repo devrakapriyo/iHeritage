@@ -112,7 +112,7 @@
                                             <option value="video">Video</option>
                                             <option value="audio">Audio</option>
                                             <option value="document">Document</option>
-                                            <option value="url">Link Website</option>
+                                            <option value="url">HTML 5</option>
                                         </select>
                                     </div>
                                 </div>

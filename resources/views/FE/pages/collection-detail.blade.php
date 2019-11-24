@@ -95,6 +95,8 @@
                     @elseif($detail->media_type == "document")
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
+                    @elseif($detail->media_type == "url")
+                        <a href="{{$item->media}}" class="btn btn-success btn-block" target="_blank">WEBSITE</a>
                     @endif
                 </div>
                 <div class="modal-footer">

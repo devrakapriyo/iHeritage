@@ -75,7 +75,7 @@
                                     <option value="audio">@lang('messages.collection_type_audio')</option>
                                     <option value="image">@lang('messages.collection_type_image')</option>
                                     <option value="video">@lang('messages.collection_type_video')</option>
-                                    <option value="url">HTML 5</option>
+                                    <option value="url">HTML5</option>
                                 </select>
                             </div>
                         </div>

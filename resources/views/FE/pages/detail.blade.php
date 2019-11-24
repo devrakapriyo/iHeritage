@@ -11,7 +11,7 @@
 <!-- Page Content -->
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 mt-2">
             <h2 class="text-capitalize">{{$detail->name}}</h2>
             @php
                 $text = App::isLocale('id') ? $detail->short_description_ind : $detail->short_description_en;
@@ -31,8 +31,8 @@
                 {!! $text_nonrender !!}
             </div>
 
-            <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='hide'>-</a>
-            <a class='btn btn-block btn-warning mt-3 text-uppercase' id='show'>+</a>
+            <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='hide'><i class="fa fa-minus fa-2x"></i></a>
+            <a class='btn btn-block btn-warning mt-3 text-uppercase' id='show'><i class="fa fa-plus fa-2x"></i></a>
 
             {{--collection--}}
             @if(count($collection) > 0)
@@ -175,8 +175,8 @@
                 </div>
             @endif
         </div>
-        <div class="col-md-4">
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:350px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:350px;}</style></div>
+        <div class="col-md-4 mt-2">
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:100%;}</style></div>
             <div class="form-group mt-3">
                 <h5>{{$detail->name}}</h5>
                 <span class="font-weight-lighter">{{$detail->address}}<br>

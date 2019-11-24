@@ -1,7 +1,4 @@
 @extends('BE.layout')
-@section('ctn-pgs')
-    show
-@endsection
 @section('collection')
     active
 @endsection

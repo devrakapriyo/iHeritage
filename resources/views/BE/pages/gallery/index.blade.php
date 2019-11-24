@@ -1,8 +1,5 @@
 @extends('BE.layout')
-@section('ctn-pgs')
-    show
-@endsection
-@section('gallery')
+@section('photo')
     active
 @endsection
 @section('content')

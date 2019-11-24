@@ -107,11 +107,11 @@
         </a>
     </li>
 
-    <!-- Nav Item - Gallery -->
-    <li class="nav-item @yield('gallery')">
+    <!-- Nav Item - Photo -->
+    <li class="nav-item @yield('photo')">
         <a class="nav-link" href="{{route('gallery-pages')}}">
             <i class="fas fa-fw fa-atlas"></i>
-            <span>Gallery</span>
+            <span>Photo</span>
         </a>
     </li>
 

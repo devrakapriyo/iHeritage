@@ -72,6 +72,10 @@
                                                         <a href="{{$item->media}}" target="_blank">lihat {{$item->name}}</a>
                                                     </div>
                                                 </div>
+                                            @elseif($item->media_type == "url")
+                                                <div class="form-group">
+                                                    <a href="{{$item->media}}" class="btn btn-success btn-block" target="_blank">WEBSITE</a>
+                                                </div>
                                             @endif
                                             <a href="{{route('content-collection-delete',['category'=>$category,'id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Collection</a>
                                         </div>
@@ -108,6 +112,7 @@
                                             <option value="video">Video</option>
                                             <option value="audio">Audio</option>
                                             <option value="document">Document</option>
+                                            <option value="url">Link Website</option>
                                         </select>
                                     </div>
                                 </div>

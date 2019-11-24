@@ -70,6 +70,7 @@
                                         <option value="video">Video</option>
                                         <option value="audio">Audio</option>
                                         <option value="document">Document</option>
+                                        <option value="url">Link Website</option>
                                     </select>
                                 </div>
                             </div>
@@ -82,6 +83,11 @@
                                     <label>Link Youtube : </label>
                                     <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" required>
                                     <small class="text-danger">paste your url from youtube</small>
+                                </div>
+                                <div class="form-group" id="media_url">
+                                    <label>Link Youtube : </label>
+                                    <input type="text" name="media" class="form-control" required>
+                                    <small class="text-danger">paste your link website</small>
                                 </div>
                             </div>
                         </div>
@@ -216,12 +222,19 @@
             $("#gmap_canvas").hide();
 
             $("#media_link").hide();
+            $("#media_url").hide();
             $("#media_type").on("change", function () {
                 if($("#media_type").val() === "video"){
                     $("#media_link").show();
+                    $("#media_url").hide();
+                    $("#media_file").hide();
+                }else if($("#media_type").val() === "url"){
+                    $("#media_link").hide();
+                    $("#media_url").show();
                     $("#media_file").hide();
                 }else{
                     $("#media_link").hide();
+                    $("#media_url").hide();
                     $("#media_file").show();
                 }
             });

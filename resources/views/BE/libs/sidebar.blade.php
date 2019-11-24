@@ -101,9 +101,17 @@
 
     <!-- Nav Item - Collection -->
     <li class="nav-item @yield('collection')">
-        <a class="nav-link" href="{{route('collection-add')}}">
+        <a class="nav-link" href="{{route('collection-pages')}}">
             <i class="fas fa-fw fa-atlas"></i>
             <span>Collection</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Gallery -->
+    <li class="nav-item @yield('gallery')">
+        <a class="nav-link" href="{{route('gallery-pages')}}">
+            <i class="fas fa-fw fa-atlas"></i>
+            <span>Gallery</span>
         </a>
     </li>
 

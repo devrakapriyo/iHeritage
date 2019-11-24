@@ -47,11 +47,13 @@ class ContentController extends Controller
                 return $substr."<a href='".route('content-edit', ['category'=>$category, 'id'=>$data->id])."'>...readmore</a>";
             })
             ->addColumn('gallery', function ($data) use ($category) {
-                $btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
+                //$btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
+                $btn_gallery = '<span class="badge badge-secondary">'.content_gallery_tbl::countAlbum($data->id).' photo</span>';
                 return $btn_gallery;
             })
             ->addColumn('collection', function ($data) use ($category) {
-                $btn_collection = '<a href="'.route('content-collection', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new collection?">'.content_collection_tbl::countCollectionType($data->id, "all").' collection</a>';
+                //$btn_collection = '<a href="'.route('content-collection', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new collection?">'.content_collection_tbl::countCollectionType($data->id, "all").' collection</a>';
+                $btn_collection = '<span class="badge badge-secondary">'.content_collection_tbl::countCollectionType($data->id, "all").' collection</span>';
                 return $btn_collection;
             })
             ->addColumn('action', function ($data) use ($category) {

@@ -43,11 +43,11 @@
                     <table class="table" id="datatable">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th></th>
                                 <th>Name</th>
-                                <th>Town Location</th>
+                                <th>Location</th>
                                 <th>Short Description</th>
+                                <th></th>
+                                <th></th>
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>
                             </tr>
                         </thead>
@@ -71,11 +71,11 @@
             serverSide: true,
             ajax: '{{route('content-get', ['category'=>$category])}}',
             columns: [
-                { data: 'gallery', name: 'gallery', orderable: false, searchable: false},
-                { data: 'collection', name: 'collection', orderable: false, searchable: false},
                 { data: 'name', name: 'name' },
                 { data: 'location', name: 'location' },
                 { data: 'short_description_ind', name: 'short_description_ind' },
+                { data: 'gallery', name: 'gallery', orderable: false, searchable: false},
+                { data: 'collection', name: 'collection', orderable: false, searchable: false},
                 { data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });

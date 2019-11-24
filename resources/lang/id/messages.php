@@ -34,7 +34,7 @@ return [
     'home_select_heritage' => 'Semua Pusaka di Indonesia',
     'home_select_search' => 'Cari',
 
-    'home_banner_title' => 'Tambahkan pusaka anda dan tunjukkan pada dunia, bahwa kita kaya akan budaya.',
+    'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda',
     'home_banner_description' => 'Gratis...',
     'home_banner_button' => 'Coba sekarang!',
 

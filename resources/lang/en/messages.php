@@ -34,7 +34,7 @@ return [
     'home_select_heritage' => 'All Heritage in Indonesia',
     'home_select_search' => 'Search',
 
-    'home_banner_title' => 'Add Your Heritage and show the world, that we are rich in culture.',
+    'home_banner_title' => 'Promote your Heritage Events & Collections.',
     'home_banner_description' => 'Its Free...',
     'home_banner_button' => 'Try it out!',
 

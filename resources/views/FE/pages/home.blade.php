@@ -179,7 +179,7 @@
                 @endforeach
             </div>
         @endif
-    <!-- /.row -->
+        <!-- /.row -->
 
         <!-- List Nature -->
         @if(count($nature) != 0)
@@ -215,8 +215,8 @@
                     </div>
                 @endforeach
             </div>
-    @endif
-    <!-- /.row -->
+        @endif
+        <!-- /.row -->
 
         <!-- List News -->
         <div class="row">

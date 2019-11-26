@@ -82,6 +82,7 @@
                     $notif_palace = \App\Model\content_tbl::countWaitingAppr("palace");
                     $notif_nature = \App\Model\content_tbl::countWaitingAppr("nature");
                     $notif_historical = \App\Model\content_tbl::countWaitingAppr("historical-building");
+                    $notif_personal_activities = \App\Model\content_tbl::countWaitingAppr("personal-activities");
                 @endphp
                 @if($auth->is_admin_master == "Y")
                     <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum @if($notif_museum != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_museum}}</span>@endif</a>
@@ -92,6 +93,7 @@
                     <a class="collapse-item @yield('palace')" href="{{route('content-pages', ['category'=>'palace'])}}">Palace @if($notif_palace != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_palace}}</span>@endif</a>
                     <a class="collapse-item @yield('nature')" href="{{route('content-pages', ['category'=>'nature'])}}">Nature @if($notif_nature != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_nature}}</span>@endif</a>
                     <a class="collapse-item @yield('historical-building')" href="{{route('content-pages', ['category'=>'historical-building'])}}">Historical Building @if($notif_historical != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_historical}}</span>@endif</a>
+                    <a class="collapse-item @yield('personal-activities')" href="{{route('content-pages', ['category'=>'personal-activities'])}}">Personal Activities @if($notif_personal_activities != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_personal_activities}}</span>@endif</a>
                 @else
                     <a class="collapse-item @yield($category) text-capitalize" href="{{route('content-pages', ['category'=>$category])}}">{{str_replace("-", " ",$category)}}</a>
                 @endif

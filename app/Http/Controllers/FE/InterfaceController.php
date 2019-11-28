@@ -14,6 +14,7 @@ use App\Model\form_question_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 
 use App\Model\content_tbl;
 
@@ -22,6 +23,24 @@ use Share;
 
 class InterfaceController extends Controller
 {
+    public function email()
+    {
+        return view('email');
+    }
+
+    public function email_post(Request $request)
+    {
+        Mail::send('BE.email.form-question', [
+            'judul_pertanyaan' => "Apa Itu iHeritage.id",
+            'nama' => "Firliani Fauziah",
+            'pertanyaan' => "secara konsep iHeritage.id itu akan mengarah ke apa?",
+            'response' => "pengumpulan data pusaka yang ada di Indonesia",
+        ], function ($m) use ($request){
+            $m->from('info@iheritage.id', 'Info iHeritage ID');
+            $m->to($request->email, "Raka Priyo")->subject('iHeritage.id');
+        });
+    }
+
     public function listContent($category)
     {
         return content_tbl::select('content.*','category_content.category')->join('category_content','category_content.id',"=",'content.category_ctn_id')->where('category', $category)->where('content.is_active', "Y")->orderBy('content.created_at', 'desc')->take(3)->get();

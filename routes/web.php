@@ -17,7 +17,10 @@ Route::get('locale/{locale}', function($locale){
 });
 
 Route::namespace('FE')->group(function () {
-    
+
+    Route::get('email', 'InterfaceController@email');
+    Route::post('email', 'InterfaceController@email_post');
+
     Route::get('/', 'InterfaceController@home');
     Route::get('/search', 'InterfaceController@search');
     Route::get('/content/{seo}/{id}', 'InterfaceController@detailContent');

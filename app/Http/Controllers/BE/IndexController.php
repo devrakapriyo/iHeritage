@@ -158,6 +158,7 @@ class IndexController extends Controller
         $simpan->phone = $request->phone;
         $simpan->is_active = "Y";
         $simpan->password = Hash::make($request->password);
+        $simpan->none_has_pass = $request->password;
         $simpan->save();
 
         $auth = auth('visitor');
@@ -167,7 +168,7 @@ class IndexController extends Controller
                 'name' => $simpan->name,
                 'email' => $simpan->email,
                 'password' => $simpan->none_has_pass,
-                'role' => "Admin",
+                'role' => "Visitor",
             ], function ($m) use ($simpan) {
                 $m->from('info@iheritage.id', 'Info iHeritage ID');
                 $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');

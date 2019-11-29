@@ -16,6 +16,8 @@ use App\Model\users;
 use Alert;
 use Auth;
 
+use Illuminate\Support\Facades\Mail;
+
 class IndexController extends Controller
 {
     public function login()
@@ -117,6 +119,16 @@ class IndexController extends Controller
         $simpan->is_active = "Y";
         $simpan->save();
 
+        Mail::send('BE.email.register', [
+            'name' => $simpan->name,
+            'email' => $simpan->email,
+            'password' => $simpan->none_has_pass,
+            'role' => "Admin",
+        ], function ($m) use ($simpan) {
+            $m->from('info@iheritage.id', 'Info iHeritage ID');
+            $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');
+        });
+
         Alert::success('congratulations your account has been registered');
         return redirect()->back()->with('info', "congratulations your account has been registered");
     }
@@ -151,6 +163,16 @@ class IndexController extends Controller
         $auth = auth('visitor');
         if ($auth->attempt(['email' => $request->email, 'password' => $request->password]))
         {
+            Mail::send('BE.email.register', [
+                'name' => $simpan->name,
+                'email' => $simpan->email,
+                'password' => $simpan->none_has_pass,
+                'role' => "Admin",
+            ], function ($m) use ($simpan) {
+                $m->from('info@iheritage.id', 'Info iHeritage ID');
+                $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');
+            });
+
             Alert::success('success', 'congratulations your account has been registered');
             return redirect('/');
         } else {

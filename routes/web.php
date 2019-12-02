@@ -21,6 +21,9 @@ Route::namespace('FE')->group(function () {
     Route::get('email', 'InterfaceController@email');
     Route::post('email', 'InterfaceController@email_post');
 
+    Route::get('/profile-visitor', 'InterfaceController@profileVisitor')->middleware('visitor');
+    Route::post('/profile-visitor', 'InterfaceController@profileVisitorPost')->middleware('visitor');
+
     Route::get('/', 'InterfaceController@home');
     Route::get('/search', 'InterfaceController@search');
     Route::get('/content/{seo}/{id}', 'InterfaceController@detailContent');

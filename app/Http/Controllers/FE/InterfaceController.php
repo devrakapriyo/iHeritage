@@ -11,8 +11,11 @@ use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
+use App\UserVisitor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 
@@ -39,6 +42,56 @@ class InterfaceController extends Controller
             $m->from('info@iheritage.id', 'Info iHeritage ID');
             $m->to($request->email, "Raka Priyo")->subject('iHeritage.id');
         });
+    }
+
+    public function profileVisitor()
+    {
+        return view('FE.pages.profile');
+    }
+
+    public function profileVisitorPost(Request $request)
+    {
+        if($request->password)
+        {
+            if($request->password != $request->re_password)
+            {
+                if(App::isLocale('id'))
+                {
+                    Alert::error("Password yang anda masukan tidak sama");
+                }else{
+                    Alert::error("The password you entered is not the same");
+                }
+                return redirect()->back();
+            }
+
+            $update_field = [
+              'name' => $request->name,
+              'password' => Hash::make($request->password),
+              'none_has_pass' => $request->password,
+            ];
+
+            $data = UserVisitor::find(auth('visitor')->user()->id);
+            Mail::send('FE.email.password', [
+                'name' => $request->name,
+                'password' => $request->password
+            ], function ($m) use ($request, $data){
+                $m->from('info@iheritage.id', 'Info iHeritage ID');
+                $m->to($data->email, $request->name)->subject('iHeritage.id - change password account visitor');
+            });
+        }else{
+            $update_field = [
+                'name' => $request->name
+            ];
+        }
+
+        UserVisitor::where('id', auth('visitor')->user()->id)->update($update_field);
+        if(App::isLocale('id'))
+        {
+            Alert::success("Profil berhasil diperbarui");
+        }else{
+            Alert::success("Profile updated successfully");
+        }
+        return redirect()->back();
     }
 
     public function listContent($category)

@@ -11,7 +11,7 @@
                     <img src="{{asset('bootstrap/vendor/iheritage.png')}}" style="width:200px;height:85px;">
                 </a>
             </div>
-            <form class="form-signin" action="{{url('reset-password/visitor')}}" method="post">
+            <form class="form-signin" action="{{url('reset-password/'.$role)}}" method="post">
                 @csrf
                 <p class="text-center">Reset Password Account {{$role}}</p>
                 <div class="form-label-group">

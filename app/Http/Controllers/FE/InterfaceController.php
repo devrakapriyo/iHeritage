@@ -109,20 +109,43 @@ class InterfaceController extends Controller
             $data = User::where('email', $request->email)->first();
         }
 
-        if($data->none_has_pass == null || $data->none_has_pass == "")
+        if($data)
         {
-            $password = rand(1000,9990);
+            if($data->none_has_pass == null || $data->none_has_pass == "")
+            {
+                $password = rand(1000,9990);
+                if($role == "visitor")
+                {
+                    UserVisitor::where('email', $request->email)->update(['password'=>Hash::make($password), 'none_has_pass'=>$password]);
+                }else{
+                    User::where('email', $request->email)->update(['password'=>Hash::make($password), 'none_has_pass'=>$password]);
+                }
+            }else{
+                $password = $data->none_has_pass;
+            }
+            Mail::send('BE.email.reset-password', [
+                'name' => $data->name,
+                'password' => $password,
+                'role' => $role
+            ], function ($m) use ($request, $data){
+                $m->from('info@iheritage.id', 'Info iHeritage ID');
+                $m->to($data->email, $request->name)->subject('iHeritage.id - change password account visitor');
+            });
+
+            if(App::isLocale('id'))
+            {
+                Alert::success("Email berhasil terkirim");
+            }else{
+                Alert::success("Email successfully sent");
+            }
         }else{
-            $password = $data->none_has_pass;
+            if(App::isLocale('id'))
+            {
+                Alert::error("Email tidak terdaftar");
+            }else{
+                Alert::error("Email not registered");
+            }
         }
-        Mail::send('BE.email.reset-password', [
-            'name' => $data->name,
-            'password' => $password,
-            'role' => $role
-        ], function ($m) use ($request, $data){
-            $m->from('info@iheritage.id', 'Info iHeritage ID');
-            $m->to($data->email, $request->name)->subject('iHeritage.id - change password account visitor');
-        });
 
         return redirect('/');
     }

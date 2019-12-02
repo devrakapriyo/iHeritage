@@ -108,9 +108,16 @@ class InterfaceController extends Controller
         }else{
             $data = User::where('email', $request->email)->first();
         }
+
+        if($data->none_has_pass == null || $data->none_has_pass == "")
+        {
+            $password = rand(1000,9990);
+        }else{
+            $password = $data->none_has_pass;
+        }
         Mail::send('BE.email.reset-password', [
             'name' => $data->name,
-            'password' => $data->none_has_pass,
+            'password' => $password,
             'role' => $role
         ], function ($m) use ($request, $data){
             $m->from('info@iheritage.id', 'Info iHeritage ID');

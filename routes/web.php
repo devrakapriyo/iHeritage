@@ -24,6 +24,9 @@ Route::namespace('FE')->group(function () {
     Route::get('/profile-visitor', 'InterfaceController@profileVisitor')->middleware('visitor');
     Route::post('/profile-visitor', 'InterfaceController@profileVisitorPost')->middleware('visitor');
 
+    Route::get('/reset-password/{role}', 'InterfaceController@resetPassword');
+    Route::post('/reset-password/{role}', 'InterfaceController@resetPasswordPost');
+
     Route::get('/', 'InterfaceController@home');
     Route::get('/search', 'InterfaceController@search');
     Route::get('/content/{seo}/{id}', 'InterfaceController@detailContent');

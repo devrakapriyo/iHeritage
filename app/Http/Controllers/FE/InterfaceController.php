@@ -11,6 +11,7 @@ use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
+use App\User;
 use App\UserVisitor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -92,6 +93,31 @@ class InterfaceController extends Controller
             Alert::success("Profile updated successfully");
         }
         return redirect()->back();
+    }
+
+    public function resetPassword($role)
+    {
+        return view('BE.reset-password', compact('role'));
+    }
+
+    public function resetPasswordPost(Request $request, $role)
+    {
+        if($role == "visitor")
+        {
+            $data = UserVisitor::where('email', $request->email)->first();
+        }else{
+            $data = User::where('email', $request->email)->first();
+        }
+        Mail::send('BE.email.reset-password', [
+            'name' => $data->name,
+            'password' => $data->none_has_pass,
+            'role' => $role
+        ], function ($m) use ($request, $data){
+            $m->from('info@iheritage.id', 'Info iHeritage ID');
+            $m->to($data->email, $request->name)->subject('iHeritage.id - change password account visitor');
+        });
+
+        return redirect('/');
     }
 
     public function listContent($category)

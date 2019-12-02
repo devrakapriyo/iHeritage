@@ -2,6 +2,7 @@
 
 return [
     // page login and register
+    'btn_reset_password' => 'Kirim ke email',
     'btn_login' => 'Masuk',
     'btn_register' => 'Daftar',
     'login_visitor' => 'Masuk Sebagai Pengunjung',

@@ -2,6 +2,7 @@
 
 return [
     // page login and register
+    'btn_reset_password' => 'Send to email',
     'btn_login' => 'Login',
     'btn_register' => 'Register',
     'login_visitor' => 'Login as Visitor',

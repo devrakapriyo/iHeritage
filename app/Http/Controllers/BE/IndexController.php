@@ -8,6 +8,7 @@ use App\User;
 use App\UserVisitor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 use Yajra\Datatables\Datatables;
 
@@ -213,5 +214,55 @@ class IndexController extends Controller
         $simpan->save();
 
         return redirect()->back()->with('info', "kategori berhasil tersimpan");
+    }
+
+    public function profileAdmin()
+    {
+        return view('BE.pages.profile');
+    }
+
+    public function profileAdminPost(Request $request)
+    {
+        if($request->password)
+        {
+            if($request->password != $request->re_password)
+            {
+                if(App::isLocale('id'))
+                {
+                    Alert::error("Password yang anda masukan tidak sama");
+                }else{
+                    Alert::error("The password you entered is not the same");
+                }
+                return redirect()->back();
+            }
+
+            $update_field = [
+                'name' => $request->name,
+                'password' => Hash::make($request->password),
+                'none_has_pass' => $request->password,
+            ];
+
+            $data = User::find(auth('admin')->user()->id);
+            Mail::send('FE.email.password', [
+                'name' => $request->name,
+                'password' => $request->password
+            ], function ($m) use ($request, $data){
+                $m->from('info@iheritage.id', 'Info iHeritage ID');
+                $m->to($data->email, $request->name)->subject('iHeritage.id - change password account visitor');
+            });
+        }else{
+            $update_field = [
+                'name' => $request->name
+            ];
+        }
+
+        User::where('id', auth('admin')->user()->id)->update($update_field);
+        if(App::isLocale('id'))
+        {
+            Alert::success("Profil berhasil diperbarui");
+        }else{
+            Alert::success("Profile updated successfully");
+        }
+        return redirect()->back();
     }
 }

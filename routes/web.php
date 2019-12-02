@@ -66,6 +66,9 @@ Route::post('/register', 'BE\IndexController@register_post');
 Route::get('/register-visitor', 'BE\IndexController@register_visitor');
 Route::post('/register-visitor', 'BE\IndexController@register_visitor_post');
 
+Route::get('/dashboard/profile-admin', 'BE\IndexController@profileAdmin')->middleware('admin')->name('profile');
+Route::post('/dashboard/profile-admin', 'BE\IndexController@profileAdminPost')->middleware('admin')->name('profile-post');
+
 Route::prefix('dashboard')->namespace('Admin')->middleware('admin')->group(function () {
     // heritage
     Route::get('/heritage', 'HeritageController@heritage_pages')->name('heritage-pages');

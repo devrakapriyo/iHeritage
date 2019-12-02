@@ -9,6 +9,13 @@ return [
     'login_admin' => 'Masuk Sebagai Pengelolah',
     'register_admin' => 'Masuk Sebagai Pengelolah',
 
+    // profil
+    'full_name' => 'Nama Lengkap',
+    'no_phone' => 'Nomor Handphone',
+    'placeholder_password' => 'Masukan password baru anda, jika anda ingin mengubah password',
+    're_password' => 'Masukan Kembali Password',
+    'button_update' => 'Perbarui',
+
     // search
     'title_search' => 'Maaf,',
     'msg_search' => 'Data yang anda cari belum ditemukan',

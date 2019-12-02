@@ -12,7 +12,7 @@
                     <form action="{{url('profile-visitor')}}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label>Nama Lengkap</label>
+                            <label>@lang('messages.full_name')</label>
                             <input type="text" name="name" class="form-control" value="{{auth('visitor')->user()->name}}" placeholder="Masukan nama lengkap anda..." required>
                         </div>
                         <div class="form-group">
@@ -20,18 +20,18 @@
                             <input type="email" class="form-control" value="{{auth('visitor')->user()->email}}" readonly>
                         </div>
                         <div class="form-group">
-                            <label>Nomor Handphone</label>
+                            <label>@lang('messages.no_phone')</label>
                             <input type="text" class="form-control" value="{{auth('visitor')->user()->phone}}" readonly>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Masukan password baru anda, jika anda ingin mengubah password">
+                            <input type="password" name="password" class="form-control" placeholder="@lang('messages.placeholder_password')">
                         </div>
                         <div class="form-group">
-                            <label>Masukan Kembali Password</label>
+                            <label>@lang('messages.re_password')</label>
                             <input type="password" name="re_password" class="form-control">
                         </div>
-                        <button class="btn btn-warning float-right">Perbarui</button>
+                        <button class="btn btn-warning float-right">@lang('messages.button_update')</button>
                     </form>
                 </div>
             </div>

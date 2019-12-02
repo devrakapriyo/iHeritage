@@ -9,6 +9,13 @@ return [
     'login_admin' => 'Login as Administrator',
     'register_admin' => 'Register as Administrator',
 
+    // profil
+    'full_name' => 'Full Name',
+    'no_phone' => 'Number Handphone',
+    'placeholder_password' => 'Enter your new password, if you want to change the password',
+    're_password' => 'Re-enter Password',
+    'button_update' => 'Update',
+
     // search
     'title_search' => 'Sorry,',
     'msg_search' => 'The data you are looking for has not been found',

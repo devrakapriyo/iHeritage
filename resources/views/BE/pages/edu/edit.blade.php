@@ -48,12 +48,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Institution : </label>
-                                        <select name="content_id" class="form-control" required>
-                                            @foreach(App\Model\content_tbl::listContent(auth('admin')->user()->institutional_id) as $item)
-                                                <option {{$detail->content_id == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <a href="{{route('content-pages', ['category'=>'museum'])}}">Content are not yet available, click here...</a>
+                                        <input type="text" name="content_id" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +91,7 @@
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <label>Name Location :</label>
-                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="Istana Bogor, Indonesia" onchange="check_location()" required>
+                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude">
                                         <input type="hidden" name="longitude_detail" id="longitude">
                                     </div>

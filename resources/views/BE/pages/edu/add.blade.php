@@ -25,7 +25,9 @@
 
     <!-- Content Row -->
     <div class="row">
-
+        @php
+            $content_id = \App\Model\content_tbl::select('id')->where('institutional_id', auth('admin')->user()->institutional_id)->first()->id;
+        @endphp
         <!-- Area Chart -->
         <div class="col-md-12">
             <div class="card shadow mb-4">
@@ -50,11 +52,10 @@
                                     <label>Institution : </label>
                                     <select name="content_id" class="form-control" required>
                                         <option value=""></option>
-                                        @foreach(App\Model\content_tbl::listContent(auth('admin')->user()->institutional_id) as $item)
+                                        @foreach($content as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
                                     </select>
-                                    <a href="{{route('content-pages', ['category'=>'museum'])}}">Content are not yet available, click here...</a>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +90,7 @@
                                     <select name="place_id" class="form-control" required>
                                         <option value=""></option>
                                         @foreach(App\Model\place_tbl::listSearch() as $item)
-                                            <option value="{{$item->id}}">{{$item->place_ind}}</option>
+                                            <option value="{{$item->id}}" {{\App\Model\content_detail_tbl::fieldContent($content_id, "place_id") == $item->id ? "selected" : ""}}>{{$item->place_ind}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -97,7 +98,7 @@
                             <div class="col-md-9">
                                 <div class="form-group">
                                     <label>Location Name :</label>
-                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="Istana Bogor, Indonesia" onchange="check_location()" required>
+                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "map_area_detail")}}" onchange="check_location()" required>
                                     <input type="hidden" name="latitude_detail" id="latitude">
                                     <input type="hidden" name="longitude_detail" id="longitude">
                                 </div>

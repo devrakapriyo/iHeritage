@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BE;
 
 use App\Helper\helpers;
 use App\Model\content_event_tbl;
+use App\Model\content_tbl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -67,7 +68,12 @@ class EventController extends Controller
 
     public function event_add()
     {
-        return view('BE.pages.event.add');
+        if (auth('admin')->user()->is_admin_master == "Y") {
+            $content = content_tbl::select('id', 'name')->where('is_active', "Y")->get();
+        } else {
+            $content = content_tbl::listContent(auth('admin')->user()->institutional_id);
+        }
+        return view('BE.pages.event.add', compact('content'));
     }
 
     public function event_post(Request $request)

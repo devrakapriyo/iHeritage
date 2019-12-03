@@ -48,12 +48,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Institution : </label>
-                                        <select name="content_id" class="form-control" required>
-                                            @foreach(App\Model\content_tbl::listContent(auth('admin')->user()->institutional_id) as $item)
-                                                <option {{$detail->content_id == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <a href="{{route('content-pages', ['category'=>'museum'])}}">Content are not yet available, click here...</a>
+                                        <input type="text" name="content_id" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
                                     </div>
                                 </div>
                             </div>

@@ -52,11 +52,10 @@
                                     <label>Institution : </label>
                                     <select name="content_id" class="form-control" required>
                                         <option value=""></option>
-                                        @foreach(App\Model\content_tbl::listContent(auth('admin')->user()->institutional_id) as $item)
+                                        @foreach($content as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
                                     </select>
-                                    <a href="{{route('content-pages', ['category'=>'museum'])}}">Content are not yet available, click here...</a>
                                 </div>
                             </div>
                         </div>

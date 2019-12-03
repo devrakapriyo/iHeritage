@@ -65,13 +65,13 @@
                                 @if($detail->media_type == "video")
                                     <div class="form-group">
                                         <label>Link Youtube : </label>
-                                        <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" value="{{$detail->media}}" required>
+                                        <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" value="{{$detail->media}}">
                                         <small class="text-danger">paste your url from youtube</small>
                                     </div>
                                 @elseif($detail->media_type == "url")
                                     <div class="form-group">
                                         <label>Link Website : </label>
-                                        <input type="text" name="media" class="form-control" value="{{$detail->media}}" required>
+                                        <input type="text" name="media" class="form-control" value="{{$detail->media}}">
                                         <small class="text-danger">paste your link website</small>
                                     </div>
                                 @else

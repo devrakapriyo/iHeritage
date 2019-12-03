@@ -25,7 +25,9 @@
 
         <!-- Content Row -->
         <div class="row">
-
+            @php
+                $content_id = \App\Model\content_tbl::select('id')->where('institutional_id', auth('admin')->user()->institutional_id)->first()->id;
+            @endphp
             <!-- Area Chart -->
             <div class="col-md-12">
                 <div class="card shadow mb-4">
@@ -74,16 +76,16 @@
                             <div class="col-md-3">
                                 <div class="form-group" id="media_file">
                                     <label>Upload Media : </label>
-                                    <input type="file" name="media" class="form-control" required>
+                                    <input type="file" name="media" class="form-control">
                                 </div>
                                 <div class="form-group" id="media_link">
                                     <label>Link Youtube : </label>
-                                    <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" required>
+                                    <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12">
                                     <small class="text-danger">paste your url from youtube</small>
                                 </div>
                                 <div class="form-group" id="media_url">
                                     <label>Link Youtube : </label>
-                                    <input type="text" name="media" class="form-control" required>
+                                    <input type="text" name="media" class="form-control">
                                     <small class="text-danger">paste your link website</small>
                                 </div>
                             </div>
@@ -124,13 +126,13 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Institution Owner : </label>
-                                    <input type="text" name="institution_owner" class="form-control">
+                                    <input type="text" name="institution_owner" value="{{\App\Model\institutional::getData(auth('admin')->user()->institutional_id, "institutional_name")->institutional_name}}" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Link Url : </label>
-                                    <input type="text" name="link_url" class="form-control">
+                                    <input type="text" name="link_url" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "url_website")}}" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -141,7 +143,7 @@
                                     <select name="place_id" class="form-control">
                                         <option value=""></option>
                                         @foreach(App\Model\place_tbl::listSearch() as $item)
-                                            <option value="{{$item->id}}">{{$item->place_ind}}</option>
+                                            <option value="{{$item->id}}" {{\App\Model\content_detail_tbl::fieldContent($content_id, "place_id") == $item->id ? "selected" : ""}}>{{$item->place_ind}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -149,7 +151,7 @@
                             <div class="col-md-9">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="" onchange="check_location()">
+                                    <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "map_area_detail")}}" onchange="check_location()">
                                     <input type="hidden" name="latitude_detail" id="latitude">
                                     <input type="hidden" name="longitude_detail" id="longitude">
                                 </div>

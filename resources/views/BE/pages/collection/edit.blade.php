@@ -42,7 +42,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Institution :</label>
-                                    <input type="text" name="name" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
+                                    <input type="text" name="content_id" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
                                 </div>
                             </div>
                         </div>

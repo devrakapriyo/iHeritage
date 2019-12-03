@@ -25,7 +25,7 @@
             @php
                 $text = App::isLocale('id') ? $detail->description_ind : $detail->description_en;
             @endphp
-            <small>{{$text}}</small>
+            <small>{!! $text !!}</small>
 
             <div class="form-group mt-5">
                 <p class="text-capitalize">@lang('messages.collection_creator') : <br><strong>{{$detail->creator}}</strong></p>

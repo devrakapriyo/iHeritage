@@ -94,7 +94,7 @@
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <label>Location Name :</label>
-                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="Istana Bogor, Indonesia" onchange="check_location()" required>
+                                        <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude">
                                         <input type="hidden" name="longitude_detail" id="longitude">
                                     </div>
@@ -144,8 +144,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Ticket Price : </label>
-                                        <input type="text" name="price" class="form-control" value="{{$detail->price}}" required>
-                                        <small class="text-danger">example value : Rp. 200.000</small>
+                                        <input type="text" name="price" class="form-control" value="{{$detail->price}}">
+                                        <small class="text-danger">if the event is free then empty it</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

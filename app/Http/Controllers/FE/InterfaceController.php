@@ -207,7 +207,8 @@ class InterfaceController extends Controller
             'document'=>'primary',
             'audio'=>'success',
             'video'=>'danger',
-            'image'=>'warning'
+            'image'=>'warning',
+            'url'=>'dark'
         ];
         return view('FE.pages.collection', compact('data','color_media'));
     }
@@ -236,7 +237,8 @@ class InterfaceController extends Controller
             'document'=>'primary',
             'audio'=>'success',
             'video'=>'danger',
-            'image'=>'warning'
+            'image'=>'warning',
+            'url'=>'dark'
         ];
         return view('FE.pages.collection', compact('data','color_media'));
     }

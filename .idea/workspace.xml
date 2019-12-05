@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/edu/add.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/edu/add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="227">
@@ -55,13 +56,44 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="collection-detail.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="38" column="142" lean-forward="false" selection-start-line="38" selection-start-column="142" selection-end-line="38" selection-end-column="142" />
+              <folding>
+                <marker date="1575589708565" expanded="true" signature="6699:6726" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InterfaceController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="241" column="10" lean-forward="false" selection-start-line="241" selection-start-column="10" selection-end-line="241" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="collection.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="126" column="157" lean-forward="false" selection-start-line="126" selection-start-column="96" selection-end-line="126" selection-end-column="157" />
+              <folding>
+                <marker date="1575589475815" expanded="true" signature="7429:7644" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fieldContent</find>
-      <find>created_by</find>
-      <find>Town Location :</find>
       <find>institution</find>
       <find>Promote your Heritage Events &amp; Collections</find>
       <find>home_banner_title</find>
@@ -69,7 +101,6 @@
       <find>pages</find>
       <find>gallery-add</find>
       <find>gallery-pages</find>
-      <find>collection</find>
       <find>formQuestion</find>
       <find>MAIL_ENCRYPTION</find>
       <find>form_question</find>
@@ -89,6 +120,10 @@
       <find>opening_monday</find>
       <find>opening_moday</find>
       <find>close_en</find>
+      <find>url</find>
+      <find>collection</find>
+      <find>Type Of Collection</find>
+      <find>$color_media</find>
     </findStrings>
     <replaceStrings>
       <replace>our_services</replace>
@@ -125,7 +160,6 @@
         <option value="&lt;df633a0b-b803-44a7-8eaa-414e62f5dfcd&gt;/public_html/public/.htaccess" />
         <option value="&lt;df633a0b-b803-44a7-8eaa-414e62f5dfcd&gt;/public_html/.htaccess" />
         <option value="&lt;df633a0b-b803-44a7-8eaa-414e62f5dfcd&gt;/public_html/.env" />
-        <option value="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/libs/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
         <option value="$PROJECT_DIR$/resources/views/email.blade.php" />
@@ -141,14 +175,12 @@
         <option value="$PROJECT_DIR$/resources/views/BE/email/reset-password.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/reset-password.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/libs/navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/profile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/event/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EventController.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/event/add.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/alert.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/CollectionController.php" />
@@ -159,6 +191,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/EduController.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/edu/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/edu/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" />
       </list>
     </option>
   </component>
@@ -229,6 +264,14 @@
               <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FE" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -283,6 +326,21 @@
               <item name="BE" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="edu" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FE" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iheritage-dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FE" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="iheritage-dev" type="b2602c69:ProjectViewProjectNode" />
@@ -359,12 +417,12 @@
       <workItem from="1574529291219" duration="7369000" />
       <workItem from="1574754789045" duration="6839000" />
       <workItem from="1575273081652" duration="13062000" />
-      <workItem from="1575586320213" duration="2389000" />
+      <workItem from="1575586320213" duration="3073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271240000" />
+    <option name="totallyTimeSpent" value="271924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -425,27 +483,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/GalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="43" lean-forward="false" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
-          <folding>
-            <element signature="e#43#66#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/libs/sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="95" column="71" lean-forward="false" selection-start-line="95" selection-start-column="71" selection-end-line="95" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="78" column="61" lean-forward="false" selection-start-line="78" selection-start-column="61" selection-end-line="78" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -627,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="95" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -685,16 +719,6 @@
         <state relative-caret-position="1365">
           <caret line="91" column="153" lean-forward="false" selection-start-line="91" selection-start-column="116" selection-end-line="91" selection-end-column="153" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <marker date="1575365419857" expanded="true" signature="6656:6683" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,6 +831,48 @@
         <state relative-caret-position="227">
           <caret line="95" column="134" lean-forward="false" selection-start-line="95" selection-start-column="134" selection-end-line="95" selection-end-column="134" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1574559685217" expanded="true" signature="6312:6602" ph="..." />
+            <marker date="1574559685217" expanded="true" signature="8591:8885" ph="..." />
+            <marker date="1574559685217" expanded="true" signature="10515:10809" ph="..." />
+            <marker date="1574559685217" expanded="true" signature="12280:12620" ph="..." />
+            <marker date="1574559685217" expanded="true" signature="14034:14301" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="241" column="10" lean-forward="false" selection-start-line="241" selection-start-column="10" selection-end-line="241" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="126" column="157" lean-forward="false" selection-start-line="126" selection-start-column="96" selection-end-line="126" selection-end-column="157" />
+          <folding>
+            <marker date="1575589475815" expanded="true" signature="7429:7644" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="38" column="142" lean-forward="false" selection-start-line="38" selection-start-column="142" selection-end-line="38" selection-end-column="142" />
+          <folding>
+            <marker date="1575589708565" expanded="true" signature="6699:6726" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

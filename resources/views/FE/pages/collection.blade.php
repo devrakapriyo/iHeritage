@@ -116,25 +116,25 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100">
                 <a href="{{route('collection-detail', ['id'=>$item->id])}}">
-                <img class="card-img-top" src="{{$item->banner}}" alt="{{$item->banner}}" height="200" widht="200">
-                <div class="card-body">
-                    <h5 class="card-title text-uppercase">
-                        <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{$item->name}}</a>
-                    </h5>
-                    <small class="card-text">
-                        @lang('messages.collection_institution') : {{\App\Model\institutional::getName($item->content_id)}}<br>
-                        @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
-                        media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type}}</span>
-                    </small>
-                    <hr>
-                    <p class="card-text">
-                        @php
-                            $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);
-                            $limit_text = strlen($text) > 250 ? substr($text, 0, 250)." ...readmore" : $text;
-                        @endphp
-                        {!! $limit_text !!}
-                    </p>
-                </div>
+                    <img class="card-img-top" src="{{$item->banner}}" alt="{{$item->banner}}" height="200" widht="200">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase">
+                            <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{$item->name}}</a>
+                        </h5>
+                        <small class="card-text">
+                            @lang('messages.collection_institution') : {{\App\Model\institutional::getName($item->content_id)}}<br>
+                            @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
+                            media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type == "url" ? "HTML 5" : $item->media_type}}</span>
+                        </small>
+                        <hr>
+                        <p class="card-text">
+                            @php
+                                $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);
+                                $limit_text = strlen($text) > 250 ? substr($text, 0, 250)." ...readmore" : $text;
+                            @endphp
+                            {!! $limit_text !!}
+                        </p>
+                    </div>
                 </a>
             </div>
         </div>

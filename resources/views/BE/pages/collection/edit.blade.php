@@ -144,8 +144,8 @@
                                 <div class="form-group">
                                     <label>Address:</label>
                                     <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()">
-                                    <input type="hidden" name="latitude_detail" id="latitude">
-                                    <input type="hidden" name="longitude_detail" id="longitude">
+                                    <input type="hidden" name="latitude_detail" id="latitude" value="{{$detail->latitude_detail}}">
+                                    <input type="hidden" name="longitude_detail" id="longitude" value="{{$detail->longitude_detail}}">
                                 </div>
                                 <div id='address-examples'>
                                     <div>Address examples:</div>

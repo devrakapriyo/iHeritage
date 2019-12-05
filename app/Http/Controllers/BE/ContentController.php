@@ -379,7 +379,7 @@ class ContentController extends Controller
 
     public function content_collection_upload(Request $request,$category,$id)
     {
-        if (($request->media_type != "video") || ($request->media_type != "url"))
+        if (($request->media_type != "video") && ($request->media_type != "url"))
         {
             if (!empty($request->file('media')))
             {
@@ -411,7 +411,6 @@ class ContentController extends Controller
                 }
             }else{
                 Alert::error('Media hasnt been uploaded yet');
-                return redirect()->back();
             }
         }else{
             $media = $request->media;

@@ -84,7 +84,7 @@
                                     <small class="text-danger">paste your url from youtube</small>
                                 </div>
                                 <div class="form-group" id="media_url">
-                                    <label>Link Youtube : </label>
+                                    <label>Link Website : </label>
                                     <input type="text" name="media" class="form-control">
                                     <small class="text-danger">paste your link website</small>
                                 </div>
@@ -152,8 +152,8 @@
                                 <div class="form-group">
                                     <label>Address:</label>
                                     <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "map_area_detail")}}" onchange="check_location()">
-                                    <input type="hidden" name="latitude_detail" id="latitude">
-                                    <input type="hidden" name="longitude_detail" id="longitude">
+                                    <input type="hidden" name="latitude_detail" id="latitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "latitude_detail")}}">
+                                    <input type="hidden" name="longitude_detail" id="longitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "longitude_detail")}}">
                                 </div>
                                 <div id='address-examples'>
                                     <div>Address examples:</div>

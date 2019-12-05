@@ -67,7 +67,7 @@ class CollectionController extends Controller
 
     public function collection_post(Request $request)
     {
-        if (($request->media_type != "video") || ($request->media_type != "url")) {
+        if (($request->media_type != "video") && ($request->media_type != "url")) {
             if (!empty($request->file('media'))) {
                 if ($request->media_type == "image") {
                     $size = 1000000;
@@ -94,7 +94,6 @@ class CollectionController extends Controller
                 }
             } else {
                 Alert::error('Media hasnt been uploaded yet');
-                return redirect()->back();
             }
         } else {
             $media = $request->media;
@@ -173,7 +172,7 @@ class CollectionController extends Controller
 
     public function collection_update(Request $request, $id)
     {
-        if (($request->media_type != "video") || ($request->media_type != "url")) {
+        if (($request->media_type != "video") && ($request->media_type != "url")) {
             if (!empty($request->file('media'))) {
                 if ($request->media_type == "image") {
                     $size = 1000000;

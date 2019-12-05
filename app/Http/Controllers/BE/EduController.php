@@ -104,7 +104,7 @@ class EduController extends Controller
             $simpan->description_en = $request->description_en;
             $simpan->description_ind = $request->description_ind;
             $simpan->opening_sunday = $request->opening_sunday;
-            $simpan->opening_moday = $request->opening_moday;
+            $simpan->opening_monday = $request->opening_monday;
             $simpan->opening_tuesday = $request->opening_tuesday;
             $simpan->opening_wednesday = $request->opening_wednesday;
             $simpan->opening_thursday = $request->opening_thursday;
@@ -175,7 +175,7 @@ class EduController extends Controller
                     'description_en'=>$request->description_en,
                     'description_ind'=>$request->description_ind,
                     'opening_sunday'=>$request->opening_sunday,
-                    'opening_moday'=>$request->opening_moday,
+                    'opening_monday'=>$request->opening_monday,
                     'opening_tuesday'=>$request->opening_tuesday,
                     'opening_wednesday'=>$request->opening_wednesday,
                     'opening_thursday'=>$request->opening_thursday,

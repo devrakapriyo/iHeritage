@@ -64,14 +64,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Closing Hours (bahasa inggris): </label>
-                                        <input type="text" name="close_en" class="form-control" value="{{$detail->close_en}}">
+                                        <input type="text" name="close_en" class="form-control" value="{{$detail->close_en}}" required>
                                         <small class="text-danger">example value : National holiday</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Closing Hours (bahasa indonesia): </label>
-                                        <input type="text" name="close_ind" class="form-control" value="{{$detail->close_ind}}">
+                                        <input type="text" name="close_ind" class="form-control" value="{{$detail->close_ind}}" required>
                                         <small class="text-danger">example value : Hari libur nasional</small>
                                     </div>
                                 </div>
@@ -92,8 +92,8 @@
                                     <div class="form-group">
                                         <label>Name Location :</label>
                                         <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()" required>
-                                        <input type="hidden" name="latitude_detail" id="latitude">
-                                        <input type="hidden" name="longitude_detail" id="longitude">
+                                        <input type="hidden" name="latitude_detail" id="latitude" value="{{$detail->latitude_detail}}">
+                                        <input type="hidden" name="longitude_detail" id="longitude" value="{{$detail->longitude_detail}}">
                                     </div>
                                     <div id='address-examples'>
                                         <div>Name Location examples :</div>

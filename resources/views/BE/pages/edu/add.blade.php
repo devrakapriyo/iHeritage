@@ -71,14 +71,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Closing Hours (bahasa inggris): </label>
-                                    <input type="text" name="close_en" class="form-control">
+                                    <input type="text" name="close_en" class="form-control" required>
                                     <small class="text-danger">example value : National holiday</small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Closing Hours (bahasa indonesia): </label>
-                                    <input type="text" name="close_ind" class="form-control">
+                                    <input type="text" name="close_ind" class="form-control" required>
                                     <small class="text-danger">example value : Hari libur nasional</small>
                                 </div>
                             </div>
@@ -99,8 +99,8 @@
                                 <div class="form-group">
                                     <label>Location Name :</label>
                                     <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "map_area_detail")}}" onchange="check_location()" required>
-                                    <input type="hidden" name="latitude_detail" id="latitude">
-                                    <input type="hidden" name="longitude_detail" id="longitude">
+                                    <input type="hidden" name="latitude_detail" id="latitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "latitude_detail")}}">
+                                    <input type="hidden" name="longitude_detail" id="longitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "longitude_detail")}}">
                                 </div>
                                 <div id='address-examples'>
                                     <div>Location Name examples:</div>

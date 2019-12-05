@@ -97,8 +97,8 @@
                                 <div class="form-group">
                                     <label>Location Name :</label>
                                     <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "map_area_detail")}}" onchange="check_location()" required>
-                                    <input type="hidden" name="latitude_detail" id="latitude">
-                                    <input type="hidden" name="longitude_detail" id="longitude">
+                                    <input type="hidden" name="latitude_detail" id="latitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "latitude_detail")}}">
+                                    <input type="hidden" name="longitude_detail" id="longitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "latitude_detail")}}">
                                 </div>
                                 <div id='address-examples'>
                                     <div>Location Name examples :</div>

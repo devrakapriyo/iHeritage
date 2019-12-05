@@ -114,10 +114,10 @@ class EventController extends Controller
             $simpan->short_description_ind = $request->short_description_ind;
             $simpan->long_description_en = $request->long_description_en;
             $simpan->long_description_ind = $request->long_description_ind;
-            $simpan->price = $request->price;
+            $simpan->price = $request->price == "" ? 0 : $request->price;
             $simpan->close_registration = $request->close_registration;
             $simpan->is_active = "Y";
-            $simpan->created_at = auth('admin')->user()->name;
+            $simpan->created_by = auth('admin')->user()->name;
             $simpan->save();
 
         }catch (\Exception $exception){
@@ -178,7 +178,7 @@ class EventController extends Controller
                     'short_description_ind'=>$request->short_description_ind,
                     'long_description_en'=>$request->long_description_en,
                     'long_description_ind'=>$request->long_description_ind,
-                    'price'=>$request->price,
+                    'price'=>$request->price == "" ? 0 : $request->price,
                     'close_registration'=>$request->close_registration
                 ]);
         }catch (\Exception $exception){

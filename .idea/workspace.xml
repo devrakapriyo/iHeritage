@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="103" column="63" lean-forward="false" selection-start-line="103" selection-start-column="63" selection-end-line="103" selection-end-column="63" />
+            <state relative-caret-position="645">
+              <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -57,10 +56,10 @@
       <file leaf-file-name="collection.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="132" column="117" lean-forward="false" selection-start-line="132" selection-start-column="117" selection-end-line="132" selection-end-column="117" />
+            <state relative-caret-position="292">
+              <caret line="132" column="127" lean-forward="false" selection-start-line="132" selection-start-column="127" selection-end-line="132" selection-end-column="127" />
               <folding>
-                <marker date="1575773501429" expanded="true" signature="7429:7713" ph="..." />
+                <marker date="1575773633299" expanded="true" signature="7429:7698" ph="..." />
               </folding>
             </state>
           </provider>
@@ -70,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/edu-program.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="217">
-              <caret line="106" column="180" lean-forward="false" selection-start-line="106" selection-start-column="90" selection-end-line="106" selection-end-column="180" />
+              <caret line="106" column="124" lean-forward="true" selection-start-line="106" selection-start-column="107" selection-end-line="106" selection-end-column="124" />
               <folding>
                 <marker date="1574178756152" expanded="true" signature="5633:5985" ph="..." />
               </folding>
@@ -82,7 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>institution</find>
       <find>Promote your Heritage Events &amp; Collections</find>
       <find>home_banner_title</find>
       <find>content_gallery</find>
@@ -112,6 +110,7 @@
       <find>$color_media</find>
       <find>Type Of Collection</find>
       <find>close_en</find>
+      <find>education-program</find>
     </findStrings>
     <replaceStrings>
       <replace>our_services</replace>
@@ -350,12 +349,12 @@
       <workItem from="1574754789045" duration="6839000" />
       <workItem from="1575273081652" duration="13062000" />
       <workItem from="1575586320213" duration="3600000" />
-      <workItem from="1575773353869" duration="149000" />
+      <workItem from="1575773353869" duration="307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272600000" />
+    <option name="totallyTimeSpent" value="272758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -744,14 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="103" column="63" lean-forward="false" selection-start-line="103" selection-start-column="63" selection-end-line="103" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/event/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -771,19 +762,27 @@
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/edu-program.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
-          <caret line="106" column="180" lean-forward="false" selection-start-line="106" selection-start-column="90" selection-end-line="106" selection-end-column="180" />
+          <caret line="106" column="124" lean-forward="true" selection-start-line="106" selection-start-column="107" selection-end-line="106" selection-end-column="124" />
           <folding>
             <marker date="1574178756152" expanded="true" signature="5633:5985" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="132" column="117" lean-forward="false" selection-start-line="132" selection-start-column="117" selection-end-line="132" selection-end-column="117" />
+        <state relative-caret-position="292">
+          <caret line="132" column="127" lean-forward="false" selection-start-line="132" selection-start-column="127" selection-end-line="132" selection-end-column="127" />
           <folding>
-            <marker date="1575773501429" expanded="true" signature="7429:7713" ph="..." />
+            <marker date="1575773633299" expanded="true" signature="7429:7698" ph="..." />
           </folding>
         </state>
       </provider>

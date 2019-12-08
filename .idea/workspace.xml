@@ -69,10 +69,9 @@
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="98" column="88" lean-forward="false" selection-start-line="98" selection-start-column="88" selection-end-line="98" selection-end-column="88" />
+              <caret line="98" column="83" lean-forward="false" selection-start-line="98" selection-start-column="83" selection-end-line="98" selection-end-column="83" />
               <folding>
-                <element signature="e#5753#5784#0#HTML" expanded="true" />
-                <marker date="1575774237282" expanded="true" signature="6783:6810" ph="..." />
+                <marker date="1575774351265" expanded="true" signature="6783:6810" ph="..." />
               </folding>
             </state>
           </provider>
@@ -350,12 +349,12 @@
       <workItem from="1574754789045" duration="6839000" />
       <workItem from="1575273081652" duration="13062000" />
       <workItem from="1575586320213" duration="3600000" />
-      <workItem from="1575773353869" duration="661000" />
+      <workItem from="1575773353869" duration="736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273112000" />
+    <option name="totallyTimeSpent" value="273187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -784,10 +783,9 @@
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="98" column="88" lean-forward="false" selection-start-line="98" selection-start-column="88" selection-end-line="98" selection-end-column="88" />
+          <caret line="98" column="83" lean-forward="false" selection-start-line="98" selection-start-column="83" selection-end-line="98" selection-end-column="83" />
           <folding>
-            <element signature="e#5753#5784#0#HTML" expanded="true" />
-            <marker date="1575774237282" expanded="true" signature="6783:6810" ph="..." />
+            <marker date="1575774351265" expanded="true" signature="6783:6810" ph="..." />
           </folding>
         </state>
       </provider>

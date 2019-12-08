@@ -68,11 +68,7 @@ class EventController extends Controller
 
     public function event_add()
     {
-        if (auth('admin')->user()->is_admin_master == "Y") {
-            $content = content_tbl::select('id', 'name')->where('is_active', "Y")->get();
-        } else {
-            $content = content_tbl::listContent(auth('admin')->user()->institutional_id);
-        }
+        $content = content_tbl::select('id', 'name')->where('is_active', "Y")->get();
         return view('BE.pages.event.add', compact('content'));
     }
 
@@ -115,8 +111,10 @@ class EventController extends Controller
             $simpan->long_description_en = $request->long_description_en;
             $simpan->long_description_ind = $request->long_description_ind;
             $simpan->price = $request->price == "" ? 0 : $request->price;
-            $simpan->close_registration = $request->close_registration;
+            //$simpan->close_registration = $request->close_registration;
+            $simpan->close_registration = date("Y-m-d H:i:s");
             $simpan->is_active = "Y";
+            $simpan->is_publish = "Y";
             $simpan->created_by = auth('admin')->user()->name;
             $simpan->save();
 
@@ -179,7 +177,7 @@ class EventController extends Controller
                     'long_description_en'=>$request->long_description_en,
                     'long_description_ind'=>$request->long_description_ind,
                     'price'=>$request->price == "" ? 0 : $request->price,
-                    'close_registration'=>$request->close_registration
+                    //'close_registration'=>$request->close_registration
                 ]);
         }catch (\Exception $exception){
             DB::rollback();

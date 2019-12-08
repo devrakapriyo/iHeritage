@@ -49,12 +49,12 @@
                             {{\App\Model\place_tbl::placeNameLang($detail->place_id)}}</span>
                     </p>
                 </div>
-                <div class="form-group">
-                    <p>
-                        <span class="font-weight-bold">@lang('messages.event_close')</span><br>
-                        <span class="badge badge-danger">{{\App\Helper\helpers::dateFormatTime($detail->close_registration)}}</span>
-                    </p>
-                </div>
+                {{--<div class="form-group">--}}
+                    {{--<p>--}}
+                        {{--<span class="font-weight-bold">@lang('messages.event_close')</span><br>--}}
+                        {{--<span class="badge badge-danger">{{\App\Helper\helpers::dateFormatTime($detail->close_registration)}}</span>--}}
+                    {{--</p>--}}
+                {{--</div>--}}
             </div>
         </div>
         <!-- /.row -->

@@ -320,8 +320,8 @@ class InterfaceController extends Controller
 
     public function event()
     {
-        $data = content_event_tbl::where('close_registration','>=',date('Y-m-d H:i:s'))
-            ->where('is_active',"Y")
+        //$data = content_event_tbl::where('close_registration','>=',date('Y-m-d H:i:s'))
+        $data = content_event_tbl::where('is_active',"Y")
             ->where('is_publish',"Y")
             ->get();
         return view('FE.pages.event', compact('data'));
@@ -349,7 +349,8 @@ class InterfaceController extends Controller
             return $q->where('institutional_id', $request->institutional_id);
         });
 
-        $data = $query->where('close_registration','>=',date('Y-m-d H:i:s'))
+        //$data = $query->where('close_registration','>=',date('Y-m-d H:i:s'))
+        $data = $query
             ->where('content_event.is_active',"Y")
             ->where('is_publish',"Y")
             ->get();
@@ -360,7 +361,7 @@ class InterfaceController extends Controller
     {
         $detail = content_event_tbl::where('seo',$seo)
             ->where('id',$id)
-            ->where('close_registration','>=',date('Y-m-d H:i:s'))
+            //->where('close_registration','>=',date('Y-m-d H:i:s'))
             ->where('is_active',"Y")
             ->where('is_publish',"Y")
             ->first();

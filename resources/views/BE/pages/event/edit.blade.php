@@ -108,6 +108,23 @@
                             </div>
 
                             <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Ticket Price : </label>
+                                        <input type="text" name="price" class="form-control" value="{{$detail->price}}">
+                                        <small class="text-danger">if the event is free then empty it</small>
+                                    </div>
+                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Close Registration : </label>--}}
+                                        {{--<input type="datetime-local" name="close_registration" class="form-control" value="{{$detail->close_registration}}" required>--}}
+                                        {{--<small class="text-danger">value : {{$detail->close_registration}}</small>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            </div>
+
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Short Description (Bahasa Indonesia): </label>
@@ -132,22 +149,6 @@
                                     <div class="form-group">
                                         <label>Long Description (Bahasa Inggris): </label>
                                         <textarea name="long_description_en" class="form-control text-editor" row="5">{!! $detail->long_description_en !!}</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Ticket Price : </label>
-                                        <input type="text" name="price" class="form-control" value="{{$detail->price}}">
-                                        <small class="text-danger">if the event is free then empty it</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Close Registration : </label>
-                                        <input type="datetime-local" name="close_registration" class="form-control" value="{{$detail->close_registration}}" required>
-                                        <small class="text-danger">value : {{$detail->close_registration}}</small>
                                     </div>
                                 </div>
                             </div>

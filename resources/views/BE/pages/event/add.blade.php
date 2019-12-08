@@ -50,12 +50,17 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Institution : </label>
-                                    <select name="content_id" class="form-control" required>
-                                        <option value=""></option>
-                                        @foreach($content as $item)
-                                            <option value="{{$item->id}}">{{$item->name}}</option>
-                                        @endforeach
-                                    </select>
+                                    @if(auth('admin')->user()->is_admin_master == "Y")
+                                        <select name="content_id" class="form-control" required>
+                                            <option value=""></option>
+                                            @foreach($content as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    @else
+                                        <input type="hidden" name="content_id" value="{{\App\Model\content_tbl::content(auth('admin')->user()->institutional_id)->id}}">
+                                        <input type="text" value="{{\App\Model\content_tbl::content(auth('admin')->user()->institutional_id)->name}}" class="form-control" readonly>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -115,6 +120,22 @@
                         </div>
 
                         <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Ticket Price : </label>
+                                    <input type="text" name="price" class="form-control">
+                                    <small class="text-danger">if the event is free then empty it</small>
+                                </div>
+                            </div>
+                            {{--<div class="col-md-6">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label>Close Registration : </label>--}}
+                                    {{--<input type="datetime-local" name="close_registration" class="form-control" required>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Short Description (Bahasa Indonesia): </label>
@@ -139,21 +160,6 @@
                                 <div class="form-group">
                                     <label>Long Description (Bahasa Inggris): </label>
                                     <textarea name="long_description_en" class="form-control text-editor" row="5"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Ticket Price : </label>
-                                    <input type="text" name="price" class="form-control">
-                                    <small class="text-danger">if the event is free then empty it</small>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Close Registration : </label>
-                                    <input type="datetime-local" name="close_registration" class="form-control" required>
                                 </div>
                             </div>
                         </div>

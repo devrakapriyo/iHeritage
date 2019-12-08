@@ -44,12 +44,17 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Institution :</label>
-                                    <select name="content_id" class="form-control" required>
-                                        <option value=""></option>
-                                        @foreach($content as $item)
-                                            <option value="{{$item->id}}">{{$item->name}}</option>
-                                        @endforeach
-                                    </select>
+                                    @if(auth('admin')->user()->is_admin_master == "Y")
+                                        <select name="content_id" class="form-control" required>
+                                            <option value=""></option>
+                                            @foreach($content as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    @else
+                                        <input type="hidden" name="content_id" value="{{\App\Model\content_tbl::content(auth('admin')->user()->institutional_id)->id}}">
+                                        <input type="text" value="{{\App\Model\content_tbl::content(auth('admin')->user()->institutional_id)->name}}" class="form-control" readonly>
+                                    @endif
                                 </div>
                             </div>
                         </div>

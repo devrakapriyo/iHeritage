@@ -29,11 +29,7 @@ class GalleryController extends Controller
 
     public function gallery_add()
     {
-        if (auth('admin')->user()->is_admin_master == "Y") {
-            $content = content_tbl::select('id', 'name')->where('is_active', "Y")->get();
-        } else {
-            $content = content_tbl::listContent(auth('admin')->user()->institutional_id);
-        }
+        $content = content_tbl::select('id', 'name')->where('is_active', "Y")->get();
         return view('BE.pages.gallery.add', compact('content'));
     }
     public function content_gallery_upload(Request $request)

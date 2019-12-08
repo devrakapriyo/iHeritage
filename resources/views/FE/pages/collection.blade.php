@@ -130,7 +130,7 @@
                         <p class="card-text">
                             @php
                                 $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);
-                                $limit_text = strlen($text) > 250 ? substr($text, 0, 250)." ...readmore" : $text;
+                                $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('collection/detail/'.$item->seo.'/'.$item->id)."'> ...readmore</a>" : $text;
                             @endphp
                             {!! $limit_text !!}
                         </p>

@@ -117,6 +117,7 @@ class EduController extends Controller
             $simpan->latitude_detail = $request->latitude_detail;
             $simpan->longitude_detail = $request->longitude_detail;
             $simpan->is_active = "Y";
+            $simpan->is_publish = "Y";
             $simpan->created_by = auth('admin')->user()->name;
             $simpan->save();
 

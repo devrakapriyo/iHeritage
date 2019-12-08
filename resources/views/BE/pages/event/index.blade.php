@@ -36,7 +36,7 @@
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Price</th>
-                                <th>Close Registration</th>
+                                {{--<th>Close Registration</th>--}}
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>
                             </tr>
                         </thead>
@@ -66,7 +66,7 @@
                 { data: 'start_date', name: 'start_date' },
                 { data: 'end_date', name: 'end_date' },
                 { data: 'price', name: 'price' },
-                { data: 'close_registration', name: 'close_registration' },
+                //{ data: 'close_registration', name: 'close_registration' },
                 { data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });

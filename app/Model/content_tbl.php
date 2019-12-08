@@ -23,6 +23,16 @@ class content_tbl extends Model
         return self::select($field)->where('id',$id)->first()->$field;
     }
 
+    public static function countAppr($admin_master, $instantion)
+    {
+        if($admin_master == "Y")
+        {
+            return self::select('name')->where('is_active', "N")->count();
+        }else{
+            return self::where('institutional_id', $instantion)->where('is_active', "Y")->count();
+        }
+    }
+
     public static function countWaitingAppr($category)
     {
         $data = self::select('category')

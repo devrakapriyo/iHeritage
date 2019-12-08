@@ -37,4 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function countAdmin($admin_master, $instantion)
+    {
+        if($admin_master == "Y")
+        {
+            return self::where('is_active', "Y")->count();
+        }else{
+            return self::where('institutional_id', $instantion)->where('is_active', "Y")->count();
+        }
+    }
 }

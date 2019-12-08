@@ -34,7 +34,7 @@
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Heritage Collection</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">180</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Model\content_collection_tbl::countCollection(auth('admin')->user()->is_admin_master, auth('admin')->user()->institutional_id)}}</div>
             </div>
             <div class="col-auto">
                 <i class="fas fa-folder fa-2x text-gray-300"></i>
@@ -50,10 +50,10 @@
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Process Approval Content</div>
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Process Approval Instantion</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2</div>
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\Model\content_tbl::countAppr(auth('admin')->user()->is_admin_master, auth('admin')->user()->institutional_id)}}</div>
                 </div>
                 <!-- <div class="col">
                     <div class="progress progress-sm mr-2">
@@ -77,7 +77,7 @@
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Admin</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\User::countAdmin(auth('admin')->user()->is_admin_master, auth('admin')->user()->institutional_id)}}</div>
             </div>
             <div class="col-auto">
                 <i class="fas fa-user fa-2x text-gray-300"></i>

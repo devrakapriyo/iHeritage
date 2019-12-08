@@ -58,7 +58,7 @@ class ContentController extends Controller
             })
             ->addColumn('action', function ($data) use ($category) {
                 $btn_edit = '<a href="'.route('content-edit', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
-                $btn_hapus = '<a href="'.route('content-delete', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
+                $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('content-delete', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
                 $btn_approve = '<a href="'.route('content-approve', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-primary">Approve</a>';
 
                 if(auth('admin')->user()->is_admin_master == "Y")

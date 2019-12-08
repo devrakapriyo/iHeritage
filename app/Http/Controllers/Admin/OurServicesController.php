@@ -38,7 +38,7 @@ class OurServicesController extends Controller
             })
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('our-services-edit', ['id'=>$data->id]).'" class="btn btn-warning">Edit</a>';
-                $btn_hapus = '<a href="'.route('our-services-delete', ['id'=>$data->id]).'" class="btn btn-danger">Delete</a>';
+                $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('our-services-delete', ['id'=>$data->id]).'" class="btn btn-danger">Delete</a>';
                 return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
             })
             ->rawColumns(['description_en','description_ind','banner','action'])

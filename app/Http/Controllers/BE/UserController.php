@@ -39,7 +39,7 @@ class UserController extends Controller
             })
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('users-edit', ['id'=>$data->id]).'" class="btn btn-warning">Edit</a>';
-                $btn_hapus = '<a href="'.route('users-delete', ['id'=>$data->id]).'" class="btn btn-danger">Hapus</a>';
+                $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('users-delete', ['id'=>$data->id]).'" class="btn btn-danger">Hapus</a>';
                 if((auth('admin')->user()->is_admin == "Y") || (auth('admin')->user()->is_admin_master == "Y"))
                 {
                     return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";

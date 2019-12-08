@@ -48,7 +48,7 @@ class CollectionController extends Controller
                 $category = institutional::getData($institutional, 'category')->category;
 
                 $btn_edit = '<a href="' . route('collection-edit', ['id' => $data->id]) . '" class="btn btn-xs btn-warning">Edit</a>';
-                $btn_hapus = '<a href="' . route('content-collection-delete', ['category' => $category, 'id' => $data->id]) . '" class="btn btn-xs btn-danger">Hapus</a>';
+                $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="' . route('content-collection-delete', ['category' => $category, 'id' => $data->id]) . '" class="btn btn-xs btn-danger">Hapus</a>';
                 return "<div class='btn-group'>" . $btn_edit . " " . $btn_hapus . "</div>";
             })
             ->rawColumns(['description_en', 'banner', 'media', 'action'])

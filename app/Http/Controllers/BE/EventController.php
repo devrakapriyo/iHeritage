@@ -46,7 +46,7 @@ class EventController extends Controller
             })
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('event-edit', ['id'=>$data->id]).'" class="btn btn-xs btn-warning">Edit</a>';
-                $btn_hapus = '<a href="'.route('event-delete', ['id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
+                $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('event-delete', ['id'=>$data->id]).'" class="btn btn-xs btn-danger">Hapus</a>';
                 $btn_approve = '<a href="'.route('event-approve', ['id'=>$data->id]).'" class="btn btn-xs btn-primary">Approve</a>';
 
                 if(auth('admin')->user()->is_admin_master == "Y")

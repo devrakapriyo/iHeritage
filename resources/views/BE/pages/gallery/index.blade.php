@@ -36,7 +36,7 @@
                                             <div class="card">
                                                 <img src="{{$item->photo}}" class="card-img-top" alt="photo" style="height:150px;">
                                                 <div class="card-body">
-                                                    <a href="{{route('gallery-delete',['id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Photo</a>
+                                                    <a onclick="return confirm('Are you sure you want to delete this data?');" href="{{route('gallery-delete',['id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Photo</a>
                                                 </div>
                                             </div>
                                         </div>

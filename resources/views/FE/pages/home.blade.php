@@ -105,6 +105,14 @@
             <div class="col-md-12">
                 <h2>Museum</h2>
                 <hr>
+                <form method="get" action="{{url('search-instantion/museum')}}">
+                    <div class="input-group mb-3">
+                        <input type="text" name="name" class="form-control" placeholder="@lang('messages.home_museum_search')" aria-label="@lang('messages.home_museum_search')" aria-describedby="button-addon-museum">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             @foreach($museum as $list)
                 <div class="col-md-4 mb-5">
@@ -150,6 +158,14 @@
                 <div class="col-md-12">
                     <h2>@lang('messages.home_palace_title')</h2>
                     <hr>
+                    <form method="get" action="{{url('search-instantion/palace')}}">
+                        <div class="input-group mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="@lang('messages.home_palace_search')" aria-label="@lang('messages.home_palace_search')" aria-describedby="button-addon-museum">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 @foreach($palace as $list)
                     <div class="col-md-4 mb-5">
@@ -187,6 +203,14 @@
                 <div class="col-md-12">
                     <h2>@lang('messages.home_nature_title')</h2>
                     <hr>
+                    <form method="get" action="{{url('search-instantion/nature')}}">
+                        <div class="input-group mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 @foreach($nature as $list)
                     <div class="col-md-4 mb-5">

@@ -25,7 +25,10 @@ return [
     'home_title' => 'The Indonesian Heritage Network',
     'home_description' => 'Let us explore the extraordinary heritage of the nation to push the boundaries of understanding in the past and today.',
     'home_result_search' => 'Result Search...',
-    
+    'home_museum_search' => 'Look for the name of the museum here',
+    'home_palace_search' => 'Look for the name of the palace here',
+    'home_nature_search' => 'Look for the name of the nature here',
+
     'head_menu_about' => 'About',
     'head_menu_service' => 'Services',
     'head_menu_news' => 'News',

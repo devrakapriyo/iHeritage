@@ -184,6 +184,20 @@ class InterfaceController extends Controller
         return view('FE.pages.search', compact('data'));
     }
 
+    public function searchInstantion(Request $request, $instantion)
+    {
+        $query = content_tbl::select('content.*','content_detail.place_id', 'institutional.category')
+            ->join('institutional','institutional.id',"=",'content.institutional_id')
+            ->join('content_detail','content_detail.content_id',"=",'content.id')
+            ->where('institutional.category', $instantion)
+            ->where('content.name', 'like', "%".$request->name."%");
+
+        $data = $query->where('content.is_active', "Y")
+            ->orderBy('content.created_at', 'desc')
+            ->get();
+        return view('FE.pages.search', compact('data'));
+    }
+
     public function detailContent($seo, $id)
     {
         $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $seo)->where('content.id', $id)->first();

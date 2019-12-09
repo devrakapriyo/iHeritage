@@ -11,7 +11,7 @@
     <div class="row">
 
     <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="{{auth('admin')->user()->is_admin_master == "Y" ? "col-xl-3 col-md-6" : "col-xl-4 col-md-6"}} mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="{{auth('admin')->user()->is_admin_master == "Y" ? "col-xl-3 col-md-6" : "col-xl-4 col-md-6"}} mb-4">
         <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
@@ -45,6 +45,7 @@
     </div>
 
     <!-- Earnings (Monthly) Card Example -->
+    @if(auth('admin')->user()->is_admin_master == "Y")
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-info shadow h-100 py-2">
         <div class="card-body">
@@ -69,9 +70,10 @@
         </div>
         </div>
     </div>
+    @endif
 
     <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="{{auth('admin')->user()->is_admin_master == "Y" ? "col-xl-3 col-md-6" : "col-xl-4 col-md-6"}} mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">

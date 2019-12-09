@@ -51,7 +51,7 @@
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Process Approval Instantion</div>
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Process Approval Institution</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\Model\content_tbl::countAppr(auth('admin')->user()->is_admin_master, auth('admin')->user()->institutional_id)}}</div>

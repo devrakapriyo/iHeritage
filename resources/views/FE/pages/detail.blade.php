@@ -58,7 +58,7 @@
                                         <p class="card-text">
                                             @php
                                                 $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
-                                                $limit_text = strlen($text) > 150 ? substr($text, 0, 150)." ...readmore" : $text;
+                                                $limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('collection/detail/'.$item->id)."'> ...readmore</a>" : $text;
                                             @endphp
                                             {!! $limit_text !!}
                                         </p>

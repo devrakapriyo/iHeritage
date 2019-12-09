@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,22 +49,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="900">
+              <caret line="60" column="173" lean-forward="false" selection-start-line="60" selection-start-column="173" selection-end-line="60" selection-end-column="173" />
               <folding>
-                <marker date="1575900529902" expanded="true" signature="855:1183" ph="..." />
-                <marker date="1575900529902" expanded="true" signature="3254:3511" ph="..." />
-                <marker date="1575900529902" expanded="true" signature="5019:5421" ph="..." />
-                <marker date="1575900529902" expanded="true" signature="7706:7913" ph="..." />
+                <marker date="1575901809770" expanded="true" signature="855:1183" ph="..." />
+                <marker date="1575901809770" expanded="true" signature="3254:3565" ph="..." />
+                <marker date="1575901809770" expanded="true" signature="5073:5475" ph="..." />
+                <marker date="1575901809770" expanded="true" signature="7760:7967" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
@@ -182,13 +181,13 @@
         <option value="$PROJECT_DIR$/resources/views/BE/pages/collection/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" />
-        <option value="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/content/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/content/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BE/ContentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
       </list>
     </option>
   </component>
@@ -442,12 +441,12 @@
       <workItem from="1575273081652" duration="13062000" />
       <workItem from="1575586320213" duration="3600000" />
       <workItem from="1575773353869" duration="6301000" />
-      <workItem from="1575899491138" duration="1978000" />
+      <workItem from="1575899491138" duration="2149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280730000" />
+    <option name="totallyTimeSpent" value="280901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -831,16 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="126" column="132" lean-forward="true" selection-start-line="126" selection-start-column="132" selection-end-line="126" selection-end-column="132" />
-          <folding>
-            <marker date="1575900777651" expanded="true" signature="7428:7697" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -848,19 +837,6 @@
           <folding>
             <element signature="e#5752#5783#0#HTML" expanded="true" />
             <marker date="1575900829473" expanded="true" signature="6782:6809" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
-          <folding>
-            <marker date="1575900529902" expanded="true" signature="855:1183" ph="..." />
-            <marker date="1575900529902" expanded="true" signature="3254:3511" ph="..." />
-            <marker date="1575900529902" expanded="true" signature="5019:5421" ph="..." />
-            <marker date="1575900529902" expanded="true" signature="7706:7913" ph="..." />
           </folding>
         </state>
       </provider>
@@ -902,6 +878,29 @@
         <state relative-caret-position="224">
           <caret line="130" column="39" lean-forward="true" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="64" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="132" column="157" lean-forward="true" selection-start-line="132" selection-start-column="91" selection-end-line="132" selection-end-column="157" />
+          <folding>
+            <marker date="1575900777651" expanded="true" signature="7428:7697" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="173" lean-forward="false" selection-start-line="60" selection-start-column="173" selection-end-line="60" selection-end-column="173" />
+          <folding>
+            <marker date="1575901809770" expanded="true" signature="855:1183" ph="..." />
+            <marker date="1575901809770" expanded="true" signature="3254:3565" ph="..." />
+            <marker date="1575901809770" expanded="true" signature="5073:5475" ph="..." />
+            <marker date="1575901809770" expanded="true" signature="7760:7967" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

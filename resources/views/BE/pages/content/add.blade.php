@@ -42,10 +42,16 @@
                     <form method="post" action="{{route('content-post',['category'=>$category])}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name : </label>
+                                    <label>Name (Bahasa Indonesia): </label>
                                     <input type="text" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name (Bahasa Inggris): </label>
+                                    <input type="text" name="name_en" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -110,14 +116,14 @@
                                     <input type="text" name="url_website" class="form-control">
                                 </div>
                             </div>
-                            @if(auth('admin')->user()->is_admin_master == "Y")
+                            {{--@if(auth('admin')->user()->is_admin_master == "Y")--}}
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Link Virtual Reality : </label>
                                     <input type="text" name="url_vr" class="form-control">
                                 </div>
                             </div>
-                            @endif
+                            {{--@endif--}}
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Contact Phone : </label>

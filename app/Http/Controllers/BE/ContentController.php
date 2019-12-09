@@ -111,6 +111,7 @@ class ContentController extends Controller
             $content = new content_tbl;
             $content->photo = $photo;
             $content->name = $request->name;
+            $content->name_en = $request->name_en;
             $content->seo = Str::slug($request->name);
             $content->category_ctn_id = category_content_tbl::getIDCategoryContent($category);
             $content->location = $request->location;
@@ -195,6 +196,7 @@ class ContentController extends Controller
             content_tbl::where('id',$id)
                 ->update([
                     'name'=>$request->name,
+                    'name'=>$request->name_en,
                     'photo'=>$photo,
                     'category_ctn_id'=>category_content_tbl::getIDCategoryContent($category),
                     'location'=>$request->location,

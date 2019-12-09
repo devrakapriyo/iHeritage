@@ -42,10 +42,16 @@
                         <form method="post" action="{{route('content-update',['category'=>$category,'id'=>$id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Name : </label>
+                                        <label>Name (Bahasa Indonesia): </label>
                                         <input type="text" name="name" class="form-control" value="{{$content->name}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name (Bahasa Inggris): </label>
+                                        <input type="text" name="name_en" class="form-control" value="{{$content->name_en}}" required>
                                     </div>
                                 </div>
                             </div>
@@ -79,8 +85,8 @@
                                     <div class="form-group">
                                         <label>Name Location :</label>
                                         <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()" required>
-                                        <input type="hidden" name="latitude_detail" id="latitude">
-                                        <input type="hidden" name="longitude_detail" id="longitude">
+                                        <input type="hidden" name="latitude_detail" id="latitude" value="{{$detail->latitude_detail}}">
+                                        <input type="hidden" name="longitude_detail" id="longitude" value="{{$detail->longitude_detail}}">
                                     </div>
                                     <div id='address-examples'>
                                         <div>Name location examples :</div>
@@ -110,14 +116,14 @@
                                         <input type="text" name="url_website" class="form-control" value="{{$detail->url_website}}">
                                     </div>
                                 </div>
-                                @if(auth('admin')->user()->is_admin_master == "Y")
+                                {{--@if(auth('admin')->user()->is_admin_master == "Y")--}}
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Link Virtual Reality : </label>
                                         <input type="text" name="url_vr" class="form-control" value="{{$detail->url_vr}}">
                                     </div>
                                 </div>
-                                @endif
+                                {{--@endif--}}
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Contact Phone : </label>

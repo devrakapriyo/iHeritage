@@ -36,7 +36,7 @@
             </div>
             <hr>
             <div class="form-group">
-                <p class="text-capitalize">@lang('messages.collection_type') : <br><strong>{{$detail->media_type == "url" ? "HTML 5" : $detail->media_type}}</strong></p>
+                <p class="text-capitalize">@lang('messages.collection_type') : <br><strong>{{$detail->media_type == "url" ? "HTML5" : $detail->media_type}}</strong></p>
             </div>
             <hr>
             <div class="form-group">
@@ -96,7 +96,7 @@
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
                     @elseif($detail->media_type == "url")
-                        <iframe src="{{$detail->media}}" style="width:100%;height:300px">
+                        <iframe src="{{$detail->media}}" style="width:100%;height:500px">
                             <p>Your browser does not support iframes.</p>
                         </iframe>
                     @endif

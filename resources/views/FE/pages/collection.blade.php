@@ -124,7 +124,7 @@
                         <small class="card-text">
                             @lang('messages.collection_institution') : {{\App\Model\institutional::getName($item->content_id)}}<br>
                             @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
-                            media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type == "url" ? "HTML 5" : $item->media_type}}</span>
+                            media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
                         </small>
                         <hr>
                         <p class="card-text">

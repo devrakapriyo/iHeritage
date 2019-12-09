@@ -103,16 +103,20 @@
         <!-- List Museum -->
         <div class="row">
             <div class="col-md-12">
-                <h2>Museum</h2>
+                <h2>
+                    <a href="{{url('search-instantion/museum')}}" class="text-dark">
+                        Museum
+                    </a>
+                </h2>
                 <hr>
-                <form method="get" action="{{url('search-instantion/museum')}}">
-                    <div class="input-group mb-3">
-                        <input type="text" name="name" class="form-control" placeholder="@lang('messages.home_museum_search')" aria-label="@lang('messages.home_museum_search')" aria-describedby="button-addon-museum">
-                        <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>
-                        </div>
-                    </div>
-                </form>
+                {{--<form method="get" action="{{url('search-instantion/museum')}}">--}}
+                    {{--<div class="input-group mb-3">--}}
+                        {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_museum_search')" aria-label="@lang('messages.home_museum_search')" aria-describedby="button-addon-museum">--}}
+                        {{--<div class="input-group-append">--}}
+                            {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</form>--}}
             </div>
             @foreach($museum as $list)
                 <div class="col-md-4 mb-5">
@@ -123,7 +127,7 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
-                                    {{$list->name}}
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
                                 </a>
                             </h5>
                             <p class="card-text">
@@ -156,16 +160,20 @@
         @if(count($palace) != 0)
             <div class="row">
                 <div class="col-md-12">
-                    <h2>@lang('messages.home_palace_title')</h2>
+                    <h2>
+                        <a href="{{url('search-instantion/palace')}}" class="text-dark">
+                            @lang('messages.home_palace_title')
+                        </a>
+                    </h2>
                     <hr>
-                    <form method="get" action="{{url('search-instantion/palace')}}">
-                        <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="@lang('messages.home_palace_search')" aria-label="@lang('messages.home_palace_search')" aria-describedby="button-addon-museum">
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>
-                            </div>
-                        </div>
-                    </form>
+                    {{--<form method="get" action="{{url('search-instantion/palace')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_palace_search')" aria-label="@lang('messages.home_palace_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
                 </div>
                 @foreach($palace as $list)
                     <div class="col-md-4 mb-5">
@@ -176,7 +184,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
-                                        {{$list->name}}
+                                        {{App::isLocale('id') ? $list->name : $list->name_en}}
                                     </a>
                                 </h5>
                                 <p class="card-text">
@@ -201,16 +209,20 @@
         @if(count($nature) != 0)
             <div class="row">
                 <div class="col-md-12">
-                    <h2>@lang('messages.home_nature_title')</h2>
+                    <h2>
+                        <a href="{{url('search-instantion/nature')}}" class="text-dark">
+                            @lang('messages.home_nature_title')
+                        </a>
+                    </h2>
                     <hr>
-                    <form method="get" action="{{url('search-instantion/nature')}}">
-                        <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>
-                            </div>
-                        </div>
-                    </form>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
                 </div>
                 @foreach($nature as $list)
                     <div class="col-md-4 mb-5">
@@ -221,7 +233,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
-                                    {{$list->name}}
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
                                     </a>
                                 </h5>
                                 <p class="card-text">

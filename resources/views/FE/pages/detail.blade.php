@@ -12,7 +12,7 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-md-8 mt-2">
-            <h2 class="text-capitalize">{{$detail->name}}</h2>
+            <h2 class="text-capitalize">{{App::isLocale('id') ? $detail->name : $detail->name_en}}</h2>
             @php
                 $text = App::isLocale('id') ? $detail->short_description_ind : $detail->short_description_en;
             @endphp
@@ -52,7 +52,7 @@
                                         </h5>
                                         <small class="card-text">
                                             @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
-                                            media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type}}</span>
+                                            media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
                                         </small>
                                         <hr>
                                         <p class="card-text">
@@ -73,7 +73,7 @@
             {{--education--}}
             @if(count($education) > 0)
                 <div class="form-group mt-5">
-                    <h2 class="text-capitalize">@lang('messages.edu_title')}</h2>
+                    <h2 class="text-capitalize">@lang('messages.edu_title')</h2>
                 </div>
                 <hr>
                 <div class="row">
@@ -183,7 +183,14 @@
                     {{\App\Model\place_tbl::placeNameLang($detail->place_id)}}</span>
             </div>
             <div class="form-group">
-                <p>Website : <a href="{{$detail->url_website}}" target="_blank">{{\Illuminate\Support\Str::replaceArray('http://', [""], $detail->url_website)}}</a></p>
+                <p>
+                    Website :
+                    @if(($detail->url_website == "") || ($detail->url_website == null) || ($detail->url_website == "-"))
+                        -
+                    @else
+                        <a href="{{$detail->url_website}}" target="_blank">{{\Illuminate\Support\Str::replaceArray('http://', [""], $detail->url_website)}}</a>
+                    @endif
+                </p>
             </div>
             <div class="form-group">
                 <p>Phone : {{$detail->phone}}</p>

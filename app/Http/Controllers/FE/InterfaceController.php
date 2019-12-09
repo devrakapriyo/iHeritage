@@ -184,13 +184,13 @@ class InterfaceController extends Controller
         return view('FE.pages.search', compact('data'));
     }
 
-    public function searchInstantion(Request $request, $instantion)
+    public function searchInstantion($instantion)
     {
         $query = content_tbl::select('content.*','content_detail.place_id', 'institutional.category')
             ->join('institutional','institutional.id',"=",'content.institutional_id')
             ->join('content_detail','content_detail.content_id',"=",'content.id')
-            ->where('institutional.category', $instantion)
-            ->where('content.name', 'like', "%".$request->name."%");
+            ->where('institutional.category', $instantion);
+            //->where('content.name', 'like', "%".$request->name."%");
 
         $data = $query->where('content.is_active', "Y")
             ->orderBy('content.created_at', 'desc')
@@ -206,7 +206,8 @@ class InterfaceController extends Controller
             'document'=>'primary',
             'audio'=>'success',
             'video'=>'danger',
-            'image'=>'warning'
+            'image'=>'warning',
+            'url'=>'dark'
         ];
         $education = content_edu_tbl::select('id','name','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $event = content_event_tbl::select('id','name','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('close_registration','>=',date('Y-m-d H:i:s'))->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();

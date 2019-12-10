@@ -67,12 +67,13 @@
       <file leaf-file-name="collection-detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="98" column="26" lean-forward="false" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="26" />
+            <state relative-caret-position="332">
+              <caret line="101" column="55" lean-forward="false" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="55" />
               <folding>
                 <element signature="e#1174#1193#0#HTML" expanded="true" />
-                <element signature="e#5763#5806#0#HTML" expanded="true" />
-                <marker date="1575949115592" expanded="true" signature="6869:6896" ph="..." />
+                <element signature="e#5611#5646#0#HTML" expanded="true" />
+                <element signature="e#6060#6095#0#HTML" expanded="true" />
+                <marker date="1575951879270" expanded="true" signature="6986:7013" ph="..." />
               </folding>
             </state>
           </provider>
@@ -455,12 +456,12 @@
       <workItem from="1575273081652" duration="13062000" />
       <workItem from="1575586320213" duration="3600000" />
       <workItem from="1575773353869" duration="6301000" />
-      <workItem from="1575899491138" duration="3951000" />
+      <workItem from="1575899491138" duration="4278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282703000" />
+    <option name="totallyTimeSpent" value="283030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -909,12 +910,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="98" column="26" lean-forward="false" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="26" />
+        <state relative-caret-position="332">
+          <caret line="101" column="55" lean-forward="false" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="55" />
           <folding>
             <element signature="e#1174#1193#0#HTML" expanded="true" />
-            <element signature="e#5763#5806#0#HTML" expanded="true" />
-            <marker date="1575949115592" expanded="true" signature="6869:6896" ph="..." />
+            <element signature="e#5611#5646#0#HTML" expanded="true" />
+            <element signature="e#6060#6095#0#HTML" expanded="true" />
+            <marker date="1575951879270" expanded="true" signature="6986:7013" ph="..." />
           </folding>
         </state>
       </provider>

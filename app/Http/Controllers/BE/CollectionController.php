@@ -139,6 +139,7 @@ class CollectionController extends Controller
         $simpan = new content_collection_tbl;
         $simpan->content_id = $request->content_id;
         $simpan->name = $request->name;
+        $simpan->name_en = $request->name_en;
         $simpan->banner = $banner;
         $simpan->media = $media;
         $simpan->media_type = $request->media_type;
@@ -244,6 +245,7 @@ class CollectionController extends Controller
         content_collection_tbl::where('id',$id)
             ->update([
                 'name'=>$request->name,
+                'name_en'=>$request->name_en,
                 'banner'=>$banner,
                 'media'=>$media,
                 'creator'=>$request->creator,

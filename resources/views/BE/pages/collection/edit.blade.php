@@ -49,11 +49,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Title : </label>
+                                    <label>Name Collection (Bahasa Indonesia): </label>
                                     <input type="text" name="name" class="form-control" value="{{$detail->name}}" required>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name Collection (Bahasa Indonesia): </label>
+                                    <input type="text" name="name_en" class="form-control" value="{{$detail->name_en}}" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Media Type : </label>
                                     <select name="media_type" class="form-control" required>
@@ -61,7 +69,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-8">
                                 @if($detail->media_type == "video")
                                     <div class="form-group">
                                         <label>Link Youtube : </label>

@@ -61,11 +61,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Title : </label>
+                                    <label>Name Collection (Bahasa Indonesia): </label>
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name Collection (Bahasa Inggris): </label>
+                                    <input type="text" name="name_en" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Media Type : </label>
                                     <select name="media_type" class="form-control" id="media_type" required>
@@ -74,11 +82,11 @@
                                         <option value="video">Video</option>
                                         <option value="audio">Audio</option>
                                         <option value="document">Document</option>
-                                        <option value="url">HTML 5</option>
+                                        <option value="url">HTML5</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-8">
                                 <div class="form-group" id="media_file">
                                     <label>Upload Media : </label>
                                     <input type="file" name="media" class="form-control">

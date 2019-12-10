@@ -201,7 +201,7 @@ class InterfaceController extends Controller
     public function detailContent($seo, $id)
     {
         $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $seo)->where('content.id', $id)->first();
-        $collection = content_collection_tbl::select('id','name','banner','media_type','description_ind','description_en','place_id','media_type')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
+        $collection = content_collection_tbl::select('id','name','name_en','banner','media_type','description_ind','description_en','place_id','media_type')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
         $color_media = [
             'document'=>'primary',
             'audio'=>'success',

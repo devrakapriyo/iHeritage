@@ -125,6 +125,7 @@ class IndexController extends Controller
             'email' => $simpan->email,
             'password' => $simpan->none_has_pass,
             'role' => "Admin",
+            'link' => url('login')
         ], function ($m) use ($simpan) {
             $m->from('info@iheritage.id', 'Info iHeritage ID');
             $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');
@@ -170,6 +171,7 @@ class IndexController extends Controller
                 'email' => $simpan->email,
                 'password' => $simpan->none_has_pass,
                 'role' => "Visitor",
+                'link' => url('login-visitor')
             ], function ($m) use ($simpan) {
                 $m->from('info@iheritage.id', 'Info iHeritage ID');
                 $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');

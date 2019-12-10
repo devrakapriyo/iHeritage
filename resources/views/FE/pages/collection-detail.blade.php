@@ -8,17 +8,17 @@
                 <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
                 <div class="card-body">
                     <a href="" class="btn btn-warning btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#exampleModal">view collection</a>
-                    <div class="row mt-2">
-                        <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6 mt-2">
                             <a href="{{$facebook}}" class="btn btn-sm btn-facebook btn-block" target="_blank" title="share facebook"><i class="fa fa-facebook"></i></a>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-2">
                             <a href="{{$twitter}}" class="btn btn-sm btn-twitter btn-block" target="_blank" title="share twitter"><i class="fa fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:350px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:350px;}</style></div>
+            <div class="mapouter"><div class="gmap_canvas"><iframe style="width: 100%" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:100%;}</style></div>
         </div>
         <div class="col-md-8">
             <h2 class="text-capitalize">{{$detail->name}}</h2>
@@ -96,7 +96,7 @@
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
                     @elseif($detail->media_type == "url")
-                        <iframe src="{{$detail->media}}" style="width:100%;height:500px">
+                        <iframe src="{{$detail->media}}" style="border:none;width:100%;height:500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                             <p>Your browser does not support iframes.</p>
                         </iframe>
                     @endif

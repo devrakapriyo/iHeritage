@@ -196,7 +196,7 @@ class ContentController extends Controller
             content_tbl::where('id',$id)
                 ->update([
                     'name'=>$request->name,
-                    'name'=>$request->name_en,
+                    'name_en'=>$request->name_en,
                     'photo'=>$photo,
                     'category_ctn_id'=>category_content_tbl::getIDCategoryContent($category),
                     'location'=>$request->location,

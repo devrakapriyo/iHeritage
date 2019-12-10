@@ -5,9 +5,11 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card mb-3">
-                <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
+                <a href="" data-toggle="modal" data-target="#exampleModal">
+                    <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
+                </a>
                 <div class="card-body">
-                    <a href="" class="btn btn-warning btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#exampleModal">view collection</a>
+                    <a href="" class="btn btn-warning btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#exampleModal">@lang('messages.collection_btn_view')</a>
                     <div class="row">
                         <div class="col-md-6 mt-2">
                             <a href="{{$facebook}}" class="btn btn-sm btn-facebook btn-block" target="_blank" title="share facebook"><i class="fa fa-facebook"></i></a>

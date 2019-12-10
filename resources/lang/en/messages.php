@@ -72,6 +72,7 @@ return [
     'collection_publisher' => 'Publisher',
     'collection_institution' => 'Institution Owner',
     'collection_link' => 'Link URL',
+    'collection_btn_view' => 'VIEW COLLECTION',
 
     // page vr
     'vr_title' => 'Virtual Tour',

@@ -72,6 +72,7 @@ return [
     'collection_publisher' => 'Penerbit',
     'collection_institution' => 'Institusi Pemilik',
     'collection_link' => 'Tautan URL',
+    'collection_btn_view' => 'LIHAT KOLEKSI',
 
     // page vr
     'vr_title' => 'Tur Virtual',

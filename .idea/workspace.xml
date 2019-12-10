@@ -52,9 +52,10 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="173" lean-forward="false" selection-start-line="60" selection-start-column="173" selection-end-line="60" selection-end-column="173" />
+            <state relative-caret-position="-3098">
+              <caret line="3" column="42" lean-forward="true" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
               <folding>
+                <element signature="e#93#278#0#HTML" expanded="true" />
                 <marker date="1575901809770" expanded="true" signature="855:1183" ph="..." />
                 <marker date="1575901809770" expanded="true" signature="3254:3565" ph="..." />
                 <marker date="1575901809770" expanded="true" signature="5073:5475" ph="..." />
@@ -67,13 +68,13 @@
       <file leaf-file-name="collection-detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="101" column="55" lean-forward="false" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="55" />
+            <state relative-caret-position="272">
+              <caret line="97" column="57" lean-forward="false" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
               <folding>
                 <element signature="e#1174#1193#0#HTML" expanded="true" />
                 <element signature="e#5611#5646#0#HTML" expanded="true" />
-                <element signature="e#6060#6095#0#HTML" expanded="true" />
-                <marker date="1575951879270" expanded="true" signature="6986:7013" ph="..." />
+                <element signature="e#5762#5797#0#HTML" expanded="true" />
+                <marker date="1575953245119" expanded="true" signature="6688:6715" ph="..." />
               </folding>
             </state>
           </provider>
@@ -456,12 +457,12 @@
       <workItem from="1575273081652" duration="13062000" />
       <workItem from="1575586320213" duration="3600000" />
       <workItem from="1575773353869" duration="6301000" />
-      <workItem from="1575899491138" duration="4278000" />
+      <workItem from="1575899491138" duration="4785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283030000" />
+    <option name="totallyTimeSpent" value="283537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -897,9 +898,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="173" lean-forward="false" selection-start-line="60" selection-start-column="173" selection-end-line="60" selection-end-column="173" />
+        <state relative-caret-position="-3098">
+          <caret line="3" column="42" lean-forward="true" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
           <folding>
+            <element signature="e#93#278#0#HTML" expanded="true" />
             <marker date="1575901809770" expanded="true" signature="855:1183" ph="..." />
             <marker date="1575901809770" expanded="true" signature="3254:3565" ph="..." />
             <marker date="1575901809770" expanded="true" signature="5073:5475" ph="..." />
@@ -910,13 +912,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="101" column="55" lean-forward="false" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="55" />
+        <state relative-caret-position="272">
+          <caret line="97" column="57" lean-forward="false" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
           <folding>
             <element signature="e#1174#1193#0#HTML" expanded="true" />
             <element signature="e#5611#5646#0#HTML" expanded="true" />
-            <element signature="e#6060#6095#0#HTML" expanded="true" />
-            <marker date="1575951879270" expanded="true" signature="6986:7013" ph="..." />
+            <element signature="e#5762#5797#0#HTML" expanded="true" />
+            <marker date="1575953245119" expanded="true" signature="6688:6715" ph="..." />
           </folding>
         </state>
       </provider>

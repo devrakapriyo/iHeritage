@@ -96,9 +96,6 @@
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
                     @elseif($detail->media_type == "url")
-                        {{--<iframe src="{{$detail->media}}" style="border:none;width:100%;height:500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">--}}
-                            {{--<p>Your browser does not support iframes.</p>--}}
-                        {{--</iframe>--}}
                         <embed src="{{$detail->media}}" style="width: 100%; height: 515px;">
                     @endif
                 </div>

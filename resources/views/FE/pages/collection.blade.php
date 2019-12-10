@@ -22,7 +22,7 @@
                                     <option value="audio">@lang('messages.collection_type_audio')</option>
                                     <option value="image">@lang('messages.collection_type_image')</option>
                                     <option value="video">@lang('messages.collection_type_video')</option>
-                                    <option value="url">HTML 5</option>
+                                    <option value="url">HTML5</option>
                                 </select>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                     <img class="card-img-top" src="{{$item->banner}}" alt="{{$item->banner}}" height="200" widht="200">
                     <div class="card-body">
                         <h5 class="card-title text-uppercase">
-                            <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{$item->name}}</a>
+                            <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{App::isLocale('id') ? $item->name : $item->name_en}}</a>
                         </h5>
                         <small class="card-text">
                             @lang('messages.collection_institution') : {{\App\Model\institutional::getName($item->content_id)}}<br>

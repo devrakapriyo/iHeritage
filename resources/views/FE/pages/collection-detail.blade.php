@@ -23,7 +23,7 @@
             <div class="mapouter"><div class="gmap_canvas"><iframe style="width: 100%" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:100%;}</style></div>
         </div>
         <div class="col-md-8">
-            <h2 class="text-capitalize">{{$detail->name}}</h2>
+            <h2 class="text-capitalize">{{App::isLocale('id') ? $detail->name : $detail->name_en}}</h2>
             @php
                 $text = App::isLocale('id') ? $detail->description_ind : $detail->description_en;
             @endphp

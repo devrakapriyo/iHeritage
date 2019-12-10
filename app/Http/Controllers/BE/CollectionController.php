@@ -205,7 +205,7 @@ class CollectionController extends Controller
             $media = $request->media;
         }
 
-        $institutional = content_tbl::fieldContent($id, 'institutional_id');
+        $institutional = content_tbl::fieldContent(content_collection_tbl::fieldContent($id, "content_id"), 'institutional_id');
         $category = institutional::getData($institutional, 'category')->category;
 
         if (!empty($request->file('banner'))) {

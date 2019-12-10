@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name Collection (Bahasa Indonesia): </label>
+                                    <label>Name Collection (Bahasa Inggris): </label>
                                     <input type="text" name="name_en" class="form-control" value="{{$detail->name_en}}" required>
                                 </div>
                             </div>

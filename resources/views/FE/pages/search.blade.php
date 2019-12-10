@@ -115,7 +115,7 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
-                                    {{$list->name}}
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
                                 </a>
                             </h5>
                             <p class="card-text">

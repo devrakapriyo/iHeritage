@@ -56,7 +56,7 @@ return [
     'home_news_title' => 'News',
 
     // page collection
-    'heritage_title' => 'Collection Search',
+    'heritage_title' => 'Collection',
     'collection_address' => 'Address',
     'collection_creator' => 'Creator',
     'collection_year' => 'Created Year',

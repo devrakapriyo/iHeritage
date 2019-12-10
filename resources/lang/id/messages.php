@@ -56,7 +56,7 @@ return [
     'home_news_title' => 'Berita',
 
     // page collection
-    'heritage_title' => 'Pencarian Koleksi',
+    'heritage_title' => 'Koleksi',
     'collection_address' => 'Alamat',
     'collection_creator' => 'Pembuat',
     'collection_year' => 'Tahun Pembuatan',

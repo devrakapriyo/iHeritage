@@ -67,7 +67,6 @@ class CollectionController extends Controller
 
     public function collection_post(Request $request)
     {
-        dd($request->file("media"));
         if (($request->media_type != "video") && ($request->media_type != "url")) {
             if (!empty($request->file('media'))) {
                 if ($request->media_type == "image") {

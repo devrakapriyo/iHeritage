@@ -36,19 +36,27 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        <form method="post" action="{{route('edu-post')}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('edu-update', ['id'=>$id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Name Education Program : </label>
+                                        <label>Institution : </label>
+                                        <input type="text" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name Education Program (Bahasa Indonesia): </label>
                                         <input type="text" name="name" class="form-control" value="{{$detail->name}}" required>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Institution : </label>
-                                        <input type="text" name="content_id" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
+                                        <label>Name Education Program (Bahasa Inggris): </label>
+                                        <input type="text" name="name_en" class="form-control" value="{{$detail->name_en}}" required>
                                     </div>
                                 </div>
                             </div>

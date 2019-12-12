@@ -100,6 +100,7 @@ class EduController extends Controller
             $simpan->content_id = $request->content_id;
             $simpan->banner = $banner;
             $simpan->name = $request->name;
+            $simpan->name_en = $request->name_en;
             $simpan->seo = Str::slug($request->name);
             $simpan->description_en = $request->description_en;
             $simpan->description_ind = $request->description_ind;
@@ -168,6 +169,8 @@ class EduController extends Controller
 
             content_edu_tbl::where('id',$id)
                 ->update([
+                    'name'=>$request->name,
+                    'name_en'=>$request->name_en,
                     'banner'=>$banner,
                     'place_id'=>$request->place_id,
                     'map_area_detail'=>$request->map_area_detail,

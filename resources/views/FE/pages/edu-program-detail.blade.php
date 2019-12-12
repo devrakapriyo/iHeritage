@@ -10,7 +10,7 @@
                 <div class="card">
                     <img src="{{$detail->banner}}" class="card-img-top" alt="{{$detail->banner}}">
                     <div class="card-body">
-                        <h5 class="card-title">{{$detail->name}}</h5>
+                        <h5 class="card-title">{{App::isLocale('id') ? $detail->name : $detail->name_en}}</h5>
                         <p class="card-text">
                             @php
                                 $description = App::isLocale('id') ? $detail->description_ind : $detail->description_en;

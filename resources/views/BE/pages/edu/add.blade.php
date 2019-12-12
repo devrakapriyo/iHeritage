@@ -41,13 +41,7 @@
                     <form method="post" action="{{route('edu-post')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <label>Name Education Program : </label>
-                                    <input type="text" name="name" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Institution : </label>
                                     @if(auth('admin')->user()->is_admin_master == "Y")
@@ -61,6 +55,20 @@
                                         <input type="hidden" name="content_id" value="{{\App\Model\content_tbl::content(auth('admin')->user()->institutional_id)->id}}">
                                         <input type="text" value="{{\App\Model\content_tbl::content(auth('admin')->user()->institutional_id)->name}}" class="form-control" readonly>
                                     @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name Education Program (Bahasa Indonesia): </label>
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name Education Program (Bahasa Inggris): </label>
+                                    <input type="text" name="name_en" class="form-control" required>
                                 </div>
                             </div>
                         </div>

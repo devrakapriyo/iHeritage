@@ -95,7 +95,7 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{{url('education-program/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
-                                    {{$item->name}}
+                                    {{App::isLocale('id') ? $item->name : $item->name_en}}
                                 </a>
                             </h5>
                             <p class="card-text">

@@ -209,8 +209,8 @@ class InterfaceController extends Controller
             'image'=>'warning',
             'url'=>'dark'
         ];
-        $education = content_edu_tbl::select('id','name','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
-        $event = content_event_tbl::select('id','name','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('close_registration','>=',date('Y-m-d H:i:s'))->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
+        $education = content_edu_tbl::select('id','name','name_en','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
+        $event = content_event_tbl::select('id','name','name_en','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $gallery = content_gallery_tbl::select('photo','id')->where('content_id', $id)->orderBy('id','desc')->take(3)->get();
         return view('FE.pages.detail', compact('detail','collection','color_media','education','event','gallery'));
     }

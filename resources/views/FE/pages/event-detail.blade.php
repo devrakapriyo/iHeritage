@@ -10,7 +10,7 @@
                 <div class="card">
                     <img src="{{$detail->banner}}" class="card-img-top" alt="{{$detail->banner}}">
                     <div class="card-body">
-                        <h5 class="card-title">{{$detail->name}}</h5>
+                        <h5 class="card-title">{{App::isLocale('id') ? $detail->name : $detail->name_en}}</h5>
                         <p class="card-text">
                             @php
                                 $description = App::isLocale('id') ? $detail->long_description_ind : $detail->long_description_en;
@@ -25,7 +25,7 @@
                 <div class="form-group mt-3">
                     <div class="row">
                         <div class="col-md-7">
-                            <h5>{{$detail->name}}</h5>
+                            <h5>{{App::isLocale('id') ? $detail->name : $detail->name_en}}</h5>
                         </div>
                         <div class="col-md-5">
                             <small class="btn btn-sm btn-success text-capitalize float-right">{{$detail->price == 0 ? App::isLocale('id') ? "Gratis" : "Free" : "Rp. ".number_format($detail->price) }}</small>

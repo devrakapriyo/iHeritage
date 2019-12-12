@@ -39,16 +39,24 @@
                         <form method="post" action="{{route('event-update', ['id'=>$id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <label>Name Event : </label>
-                                        <input type="text" name="name" class="form-control" value="{{$detail->name}}" required>
-                                    </div>
-                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Institution : </label>
-                                        <input type="text" name="content_id" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
+                                        <input type="text" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name Event (Bahasa Indonesia): </label>
+                                        <input type="text" name="name" class="form-control" value="{{$detail->name}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name Event (Bahasa Inggris): </label>
+                                        <input type="text" name="name_en" class="form-control" value="{{$detail->name_en}}" required>
                                     </div>
                                 </div>
                             </div>

@@ -104,7 +104,7 @@
             {{--event--}}
             @if(count($event) > 0)
                 <div class="form-group mt-5">
-                    <h2 class="text-capitalize">@lang('messages.events_title')}</h2>
+                    <h2 class="text-capitalize">@lang('messages.event_title')</h2>
                 </div>
                 <hr>
                 <div class="row">
@@ -126,7 +126,9 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <h5 class="card-title">{{$item->name}}</h5>
+                                        <h5 class="card-title">
+                                            {{App::isLocale('id') ? $item->name : $item->name_en}}
+                                        </h5>
                                         <small class="card-text" title="{{$item->map_area_detail}}">
                                             @php
                                                 $text = $item->map_area_detail;

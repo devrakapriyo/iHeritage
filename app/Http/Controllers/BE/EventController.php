@@ -99,6 +99,7 @@ class EventController extends Controller
             $simpan->content_id = $request->content_id;
             $simpan->banner = $banner;
             $simpan->name = $request->name;
+            $simpan->name_en = $request->name_en;
             $simpan->seo = Str::slug($request->name);
             $simpan->place_id = $request->place_id;
             $simpan->map_area_detail = $request->map_area_detail;
@@ -165,6 +166,8 @@ class EventController extends Controller
 
             content_event_tbl::where('id',$id)
                 ->update([
+                    'name'=>$request->name,
+                    'name_en'=>$request->name_en,
                     'banner'=>$banner,
                     'place_id'=>$request->place_id,
                     'map_area_detail'=>$request->map_area_detail,

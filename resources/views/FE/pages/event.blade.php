@@ -127,7 +127,7 @@
                         </div>
                         <h5 class="card-title">
                             <a href="{{url('event/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
-                                {{$item->name}}
+                                {{App::isLocale('id') ? $item->name : $item->name_en}}
                             </a>
                         </h5>
                         <small class="card-text" title="{{$item->map_area_detail}}">

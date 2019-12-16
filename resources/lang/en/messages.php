@@ -110,7 +110,7 @@ return [
     'news_list_title' => 'Other News',
 
     // page event
-    'event_title' => 'Search Event',
+    'event_title' => 'Event',
     'event_category_ticket' => 'Ticket Category',
     'event_free_price' => 'Free',
     'event_paid_price' => 'Paid',
@@ -120,7 +120,7 @@ return [
     'event_close' => 'Registration is Closed',
 
     // page education program
-    'edu_title' => 'Search Education Program',
+    'edu_title' => 'Education Program',
     'edu_information' => 'Information',
     'edu_information_opening' => 'Opening Hours',
     'edu_information_monday' => 'Monday',

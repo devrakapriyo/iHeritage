@@ -137,20 +137,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Short Description (Bahasa Indonesia): </label>
-                                        <textarea name="short_description_ind" class="form-control" row="3" required>{!! $content->short_description_ind !!}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Short Description (Bahasa Inggris): </label>
-                                        <textarea name="short_description_en" class="form-control" row="3" required>{!! $content->short_description_en !!}</textarea>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Short Description (Bahasa Indonesia): </label>--}}
+                                        {{--<textarea name="short_description_ind" class="form-control" row="3" required>{!! $content->short_description_ind !!}</textarea>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Short Description (Bahasa Inggris): </label>--}}
+                                        {{--<textarea name="short_description_en" class="form-control" row="3" required>{!! $content->short_description_en !!}</textarea>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -173,53 +173,76 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>Sunday : </label>--}}
+                                                {{--<input type="text" name="opening_sunday" class="form-control" value="{{$detail->opening_sunday}}">--}}
+                                                {{--<small class="text-danger">example value : 09:00 - 15:00</small>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>Monday : </label>--}}
+                                                {{--<input type="text" name="opening_monday" class="form-control" value="{{$detail->opening_monday}}">--}}
+                                                {{--<small class="text-danger">example value : 09:00 - 15:00</small>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>Tuesday : </label>--}}
+                                                {{--<input type="text" name="opening_tuesday" class="form-control" value="{{$detail->opening_tuesday}}">--}}
+                                                {{--<small class="text-danger">example value : 09:00 - 15:00</small>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>Wednesday : </label>--}}
+                                                {{--<input type="text" name="opening_wednesday" class="form-control" value="{{$detail->opening_wednesday}}">--}}
+                                                {{--<small class="text-danger">example value : 09:00 - 15:00</small>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>Thursday : </label>--}}
+                                                {{--<input type="text" name="opening_thursday" class="form-control" value="{{$detail->opening_thursday}}">--}}
+                                                {{--<small class="text-danger">example value : 09:00 - 15:00</small>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>Friday : </label>--}}
+                                                {{--<input type="text" name="opening_friday" class="form-control" value="{{$detail->opening_friday}}">--}}
+                                                {{--<small class="text-danger">example value : 09:00 - 15:00</small>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label>Saturday : </label>--}}
+                                                {{--<input type="text" name="opening_saturday" class="form-control" value="{{$detail->opening_saturday}}">--}}
+                                                {{--<small class="text-danger">example value : 09:00 - 15:00</small>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Sunday : </label>
-                                                <input type="text" name="opening_sunday" class="form-control" value="{{$detail->opening_sunday}}">
-                                                <small class="text-danger">example value : 09:00 - 15:00</small>
+                                                <label>Opening Days (bahasa indonesia): </label>
+                                                <input type="text" name="opening_day_ind" class="form-control" value="{{$detail->opening_day_ind}}">
+                                                <small class="text-danger">example value : Selasa sampai Minggu</small>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Monday : </label>
-                                                <input type="text" name="opening_monday" class="form-control" value="{{$detail->opening_monday}}">
-                                                <small class="text-danger">example value : 09:00 - 15:00</small>
+                                                <label>Opening Days (bahasa inggris): </label>
+                                                <input type="text" name="opening_day_en" class="form-control" value="{{$detail->opening_day_en}}">
+                                                <small class="text-danger">example value : Tuesday to Sunday</small>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Tuesday : </label>
-                                                <input type="text" name="opening_tuesday" class="form-control" value="{{$detail->opening_tuesday}}">
-                                                <small class="text-danger">example value : 09:00 - 15:00</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Wednesday : </label>
-                                                <input type="text" name="opening_wednesday" class="form-control" value="{{$detail->opening_wednesday}}">
-                                                <small class="text-danger">example value : 09:00 - 15:00</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Thursday : </label>
-                                                <input type="text" name="opening_thursday" class="form-control" value="{{$detail->opening_thursday}}">
-                                                <small class="text-danger">example value : 09:00 - 15:00</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Friday : </label>
-                                                <input type="text" name="opening_friday" class="form-control" value="{{$detail->opening_friday}}">
-                                                <small class="text-danger">example value : 09:00 - 15:00</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Saturday : </label>
-                                                <input type="text" name="opening_saturday" class="form-control" value="{{$detail->opening_saturday}}">
+                                                <label>Opening Hours : </label>
+                                                <input type="text" name="opening_hour" class="form-control" value="{{$detail->opening_day_en}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>

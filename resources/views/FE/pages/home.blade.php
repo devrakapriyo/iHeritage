@@ -133,13 +133,13 @@
                             <p class="card-text">
                                 <small class="card-text text-uppercase">{{$list->location}}</small>
                             </p>
-                            <p class="card-text">
-                                @php
-                                    $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
-                                    $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
-                                @endphp
-                                {!! $limit_text !!}
-                            </p>
+                            {{--<p class="card-text">--}}
+                                {{--@php--}}
+                                    {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                    {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                {{--@endphp--}}
+                                {{--{!! $limit_text !!}--}}
+                            {{--</p>--}}
                         </div>
                     </div>
                 </div>
@@ -190,13 +190,13 @@
                                 <p class="card-text">
                                     <small class="card-text text-uppercase">{{$list->location}}</small>
                                 </p>
-                                <p class="card-text">
-                                    @php
-                                        $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
-                                        $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
-                                    @endphp
-                                    {!! $limit_text !!}
-                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
                             </div>
                         </div>
                     </div>
@@ -239,13 +239,13 @@
                                 <p class="card-text">
                                     <small class="card-text text-uppercase">{{$list->location}}</small>
                                 </p>
-                                <p class="card-text">
-                                    @php
-                                        $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
-                                        $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
-                                    @endphp
-                                    {!! $limit_text !!}
-                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
                             </div>
                         </div>
                     </div>
@@ -257,7 +257,11 @@
         <!-- List News -->
         <div class="row">
             <div class="col-md-12">
-                <h2>@lang('messages.home_news_title')</h2>
+                <h2>
+                    <a href="{{url('news')}}" class="text-dark">
+                        @lang('messages.home_news_title')
+                    </a>
+                </h2>
                 <hr>
             </div>
             @foreach($news as $item)

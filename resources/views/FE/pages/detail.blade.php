@@ -13,10 +13,10 @@
     <div class="row">
         <div class="col-md-8 mt-2">
             <h2 class="text-capitalize">{{App::isLocale('id') ? $detail->name : $detail->name_en}}</h2>
-            @php
-                $text = App::isLocale('id') ? $detail->short_description_ind : $detail->short_description_en;
-            @endphp
-            <small>{{$text}}</small>
+            {{--@php--}}
+                {{--$text = App::isLocale('id') ? $detail->short_description_ind : $detail->short_description_en;--}}
+            {{--@endphp--}}
+            {{--<small>{{$text}}</small>--}}
             <hr>
 
             @php
@@ -54,14 +54,14 @@
                                             @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
                                             media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
                                         </small>
-                                        <hr>
-                                        <p class="card-text">
-                                            @php
-                                                $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
-                                                $limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('collection/detail/'.$item->id)."'> ...readmore</a>" : $text;
-                                            @endphp
-                                            {!! $limit_text !!}
-                                        </p>
+                                        {{--<hr>--}}
+                                        {{--<p class="card-text">--}}
+                                            {{--@php--}}
+                                                {{--$text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);--}}
+                                                {{--$limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('collection/detail/'.$item->id)."'> ...readmore</a>" : $text;--}}
+                                            {{--@endphp--}}
+                                            {{--{!! $limit_text !!}--}}
+                                        {{--</p>--}}
                                     </div>
                                 </a>
                             </div>

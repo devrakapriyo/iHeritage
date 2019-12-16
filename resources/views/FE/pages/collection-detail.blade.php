@@ -30,6 +30,11 @@
             <small>{!! $text !!}</small>
 
             <div class="form-group mt-5">
+                <p class="text-capitalize">
+                    <a href="{{url('content/'.App\Model\content_tbl::fieldContent($detail->content_id, "seo").'/'.App\Model\content_tbl::fieldContent($detail->content_id, "id"))}}">{{\App\Model\institutional::getName($detail->content_id)}}</a>
+                </p>
+            </div>
+            <div class="form-group mt-5">
                 <p class="text-capitalize">@lang('messages.collection_creator') : <br><strong>{{$detail->creator}}</strong></p>
             </div>
             <hr>

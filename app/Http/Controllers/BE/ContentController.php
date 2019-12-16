@@ -115,12 +115,13 @@ class ContentController extends Controller
             $content->seo = Str::slug($request->name);
             $content->category_ctn_id = category_content_tbl::getIDCategoryContent($category);
             $content->location = $request->location;
-            $content->short_description_en = $request->short_description_en;
-            $content->short_description_ind = $request->short_description_ind;
+            //$content->short_description_en = $request->short_description_en;
+            //$content->short_description_ind = $request->short_description_ind;
             $content->long_description_en = $request->long_description_en;
             $content->long_description_ind = $request->long_description_ind;
             $content->institutional_id = auth('admin')->user()->institutional_id;
             $content->created_by = auth('admin')->user()->id;
+            $content->is_active = "Y";
             $content->save();
 
             $detail = new content_detail_tbl;
@@ -135,13 +136,16 @@ class ContentController extends Controller
             $detail->url_website = $request->url_website;
             $detail->phone = $request->phone;
             $detail->email = $request->email;
-            $detail->opening_sunday = $request->opening_sunday;
-            $detail->opening_moday = $request->opening_moday;
-            $detail->opening_tuesday = $request->opening_tuesday;
-            $detail->opening_wednesday = $request->opening_wednesday;
-            $detail->opening_thursday = $request->opening_thursday;
-            $detail->opening_friday = $request->opening_friday;
-            $detail->opening_saturday = $request->opening_saturday;
+            //$detail->opening_sunday = $request->opening_sunday;
+            //$detail->opening_moday = $request->opening_moday;
+            //$detail->opening_tuesday = $request->opening_tuesday;
+            //$detail->opening_wednesday = $request->opening_wednesday;
+            //$detail->opening_thursday = $request->opening_thursday;
+            //$detail->opening_friday = $request->opening_friday;
+            //$detail->opening_saturday = $request->opening_saturday;
+            $detail->opening_day_ind = $request->opening_day_ind;
+            $detail->opening_day_en = $request->opening_day_en;
+            $detail->opening_hour = $request->opening_hour;
             $detail->close_en = $request->close_en;
             $detail->close_ind = $request->close_ind;
             $detail->save();
@@ -201,8 +205,8 @@ class ContentController extends Controller
                     'photo'=>$photo,
                     'category_ctn_id'=>category_content_tbl::getIDCategoryContent($category),
                     'location'=>$request->location,
-                    'short_description_en'=>$request->short_description_en,
-                    'short_description_ind'=>$request->short_description_ind,
+                    //'short_description_en'=>$request->short_description_en,
+                    //'short_description_ind'=>$request->short_description_ind,
                     'long_description_en'=>$request->long_description_en,
                     'long_description_ind'=>$request->long_description_ind
                 ]);
@@ -219,13 +223,16 @@ class ContentController extends Controller
                     'url_website'=>$request->url_website,
                     'phone'=>$request->phone,
                     'email'=>$request->email,
-                    'opening_sunday'=>$request->opening_sunday,
-                    'opening_moday'=>$request->opening_moday,
-                    'opening_tuesday'=>$request->opening_tuesday,
-                    'opening_wednesday'=>$request->opening_wednesday,
-                    'opening_thursday'=>$request->opening_thursday,
-                    'opening_friday'=>$request->opening_friday,
-                    'opening_saturday'=>$request->opening_saturday,
+                    //'opening_sunday'=>$request->opening_sunday,
+                    //'opening_moday'=>$request->opening_moday,
+                    //'opening_tuesday'=>$request->opening_tuesday,
+                    //'opening_wednesday'=>$request->opening_wednesday,
+                    //'opening_thursday'=>$request->opening_thursday,
+                    //'opening_friday'=>$request->opening_friday,
+                    //'opening_saturday'=>$request->opening_saturday,
+                    'opening_day_ind'=>$request->opening_day_ind,
+                    'opening_day_en'=>$request->opening_day_en,
+                    'opening_hour'=>$request->opening_hour,
                     'close_en'=>$request->close_en,
                     'close_ind'=>$request->close_ind,
                 ]);

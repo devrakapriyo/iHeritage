@@ -122,13 +122,13 @@
                                 <span class="badge badge-warning text-uppercase">{{$list->location}}</span> |
                                 <span class="badge badge-secondary text-uppercase">{{$list->category}}</span>
                             </p>
-                            <p class="card-text mt-2">
-                                @php
-                                    $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
-                                    $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
-                                @endphp
-                                {!! $limit_text !!}
-                            </p>
+                            {{--<p class="card-text mt-2">--}}
+                                {{--@php--}}
+                                    {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                    {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                {{--@endphp--}}
+                                {{--{!! $limit_text !!}--}}
+                            {{--</p>--}}
                         </div>
                     </div>
                 </div>

@@ -45,7 +45,7 @@ return [
     'home_select_heritage' => 'Semua Pusaka di Indonesia',
     'home_select_search' => 'Cari',
 
-    'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda Dengan Aplikasi Kita',
+    'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda Dengan Aplikasi Kami',
     'home_banner_description' => 'Gratis dan mudah...',
     'home_banner_button' => 'Coba sekarang!',
 
@@ -110,7 +110,7 @@ return [
     'news_list_title' => 'Berita Lainnya',
 
     // page event
-    'event_title' => 'Pencarian Acara',
+    'event_title' => 'Acara',
     'event_category_ticket' => 'Kategori Tiket',
     'event_free_price' => 'Gratis',
     'event_paid_price' => 'Berbayar',
@@ -120,7 +120,7 @@ return [
     'event_close' => 'Pendaftaran Ditutup',
 
     // page education program
-    'edu_title' => 'Pencarian Program Pendidikan',
+    'edu_title' => 'Program Pendidikan',
     'edu_information' => 'Informasi',
     'edu_information_opening' => 'Jam Buka',
     'edu_information_monday' => 'Senin',

@@ -122,18 +122,18 @@
                             <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{App::isLocale('id') ? $item->name : $item->name_en}}</a>
                         </h5>
                         <small class="card-text">
-                            @lang('messages.collection_institution') : {{\App\Model\institutional::getName($item->content_id)}}<br>
+                            @lang('messages.collection_institution') : <a href="{{url('content/'.$item->seo.'/'.$item->id)}}">{{\App\Model\institutional::getName($item->content_id)}}</a><br>
                             @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
                             media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
                         </small>
-                        <hr>
-                        <p class="card-text">
-                            @php
-                                $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);
-                                $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('collection/detail/'.$item->id)."'> ...readmore</a>" : $text;
-                            @endphp
-                            {!! $limit_text !!}
-                        </p>
+                        {{--<hr>--}}
+                        {{--<p class="card-text">--}}
+                            {{--@php--}}
+                                {{--$text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);--}}
+                                {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('collection/detail/'.$item->id)."'> ...readmore</a>" : $text;--}}
+                            {{--@endphp--}}
+                            {{--{!! $limit_text !!}--}}
+                        {{--</p>--}}
                     </div>
                 </a>
             </div>

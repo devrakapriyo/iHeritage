@@ -10,7 +10,7 @@ class institutional extends Model
 
     public static function listInstitutional()
     {
-        return self::select('id','institutional_name')->where('is_active', "Y")->get();
+        return self::select('id','institutional_name')->where('is_active', "Y")->where('id', '!=', "1")->get();
     }
 
     public static function getData($parameter, $field)

@@ -202,23 +202,16 @@ class InterfaceController extends Controller
     {
         $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $seo)->where('content.id', $id)->first();
         $collection = content_collection_tbl::select('id','name','name_en','banner','media_type','description_ind','description_en','place_id','media_type')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
-        $color_media = [
-            'document'=>'primary',
-            'audio'=>'success',
-            'video'=>'danger',
-            'image'=>'warning',
-            'url'=>'dark'
-        ];
         $education = content_edu_tbl::select('id','name','name_en','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $event = content_event_tbl::select('id','name','name_en','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $gallery = content_gallery_tbl::select('photo','id')->where('content_id', $id)->orderBy('id','desc')->take(3)->get();
-        return view('FE.pages.detail', compact('detail','collection','color_media','education','event','gallery'));
+        return view('FE.pages.detail', compact('detail','collection','education','event','gallery'));
     }
 
     public function collection()
     {
         $data = content_collection_tbl::where('is_active',"Y")->get();
-        return view('FE.pages.collection', compact('data','color_media'));
+        return view('FE.pages.collection', compact('data'));
     }
 
     public function collectionSearch(Request $request)
@@ -240,7 +233,7 @@ class InterfaceController extends Controller
 
         $data = $query->where('content_collection.is_active',"Y")
             ->get();
-        return view('FE.pages.collection', compact('data','color_media'));
+        return view('FE.pages.collection', compact('data'));
     }
 
     public function collectionDetail($id)

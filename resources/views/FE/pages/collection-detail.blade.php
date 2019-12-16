@@ -31,7 +31,7 @@
 
             <div class="form-group mt-5">
                 <p class="text-capitalize">
-                    <a href="{{url('content/'.App\Model\content_tbl::fieldContent($detail->content_id, "seo").'/'.App\Model\content_tbl::fieldContent($detail->content_id, "id"))}}">{{\App\Model\institutional::getName($detail->content_id)}}</a>
+
                 </p>
             </div>
             <div class="form-group mt-5">
@@ -67,7 +67,10 @@
             </div>
             <hr>
             <div class="form-group">
-                <p class="text-capitalize">@lang('messages.collection_institution') : <br><strong>{{$detail->institution_owner}}</strong></p>
+                <p class="text-capitalize">
+                    @lang('messages.collection_institution') : <br>
+                    <strong><a href="{{url('content/'.App\Model\content_tbl::fieldContent($detail->content_id, "seo").'/'.App\Model\content_tbl::fieldContent($detail->content_id, "id"))}}">{{$detail->institution_owner}}</a></strong>
+                </p>
             </div>
             <hr>
             <div class="form-group">

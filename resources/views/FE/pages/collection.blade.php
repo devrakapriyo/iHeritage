@@ -122,9 +122,9 @@
                             <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{App::isLocale('id') ? $item->name : $item->name_en}}</a>
                         </h5>
                         <small class="card-text">
-                            @lang('messages.collection_institution') : <a href="{{url('content/'.$item->seo.'/'.$item->id)}}">{{\App\Model\institutional::getName($item->content_id)}}</a><br>
+                            @lang('messages.collection_institution') : <a href="{{url('content/'.App\Model\content_tbl::fieldContent($item->content_id, "seo").'/'.App\Model\content_tbl::fieldContent($item->content_id, "id"))}}">{{\App\Model\institutional::getName($item->content_id)}}</a><br>
                             @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
-                            media : <span class="text text-{{$color_media[$item->media_type]}}">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
+                            media : <span class="text text-dark">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
                         </small>
                         {{--<hr>--}}
                         {{--<p class="card-text">--}}

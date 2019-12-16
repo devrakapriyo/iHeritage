@@ -218,13 +218,6 @@ class InterfaceController extends Controller
     public function collection()
     {
         $data = content_collection_tbl::where('is_active',"Y")->get();
-        $color_media = [
-            'document'=>'primary',
-            'audio'=>'success',
-            'video'=>'danger',
-            'image'=>'warning',
-            'url'=>'dark'
-        ];
         return view('FE.pages.collection', compact('data','color_media'));
     }
 
@@ -247,14 +240,6 @@ class InterfaceController extends Controller
 
         $data = $query->where('content_collection.is_active',"Y")
             ->get();
-
-        $color_media = [
-            'document'=>'primary',
-            'audio'=>'success',
-            'video'=>'danger',
-            'image'=>'warning',
-            'url'=>'dark'
-        ];
         return view('FE.pages.collection', compact('data','color_media'));
     }
 

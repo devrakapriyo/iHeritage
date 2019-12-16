@@ -45,8 +45,8 @@ return [
     'home_select_heritage' => 'All Heritage in Indonesia',
     'home_select_search' => 'Search',
 
-    'home_banner_title' => 'Promote your Heritage Events & Collections.',
-    'home_banner_description' => 'Its Free...',
+    'home_banner_title' => 'Promote your Heritage Events & Collections with our platform',
+    'home_banner_description' => 'Its Free and easy...',
     'home_banner_button' => 'Try it out!',
 
     'home_palace_title' => 'Palace',

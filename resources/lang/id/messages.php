@@ -45,8 +45,8 @@ return [
     'home_select_heritage' => 'Semua Pusaka di Indonesia',
     'home_select_search' => 'Cari',
 
-    'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda',
-    'home_banner_description' => 'Gratis...',
+    'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda Dengan Aplikasi Kita',
+    'home_banner_description' => 'Gratis dan mudah...',
     'home_banner_button' => 'Coba sekarang!',
 
     'home_palace_title' => 'Kraton',

@@ -27,11 +27,11 @@ class ContentController extends Controller
     {
         if(auth('admin')->user()->is_admin_master == "Y")
         {
-            $data = content_tbl::select(['content.id', 'name', 'location', 'short_description_ind', 'content.is_active'])
+            $data = content_tbl::select(['content.id', 'name', 'location', 'long_description_ind', 'long_description_en', 'content.is_active'])
                 ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
                 ->where('category', $category);
         }else{
-            $data = content_tbl::select(['content.id', 'name', 'location', 'short_description_ind', 'content.is_active'])
+            $data = content_tbl::select(['content.id', 'name', 'location', 'long_description_ind', 'long_description_en', 'content.is_active'])
                 ->join('category_content', 'category_content.id', '=', 'content.category_ctn_id')
                 ->where('institutional_id', auth('admin')->user()->institutional_id)
                 ->where('category', $category)

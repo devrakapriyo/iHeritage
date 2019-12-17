@@ -73,7 +73,7 @@
             columns: [
                 { data: 'name', name: 'name' },
                 { data: 'location', name: 'location' },
-                { data: 'long_description_ind', name: 'long_description_ind' },
+                { data: 'long_description_en', name: 'long_description_en' },
                 { data: 'gallery', name: 'gallery', orderable: false, searchable: false},
                 { data: 'collection', name: 'collection', orderable: false, searchable: false},
                 { data: 'action', name: 'action', orderable: false, searchable: false}

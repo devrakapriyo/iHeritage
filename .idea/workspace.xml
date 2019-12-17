@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/usersManagement/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/usersManagement/edit.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="122" column="54" lean-forward="false" selection-start-line="122" selection-start-column="54" selection-end-line="122" selection-end-column="54" />
+            <state relative-caret-position="244">
+              <caret line="124" column="10" lean-forward="false" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
               <folding>
                 <element signature="e#43#71#0#PHP" expanded="true" />
               </folding>
@@ -36,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/usersManagement/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="-161">
               <caret line="33" column="83" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="83" />
               <folding />
             </state>
@@ -469,12 +468,12 @@
       <workItem from="1575773353869" duration="6301000" />
       <workItem from="1575899491138" duration="9374000" />
       <workItem from="1576032951235" duration="5474000" />
-      <workItem from="1576483781659" duration="11307000" />
+      <workItem from="1576483781659" duration="11398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304907000" />
+    <option name="totallyTimeSpent" value="304998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -936,21 +935,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/UserController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/usersManagement/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="122" column="54" lean-forward="false" selection-start-line="122" selection-start-column="54" selection-end-line="122" selection-end-column="54" />
-          <folding>
-            <element signature="e#43#71#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-161">
+          <caret line="33" column="83" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/usersManagement/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="33" column="83" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="83" />
-          <folding />
+        <state relative-caret-position="244">
+          <caret line="124" column="10" lean-forward="false" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+          <folding>
+            <element signature="e#43#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

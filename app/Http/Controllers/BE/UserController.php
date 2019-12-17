@@ -118,11 +118,11 @@ class UserController extends Controller
             }
         }
 
-        if(institutional::where('institutional_name', $request->institutional_name)->first())
-        {
-            Alert::error('institutional name available');
-            return redirect()->back();
-        }
+        //if(institutional::where('institutional_name', $request->institutional_name)->first())
+        //{
+        //    Alert::error('institutional name available');
+        //    return redirect()->back();
+        //}
 
         $data = User::where('id',$id);
         $data->update([

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\BE;
 
+use App\Model\institutional;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -148,8 +149,12 @@ class UserController extends Controller
         $data = User::where('id',$id);
 
         $data->update([
-            'is_active'=>'Y'
+            'is_active'=>"Y"
         ]);
+        institutional::where('id', $data->first()->institutional_id)
+            ->update([
+                'is_active' => "Y"
+            ]);
 
         Mail::send('BE.email.register', [
             'name' => $data->first()->name,

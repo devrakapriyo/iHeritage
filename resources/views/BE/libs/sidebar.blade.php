@@ -177,13 +177,16 @@
                 </a>
             </li>
         @endif
-        <li class="nav-item @yield('users')">
-            <a class="nav-link" href="{{route('users-pages')}}">
-                <i class="fas fa-fw fa-users"></i>
-                <span>List Users</span>
-            </a>
-        </li>
-    @endif
+            @php
+                $notif_user = \App\User::countWaitingAppr();
+            @endphp
+            <li class="nav-item @yield('users')">
+                <a class="nav-link" href="{{route('users-pages')}}">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>List Users @if($notif_user != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_user}}</span>@endif</span>
+                </a>
+            </li>
+        @endif
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

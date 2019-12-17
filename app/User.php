@@ -47,4 +47,16 @@ class User extends Authenticatable
             return self::where('institutional_id', $instantion)->where('is_active', "Y")->count();
         }
     }
+
+    public static function countWaitingAppr()
+    {
+        $data = self::select('is_active')->where('is_active',"N");
+
+        if(empty($data->first()))
+        {
+            return 0;
+        }else{
+            return $data->count();
+        }
+    }
 }

@@ -22,8 +22,8 @@ class UserController extends Controller
         if(auth('admin')->user()->is_admin_master == "Y")
         {
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
-                ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
-                ->where('user_admin.is_active', "Y");
+                ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id');
+                //->where('user_admin.is_active', "Y");
         }else{
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')

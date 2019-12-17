@@ -27,7 +27,7 @@ class IndexController extends Controller
     }
     public function login_action(Request $request)
     {
-        $email = User::select('email')->where('email',$request->email)->first();
+        $email = User::select('email')->where('email',$request->email)->where('is_active', "Y")->first();
         if($email == true)
         {
             $auth = auth('admin');
@@ -106,7 +106,6 @@ class IndexController extends Controller
         $instansi->email = $request->email;
         $instansi->phone = $request->phone;
         $instansi->category = $request->category;
-        $instansi->is_active = "Y";
         $instansi->save();
 
         $simpan = new users;
@@ -117,7 +116,6 @@ class IndexController extends Controller
         $simpan->none_has_pass = $request->password;
         $simpan->institutional_id = $instansi->id;
         $simpan->is_admin = "Y";
-        $simpan->is_active = "Y";
         $simpan->save();
 
         Mail::send('BE.email.register', [
@@ -125,14 +123,15 @@ class IndexController extends Controller
             'email' => $simpan->email,
             'password' => $simpan->none_has_pass,
             'role' => "Admin",
-            'link' => url('login')
+            'link' => url('login'),
+            'active' => "N"
         ], function ($m) use ($simpan) {
             $m->from('info@iheritage.id', 'Info iHeritage ID');
             $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');
         });
 
-        Alert::success('congratulations your account has been registered');
-        return redirect()->back()->with('info', "congratulations your account has been registered");
+        Alert::success('congratulations your account has been saved, please wait for admin confirmation to activate the account');
+        return redirect()->back()->with('info', "congratulations your account has been saved, please wait for admin confirmation to activate the account");
     }
 
     public function register_visitor()
@@ -171,7 +170,8 @@ class IndexController extends Controller
                 'email' => $simpan->email,
                 'password' => $simpan->none_has_pass,
                 'role' => "Visitor",
-                'link' => url('login-visitor')
+                'link' => url('login-visitor'),
+                'active' => "Y"
             ], function ($m) use ($simpan) {
                 $m->from('info@iheritage.id', 'Info iHeritage ID');
                 $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');

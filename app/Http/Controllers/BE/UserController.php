@@ -39,10 +39,16 @@ class UserController extends Controller
             })
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('users-edit', ['id'=>$data->id]).'" class="btn btn-warning">Edit</a>';
-                $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('users-delete', ['id'=>$data->id]).'" class="btn btn-danger">Hapus</a>';
+                $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('users-delete', ['id'=>$data->id]).'" class="btn btn-danger">Delete</a>';
+                $btn_active = '<a onclick="return confirm(\'Are you sure you want active this account?\');" href="'.route('users-active', ['id'=>$data->id]).'" class="btn btn-success">Active</a>';
                 if((auth('admin')->user()->is_admin == "Y") || (auth('admin')->user()->is_admin_master == "Y"))
                 {
-                    return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                    if($data->is_active == "N")
+                    {
+                        return "<div class='btn-group'>".$btn_active." ".$btn_edit." ".$btn_hapus."</div>";
+                    }else{
+                        return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                    }
                 }
             })
             ->rawColumns(['institutional_name','action'])
@@ -133,6 +139,30 @@ class UserController extends Controller
         ]);
 
         Alert::success('User nonactive');
+        return redirect()->route('users-pages');
+    }
+
+    public function users_active($id)
+    {
+        $data = User::where('id',$id);
+
+        $data->update([
+            'is_active'=>'Y'
+        ]);
+
+        Mail::send('BE.email.register', [
+            'name' => $data->first()->name,
+            'email' => $data->first()->email,
+            'password' => $data->first()->none_has_pass,
+            'role' => "Admin",
+            'link' => url('login'),
+            'active' => "Y"
+        ], function ($m) use ($data) {
+            $m->from('info@iheritage.id', 'Info iHeritage ID');
+            $m->to($data->first()->email, $data->first()->name)->subject('iHeritage.id - account activation');
+        });
+
+        Alert::success('Congratulations account has been active');
         return redirect()->route('users-pages');
     }
 }

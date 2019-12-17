@@ -79,10 +79,10 @@ class CollectionController extends Controller
         if (($request->media_type != "video") && ($request->media_type != "audio") && ($request->media_type != "url")) {
             if (!empty($request->file('media'))) {
                 if ($request->media_type == "image") {
-                    $size = 1000000;
+                    $size = 5000000;
                     $msg = "must format jpg, jpeg or png";
                 } else if ($request->media_type == "document") {
-                    $size = 1000000;
+                    $size = 5000000;
                     $msg = "must format pdf";
                 }
 
@@ -182,10 +182,10 @@ class CollectionController extends Controller
         if (($request->media_type != "video") && ($request->media_type != "audio") && ($request->media_type != "url")) {
             if (!empty($request->file('media'))) {
                 if ($request->media_type == "image") {
-                    $size = 1000000;
+                    $size = 5000000;
                     $msg = "must format jpg, jpeg or png";
                 } else if ($request->media_type == "document") {
-                    $size = 1000000;
+                    $size = 5000000;
                     $msg = "must format pdf";
                 }
 

@@ -18,7 +18,7 @@
                             <div class="form-group">
                                 <select name="media_type" class="form-control">
                                     <option value="all">@lang('messages.collection_type')</option>
-                                    <option value="document">@lang('messages.collection_type_document')</option>
+                                    <option value="document">PDF</option>
                                     <option value="audio">@lang('messages.collection_type_audio')</option>
                                     <option value="image">@lang('messages.collection_type_image')</option>
                                     <option value="video">@lang('messages.collection_type_video')</option>

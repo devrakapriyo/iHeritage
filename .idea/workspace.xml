@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helper/helpers.php" afterPath="$PROJECT_DIR$/app/Helper/helpers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/CollectionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/CollectionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/collection/add.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/collection/add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/collection/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/collection/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/content/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/content/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,10 +13,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
+            <state relative-caret-position="930">
               <caret line="62" column="54" lean-forward="false" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
               <folding>
                 <marker date="1576490491364" expanded="true" signature="887:1215" ph="..." />
@@ -39,10 +31,10 @@
       <file leaf-file-name="collection.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="134" column="38" lean-forward="true" selection-start-line="128" selection-start-column="32" selection-end-line="134" selection-end-column="38" />
+            <state relative-caret-position="-730">
+              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
               <folding>
-                <marker date="1576490474889" expanded="true" signature="7938:8215" ph="..." />
+                <marker date="1576571326424" expanded="true" signature="7899:8176" ph="..." />
               </folding>
             </state>
           </provider>
@@ -95,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/collection/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="767">
@@ -200,7 +192,6 @@
         <option value="$PROJECT_DIR$/resources/lang/id/messages.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" />
         <option value="$PROJECT_DIR$/app/Model/institutional.php" />
-        <option value="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/pages/content/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/FE/pages/collection-detail.blade.php" />
@@ -209,6 +200,7 @@
         <option value="$PROJECT_DIR$/resources/views/BE/pages/collection/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/BE/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Helper/helpers.php" />
+        <option value="$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php" />
       </list>
     </option>
   </component>
@@ -481,12 +473,12 @@
       <workItem from="1575773353869" duration="6301000" />
       <workItem from="1575899491138" duration="9374000" />
       <workItem from="1576032951235" duration="5474000" />
-      <workItem from="1576483781659" duration="7216000" />
+      <workItem from="1576483781659" duration="7432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300816000" />
+    <option name="totallyTimeSpent" value="301032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -871,34 +863,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="134" column="38" lean-forward="true" selection-start-line="128" selection-start-column="32" selection-end-line="134" selection-end-column="38" />
-          <folding>
-            <marker date="1576490474889" expanded="true" signature="7938:8215" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="207" column="69" lean-forward="false" selection-start-line="207" selection-start-column="69" selection-end-line="207" selection-end-column="69" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="62" column="54" lean-forward="false" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
-          <folding>
-            <marker date="1576490491364" expanded="true" signature="887:1215" ph="..." />
-            <marker date="1576490491364" expanded="true" signature="3817:4136" ph="..." />
-            <marker date="1576490491364" expanded="true" signature="5711:6113" ph="..." />
-            <marker date="1576490491364" expanded="true" signature="8521:8728" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -939,6 +908,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/collection/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/collection/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
@@ -947,11 +924,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/collection/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/collection.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="-730">
+          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+          <folding>
+            <marker date="1576571326424" expanded="true" signature="7899:8176" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="54" lean-forward="false" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
+          <folding>
+            <marker date="1576490491364" expanded="true" signature="887:1215" ph="..." />
+            <marker date="1576490491364" expanded="true" signature="3817:4136" ph="..." />
+            <marker date="1576490491364" expanded="true" signature="5711:6113" ph="..." />
+            <marker date="1576490491364" expanded="true" signature="8521:8728" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

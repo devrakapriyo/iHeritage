@@ -24,13 +24,15 @@ class UserController extends Controller
         if(auth('admin')->user()->is_admin_master == "Y")
         {
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
-                ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id');
+                ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
+                ->orderBy('user_admin.updated_at', "DESC");
                 //->where('user_admin.is_active', "Y");
         }else{
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
                 ->where('institutional_id', auth('admin')->user()->institutional_id)
-                ->where('user_admin.is_active', "Y");
+                ->where('user_admin.is_active', "Y")
+                ->orderBy('user_admin.updated_at', "DESC");
         }
         return DataTables::of($data)
             ->editColumn('institutional_name', function ($data){
@@ -116,11 +118,22 @@ class UserController extends Controller
             }
         }
 
-        User::where('id',$id)->update([
+        if(institutional::where('institutional_name', $request->institutional_name)->first())
+        {
+            Alert::error('institutional name available');
+            return redirect()->back();
+        }
+
+        $data = User::where('id',$id);
+        $data->update([
             'name'=>$request->name,
             'phone'=>$request->phone,
             'password'=>$request->password ? Hash::make($request->password) : User::select('password')->where('id',$id)->first()->password,
             'none_has_pass'=>$request->password ? $request->password : User::select('password')->where('id',$id)->first()->none_has_pass,
+        ]);
+
+        institutional::where('id', $data->first()->institutional_id)->update([
+            'institutional_name'=>$request->institutional_name
         ]);
 
         Alert::success('User update');

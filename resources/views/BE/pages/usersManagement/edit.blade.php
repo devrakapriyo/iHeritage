@@ -28,6 +28,14 @@
                         <form method="post" action="{{route('users-update', ['id'=>$id])}}">
                             @csrf
                             <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Institutional Name : </label>
+                                        <input type="text" name="institutional_name" class="form-control" value="{{\App\Model\institutional::getData($data->institutional_id, "institutional_name")}}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Name : </label>

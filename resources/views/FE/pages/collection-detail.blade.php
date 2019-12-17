@@ -43,7 +43,17 @@
             </div>
             <hr>
             <div class="form-group">
-                <p class="text-capitalize">@lang('messages.collection_type') : <br><strong>{{$detail->media_type == "url" ? "HTML5" : $detail->media_type}}</strong></p>
+                <p class="text-capitalize">@lang('messages.collection_type') : <br>
+                    <strong>
+                        @if($detail->media_type == "url")
+                            HTML5
+                        @elseif($detail->media_type == "document")
+                            PDF
+                        @else
+                            {{$detail->media_type}}
+                        @endif
+                    </strong>
+                </p>
             </div>
             <hr>
             <div class="form-group">

@@ -72,7 +72,7 @@
                             <div class="form-group mt-3">
                                 <select name="media_type" class="form-control">
                                     <option value="all">@lang('messages.collection_type')</option>
-                                    <option value="document">@lang('messages.collection_type_document')</option>
+                                    <option value="document">PDF</option>
                                     <option value="audio">@lang('messages.collection_type_audio')</option>
                                     <option value="image">@lang('messages.collection_type_image')</option>
                                     <option value="video">@lang('messages.collection_type_video')</option>
@@ -124,7 +124,16 @@
                         <small class="card-text">
                             @lang('messages.collection_institution') : <a href="{{url('collection-search?media_type=all&place_id=all&institutional_id='.App\Model\content_tbl::fieldContent($item->content_id, "institutional_id"))}}">{{\App\Model\institutional::getName($item->content_id)}}</a><br>
                             @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
-                            media : <span class="text text-dark">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
+                            media :
+                            <span class="text text-dark">
+                                @if($item->media_type == "url")
+                                    HTML5
+                                @elseif($item->media_type == "document")
+                                    PDF
+                                @else
+                                    {{$item->media_type}}
+                                @endif
+                            </span>
                         </small>
                         {{--<hr>--}}
                         {{--<p class="card-text">--}}

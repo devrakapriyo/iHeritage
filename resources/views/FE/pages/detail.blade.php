@@ -52,7 +52,16 @@
                                         </h5>
                                         <small class="card-text">
                                             @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
-                                            media : <span class="text text-dark">{{$item->media_type == "url" ? "HTML5" : $item->media_type}}</span>
+                                            media :
+                                            <span class="text text-dark">
+                                                @if($item->media_type == "url")
+                                                    HTML5
+                                                @elseif($item->media_type == "document")
+                                                    PDF
+                                                @else
+                                                    {{$item->media_type}}
+                                                @endif
+                                            </span>
                                         </small>
                                         {{--<hr>--}}
                                         {{--<p class="card-text">--}}

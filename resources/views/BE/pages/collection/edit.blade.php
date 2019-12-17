@@ -64,8 +64,19 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Media Type : </label>
+                                    @php
+                                        if($detail->media_type == "url")
+                                        {
+                                            $media_type = "HTML5";
+                                        }elseif($detail->media_type == "document")
+                                        {
+                                            $media_type = "PDF";
+                                        }else{
+                                            $media_type = $detail->media_type;
+                                        }
+                                    @endphp
                                     <select name="media_type" class="form-control" required>
-                                        <option value="{{$detail->media_type}}">{{$detail->media_type}}</option>
+                                        <option value="{{$detail->media_type}}">{{$media_type}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -75,6 +86,12 @@
                                         <label>Link Youtube : </label>
                                         <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" value="{{$detail->media}}">
                                         <small class="text-danger">paste your url from youtube</small>
+                                    </div>
+                                @elseif($detail->media_type == "audio")
+                                    <div class="form-group">
+                                        <label>Link File Audio : </label>
+                                        <input type="text" name="media" class="form-control" value="{{$detail->media}}">
+                                        <small class="text-danger">paste your link repository file audio</small>
                                     </div>
                                 @elseif($detail->media_type == "url")
                                     <div class="form-group">
@@ -86,6 +103,7 @@
                                     <div class="form-group">
                                         <label>Upload Media : </label>
                                         <input type="file" name="media" class="form-control">
+                                        <small class="text-danger">maximum upload file 5mb</small>
                                     </div>
                                 @endif
                             </div>

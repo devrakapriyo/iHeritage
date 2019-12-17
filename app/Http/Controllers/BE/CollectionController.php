@@ -40,7 +40,16 @@ class CollectionController extends Controller
                 return $btn_gallery;
             })
             ->editColumn('media', function ($data) {
-                $btn_gallery = '<a href="' . $data->media . '" class="btn btn-xs btn-primary" title="view media?" target="_blank">' . $data->media_type . '</a>';
+                if($data->media_type == "url")
+                {
+                    $media_type = "HTML5";
+                }elseif($data->media_type == "document")
+                {
+                    $media_type = "PDF";
+                }else{
+                    $media_type = $data->media_type;
+                }
+                $btn_gallery = '<a href="' . $data->media . '" class="btn btn-xs btn-primary" title="view media?" target="_blank">' . $media_type . '</a>';
                 return $btn_gallery;
             })
             ->addColumn('action', function ($data) {
@@ -67,14 +76,11 @@ class CollectionController extends Controller
 
     public function collection_post(Request $request)
     {
-        if (($request->media_type != "video") && ($request->media_type != "url")) {
+        if (($request->media_type != "video") && ($request->media_type != "audio") && ($request->media_type != "url")) {
             if (!empty($request->file('media'))) {
                 if ($request->media_type == "image") {
                     $size = 1000000;
                     $msg = "must format jpg, jpeg or png";
-                } else if ($request->media_type == "audio") {
-                    $size = 10000000;
-                    $msg = "must format mp3";
                 } else if ($request->media_type == "document") {
                     $size = 1000000;
                     $msg = "must format pdf";
@@ -173,14 +179,11 @@ class CollectionController extends Controller
 
     public function collection_update(Request $request, $id)
     {
-        if (($request->media_type != "video") && ($request->media_type != "url")) {
+        if (($request->media_type != "video") && ($request->media_type != "audio") && ($request->media_type != "url")) {
             if (!empty($request->file('media'))) {
                 if ($request->media_type == "image") {
                     $size = 1000000;
                     $msg = "must format jpg, jpeg or png";
-                } else if ($request->media_type == "audio") {
-                    $size = 10000000;
-                    $msg = "must format mp3";
                 } else if ($request->media_type == "document") {
                     $size = 1000000;
                     $msg = "must format pdf";

@@ -65,13 +65,6 @@ class helpers extends Model
             } else {
                 return true;
             }
-        }else if($media == "audio"){
-            if (($image->getMimeType() != 'application/octet-stream') && ($image->getMimeType() != 'audio/mpeg') && ($image->getMimeType() != 'audio/mp3'))
-            {
-                return false;
-            } else {
-                return true;
-            }
         }else if($media == "document"){
             if ($image->getMimeType() != 'application/pdf')
             {

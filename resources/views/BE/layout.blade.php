@@ -5,6 +5,11 @@
 
   @include('BE.assets.header')
   @yield('header')
+  <style>
+    .note-group-select-from-files {
+      display: none;
+    }
+  </style>
   
 </head>
 

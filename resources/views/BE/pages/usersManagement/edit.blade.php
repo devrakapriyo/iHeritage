@@ -31,7 +31,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Institutional Name : </label>
-                                        <input type="text" name="institutional_name" class="form-control" value="{{\App\Model\institutional::getData($data->institutional_id, "institutional_name")->institutional_name}}" required>
+                                        <input type="text" name="institutional_name" class="form-control" value="{{\App\Model\institutional::getData($data->institutional_id, "institutional_name")->institutional_name}}" {{auth('admin')->user()->is_admin_master == "Y" ? "" : "readonly"}} required>
                                     </div>
                                 </div>
                             </div>

@@ -132,9 +132,12 @@ class UserController extends Controller
             'none_has_pass'=>$request->password ? $request->password : User::select('password')->where('id',$id)->first()->none_has_pass,
         ]);
 
-        institutional::where('id', $data->first()->institutional_id)->update([
-            'institutional_name'=>$request->institutional_name
-        ]);
+        if(auth('admin')->user()->is_admin_master == "Y")
+        {
+            institutional::where('id', $data->first()->institutional_id)->update([
+                'institutional_name'=>$request->institutional_name
+            ]);
+        }
 
         Alert::success('User update');
         return redirect()->route('users-pages');

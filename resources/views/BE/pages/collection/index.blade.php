@@ -23,7 +23,9 @@
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary text-capitalize">data collection</h6>
-                        <a href="{{route('collection-add')}}" class="btn btn-primary">Add new collection</a>
+                        @if(\App\Model\content_tbl::select('id')->where('institutional_id', auth('admin')->user()->institutional_id)->first())
+                            <a href="{{route('collection-add')}}" class="btn btn-primary">Add new collection</a>
+                        @endif
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">

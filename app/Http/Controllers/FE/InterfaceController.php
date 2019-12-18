@@ -338,8 +338,8 @@ class InterfaceController extends Controller
         $query->when($request->duration != "duration", function ($q) use ($request) {
             if($request->duration == "current")
             {
-                return $q->where('start_date', '>=', date("Y-m-d"))
-                    ->where('end_date', '<=', date("Y-m-d"));
+                return $q->where('start_date', '<=', date("Y-m-d"))
+                    ->where('end_date', '>=', date("Y-m-d"));
             }elseif($request->duration == "upcoming"){
                 return $q->where('end_date', ">", date("Y-m-d"));
             }elseif($request->duration == "archive"){

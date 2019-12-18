@@ -61,7 +61,12 @@
             </div>
             <hr>
             <div class="form-group">
-                <p class="text-capitalize">@lang('messages.collection_topic') : <br><strong>{{$detail->topic}}</strong></p>
+                <p class="text-capitalize">
+                    @lang('messages.collection_topic') : <br>
+                    <strong>
+                        @lang('messages.'.$detail->topic)
+                    </strong>
+                </p>
             </div>
             <hr>
             <div class="form-group">

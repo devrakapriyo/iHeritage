@@ -316,6 +316,7 @@ class InterfaceController extends Controller
         //$data = content_event_tbl::where('close_registration','>=',date('Y-m-d H:i:s'))
         $data = content_event_tbl::where('is_active',"Y")
             ->where('is_publish',"Y")
+            ->orderBy('end_date', "DESC")
             ->get();
         return view('FE.pages.event', compact('data'));
     }
@@ -331,6 +332,20 @@ class InterfaceController extends Controller
                 return $q->where('price', 0);
             }elseif($request->price == "paid"){
                 return $q->where('price', "!=", 0);
+            }
+        });
+
+        $query->when($request->duration != "duration", function ($q) use ($request) {
+            if($request->duration == "current")
+            {
+                return $q->where('start_date', '>=', date("Y-m-d"))
+                    ->where('end_date', '<=', date("Y-m-d"));
+            }elseif($request->duration == "upcoming"){
+                return $q->where('end_date', ">", date("Y-m-d"));
+            }elseif($request->duration == "archive"){
+                return $q->where('end_date', "<", date("Y-m-d"));
+            }else{
+                return $q;
             }
         });
 

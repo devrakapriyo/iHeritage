@@ -107,8 +107,8 @@ class EventController extends Controller
             $simpan->longitude_detail = $request->longitude_detail;
             $simpan->start_date = $request->start_date;
             $simpan->end_date = $request->end_date;
-            $simpan->short_description_en = $request->short_description_en;
-            $simpan->short_description_ind = $request->short_description_ind;
+            //$simpan->short_description_en = $request->short_description_en;
+            //$simpan->short_description_ind = $request->short_description_ind;
             $simpan->long_description_en = $request->long_description_en;
             $simpan->long_description_ind = $request->long_description_ind;
             $simpan->price = $request->price == "" ? 0 : $request->price;
@@ -175,8 +175,8 @@ class EventController extends Controller
                     'longitude_detail'=>$request->longitude_detail,
                     'start_date'=>$request->start_date,
                     'end_date'=>$request->end_date,
-                    'short_description_en'=>$request->short_description_en,
-                    'short_description_ind'=>$request->short_description_ind,
+                    //'short_description_en'=>$request->short_description_en,
+                    //'short_description_ind'=>$request->short_description_ind,
                     'long_description_en'=>$request->long_description_en,
                     'long_description_ind'=>$request->long_description_ind,
                     'price'=>$request->price == "" ? 0 : $request->price,

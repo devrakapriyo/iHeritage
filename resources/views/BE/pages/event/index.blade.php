@@ -32,7 +32,7 @@
                     <table class="table" id="datatable">
                         <thead>
                             <tr>
-                                <th>Content Name</th>
+                                <th>Institution</th>
                                 <th>Name Event</th>
                                 <th>Place</th>
                                 <th>Start Date</th>

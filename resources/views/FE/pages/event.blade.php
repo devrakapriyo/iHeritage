@@ -16,6 +16,16 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    <select name="place_id" class="form-control">
+                                        <option value="all">@lang('messages.home_select_place')</option>
+                                        @foreach(\App\Model\place_tbl::listSearch() as $items)
+                                            <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
                                     <select name="price" class="form-control">
                                         <option value="all">@lang('messages.event_category_ticket')</option>
                                         <option value="free">@lang('messages.event_free_price')</option>
@@ -23,13 +33,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group">
-                                    <select name="place_id" class="form-control">
-                                        <option value="all">@lang('messages.home_select_place')</option>
-                                        @foreach(\App\Model\place_tbl::listSearch() as $items)
-                                            <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
-                                        @endforeach
+                                    <select name="duration" class="form-control">
+                                        <option value="duration">@lang('messages.event_duration')</option>
+                                        <option value="current">@lang('messages.event_current')</option>
+                                        <option value="upcoming">@lang('messages.event_upcoming')</option>
+                                        <option value="archive">@lang('messages.event_archive')</option>
                                     </select>
                                 </div>
                             </div>
@@ -66,6 +76,16 @@
                     <form method="get" action="{{url('event-search')}}">
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="form-group">
+                                    <select name="place_id" class="form-control">
+                                        <option value="all">@lang('messages.home_select_place')</option>
+                                        @foreach(\App\Model\place_tbl::listSearch() as $items)
+                                            <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
                                 <div class="form-group mt-3">
                                     <select name="price" class="form-control">
                                         <option value="all">@lang('messages.event_category_ticket')</option>
@@ -76,11 +96,11 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <select name="place_id" class="form-control">
-                                        <option value="all">@lang('messages.home_select_place')</option>
-                                        @foreach(\App\Model\place_tbl::listSearch() as $items)
-                                            <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
-                                        @endforeach
+                                    <select name="duration" class="form-control">
+                                        <option value="duration">@lang('messages.event_duration')</option>
+                                        <option value="current">@lang('messages.event_current')</option>
+                                        <option value="upcoming">@lang('messages.event_upcoming')</option>
+                                        <option value="archive">@lang('messages.event_archive')</option>
                                     </select>
                                 </div>
                             </div>

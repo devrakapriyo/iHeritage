@@ -131,7 +131,20 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Topic : </label>
-                                    <input type="text" name="topic" class="form-control" required>
+                                    <select name="topic" class="form-control" required>
+                                        <option value=""></option>
+                                        <option value="@lang('messages.collection_manuscript')">@lang('messages.collection_manuscript')</option>
+                                        <option value="@lang('messages.collection_traditional_weapon')">@lang('messages.collection_traditional_weapon')</option>
+                                        <option value="@lang('messages.collection_traditional_music')">@lang('messages.collection_traditional_music')</option>
+                                        <option value="@lang('messages.collection_ceramic')">@lang('messages.collection_ceramic')</option>
+                                        <option value="@lang('messages.collection_painting')">@lang('messages.collection_painting')</option>
+                                        <option value="@lang('messages.collection_traditional_house')">@lang('messages.collection_traditional_house')</option>
+                                        <option value="@lang('messages.collection_performing_arts')">@lang('messages.collection_performing_arts')</option>
+                                        <option value="@lang('messages.collection_temple')">@lang('messages.collection_temple')</option>
+                                        <option value="@lang('messages.collection_statue')">@lang('messages.collection_statue')</option>
+                                        <option value="@lang('messages.collection_crown')">@lang('messages.collection_crown')</option>
+                                        <option value="@lang('messages.collection_jewelry')">@lang('messages.collection_jewelry')</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

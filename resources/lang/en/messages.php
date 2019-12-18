@@ -73,6 +73,17 @@ return [
     'collection_institution' => 'Institution Owner',
     'collection_link' => 'Link URL',
     'collection_btn_view' => 'VIEW COLLECTION',
+    'collection_manuscript' => 'Manuscript',
+    'collection_traditional_weapon' => 'Traditional Weapon',
+    'collection_traditional_music' => 'Traditional Music',
+    'collection_ceramic' => 'Ceramic',
+    'collection_painting' => 'Painting',
+    'collection_traditional_house' => 'Traditional House',
+    'collection_performing_arts' => 'Performing Arts',
+    'collection_temple' => 'Temple',
+    'collection_statue' => 'Statue',
+    'collection_crown' => 'Crown',
+    'collection_jewelry' => 'Jewelry',
 
     // page vr
     'vr_title' => 'Virtual Tour',

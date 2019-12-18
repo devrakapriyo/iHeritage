@@ -73,6 +73,17 @@ return [
     'collection_institution' => 'Institusi Pemilik',
     'collection_link' => 'Tautan URL',
     'collection_btn_view' => 'LIHAT KOLEKSI',
+    'collection_manuscript' => 'Naskah Kuno,',
+    'collection_traditional_weapon' => 'Senjata Tradisional',
+    'collection_traditional_music' => 'Musik Tradisional',
+    'collection_ceramic' => 'Keramik',
+    'collection_painting' => 'Lukisan',
+    'collection_traditional_house' => 'Rumah Adat',
+    'collection_performing_arts' => 'Seni Pertunjukan',
+    'collection_temple' => 'Candi',
+    'collection_statue' => 'Patung',
+    'collection_crown' => 'Mahkota',
+    'collection_jewelry' => 'Perhiasan',
 
     // page vr
     'vr_title' => 'Tur Virtual',

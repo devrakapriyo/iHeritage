@@ -6,6 +6,7 @@ use App\Helper\helpers;
 use App\Model\content_collection_tbl;
 use App\Model\content_detail_tbl;
 use App\Model\content_gallery_tbl;
+use App\Model\institutional;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -107,6 +108,11 @@ class ContentController extends Controller
             }else{
                 $photo = 'https://via.placeholder.com/300';
             }
+
+            institutional::where('id', auth('admin')->user()->institutional_id)
+                ->update([
+                    'is_active' => "Y"
+                ]);
 
             $content = new content_tbl;
             $content->photo = $photo;

@@ -129,7 +129,7 @@ class UserController extends Controller
             'name'=>$request->name,
             'phone'=>$request->phone,
             'password'=>$request->password ? Hash::make($request->password) : User::select('password')->where('id',$id)->first()->password,
-            'none_has_pass'=>$request->password ? $request->password : User::select('password')->where('id',$id)->first()->none_has_pass,
+            'none_has_pass'=>$request->password ? $request->password : User::select('none_has_pass')->where('id',$id)->first()->none_has_pass,
         ]);
 
         if(auth('admin')->user()->is_admin_master == "Y")

@@ -84,6 +84,14 @@ return [
     'collection_statue' => 'Statue',
     'collection_crown' => 'Crown',
     'collection_jewelry' => 'Jewelry',
+    'collection_vehicle' => 'Vehicle',
+    'collection_literature' => 'Literature',
+    'collection_traditional_cloth' => 'Traditional Cloth',
+    'collection_movie' => 'Movie',
+    'collection_inscription' => 'Inscription',
+    'collection_puppet' => 'Puppet',
+    'collection_mask' => 'Mask',
+    'collection_dance' => 'Dance',
 
     // page vr
     'vr_title' => 'Virtual Tour',

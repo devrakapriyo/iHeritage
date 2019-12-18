@@ -341,9 +341,9 @@ class InterfaceController extends Controller
                 return $q->where('start_date', '<=', date("Y-m-d"))
                     ->where('end_date', '>=', date("Y-m-d"));
             }elseif($request->duration == "upcoming"){
-                return $q->where('end_date', "<", date("Y-m-d"));
+                return $q->where('start_date', ">", date("Y-m-d"));
             }elseif($request->duration == "archive"){
-                return $q->where('end_date', ">", date("Y-m-d"));
+                return $q->where('end_date', "<", date("Y-m-d"));
             }else{
                 return $q;
             }

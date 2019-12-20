@@ -5,11 +5,21 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card mb-3">
-                <a href="" data-toggle="modal" data-target="#exampleModal">
-                    <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
-                </a>
+                @if($detail->media_type == "url")
+                    <a href="{{$detail->media}}" target="_blank">
+                        <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
+                    </a>
+                @else
+                    <a href="" data-toggle="modal" data-target="#exampleModal">
+                        <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
+                    </a>
+                @endif
                 <div class="card-body">
-                    <a href="" class="btn btn-warning btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#exampleModal">@lang('messages.collection_btn_view')</a>
+                    @if($detail->media_type == "url")
+                        <a href="{{$detail->media}}" target="_blank" class="btn btn-warning btn-sm btn-block text-uppercase">@lang('messages.collection_btn_view')</a>
+                    @else
+                        <a href="" class="btn btn-warning btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#exampleModal">@lang('messages.collection_btn_view')</a>
+                    @endif
                     <div class="row">
                         <div class="col-md-6 mt-2">
                             <a href="{{$facebook}}" class="btn btn-sm btn-facebook btn-block" target="_blank" title="share facebook"><i class="fa fa-facebook"></i></a>
@@ -64,7 +74,7 @@
                 <p class="text-capitalize">
                     @lang('messages.collection_topic') : <br>
                     <strong>
-                        @lang('messages.'.$detail->topic)
+                        <a href="{{url('collection-search?place_id=all&media_type=all&topic='.$detail->topic.'&institutional_id=all')}}">@lang('messages.'.$detail->topic)</a>
                     </strong>
                 </p>
             </div>
@@ -120,8 +130,8 @@
                     @elseif($detail->media_type == "document")
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
-                    @elseif($detail->media_type == "url")
-                        <embed src="{{$detail->media}}" style="width: 100%; height: 515px;">
+                    {{--@elseif($detail->media_type == "url")--}}
+                        {{--<embed src="{{$detail->media}}" style="width: 100%; height: 515px;">--}}
                     @endif
                 </div>
                 <div class="modal-footer">

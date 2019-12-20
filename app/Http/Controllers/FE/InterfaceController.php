@@ -223,6 +223,10 @@ class InterfaceController extends Controller
             return $q->where('media_type', $request->media_type);
         });
 
+        $query->when($request->topic != "all", function ($q) use ($request) {
+            return $q->where('topic', $request->topic);
+        });
+
         $query->when($request->place_id != "all", function ($q) use ($request) {
             return $q->where('place_id', $request->place_id);
         });

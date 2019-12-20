@@ -87,25 +87,8 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <div class="form-group" id="media_file">
-                                    <label>Upload Media : </label>
-                                    <input type="file" name="media" class="form-control">
-                                    <small class="text-danger">maximum upload file 5mb</small>
-                                </div>
-                                <div class="form-group" id="media_link">
-                                    <label>Link Youtube : </label>
-                                    <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12">
-                                    <small class="text-danger">paste your url from youtube</small>
-                                </div>
-                                <div class="form-group" id="media_audio">
-                                    <label>Link File Audio : </label>
-                                    <input type="text" name="media" class="form-control">
-                                    <small class="text-danger">paste your link repository file audio</small>
-                                </div>
-                                <div class="form-group" id="media_url">
-                                    <label>Link Website : </label>
-                                    <input type="text" name="media" class="form-control">
-                                    <small class="text-danger">paste your link website</small>
+                                <div class="form-group" id="media">
+
                                 </div>
                             </div>
                         </div>
@@ -260,30 +243,28 @@
         $(document).ready(function () {
             $("#gmap_canvas").hide();
 
-            $("#media_link").hide();
-            $("#media_audio").hide();
-            $("#media_url").hide();
             $("#media_type").on("change", function () {
-                if($("#media_type").val() === "video"){
-                    $("#media_link").show();
-                    $("#media_audio").hide();
-                    $("#media_url").hide();
-                    $("#media_file").hide();
-                }else if($("#media_type").val() === "audio"){
-                    $("#media_link").hide();
-                    $("#media_audio").show();
-                    $("#media_url").hide();
-                    $("#media_file").hide();
+                $("#media").empty();
+                if($("#media_type").val() == "video"){
+                    $("#media").append('' +
+                        '<label>Link Youtube : </label>\n' +
+                        '<input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12">\n' +
+                        '<small class="text-danger">paste your url from youtube</small>');
+                }else if($("#media_type").val() == "audio"){
+                    $("#media").append('' +
+                        '<label>Link File Audio : </label>\n' +
+                        '<input type="text" name="media" class="form-control">\n' +
+                        '<small class="text-danger">paste your link repository file audio</small>')
                 }else if($("#media_type").val() === "url"){
-                    $("#media_link").hide();
-                    $("#media_audio").hide();
-                    $("#media_url").show();
-                    $("#media_file").hide();
-                }else{
-                    $("#media_link").hide();
-                    $("#media_audio").hide();
-                    $("#media_url").hide();
-                    $("#media_file").show();
+                    $("#media").append('' +
+                        '<label>Link Website : </label>\n' +
+                        '<input type="text" name="media" class="form-control">\n' +
+                        '<small class="text-danger">paste your link website</small>')
+                }else if($("#media_type").val() === "image" || $("#media_type").val() === "document"){
+                    $("#media").append('' +
+                        '<label>Upload Media : </label>\n' +
+                        '<input type="file" name="media" class="form-control">\n' +
+                        '<small class="text-danger">maximum upload file 5mb</small>')
                 }
             });
         });

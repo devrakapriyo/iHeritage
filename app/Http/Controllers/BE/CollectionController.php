@@ -76,9 +76,12 @@ class CollectionController extends Controller
 
     public function collection_post(Request $request)
     {
-        if (($request->media_type != "video") && ($request->media_type != "audio") && ($request->media_type != "url")) {
-            if (!empty($request->file('media'))) {
-                if ($request->media_type == "image") {
+        if (($request->media_type == "document") && ($request->media_type == "image"))
+        {
+            if (!empty($request->file('media')))
+            {
+                if ($request->media_type == "image")
+                {
                     $size = 5000000;
                     $msg = "must format jpg, jpeg or png";
                 } else if ($request->media_type == "document") {
@@ -87,13 +90,15 @@ class CollectionController extends Controller
                 }
 
                 $valid = helpers::validationMedia($request->file("media"), $request->media_type);
-                if ($valid != true) {
+                if ($valid != true)
+                {
                     Alert::error('upload unsuccessful, ' . $msg);
                     return redirect()->back();
                 }
 
                 $media = helpers::uploadMedia($request->file("media"), date("Ymd") . rand(100, 999), "img/BE/media", $size);
-                if ($media != true) {
+                if ($media != true)
+                {
                     return redirect()->back();
                 } else {
                     $media = url('/img/BE/media/' . $media);
@@ -108,14 +113,17 @@ class CollectionController extends Controller
         $institutional = content_tbl::fieldContent($request->content_id, 'institutional_id');
         $category = institutional::getData($institutional, 'category')->category;
 
-        if (!empty($request->file('banner'))) {
+        if (!empty($request->file('banner')))
+        {
             $valid = helpers::validationImage($request->file("banner"));
-            if ($valid != true) {
+            if ($valid != true)
+            {
                 return redirect()->back();
             }
 
             $banner = helpers::uploadImage($request->file("banner"), date("Ymd") . rand(100, 999), "img/BE/content/" . $category);
-            if ($banner != true) {
+            if ($banner != true)
+            {
                 return redirect()->back();
             } else {
                 $banner = url('/img/BE/content/' . $category . '/' . $banner);
@@ -179,9 +187,12 @@ class CollectionController extends Controller
 
     public function collection_update(Request $request, $id)
     {
-        if (($request->media_type != "video") && ($request->media_type != "audio") && ($request->media_type != "url")) {
-            if (!empty($request->file('media'))) {
-                if ($request->media_type == "image") {
+        if (($request->media_type == "document") && ($request->media_type == "image"))
+        {
+            if (!empty($request->file('media')))
+            {
+                if ($request->media_type == "image")
+                {
                     $size = 5000000;
                     $msg = "must format jpg, jpeg or png";
                 } else if ($request->media_type == "document") {
@@ -190,7 +201,8 @@ class CollectionController extends Controller
                 }
 
                 $valid = helpers::validationMedia($request->file("media"), $request->media_type);
-                if ($valid != true) {
+                if ($valid != true)
+                {
                     Alert::error('upload unsuccessful, ' . $msg);
                     return redirect()->back();
                 }
@@ -211,14 +223,17 @@ class CollectionController extends Controller
         $institutional = content_tbl::fieldContent(content_collection_tbl::fieldContent($id, "content_id"), 'institutional_id');
         $category = institutional::getData($institutional, 'category')->category;
 
-        if (!empty($request->file('banner'))) {
+        if (!empty($request->file('banner')))
+        {
             $valid = helpers::validationImage($request->file("banner"));
-            if ($valid != true) {
+            if ($valid != true)
+            {
                 return redirect()->back();
             }
 
             $banner = helpers::uploadImage($request->file("banner"), date("Ymd") . rand(100, 999), "img/BE/content/" . $category);
-            if ($banner != true) {
+            if ($banner != true)
+            {
                 return redirect()->back();
             } else {
                 $banner = url('/img/BE/content/' . $category . '/' . $banner);

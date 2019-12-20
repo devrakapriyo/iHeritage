@@ -1,5 +1,19 @@
 @extends('FE.layout')
 @section('content')
+    <style type="text/css">
+        body {
+            scrolling:no;
+            z-index:1;
+        }
+        iframe {
+            position:fixed;
+            top: 0px;
+            left: 1050px;
+            overlay:none;
+        }
+    </style>
+@endsection
+@section('content')
 <!-- Page Content -->
 <div class="container mt-5 mb-5">
     <div class="row">
@@ -121,7 +135,8 @@
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
                     @elseif($detail->media_type == "url")
-                        <embed src="{{$detail->media}}" style="width: 100%; height: 515px;">
+                        {{--<embed src="{{$detail->media}}" style="width: 100%; height: 515px;">--}}
+                        <iframe src="{{$detail->media}}" height="100%" width="515px" frameborder="0"></iframe>
                     @endif
                 </div>
                 <div class="modal-footer">

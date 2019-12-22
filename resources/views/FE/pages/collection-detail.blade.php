@@ -7,7 +7,7 @@
             <div class="card mb-3">
                 @if(($detail->media_type == "url") || ($detail->media_type == "document"))
                     <a href="{{$detail->media}}" target="_blank">
-                        <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
+                        <iframe src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px; border-width:0" allowfullscreen="" frameborder="0" scrolling="no"></iframe>
                     </a>
                 @elseif($detail->media_type == "video")
                     <pre id="video"></pre>

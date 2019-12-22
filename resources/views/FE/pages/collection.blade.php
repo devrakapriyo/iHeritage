@@ -59,6 +59,7 @@
                                     <option value="collection_puppet">@lang('messages.collection_puppet')</option>
                                     <option value="collection_mask">@lang('messages.collection_mask')</option>
                                     <option value="collection_dance">@lang('messages.collection_dance')</option>
+                                    <option value="collection_material_art">@lang('messages.collection_material_art')</option>
                                 </select>
                             </div>
                         </div>
@@ -139,6 +140,7 @@
                                     <option value="collection_puppet">@lang('messages.collection_puppet')</option>
                                     <option value="collection_mask">@lang('messages.collection_mask')</option>
                                     <option value="collection_dance">@lang('messages.collection_dance')</option>
+                                    <option value="collection_material_art">@lang('messages.collection_material_art')</option>
                                 </select>
                             </div>
                         </div>

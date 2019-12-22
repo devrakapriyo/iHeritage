@@ -30,7 +30,7 @@ return [
     'home_nature_search' => 'Look for the name of the nature here',
 
     'head_menu_about' => 'About',
-    'head_menu_service' => 'Services',
+    'head_menu_service' => 'Solutions',
     'head_menu_news' => 'News',
     'head_menu_login' => 'Login Account',
     'head_menu_join' => 'Are you Interest to be Administator? Register Now!',
@@ -92,6 +92,7 @@ return [
     'collection_puppet' => 'Puppet',
     'collection_mask' => 'Mask',
     'collection_dance' => 'Dance',
+    'collection_material_art' => 'Martial Art',
 
     // page vr
     'vr_title' => 'Virtual Tour',
@@ -121,8 +122,8 @@ return [
     'about_title' => 'About Us',
 
     // page our services
-    'services_title' => 'Our Services',
-    'services_btn_back' => 'return to our service page',
+    'services_title' => 'Our Solutions',
+    'services_btn_back' => 'return to our solutions page',
 
     // page news
     'news_title' => 'News',

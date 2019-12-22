@@ -72,7 +72,7 @@ return [
     'collection_publisher' => 'Publisher',
     'collection_institution' => 'Institution Owner',
     'collection_link' => 'Link URL',
-    'collection_btn_view' => 'VIEW COLLECTION',
+    'collection_btn_view' => 'VIEW FULL SCREEN COLLECTION',
     'collection_manuscript' => 'Manuscript',
     'collection_traditional_weapon' => 'Traditional Weapon',
     'collection_traditional_music' => 'Traditional Music',

@@ -72,7 +72,7 @@ return [
     'collection_publisher' => 'Penerbit',
     'collection_institution' => 'Institusi Pemilik',
     'collection_link' => 'Tautan URL',
-    'collection_btn_view' => 'LIHAT KOLEKSI',
+    'collection_btn_view' => 'LIHAT KOLEKSI LAYAR PENUH',
     'collection_manuscript' => 'Naskah Kuno',
     'collection_traditional_weapon' => 'Senjata Tradisional',
     'collection_traditional_music' => 'Musik Tradisional',

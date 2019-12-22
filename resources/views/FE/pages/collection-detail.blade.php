@@ -5,20 +5,28 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card mb-3">
-                @if($detail->media_type == "url")
+                @if(($detail->media_type == "url") || ($detail->media_type == "document"))
                     <a href="{{$detail->media}}" target="_blank">
-                        <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
+                        <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
                     </a>
+                @elseif($detail->media_type == "video")
+                    <pre id="video"></pre>
+                @elseif($detail->media_type == "audio")
+                    <img src="{{$detail->banner}}" class="card-img-top" width="100%" height="250" alt="{{$detail->banner}}">
+                    <div class="container">
+                        <audio controls style="width: 100%;margin-top: 15px;">
+                            <source src="{{$detail->media}}" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                 @else
                     <a href="" data-toggle="modal" data-target="#exampleModal">
-                        <img src="{{$detail->banner}}" class="card-img-top" width="250" height="250" alt="{{$detail->banner}}">
+                        <img src="{{$detail->banner}}" class="card-img-top" width="100%" height="250" alt="{{$detail->banner}}">
                     </a>
                 @endif
                 <div class="card-body">
-                    @if($detail->media_type == "url")
+                    @if(($detail->media_type == "url") || ($detail->media_type == "document") || ($detail->media_type == "video"))
                         <a href="{{$detail->media}}" target="_blank" class="btn btn-warning btn-sm btn-block text-uppercase">@lang('messages.collection_btn_view')</a>
-                    @else
-                        <a href="" class="btn btn-warning btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#exampleModal">@lang('messages.collection_btn_view')</a>
                     @endif
                     <div class="row">
                         <div class="col-md-6 mt-2">
@@ -130,8 +138,8 @@
                     @elseif($detail->media_type == "document")
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
-                    {{--@elseif($detail->media_type == "url")--}}
-                        {{--<embed src="{{$detail->media}}" style="width: 100%; height: 515px;">--}}
+                    @elseif($detail->media_type == "url")
+                        <embed src="{{$detail->media}}" style="width: 100%; height: 515px;">
                     @endif
                 </div>
                 <div class="modal-footer">

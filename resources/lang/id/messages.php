@@ -118,12 +118,18 @@ return [
     'museum_information_close' => 'Senin dan Hari Libur Nasional Indonesia',
     'museum_close' => '(TUTUP)',
 
+    'museum_visiting_order' => 'Memesan Kunjungan',
+    'museum_institution' => 'Institusi atau Nama Pribadi',
+    'museum_phone' => 'Kontak Handphone',
+    'museum_visitor' => 'Jumlah Orang',
+    'museum_date' => 'Tanggal Kunjungan',
+    'btn_save' => 'Simpan',
+
     // page about us
     'about_title' => 'Tentang Kami',
 
     // page our services
     'services_title' => 'Solusi Kami',
-    'services_btn_back' => 'kembali ke halaman solusi kami',
     'services_btn_back' => 'kembali ke halaman solusi kami',
 
     // page news

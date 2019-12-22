@@ -7,12 +7,15 @@ use App\Model\content_collection_tbl;
 use App\Model\content_detail_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\institutional;
+use App\Model\visiting_order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Yajra\Datatables\Datatables;
+use Yajra\DataTables\DataTables;
 use Alert;
+
+use Illuminate\Support\Facades\Mail;
 
 use App\Model\content_tbl;
 use App\Model\category_content_tbl;
@@ -271,6 +274,82 @@ class ContentController extends Controller
 
         Alert::success('Content deleted successfully');
         return redirect()->route('content-pages',['category'=>$category]);
+    }
+
+    public function content_visiting()
+    {
+        return view('BE.pages.visitingOrder.index');
+    }
+
+    public function content_visiting_get()
+    {
+        if(auth('admin')->user()->is_admin_master == "Y")
+        {
+            $data = visiting_order::orderBy('created_at', "DESC");
+        }else{
+            $data = visiting_order::select(['visiting_order.*'])
+                ->join('content', 'content.id', '=', 'visiting_order.content_id')
+                ->where('institutional_id', auth('admin')->user()->institutional_id);
+        }
+
+        return DataTables::of($data)
+            ->editColumn('information', function ($data){
+                $substr = substr($data->information, 0, 250);
+                return $substr."<a href='".route('content-visiting-detail', ['id'=>$data->id])."'>...readmore</a>";
+            })
+            ->editColumn('messages_response', function ($data){
+                $substr = substr($data->messages_response, 0, 250);
+                if($data->messages_response == null)
+                {
+                    return "";
+                }else{
+                    return $substr."<a href='".route('content-visiting-detail', ['id'=>$data->id])."'>...readmore</a>";
+                }
+            })
+            ->addColumn('contact', function ($data) {
+                return "Email : ".$data->email."<br> Phone : ".$data->phone;
+            })
+            ->addColumn('detail', function ($data) {
+                $btn = '<a href="'.route('content-visiting-detail', ['id'=>$data->id]).'" class="btn btn-warning">Detail</a>';
+                return "<div class='btn-group'>".$btn."</div>";
+            })
+            ->rawColumns(['information','messages_response','contact','detail'])
+            ->make(true);
+    }
+
+    public function content_visiting_detail($id)
+    {
+        $data = visiting_order::find($id);
+        return view('BE.pages.visitingOrder.detail', compact('id', 'data'));
+    }
+
+    public function content_visiting_send(Request $request, $id)
+    {
+        $data = visiting_order::where('id',$id);
+
+        if($data->first()->is_send == "N")
+        {
+            $data->update([
+                'is_send' => "Y",
+                'messages_response' => $request->messages_response
+            ]);
+
+            Mail::send('BE.email.visiting-order', [
+                'code_booking' => $data->first()->code_booking,
+                'institutional_name' => $data->first()->institutional_name,
+                'phone' => $data->first()->phone,
+                'pax' => $data->first()->visitor,
+                'date' => $data->first()->date,
+                'information' => $data->first()->information,
+                'messages_response' => $request->messages_response,
+            ], function ($m) use ($data) {
+                $m->from(auth('admin')->user()->email, auth('admin')->user()->name);
+                $m->to($data->first()->email, $data->first()->institutional_name)->subject('iHeritage.id - reply to visiting order '.$data->first()->kode_booking);
+            });
+        }
+
+        Alert::success('messages succesfuly send to email');
+        return redirect()->route('content-visiting');
     }
 
     // gallery

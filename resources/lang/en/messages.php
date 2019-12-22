@@ -118,6 +118,13 @@ return [
     'museum_information_close' => 'Mondays and Indonesian National Holidays',
     'museum_close' => '(CLOSE)',
 
+    'museum_visiting_order' => 'Visiting Order',
+    'museum_institution' => 'Institution or Personal Name',
+    'museum_phone' => 'Contact Phone',
+    'museum_visitor' => 'Number of people',
+    'museum_date' => 'Date of Visit',
+    'btn_save' => 'Save',
+
     // page about us
     'about_title' => 'About Us',
 

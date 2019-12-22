@@ -31,6 +31,7 @@ Route::namespace('FE')->group(function () {
     Route::get('/search', 'InterfaceController@search');
     Route::get('/search-instantion/{instantion}', 'InterfaceController@searchInstantion');
     Route::get('/content/{seo}/{id}', 'InterfaceController@detailContent');
+    Route::post('/content/{id}', 'InterfaceController@detailContentPost');
 
     Route::get('/collection', 'InterfaceController@collection');
     Route::get('/collection-search', 'InterfaceController@collectionSearch');
@@ -123,6 +124,10 @@ Route::prefix('dashboard')->namespace('BE')->middleware('admin')->group(function
     Route::post('/content-pages/{category}/update/{id}', 'ContentController@content_update')->name('content-update');
     Route::get('/content-pages/{category}/delete/{id}', 'ContentController@content_delete')->name('content-delete');
     Route::get('/content-pages/{category}/approve/{id}', 'ContentController@content_approve')->name('content-approve');
+    Route::get('/content-visiting-page', 'ContentController@content_visiting')->name('content-visiting');
+    Route::get('/content-visiting-get', 'ContentController@content_visiting_get')->name('content-visiting-get');
+    Route::get('/content-visiting-detail/{id}', 'ContentController@content_visiting_detail')->name('content-visiting-detail');
+    Route::post('/content-visiting-send/{id}', 'ContentController@content_visiting_send')->name('content-visiting-send');
     // gallery
     Route::get('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery')->name('content-gallery');
     Route::post('/content-pages/{category}/gallery/{id}', 'ContentController@content_gallery_upload')->name('content-gallery-upload');

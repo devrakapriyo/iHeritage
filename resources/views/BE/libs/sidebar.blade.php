@@ -141,6 +141,14 @@
         </a>
     </li>
 
+        <!-- Nav Item - Visiting Order -->
+    <li class="nav-item @yield('content-visiting')">
+        <a class="nav-link" href="{{route('content-visiting')}}">
+            <i class="fas fa-fw fa-book-reader"></i>
+            <span>Visiting Order</span>
+        </a>
+    </li>
+
     @if($auth->is_admin == "Y")
         <!-- Divider -->
         <hr class="sidebar-divider">

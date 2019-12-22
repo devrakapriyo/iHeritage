@@ -11,6 +11,7 @@ use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
+use App\Model\visiting_order;
 use App\User;
 use App\UserVisitor;
 use Illuminate\Http\Request;
@@ -205,7 +206,24 @@ class InterfaceController extends Controller
         $education = content_edu_tbl::select('id','name','name_en','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $event = content_event_tbl::select('id','name','name_en','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $gallery = content_gallery_tbl::select('photo','id')->where('content_id', $id)->orderBy('id','desc')->take(3)->get();
-        return view('FE.pages.detail', compact('detail','collection','education','event','gallery'));
+        return view('FE.pages.detail', compact('id', 'detail','collection','education','event','gallery'));
+    }
+
+    public function detailContentPost(Request $request, $id)
+    {
+        $simpan = new visiting_order;
+        $simpan->content_id = $id;
+        $simpan->code_booking = date("Ymd").$id.$request->visitor;
+        $simpan->institutional_name = $request->institutional_name;
+        $simpan->email = $request->email;
+        $simpan->phone = $request->phone;
+        $simpan->visitor = $request->visitor;
+        $simpan->date = $request->date;
+        $simpan->information = $request->information;
+        $simpan->save();
+
+        Alert::success('visiting order successfully send');
+        return redirect()->back();
     }
 
     public function collection()

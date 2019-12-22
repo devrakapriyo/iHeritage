@@ -27,6 +27,8 @@
                 <div class="card-body">
                     @if(($detail->media_type == "url") || ($detail->media_type == "document") || ($detail->media_type == "video"))
                         <a href="{{$detail->media}}" target="_blank" class="btn btn-warning btn-sm btn-block text-uppercase">@lang('messages.collection_btn_view')</a>
+                    @elseif($detail->media_type == "image")
+                        <a href="" data-toggle="modal" data-target="#exampleModal" class="btn btn-warning btn-sm btn-block text-uppercase">@lang('messages.collection_btn_view')</a>
                     @endif
                     <div class="row">
                         <div class="col-md-6 mt-2">

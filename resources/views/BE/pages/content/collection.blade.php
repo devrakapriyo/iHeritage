@@ -101,11 +101,19 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Title : </label>
+                                        <label>Name Collection (Bahasa Indonesia): </label>
                                         <input type="text" name="name" class="form-control" required>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name Collection (Bahasa Inggris): </label>
+                                        <input type="text" name="name_en" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Media Type : </label>
                                         <select name="media_type" class="form-control" id="media_type" required>
@@ -113,25 +121,14 @@
                                             <option value="image">Image</option>
                                             <option value="video">Video</option>
                                             <option value="audio">Audio</option>
-                                            <option value="document">Document</option>
-                                            <option value="url">HTML 5</option>
+                                            <option value="document">PDF</option>
+                                            <option value="url">HTML5</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group" id="media_file">
-                                        <label>Upload Media : </label>
-                                        <input type="file" name="media" class="form-control">
-                                    </div>
-                                    <div class="form-group" id="media_link">
-                                        <label>Link Youtube : </label>
-                                        <input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12">
-                                        <small class="text-danger">paste your url from youtube</small>
-                                    </div>
-                                    <div class="form-group" id="media_url">
-                                        <label>Link Website : </label>
-                                        <input type="text" name="media" class="form-control">
-                                        <small class="text-danger">paste your link website</small>
+                                <div class="col-md-8">
+                                    <div class="form-group" id="media">
+
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +142,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Created Year : </label>
-                                        <input type="text" name="created_year" class="form-control" placeholder="2019" required>
+                                        <input type="text" name="created_year" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -157,7 +154,29 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Topic : </label>
-                                        <input type="text" name="topic" class="form-control" required>
+                                        <select name="topic" class="form-control" required>
+                                            <option value=""></option>
+                                            <option value="collection_manuscript">@lang('messages.collection_manuscript')</option>
+                                            <option value="collection_traditional_weapon">@lang('messages.collection_traditional_weapon')</option>
+                                            <option value="collection_traditional_music">@lang('messages.collection_traditional_music')</option>
+                                            <option value="collection_ceramic">@lang('messages.collection_ceramic')</option>
+                                            <option value="collection_painting">@lang('messages.collection_painting')</option>
+                                            <option value="collection_traditional_house)">@lang('messages.collection_traditional_house')</option>
+                                            <option value="collection_performing_arts">@lang('messages.collection_performing_arts')</option>
+                                            <option value="collection_temple">@lang('messages.collection_temple')</option>
+                                            <option value="collection_statue">@lang('messages.collection_statue')</option>
+                                            <option value="collection_crown">@lang('messages.collection_crown')</option>
+                                            <option value="collection_jewelry">@lang('messages.collection_jewelry')</option>
+                                            <option value="collection_vehicle">@lang('messages.collection_vehicle')</option>
+                                            <option value="collection_literature">@lang('messages.collection_literature')</option>
+                                            <option value="collection_traditional_cloth">@lang('messages.collection_traditional_cloth')</option>
+                                            <option value="collection_movie">@lang('messages.collection_movie')</option>
+                                            <option value="collection_inscription">@lang('messages.collection_inscription')</option>
+                                            <option value="collection_puppet">@lang('messages.collection_puppet')</option>
+                                            <option value="collection_mask">@lang('messages.collection_mask')</option>
+                                            <option value="collection_dance">@lang('messages.collection_dance')</option>
+                                            <option value="collection_material_art">@lang('messages.collection_material_art')</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -178,36 +197,6 @@
                                     <div class="form-group">
                                         <label>Link Url : </label>
                                         <input type="text" name="link_url" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "url_website")}}" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Physical Description :</label>
-                                        <input type="text" name="physical_description" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Description (bahasa indonesia):</label>
-                                        <textarea name="description_ind" class="form-control text-editor" rows="5"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Description (bahasa inggris):</label>
-                                        <textarea name="description_en" class="form-control text-editor" rows="5"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Upload Banner : </label>
-                                        <input type="file" name="banner" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
@@ -246,6 +235,30 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
+                                        <label>Physical Description :</label>
+                                        <input type="text" name="physical_description" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Description (bahasa indonesia):</label>
+                                        <textarea name="description_ind" class="form-control text-editor" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Description (bahasa inggris):</label>
+                                        <textarea name="description_en" class="form-control text-editor" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="banner">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
                                         <label style="color:transparent;">btn</label>
                                         <button class="btn btn-info btn-block">UPLOAD</button>
                                     </div>
@@ -255,7 +268,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
@@ -266,21 +278,65 @@
         $(document).ready(function () {
             $("#gmap_canvas").hide();
 
-            $("#media_link").hide();
-            $("#media_url").hide();
             $("#media_type").on("change", function () {
-                if($("#media_type").val() === "video"){
-                    $("#media_link").show();
-                    $("#media_url").hide();
-                    $("#media_file").hide();
+                $("#media").empty();
+                if($("#media_type").val() == "video"){
+                    $("#media").append('' +
+                        '<label>Link Youtube : </label>\n' +
+                        '<input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12">\n' +
+                        '<small class="text-danger">paste your url from youtube</small>');
+
+                    $("#banner").append('' +
+                        '<div class="col-md-12">\n' +
+                        '                                <div class="form-group">\n' +
+                        '                                    <label>Upload Banner : </label>\n' +
+                        '                                    <input type="file" name="banner" class="form-control" required>\n' +
+                        '                                </div>\n' +
+                        '                            </div>');
+                }else if($("#media_type").val() == "audio"){
+                    $("#media").append('' +
+                        '<label>Link File Audio : </label>\n' +
+                        '<input type="text" name="media" class="form-control">\n' +
+                        '<small class="text-danger">paste your link repository file audio</small>');
+
+                    $("#banner").append('' +
+                        '<div class="col-md-12">\n' +
+                        '                                <div class="form-group">\n' +
+                        '                                    <label>Upload Banner : </label>\n' +
+                        '                                    <input type="file" name="banner" class="form-control" required>\n' +
+                        '                                </div>\n' +
+                        '                            </div>');
                 }else if($("#media_type").val() === "url"){
-                    $("#media_link").hide();
-                    $("#media_url").show();
-                    $("#media_file").hide();
-                }else{
-                    $("#media_link").hide();
-                    $("#media_url").hide();
-                    $("#media_file").show();
+                    $("#media").append('' +
+                        '<label>Link Website : </label>\n' +
+                        '<input type="text" name="media" class="form-control">\n' +
+                        '<small class="text-danger">paste your link website</small>');
+
+                    $("#banner").append('' +
+                        '<div class="col-md-12">\n' +
+                        '                                <div class="form-group">\n' +
+                        '                                    <label>Upload Banner : </label>\n' +
+                        '                                    <input type="file" name="banner" class="form-control" required>\n' +
+                        '                                </div>\n' +
+                        '                            </div>');
+                }else if($("#media_type").val() === "document"){
+                    $("#media").append('' +
+                        '<label>Upload Media : </label>\n' +
+                        '<input type="file" name="upload_media" class="form-control">\n' +
+                        '<small class="text-danger">maximum upload file 5mb</small>');
+
+                    $("#banner").append('' +
+                        '<div class="col-md-12">\n' +
+                        '                                <div class="form-group">\n' +
+                        '                                    <label>Upload Banner : </label>\n' +
+                        '                                    <input type="file" name="banner" class="form-control" required>\n' +
+                        '                                </div>\n' +
+                        '                            </div>');
+                }else if($("#media_type").val() === "image"){
+                    $("#media").append('' +
+                        '<label>Upload Media : </label>\n' +
+                        '<input type="file" name="upload_media" class="form-control">\n' +
+                        '<small class="text-danger">maximum upload file 5mb</small>')
                 }
             });
         });

@@ -475,60 +475,65 @@ class ContentController extends Controller
 
     public function content_collection_upload(Request $request,$category,$id)
     {
-        if (($request->media_type != "video") && ($request->media_type != "url"))
+        if (($request->media_type == "document") || ($request->media_type == "image"))
         {
-            if (!empty($request->file('media')))
+            if ($request->file('upload_media'))
             {
-                if($request->media_type == "image")
+                if ($request->media_type == "image")
                 {
-                    $size = 1000000;
+                    $size = 5000000;
                     $msg = "must format jpg, jpeg or png";
-                }else if($request->media_type == "audio"){
-                    $size = 10000000;
-                    $msg = "must format mp3";
-                }else if($request->media_type == "document"){
-                    $size = 1000000;
+                } else if ($request->media_type == "document") {
+                    $size = 5000000;
                     $msg = "must format pdf";
                 }
 
-                $valid = helpers::validationMedia($request->file("media"), $request->media_type);
+                $valid = helpers::validationMedia($request->file("upload_media"), $request->media_type);
                 if ($valid != true)
                 {
-                    Alert::error('upload unsuccessful, '.$msg);
+                    Alert::error('upload unsuccessful, ' . $msg);
                     return redirect()->back();
                 }
 
-                $media = helpers::uploadMedia($request->file("media"),date("Ymd").rand(100,999),"img/BE/media", $size);
+                $media = helpers::uploadMedia($request->file("upload_media"), date("Ymd") . rand(100, 999), "img/BE/media", $size);
                 if ($media != true)
                 {
                     return redirect()->back();
-                }else{
-                    $media = url('/img/BE/media/'.$media);
+                } else {
+                    $media = url('/img/BE/media/' . $media);
                 }
-            }else{
+            } else {
                 Alert::error('Media hasnt been uploaded yet');
             }
-        }else{
+        } else {
             $media = $request->media;
         }
 
-        if (!empty($request->file('banner')))
+        if($request->media_type != "image")
         {
-            $valid = helpers::validationImage($request->file("banner"));
-            if ($valid != true)
+            $institutional = content_tbl::fieldContent($id, 'institutional_id');
+            $category = institutional::getData($institutional, 'category')->category;
+            if ($request->file('banner'))
             {
-                return redirect()->back();
-            }
+                $valid = helpers::validationImage($request->file("banner"));
+                if ($valid != true)
+                {
+                    return redirect()->back();
+                }
 
-            $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/BE/content/".$category);
-            if ($banner != true)
-            {
+                $banner = helpers::uploadImage($request->file("banner"), date("Ymd") . rand(100, 999), "img/BE/content/" . $category);
+                if ($banner != true)
+                {
+                    return redirect()->back();
+                } else {
+                    $banner = url('/img/BE/content/' . $category . '/' . $banner);
+                }
+            } else {
+                Alert::error('Banner is empty');
                 return redirect()->back();
-            }else{
-                $banner = url('/img/BE/content/'.$category.'/'.$banner);
             }
         }else{
-            $banner = 'https://via.placeholder.com/300';
+            $banner = $media;
         }
 
         if($request->place_id)
@@ -552,6 +557,7 @@ class ContentController extends Controller
         $simpan = new content_collection_tbl;
         $simpan->content_id = $id;
         $simpan->name = $request->name;
+        $simpan->name_en = $request->name_en;
         $simpan->banner = $banner;
         $simpan->media = $media;
         $simpan->media_type = $request->media_type;

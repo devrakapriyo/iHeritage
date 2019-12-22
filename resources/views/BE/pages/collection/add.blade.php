@@ -214,14 +214,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Upload Banner : </label>
-                                    <input type="file" name="banner" class="form-control" required>
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="row">--}}
+                            {{--<div class="col-md-12">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label>Upload Banner : </label>--}}
+                                    {{--<input type="file" name="banner" class="form-control" required>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -264,7 +264,7 @@
                 }else if($("#media_type").val() === "image" || $("#media_type").val() === "document"){
                     $("#media").append('' +
                         '<label>Upload Media : </label>\n' +
-                        '<input type="file" name="media" class="form-control">\n' +
+                        '<input type="file" name="upload_media" class="form-control">\n' +
                         '<small class="text-danger">maximum upload file 5mb</small>')
                 }
             });

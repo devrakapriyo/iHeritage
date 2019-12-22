@@ -102,7 +102,7 @@
                                 @else
                                     <div class="form-group">
                                         <label>Upload Media : </label>
-                                        <input type="file" name="media" class="form-control">
+                                        <input type="file" name="upload_media" class="form-control">
                                         <small class="text-danger">maximum upload file 5mb</small>
                                     </div>
                                 @endif
@@ -230,14 +230,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Upload Banner : </label>
-                                    <input type="file" name="banner" class="form-control">
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="row">--}}
+                            {{--<div class="col-md-12">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label>Upload Banner : </label>--}}
+                                    {{--<input type="file" name="banner" class="form-control">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">

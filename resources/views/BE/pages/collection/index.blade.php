@@ -34,7 +34,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Description</th>
-                                {{--<th>Banner</th>--}}
+                                <th>Banner</th>
                                 <th>Media</th>
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>
                             </tr>
@@ -61,7 +61,7 @@
                 columns: [
                     { data: 'name', name: 'name' },
                     { data: 'description_en', name: 'description_en' },
-//                    { data: 'banner', name: 'banner', orderable: false, searchable: false},
+                    { data: 'banner', name: 'banner', orderable: false, searchable: false},
                     { data: 'media', name: 'media', orderable: false, searchable: false},
                     { data: 'action', name: 'action', orderable: false, searchable: false}
                 ]

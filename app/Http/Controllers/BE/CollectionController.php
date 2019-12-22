@@ -110,27 +110,32 @@ class CollectionController extends Controller
             $media = $request->media;
         }
 
-        //$institutional = content_tbl::fieldContent($request->content_id, 'institutional_id');
-        //$category = institutional::getData($institutional, 'category')->category;
+        if($request->media_type != "image")
+        {
+            $institutional = content_tbl::fieldContent($request->content_id, 'institutional_id');
+            $category = institutional::getData($institutional, 'category')->category;
+            if ($request->file('banner'))
+            {
+                $valid = helpers::validationImage($request->file("banner"));
+                if ($valid != true)
+                {
+                    return redirect()->back();
+                }
 
-        //if (!empty($request->file('banner')))
-        //{
-        //    $valid = helpers::validationImage($request->file("banner"));
-        //    if ($valid != true)
-        //    {
-        //        return redirect()->back();
-        //    }
-
-        //    $banner = helpers::uploadImage($request->file("banner"), date("Ymd") . rand(100, 999), "img/BE/content/" . $category);
-        //    if ($banner != true)
-        //    {
-        //        return redirect()->back();
-        //    } else {
-        //        $banner = url('/img/BE/content/' . $category . '/' . $banner);
-        //    }
-        //} else {
-        //    $banner = 'https://via.placeholder.com/300';
-        //}
+                $banner = helpers::uploadImage($request->file("banner"), date("Ymd") . rand(100, 999), "img/BE/content/" . $category);
+                if ($banner != true)
+                {
+                    return redirect()->back();
+                } else {
+                    $banner = url('/img/BE/content/' . $category . '/' . $banner);
+                }
+            } else {
+                Alert::error('Banner is empty');
+                return redirect()->back();
+            }
+        }else{
+            $banner = $media;
+        }
 
         if($request->place_id)
         {
@@ -154,7 +159,7 @@ class CollectionController extends Controller
         $simpan->content_id = $request->content_id;
         $simpan->name = $request->name;
         $simpan->name_en = $request->name_en;
-        //$simpan->banner = $banner;
+        $simpan->banner = $banner;
         $simpan->media = $media;
         $simpan->media_type = $request->media_type;
         $simpan->creator = $request->creator;
@@ -220,27 +225,31 @@ class CollectionController extends Controller
             $media = $request->media;
         }
 
-        //$institutional = content_tbl::fieldContent(content_collection_tbl::fieldContent($id, "content_id"), 'institutional_id');
-        //$category = institutional::getData($institutional, 'category')->category;
+        if($request->media_type != "image")
+        {
+            $institutional = content_tbl::fieldContent(content_collection_tbl::fieldContent($id, "content_id"), 'institutional_id');
+            $category = institutional::getData($institutional, 'category')->category;
+            if ($request->file('banner'))
+            {
+                $valid = helpers::validationImage($request->file("banner"));
+                if ($valid != true)
+                {
+                    return redirect()->back();
+                }
 
-        //if (!empty($request->file('banner')))
-        //{
-        //    $valid = helpers::validationImage($request->file("banner"));
-        //    if ($valid != true)
-        //    {
-        //        return redirect()->back();
-        //    }
-
-        //    $banner = helpers::uploadImage($request->file("banner"), date("Ymd") . rand(100, 999), "img/BE/content/" . $category);
-        //    if ($banner != true)
-        //    {
-        //        return redirect()->back();
-        //    } else {
-        //        $banner = url('/img/BE/content/' . $category . '/' . $banner);
-        //    }
-        //} else {
-        //    $banner = content_collection_tbl::fieldContent($id, "banner");
-        //}
+                $banner = helpers::uploadImage($request->file("banner"), date("Ymd") . rand(100, 999), "img/BE/content/" . $category);
+                if ($banner != true)
+                {
+                    return redirect()->back();
+                } else {
+                    $banner = url('/img/BE/content/' . $category . '/' . $banner);
+                }
+            } else {
+                $banner = content_collection_tbl::fieldContent($id, "banner");
+            }
+        }else{
+            $banner = $media;
+        }
 
         if($request->place_id)
         {
@@ -264,7 +273,7 @@ class CollectionController extends Controller
             ->update([
                 'name'=>$request->name,
                 'name_en'=>$request->name_en,
-                //'banner'=>$banner,
+                'banner'=>$banner,
                 'media'=>$media,
                 'creator'=>$request->creator,
                 'created_year'=>$request->created_year,

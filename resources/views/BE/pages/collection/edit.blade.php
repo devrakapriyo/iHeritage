@@ -230,14 +230,16 @@
                                 </div>
                             </div>
                         </div>
-                        {{--<div class="row">--}}
-                            {{--<div class="col-md-12">--}}
-                                {{--<div class="form-group">--}}
-                                    {{--<label>Upload Banner : </label>--}}
-                                    {{--<input type="file" name="banner" class="form-control">--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                        @if($detail->media_type != "image")
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Upload Banner : </label>
+                                    <input type="file" name="banner" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        @endif
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">

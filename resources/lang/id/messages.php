@@ -93,6 +93,8 @@ return [
     'collection_mask' => 'Topeng',
     'collection_dance' => 'Tarian',
     'collection_material_art' => 'Beladiri',
+    'collection_history' => 'Sejarah',
+    'collection_historic_building' => 'Gedung Bersejarah',
 
     // page vr
     'vr_title' => 'Tur Virtual',

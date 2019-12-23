@@ -93,6 +93,8 @@ return [
     'collection_mask' => 'Mask',
     'collection_dance' => 'Dance',
     'collection_material_art' => 'Martial Art',
+    'collection_history' => 'History',
+    'collection_historic_building' => 'Historic Building',
 
     // page vr
     'vr_title' => 'Virtual Tour',

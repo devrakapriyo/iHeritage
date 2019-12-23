@@ -176,6 +176,8 @@
                                             <option value="collection_mask">@lang('messages.collection_mask')</option>
                                             <option value="collection_dance">@lang('messages.collection_dance')</option>
                                             <option value="collection_material_art">@lang('messages.collection_material_art')</option>
+                                            <option value="collection_history">@lang('messages.collection_history')</option>
+                                            <option value="collection_historic_building">@lang('messages.collection_historic_building')</option>
                                         </select>
                                     </div>
                                 </div>

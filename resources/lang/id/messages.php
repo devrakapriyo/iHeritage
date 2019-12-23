@@ -123,7 +123,7 @@ return [
     'museum_visiting_order' => 'Memesan Kunjungan',
     'museum_institution' => 'Institusi atau Nama Pribadi',
     'museum_phone' => 'Kontak Handphone',
-    'museum_visitor' => 'Jumlah Orang',
+    'museum_visitor' => 'Jumlah Pengunjung',
     'museum_date' => 'Tanggal Kunjungan',
     'btn_save' => 'Simpan',
 

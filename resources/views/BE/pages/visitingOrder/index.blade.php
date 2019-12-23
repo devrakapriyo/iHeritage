@@ -32,7 +32,7 @@
                                 <th>#</th>
                                 <th>Institutional</th>
                                 <th>Contact</th>
-                                <th>Pax</th>
+                                <th>Numbers of Visitor</th>
                                 <th>Date</th>
                                 <th>Information</th>
                                 <th>Response</th>

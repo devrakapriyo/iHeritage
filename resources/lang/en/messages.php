@@ -123,7 +123,7 @@ return [
     'museum_visiting_order' => 'Visiting Order',
     'museum_institution' => 'Institution or Personal Name',
     'museum_phone' => 'Contact Phone',
-    'museum_visitor' => 'Number of people',
+    'museum_visitor' => 'Numbers of Visitor',
     'museum_date' => 'Date of Visit',
     'btn_save' => 'Save',
 

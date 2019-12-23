@@ -4,7 +4,7 @@
     Booking Code : {{$code_booking}}<br>
     Phone : {{$phone}}<br>
     Date Visit : {{$date}}<br>
-    Pax : {{$pax}}<br>
+    Numbers of Visitor : {{$pax}}<br>
     Information : {{$information}}
 </p>
 <p>this is the Message Response</p>

@@ -285,7 +285,7 @@
                             <input type="text" name="phone" class="form-control" placeholder="@lang('messages.museum_phone')" required>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="visitor" class="form-control" min="0" placeholder="PAX" required>
+                            <input type="number" name="visitor" class="form-control" min="0" placeholder="@lang('messages.museum_visitor')" required>
                         </div>
                         <div class="form-group">
                             <input type="date" name="date" class="form-control" placeholder="@lang('messages.museum_date')" required>

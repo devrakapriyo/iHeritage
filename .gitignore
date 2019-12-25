@@ -1,6 +1,7 @@
 /node_modules
 /storage/*.key
-/public/img
+/public/img/Admin
+/public/img/BE
 .env
 .htaccess
 .phpunit.result.cache

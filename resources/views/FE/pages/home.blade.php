@@ -147,12 +147,36 @@
         </div>
         <!-- /.row -->
 
-        <!-- Join -->
-        <div class="jumbotron bg-warning">
-            <h3 class="display-5">@lang('messages.home_banner_title')</h3>
-            <p class="lead">@lang('messages.home_banner_description')</p>
-            <hr class="my-4">
-            <a class="btn btn-light" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
+        <!-- Join View Desktop-->
+        <div class="d-none d-lg-block">
+            <div class="jumbotron bg-warning">
+                <h3 class="display-5">@lang('messages.home_banner_title')</h3>
+                <p class="lead">@lang('messages.home_banner_description')</p>
+                <hr class="my-4">
+                <a class="btn btn-light" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
+                <img src="{{asset('img/app-store.png')}}" class="img float-right" style="width: 160px; height: 60px;">
+                <img src="{{asset('img/play-store.png')}}" class="img float-right" style="width: 160px; height: 60px;">
+            </div>
+        </div>
+
+        <!-- Join View Mobile-->
+        <div class="d-lg-none">
+            <div class="jumbotron bg-warning">
+                <h3 class="display-5">@lang('messages.home_banner_title')</h3>
+                <p class="lead">@lang('messages.home_banner_description')</p>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="btn btn-light btn-block mb-5" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{asset('img/app-store.png')}}" class="img float-right" style="width: 100%; height: 100px;">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{asset('img/play-store.png')}}" class="img float-right" style="width: 100%; height: 100px;">
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.row -->
 

@@ -46,8 +46,8 @@
                     Language
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index:10000">
-                    <a class="dropdown-item" href="{{url('locale/en')}}">English</a>
-                    <a class="dropdown-item" href="{{url('locale/id')}}">Indonesia</a>
+                    <a class="dropdown-item" href="{{url('locale/id')}}">English</a>
+                    <a class="dropdown-item" href="{{url('locale/en')}}">Indonesia</a>
                 </div>
             </li>
         </ul>

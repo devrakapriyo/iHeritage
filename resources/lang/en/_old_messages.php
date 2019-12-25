@@ -34,7 +34,7 @@ return [
     'head_menu_news' => 'News',
     'head_menu_login' => 'Login Account',
     'head_menu_join' => 'Are you Interest to be Administator? Register Now!',
-
+    
     'nav_menu_home' => 'Home',
     'nav_menu_heritage' => 'Collections',
     'nav_menu_event' => 'Events',

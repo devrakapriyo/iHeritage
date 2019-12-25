@@ -38,7 +38,7 @@ return [
     'nav_menu_home' => 'Beranda',
     'nav_menu_heritage' => 'Koleksi',
     'nav_menu_event' => 'Acara',
-    'nav_menu_edu_pro' => 'Edukasi',
+    'nav_menu_edu_pro' => 'Program Pendidikan',
     'nav_menu_vr' => 'Tur Virtual',
 
     'home_select_place' => 'Semua Provinsi di Indonesia',
@@ -166,4 +166,3 @@ return [
     'edu_information_close' => 'Senin dan Hari Libur Nasional Indonesia',
     'edu_close' => '(TUTUP)',
 ];
-

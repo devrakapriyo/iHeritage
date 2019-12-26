@@ -34,15 +34,15 @@
                         <div class="form-group mt-5 mb-5">
                             <select name="category" class="form-control">
                                 <option value="all">@lang('messages.home_select_heritage')</option>
-                                <option value="museum">Museum</option>
-                                <option value="library">Library</option>
-                                <option value="gallery">Gallery</option>
-                                <option value="archive">Archive</option>
-                                <option value="temple">Temple</option>
-                                <option value="palace">Palace</option>
-                                <option value="natural-place">Natural Place</option>
-                                <option value="historical-building">Historical Building</option>
-                                <option value="personal-activities">Personal Activities</option>
+                                <option value="museum">@lang('messages.category_museum')</option>
+                                <option value="library">@lang('messages.category_library')</option>
+                                <option value="gallery">@lang('messages.category_gallery')</option>
+                                <option value="archive">@lang('messages.category_archive')</option>
+                                <option value="temple">@lang('messages.category_temple')</option>
+                                <option value="palace">@lang('messages.category_palace')</option>
+                                <option value="natural-place">@lang('messages.category_natural_place')</option>
+                                <option value="historical-building">@lang('messages.category_historical_building')</option>
+                                <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                             </select>
                         </div>
                     </div>
@@ -148,34 +148,42 @@
         <!-- /.row -->
 
         <!-- Join View Desktop-->
+        {{--<div class="d-none d-lg-block">--}}
+            {{--<div class="jumbotron bg-warning">--}}
+                {{--<h3 class="display-5">@lang('messages.home_banner_title')</h3>--}}
+                {{--<p class="lead">@lang('messages.home_banner_description')</p>--}}
+                {{--<hr class="my-4">--}}
+                {{--<a class="btn btn-light" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>--}}
+                {{--<img src="{{asset('img/app-store.png')}}" class="img float-right" style="width: 160px; height: 60px;">--}}
+                {{--<img src="{{asset('img/play-store.png')}}" class="img float-right" style="width: 160px; height: 60px;">--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+        <!-- Join View Mobile-->
+        {{--<div class="d-lg-none">--}}
+            {{--<div class="jumbotron bg-warning">--}}
+                {{--<h3 class="display-5">@lang('messages.home_banner_title')</h3>--}}
+                {{--<p class="lead">@lang('messages.home_banner_description')</p>--}}
+                {{--<hr class="my-4">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-12">--}}
+                        {{--<a class="btn btn-light btn-block mb-5" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-6">--}}
+                        {{--<img src="{{asset('img/app-store.png')}}" class="img float-right" style="width: 100%; height: 100px;">--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-6">--}}
+                        {{--<img src="{{asset('img/play-store.png')}}" class="img float-right" style="width: 100%; height: 100px;">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="d-none d-lg-block">
             <div class="jumbotron bg-warning">
                 <h3 class="display-5">@lang('messages.home_banner_title')</h3>
                 <p class="lead">@lang('messages.home_banner_description')</p>
                 <hr class="my-4">
                 <a class="btn btn-light" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
-                <img src="{{asset('img/app-store.png')}}" class="img float-right" style="width: 160px; height: 60px;">
-                <img src="{{asset('img/play-store.png')}}" class="img float-right" style="width: 160px; height: 60px;">
-            </div>
-        </div>
-
-        <!-- Join View Mobile-->
-        <div class="d-lg-none">
-            <div class="jumbotron bg-warning">
-                <h3 class="display-5">@lang('messages.home_banner_title')</h3>
-                <p class="lead">@lang('messages.home_banner_description')</p>
-                <hr class="my-4">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="btn btn-light btn-block mb-5" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{asset('img/app-store.png')}}" class="img float-right" style="width: 100%; height: 100px;">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{asset('img/play-store.png')}}" class="img float-right" style="width: 100%; height: 100px;">
-                    </div>
-                </div>
             </div>
         </div>
         <!-- /.row -->

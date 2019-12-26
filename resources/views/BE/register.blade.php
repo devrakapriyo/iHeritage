@@ -23,18 +23,18 @@
             <form class="form-signin" action="{{url('register')}}" method="post">
                 @csrf
                 <div class="form-label-group">
-                    <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required autofocus>
-                    <label for="inputName">Name</label>
+                    <input type="text" name="name" id="inputName" class="form-control" placeholder="@lang('messages.full_name')" required autofocus>
+                    <label for="inputName">@lang('messages.full_name')</label>
                 </div>
 
                 <div class="form-label-group">
-                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    <label for="inputEmail">Email address</label>
+                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="@lang('messages.email_address')" required autofocus>
+                    <label for="inputEmail">@lang('messages.email_address')</label>
                 </div>
 
                 <div class="form-label-group">
-                    <input type="text" name="phone" id="inputPhone" class="form-control" placeholder="Phone numbers" required autofocus>
-                    <label for="inputPhone">Phone</label>
+                    <input type="text" name="phone" id="inputPhone" class="form-control" placeholder="@lang('messages.no_phone')" required autofocus>
+                    <label for="inputPhone">@lang('messages.no_phone')</label>
                 </div>
 
                 <div class="form-label-group">
@@ -43,45 +43,45 @@
                 </div>
 
                 <div class="form-label-group">
-                    <input type="password" name="re_password" id="inputRePassword" class="form-control" placeholder="Re Password" required>
-                    <label for="inputRePassword">Re Password</label>
+                    <input type="password" name="re_password" id="inputRePassword" class="form-control" placeholder="@lang('messages.re_password')" required>
+                    <label for="inputRePassword">@lang('messages.re_password')</label>
                 </div>
 
                 <hr class="sidebar-divider d-none d-md-block">
 
                 <div class="form-group">
-                    <label for="inputInstitutional">Institutional Name</label>
+                    <label for="inputInstitutional">@lang('messages.institutional_name')</label>
                     <input type="text" name="institutional_name" id="inputInstitutional" class="form-control" required autofocus>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputCategory">Category</label>
+                    <label for="inputCategory">@lang('messages.category')</label>
                     <select name="category" class="form-control" id="inputCategory" required>
                         <option value=""></option>
-                        <option value="museum">Museum</option>
-                        <option value="library">Library</option>
-                        <option value="gallery">Gallery</option>
-                        <option value="archive">Archive</option>
-                        <option value="temple">Temple</option>
-                        <option value="palace">Palace</option>
-                        <option value="natural-place">Natural Place</option>
-                        <option value="historical-building">Historical Building</option>
-                        <option value="personal-activities">Personal Activities</option>
+                        <option value="museum">@lang('messages.category_museum')</option>
+                        <option value="library">@lang('messages.category_library')</option>
+                        <option value="gallery">@lang('messages.category_gallery')</option>
+                        <option value="archive">@lang('messages.category_archive')</option>
+                        <option value="temple">@lang('messages.category_temple')</option>
+                        <option value="palace">@lang('messages.category_palace')</option>
+                        <option value="natural-place">@lang('messages.category_natural_place')</option>
+                        <option value="historical-building">@lang('messages.category_historical_building')</option>
+                        <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputPlace">Province</label>
+                    <label for="inputPlace">@lang('messages.collection_place')</label>
                     <select name="place_id" class="form-control" id="inputPlace" required>
                         <option value=""></option>
                         @foreach(\App\Model\place_tbl::listSearch() as $item)
-                            <option value="{{$item->id}}">{{$item->place_en}}</option>
+                            <option value="{{$item->id}}">{{App::isLocale('id') ? $item->place_ind : $item->place_en}}</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputAddress">Address</label>
+                    <label for="inputAddress">@lang('messages.collection_address')</label>
                     <textarea name="address" id="inputAddress" class="form-control" rows="5" required></textarea>
                 </div>
 

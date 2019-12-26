@@ -14,8 +14,8 @@
             <form class="form-signin" action="{{url('login')}}" method="post">
                 @csrf
                 <div class="form-label-group">
-                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    <label for="inputEmail">Email address</label>
+                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="@lang('messages.email_address')" required autofocus>
+                    <label for="inputEmail">@lang('messages.email_address')</label>
                 </div>
 
                 <div class="form-label-group">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="mb-3 text-center">
-                    <a href="{{url('reset-password/admin')}}" target="_blank">forgot the password? clik here...</a>
+                    <a href="{{url('reset-password/admin')}}" target="_blank">@lang('messages.forgot_password')</a>
                 </div>
                 <button class="btn btn-lg btn-warning btn-block text-uppercase">@lang('messages.login_admin')</button>
                 <!-- <hr class="my-4"> -->

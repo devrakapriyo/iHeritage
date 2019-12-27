@@ -52,7 +52,7 @@ return [
     'home_banner_description' => 'Gratis dan mudah...',
     'home_banner_button' => 'Coba sekarang!',
 
-    'home_palace_title' => 'Kraton',
+    'home_palace_title' => 'Keraton',
 
     'home_nature_title' => 'Alam',
 
@@ -156,7 +156,7 @@ return [
     'event_close' => 'Pendaftaran Ditutup',
 
     // page education program
-    'edu_title' => 'Program Pendidikan',
+    'edu_title' => 'Edukasi',
     'edu_information' => 'Informasi',
     'edu_information_opening' => 'Jam Buka',
     'edu_information_monday' => 'Senin',
@@ -176,8 +176,9 @@ return [
     'category_gallery' => 'Galeri',
     'category_archive' => 'Arsip',
     'category_temple' => 'Candi',
-    'category_palace' => 'Kraton',
+    'category_palace' => 'Keraton',
     'category_natural_place' => 'Wisata Alam',
     'category_historical_building' => 'Bangunan Bersejarah',
     'category_personal_activities' => 'Aktivitas Pribadi',
+    'category_site' => 'Situs',
 ];

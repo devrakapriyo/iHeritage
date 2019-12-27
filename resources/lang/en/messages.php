@@ -156,7 +156,7 @@ return [
     'event_close' => 'Registration is Closed',
 
     // page education program
-    'edu_title' => 'Education Program',
+    'edu_title' => 'Education',
     'edu_information' => 'Information',
     'edu_information_opening' => 'Opening Hours',
     'edu_information_monday' => 'Monday',
@@ -180,4 +180,5 @@ return [
     'category_natural_place' => 'Natural Place',
     'category_historical_building' => 'Historical Building',
     'category_personal_activities' => 'Personal Activities',
+    'category_site' => 'Site',
 ];

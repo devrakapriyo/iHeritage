@@ -43,6 +43,7 @@
                                 <option value="natural-place">@lang('messages.category_natural_place')</option>
                                 <option value="historical-building">@lang('messages.category_historical_building')</option>
                                 <option value="personal-activities">@lang('messages.category_personal_activities')</option>
+                                <option value="site">@lang('messages.category_site')</option>
                             </select>
                         </div>
                     </div>
@@ -75,15 +76,16 @@
                         <div class="form-group">
                             <select name="category" class="form-control">
                                 <option value="all">@lang('messages.home_select_heritage')</option>
-                                <option value="museum">Museum</option>
-                                <option value="library">Library</option>
-                                <option value="gallery">Gallery</option>
-                                <option value="archive">Archive</option>
-                                <option value="temple">Temple</option>
-                                <option value="palace">Palace</option>
-                                <option value="natural-place">Natural Place</option>
-                                <option value="historical-building">Historical Building</option>
-                                <option value="personal-activities">Personal Activities</option>
+                                <option value="museum">@lang('messages.category_museum')</option>
+                                <option value="library">@lang('messages.category_library')</option>
+                                <option value="gallery">@lang('messages.category_gallery')</option>
+                                <option value="archive">@lang('messages.category_archive')</option>
+                                <option value="temple">@lang('messages.category_temple')</option>
+                                <option value="palace">@lang('messages.category_palace')</option>
+                                <option value="natural-place">@lang('messages.category_natural_place')</option>
+                                <option value="historical-building">@lang('messages.category_historical_building')</option>
+                                <option value="personal-activities">@lang('messages.category_personal_activities')</option>
+                                <option value="site">@lang('messages.category_site')</option>
                             </select>
                         </div>
                     </div>
@@ -178,13 +180,11 @@
                 {{--</div>--}}
             {{--</div>--}}
         {{--</div>--}}
-        <div class="d-none d-lg-block">
-            <div class="jumbotron bg-warning">
-                <h3 class="display-5">@lang('messages.home_banner_title')</h3>
-                <p class="lead">@lang('messages.home_banner_description')</p>
-                <hr class="my-4">
-                <a class="btn btn-light" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
-            </div>
+        <div class="jumbotron bg-warning">
+            <h3 class="display-5">@lang('messages.home_banner_title')</h3>
+            <p class="lead">@lang('messages.home_banner_description')</p>
+            <hr class="my-4">
+            <a class="btn btn-light" href="{{url('register')}}" role="button">@lang('messages.home_banner_button')</a>
         </div>
         <!-- /.row -->
 

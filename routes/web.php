@@ -32,6 +32,7 @@ Route::namespace('FE')->group(function () {
     Route::get('/search-instantion/{instantion}', 'InterfaceController@searchInstantion');
     Route::get('/content/{seo}/{id}', 'InterfaceController@detailContent');
     Route::post('/content/{id}', 'InterfaceController@detailContentPost');
+    Route::post('/content-{visiting_order}/{id}', 'InterfaceController@visitingOrderPost');
 
     Route::get('/collection', 'InterfaceController@collection');
     Route::get('/collection-search', 'InterfaceController@collectionSearch');

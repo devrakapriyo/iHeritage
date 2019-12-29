@@ -29,8 +29,8 @@
                         <table class="table" id="datatable">
                             <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Institutional</th>
+                                <th>Visiting Order</th>
                                 <th>Contact</th>
                                 <th>Numbers of Visitor</th>
                                 <th>Date</th>
@@ -59,8 +59,8 @@
                 serverSide: true,
                 ajax: '{{route('content-visiting-get')}}',
                 columns: [
-                    { data: 'code_booking', name: 'code_booking' },
                     { data: 'institutional_name', name: 'institutional_name' },
+                    { data: 'visiting_order', name: 'visiting_order' },
                     { data: 'contact', name: 'contact', orderable: false, searchable: false},
                     { data: 'visitor', name: 'visitor' },
                     { data: 'date', name: 'date' },

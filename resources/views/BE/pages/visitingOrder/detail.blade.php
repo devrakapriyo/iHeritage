@@ -39,6 +39,16 @@
                                     </div>
                                 </div>
                             </div>
+                            @if(\App\Model\visiting_order::get_visitor_order($id) != "-")
+                               <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Visiting Order : </label>
+                                            <input type="text" class="form-control" value="{{\App\Model\visiting_order::get_visitor_order($id)}}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">

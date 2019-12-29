@@ -5,6 +5,8 @@ namespace App\Http\Controllers\BE;
 use App\Helper\helpers;
 use App\Model\content_collection_tbl;
 use App\Model\content_detail_tbl;
+use App\Model\content_edu_tbl;
+use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\institutional;
 use App\Model\visiting_order;
@@ -306,6 +308,9 @@ class ContentController extends Controller
                     return $substr."<a href='".route('content-visiting-detail', ['id'=>$data->id])."'>...readmore</a>";
                 }
             })
+            ->addColumn('visiting_order', function ($data) {
+                return visiting_order::get_visitor_order($data->id);
+            })
             ->addColumn('contact', function ($data) {
                 return "Email : ".$data->email."<br> Phone : ".$data->phone;
             })
@@ -313,7 +318,7 @@ class ContentController extends Controller
                 $btn = '<a href="'.route('content-visiting-detail', ['id'=>$data->id]).'" class="btn btn-warning">Detail</a>';
                 return "<div class='btn-group'>".$btn."</div>";
             })
-            ->rawColumns(['information','messages_response','contact','detail'])
+            ->rawColumns(['information','messages_response','visiting_order','contact','detail'])
             ->make(true);
     }
 

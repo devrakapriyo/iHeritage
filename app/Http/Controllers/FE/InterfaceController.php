@@ -226,6 +226,31 @@ class InterfaceController extends Controller
         return redirect()->back();
     }
 
+    public function visitingOrderPost(Request $request, $visiting_order, $id)
+    {
+        $simpan = new visiting_order;
+        if($visiting_order == "education")
+        {
+            $simpan->education_id = $id;
+            $content_id = content_edu_tbl::select('content_id')->where('id', $id)->first()->content_id;
+        }else{
+            $simpan->event_id = $id;
+            $content_id = content_event_tbl::select('content_id')->where('id', $id)->first()->content_id;
+        }
+        $simpan->content_id = $content_id;
+        $simpan->code_booking = date("Ymd").$id.$request->visitor;
+        $simpan->institutional_name = $request->institutional_name;
+        $simpan->email = $request->email;
+        $simpan->phone = $request->phone;
+        $simpan->visitor = $request->visitor;
+        $simpan->date = $request->date;
+        $simpan->information = $request->information;
+        $simpan->save();
+
+        Alert::success('visiting order successfully send');
+        return redirect()->back();
+    }
+
     public function collection()
     {
         $data = content_collection_tbl::where('is_active',"Y")->get();
@@ -337,6 +362,7 @@ class InterfaceController extends Controller
     {
         //$data = content_event_tbl::where('close_registration','>=',date('Y-m-d H:i:s'))
         $data = content_event_tbl::where('is_active',"Y")
+            ->where('end_date', '>=', date("Y-m-d"))
             ->where('is_publish',"Y")
             ->orderBy('end_date', "DESC")
             ->get();
@@ -395,7 +421,7 @@ class InterfaceController extends Controller
             ->where('is_active',"Y")
             ->where('is_publish',"Y")
             ->first();
-        return view('FE.pages.event-detail', compact('detail'));
+        return view('FE.pages.event-detail', compact('detail','id'));
     }
 
     public function educationProgram()
@@ -432,6 +458,6 @@ class InterfaceController extends Controller
             ->where('is_active',"Y")
             ->where('is_publish',"Y")
             ->first();
-        return view('FE.pages.edu-program-detail', compact('detail'));
+        return view('FE.pages.edu-program-detail', compact('detail','id'));
     }
 }

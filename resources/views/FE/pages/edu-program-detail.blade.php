@@ -88,6 +88,37 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">@lang('messages.museum_visiting_order')</h5>
+                        <form method="post" action="{{url('content-education/'.$id)}}">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" name="institutional_name" class="form-control" placeholder="@lang('messages.museum_institution')" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" class="form-control" placeholder="@lang('messages.museum_phone')" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="visitor" class="form-control" min="0" placeholder="@lang('messages.museum_visitor')" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="date" class="form-control" placeholder="@lang('messages.museum_date')" required>
+                            </div>
+                            <div class="form-group">
+                                <label>@lang('messages.museum_information')</label>
+                                <textarea name="information" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block">@lang('messages.btn_save')</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.row -->

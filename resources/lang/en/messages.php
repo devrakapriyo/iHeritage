@@ -98,6 +98,7 @@ return [
     'collection_material_art' => 'Martial Art',
     'collection_history' => 'History',
     'collection_historic_building' => 'Historic Building',
+    'collection_site' => 'Site',
 
     // page vr
     'vr_title' => 'Virtual Tour',

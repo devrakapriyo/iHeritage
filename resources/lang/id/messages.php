@@ -98,6 +98,7 @@ return [
     'collection_material_art' => 'Beladiri',
     'collection_history' => 'Sejarah',
     'collection_historic_building' => 'Gedung Bersejarah',
+    'collection_site' => 'Situs',
 
     // page vr
     'vr_title' => 'Tur Virtual',

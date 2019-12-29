@@ -99,6 +99,7 @@ return [
     'collection_history' => 'Sejarah',
     'collection_historic_building' => 'Gedung Bersejarah',
     'collection_site' => 'Situs',
+    'collection_culinary' => 'Kuliner',
 
     // page vr
     'vr_title' => 'Tur Virtual',

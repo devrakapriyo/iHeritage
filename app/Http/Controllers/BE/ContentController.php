@@ -315,7 +315,15 @@ class ContentController extends Controller
                 return "Email : ".$data->email."<br> Phone : ".$data->phone;
             })
             ->addColumn('detail', function ($data) {
-                $btn = '<a href="'.route('content-visiting-detail', ['id'=>$data->id]).'" class="btn btn-warning">Detail</a>';
+                if($data->is_send == "Y")
+                {
+                    $text = "Detail";
+                    $color = "btn-warning";
+                }else{
+                    $text = "Reply message";
+                    $color = "btn-danger";
+                }
+                $btn = '<a href="'.route('content-visiting-detail', ['id'=>$data->id]).'" class="btn '.$color.'">'.$text.'</a>';
                 return "<div class='btn-group'>".$btn."</div>";
             })
             ->rawColumns(['information','messages_response','visiting_order','contact','detail'])

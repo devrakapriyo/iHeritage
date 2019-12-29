@@ -132,14 +132,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (Bahasa Inggris): </label>
-                                    <textarea name="description_en" class="form-control text-editor" row="3"></textarea>
+                                    <label>Description (Bahasa Indonesia): </label>
+                                    <textarea name="description_ind" class="form-control text-editor" row="3"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (Bahasa Indonesia): </label>
-                                    <textarea name="description_ind" class="form-control text-editor" row="3"></textarea>
+                                    <label>Description (Bahasa Inggris): </label>
+                                    <textarea name="description_en" class="form-control text-editor" row="3"></textarea>
                                 </div>
                             </div>
                         </div>

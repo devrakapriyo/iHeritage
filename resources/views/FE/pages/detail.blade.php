@@ -1,4 +1,7 @@
 @extends('FE.layout')
+@section('header')
+    {!! ReCaptcha::htmlScriptTagJsApi() !!}
+@endsection
 @section('content')
 <!-- Header -->
 <header class="ctn-museum-bg py-5" style="background: url('{{$detail->photo}}') no-repeat center center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
@@ -277,22 +280,32 @@
                         @csrf
                         <div class="form-group">
                             <input type="text" name="institutional_name" class="form-control" placeholder="@lang('messages.museum_institution')" required>
+                            <span class="text-danger">{{ $errors->first('institutional_name') }}</span>
                         </div>
                         <div class="form-group">
                             <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
                         </div>
                         <div class="form-group">
                             <input type="text" name="phone" class="form-control" placeholder="@lang('messages.museum_phone')" required>
+                            <span class="text-danger">{{ $errors->first('phone') }}</span>
                         </div>
                         <div class="form-group">
                             <input type="number" name="visitor" class="form-control" min="0" placeholder="@lang('messages.museum_visitor')" required>
+                            <span class="text-danger">{{ $errors->first('visitor') }}</span>
                         </div>
                         <div class="form-group">
                             <input type="date" name="date" class="form-control" placeholder="@lang('messages.museum_date')" required>
                         </div>
                         <div class="form-group">
                             <label>@lang('messages.museum_information')</label>
-                            <textarea name="information" class="form-control" rows="5"></textarea>
+                            <textarea name="information" class="form-control" rows="5" required></textarea>
+                            <span class="text-danger">{{ $errors->first('information') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="captcha">Captcha</label>
+                            {!! htmlFormSnippet() !!}
+                            <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary btn-block">@lang('messages.btn_save')</button>

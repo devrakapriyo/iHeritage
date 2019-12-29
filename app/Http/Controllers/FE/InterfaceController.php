@@ -211,6 +211,21 @@ class InterfaceController extends Controller
 
     public function detailContentPost(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'institutional_name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'visitor' => 'required',
+            'information' => 'required',
+            recaptchaFieldName() => recaptchaRuleName()
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $simpan = new visiting_order;
         $simpan->content_id = $id;
         $simpan->code_booking = date("Ymd").$id.$request->visitor;
@@ -228,6 +243,21 @@ class InterfaceController extends Controller
 
     public function visitingOrderPost(Request $request, $visiting_order, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'institutional_name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'visitor' => 'required',
+            'information' => 'required',
+            recaptchaFieldName() => recaptchaRuleName()
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $simpan = new visiting_order;
         if($visiting_order == "education")
         {

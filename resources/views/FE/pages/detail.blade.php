@@ -168,6 +168,13 @@
                         <div class="col-md-4">
                             <div class="card mb-3">
                                 <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}" height="150" data-toggle="modal" data-target=".bd-example-modal-xl-{{$item->id}}">
+                                @if(($item->description_ind != "") || ($item->description_en != ""))
+                                    <div class="card-body">
+                                        <p>
+                                            {{App::isLocale('id') ? $item->description_ind : $item->description_en}}
+                                        </p>
+                                    </div>
+                                @endif
                             </div>
                         </div>
 

@@ -23,6 +23,7 @@ return [
     // search
     'title_search' => 'Maaf,',
     'msg_search' => 'Data yang anda cari belum ditemukan',
+    'msg_search_event' => 'Silahkan, tentukan durasi waktu yang Anda cari',
 
     // page home
     'home_title' => 'Jejaring Pusaka Budaya Indonesia',
@@ -57,6 +58,8 @@ return [
     'home_nature_title' => 'Alam',
 
     'home_news_title' => 'Berita',
+
+    'service_form_title' => 'Hubungi Kami',
 
     // page collection
     'heritage_title' => 'Koleksi',
@@ -126,6 +129,7 @@ return [
     'museum_close' => '(TUTUP)',
 
     'museum_visiting_order' => 'Memesan Kunjungan',
+    'museum_detail_visiting_order' => 'Pendaftaran',
     'museum_institution' => 'Institusi atau Nama Pribadi',
     'museum_phone' => 'Kontak Handphone',
     'museum_visitor' => 'Jumlah Pengunjung',

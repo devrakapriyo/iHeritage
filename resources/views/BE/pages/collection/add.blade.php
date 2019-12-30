@@ -244,10 +244,11 @@
 
             $("#media_type").on("change", function () {
                 $("#media").empty();
+                $("#banner").empty();
                 if($("#media_type").val() == "video"){
                     $("#media").append('' +
                         '<label>Link Youtube : </label>\n' +
-                        '<input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12">\n' +
+                        '<input type="text" name="media" class="form-control" placeholder="https://www.youtube.com/watch?v=zLAhRiUeJ8E&list=RDZRztvfiu-RM&index=12" required>\n' +
                         '<small class="text-danger">paste your url from youtube</small>');
 
                     $("#banner").append('' +
@@ -260,7 +261,7 @@
                 }else if($("#media_type").val() == "audio"){
                     $("#media").append('' +
                         '<label>Link File Audio : </label>\n' +
-                        '<input type="text" name="media" class="form-control">\n' +
+                        '<input type="text" name="media" class="form-control" required>\n' +
                         '<small class="text-danger">paste your link repository file audio</small>');
 
                     $("#banner").append('' +
@@ -273,7 +274,7 @@
                 }else if($("#media_type").val() === "url"){
                     $("#media").append('' +
                         '<label>Link Website : </label>\n' +
-                        '<input type="text" name="media" class="form-control">\n' +
+                        '<input type="text" name="media" class="form-control" required>\n' +
                         '<small class="text-danger">paste your link website</small>');
 
                     $("#banner").append('' +
@@ -286,7 +287,7 @@
                 }else if($("#media_type").val() === "document"){
                     $("#media").append('' +
                         '<label>Upload Media : </label>\n' +
-                        '<input type="file" name="upload_media" class="form-control">\n' +
+                        '<input type="file" name="upload_media" class="form-control" required>\n' +
                         '<small class="text-danger">maximum upload file 5mb</small>');
 
                     $("#banner").append('' +
@@ -299,7 +300,7 @@
                 }else if($("#media_type").val() === "image"){
                     $("#media").append('' +
                         '<label>Upload Media : </label>\n' +
-                        '<input type="file" name="upload_media" class="form-control">\n' +
+                        '<input type="file" name="upload_media" class="form-control" required>\n' +
                         '<small class="text-danger">maximum upload file 5mb</small>')
                 }
             });

@@ -368,7 +368,10 @@ class ContentController extends Controller
     // gallery
     public function content_gallery($category,$id)
     {
-        $gallery = content_gallery_tbl::select('id','photo')->where('content_id',$id)->get();
+        $gallery = content_gallery_tbl::select(['content_gallery.*', 'institutional_id'])
+            ->join('content', 'content.id', '=', 'content_gallery.content_id')
+            ->where('content_id',$id)
+            ->get();
         return view('BE.pages.content.gallery', compact('category','id','gallery'));
     }
     public function content_gallery_upload(Request $request,$category,$id)
@@ -398,8 +401,11 @@ class ContentController extends Controller
         $simpan = new content_gallery_tbl;
         $simpan->content_id = $id;
         $simpan->photo = $photo;
+        $simpan->description_ind = $request->description_ind;
+        $simpan->description_en = $request->description_en;
         $simpan->save();
 
+        Alert::success('Photo successfully upload');
         return redirect()->route('content-pages',['category'=>$category]);
     }
     public function content_gallery_delete($category,$id)

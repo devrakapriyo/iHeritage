@@ -35,9 +35,14 @@
                                 <div class="row">
                                     @foreach($gallery as $item)
                                         <div class="col-md-3">
-                                            <div class="card">
+                                            <div class="card mb-3">
                                                 <img src="{{$item->photo}}" class="card-img-top" alt="photo" style="height:150px;">
                                                 <div class="card-body">
+                                                    <p>Institution : {{\App\Model\institutional::getData($item->institutional_id, "institutional_name")->institutional_name}}</p>
+                                                    <p>
+                                                        {{$item->description_ind == "" ? "" : "Bahasa Indonesia : ".$item->description_ind}}<br>
+                                                        {{$item->description_en == "" ? "" : "Bahasa Inggris : ".$item->description_en}}
+                                                    </p>
                                                     <a onclick="return confirm('Are you sure you want to delete this data?');" href="{{route('gallery-delete',['id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Photo</a>
                                                 </div>
                                             </div>

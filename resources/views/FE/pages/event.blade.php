@@ -166,7 +166,7 @@
                     <div class="jumbotron jumbotron-fluid">
                         <div class="container">
                             <h1 class="display-4">@lang('messages.title_search')</h1>
-                            <p class="lead">@lang('messages.msg_search')</p>
+                            <p class="lead">@lang('messages.msg_search_event')</p>
                         </div>
                     </div>
                 </div>

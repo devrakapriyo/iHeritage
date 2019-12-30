@@ -59,8 +59,11 @@ class GalleryController extends Controller
         $simpan = new content_gallery_tbl;
         $simpan->content_id = $request->content_id;
         $simpan->photo = $photo;
+        $simpan->description_ind = $request->description_ind;
+        $simpan->description_en = $request->description_en;
         $simpan->save();
 
+        Alert::success('Photo successfully upload');
         return redirect()->route('gallery-pages');
     }
     public function content_gallery_upload(Request $request)
@@ -90,8 +93,11 @@ class GalleryController extends Controller
         $simpan = new content_gallery_tbl;
         $simpan->content_id = $request->content_id;
         $simpan->photo = $photo;
+        $simpan->description_ind = $request->description_ind;
+        $simpan->description_en = $request->description_en;
         $simpan->save();
 
+        Alert::success('Photo successfully upload');
         return redirect()->route('gallery-pages');
     }
     public function content_gallery_delete($id)

@@ -23,6 +23,7 @@ return [
     // search
     'title_search' => 'Sorry,',
     'msg_search' => 'The data you are looking for has not been found',
+    'msg_search_event' => 'Please, specify the time duration you are looking for',
 
     // page home
     'home_title' => 'The Indonesian Heritage Network',
@@ -57,6 +58,8 @@ return [
     'home_nature_title' => 'Nature',
 
     'home_news_title' => 'News',
+
+    'service_form_title' => 'Get in touch with Us',
 
     // page collection
     'heritage_title' => 'Collection',
@@ -126,6 +129,7 @@ return [
     'museum_close' => '(CLOSE)',
 
     'museum_visiting_order' => 'Visiting Order',
+    'museum_detail_visiting_order' => 'Registration',
     'museum_institution' => 'Institution or Personal Name',
     'museum_phone' => 'Contact Phone',
     'museum_visitor' => 'Numbers of Visitor',

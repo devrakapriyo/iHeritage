@@ -30,13 +30,31 @@
                             @csrf
 
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Photo : </label>
                                         <input type="file" name="photo" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Caption (bahasa indonesia): </label>
+                                        <input type="text" name="description_ind" class="form-control" maxlength="250">
+                                        <small class="text-danger">limit text 250 character</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Caption (bahasa inggris): </label>
+                                        <input type="text" name="description_en" class="form-control" maxlength="250">
+                                        <small class="text-danger">limit text 250 character</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label style="color:transparent;">btn</label>
                                         <button class="btn btn-info btn-block">UPLOAD</button>
@@ -58,6 +76,11 @@
                                             <div class="card">
                                                 <img src="{{$item->photo}}" class="card-img-top" alt="photo" style="height:150px;">
                                                 <div class="card-body">
+                                                    <p>Institution : {{\App\Model\institutional::getData($item->institutional_id, "institutional_name")->institutional_name}}</p>
+                                                    <p>
+                                                        {{$item->description_ind == "" ? "" : "Bahasa Indonesia : ".$item->description_ind}}<br>
+                                                        {{$item->description_en == "" ? "" : "Bahasa Inggris : ".$item->description_en}}
+                                                    </p>
                                                     <a href="{{route('content-gallery-delete',['category'=>$category,'id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Photo</a>
                                                 </div>
                                             </div>

@@ -61,7 +61,7 @@
 
                 <div class="card mt-5">
                     <div class="card-body">
-                        <h5 class="card-title">@lang('messages.museum_visiting_order')</h5>
+                        <h5 class="card-title">@lang('messages.museum_detail_visiting_order')</h5>
                         <form method="post" action="{{url('content-event/'.$id)}}">
                             @csrf
                             <div class="form-group">

@@ -46,13 +46,31 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Photo : </label>
                                         <input type="file" name="photo" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Caption (bahasa indonesia): </label>
+                                        <input type="text" name="description_ind" class="form-control" maxlength="250">
+                                        <small class="text-danger">limit text 250 character</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Caption (bahasa inggris): </label>
+                                        <input type="text" name="description_en" class="form-control" maxlength="250">
+                                        <small class="text-danger">limit text 250 character</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label style="color:transparent;">btn</label>
                                         <button class="btn btn-info btn-block">UPLOAD</button>

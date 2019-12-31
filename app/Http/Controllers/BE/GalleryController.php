@@ -32,6 +32,7 @@ class GalleryController extends Controller
         $content = content_tbl::select('id', 'name')->where('is_active', "Y")->get();
         return view('BE.pages.gallery.add', compact('content'));
     }
+
     public function gallery_upload(Request $request)
     {
         if (!empty($request->file('photo')))
@@ -66,41 +67,8 @@ class GalleryController extends Controller
         Alert::success('Photo successfully upload');
         return redirect()->route('gallery-pages');
     }
-    public function content_gallery_upload(Request $request)
-    {
-        if (!empty($request->file('photo')))
-        {
-            $valid = helpers::validationImage($request->file("photo"));
-            if ($valid != true)
-            {
-                Alert::info('format photo not valid');
-                return redirect()->back();
-            }
 
-            $photo = helpers::uploadImage($request->file("photo"),date("Ymd").rand(100,999),"img/BE/gallery");
-            if ($photo != true)
-            {
-                Alert::info('photo failed to upload');
-                return redirect()->back();
-            }else{
-                $photo = url('/img/BE/gallery/'.$photo);
-            }
-        }else{
-            Alert::error('Image hasnt been uploaded yet');
-            return redirect()->back();
-        }
-
-        $simpan = new content_gallery_tbl;
-        $simpan->content_id = $request->content_id;
-        $simpan->photo = $photo;
-        $simpan->description_ind = $request->description_ind;
-        $simpan->description_en = $request->description_en;
-        $simpan->save();
-
-        Alert::success('Photo successfully upload');
-        return redirect()->route('gallery-pages');
-    }
-    public function content_gallery_delete($id)
+    public function gallery_delete($id)
     {
         // delete file storage
         $path = content_gallery_tbl::select('photo')->where('id',$id)->first()->photo;

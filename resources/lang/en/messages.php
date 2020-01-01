@@ -103,6 +103,9 @@ return [
     'collection_historic_building' => 'Historic Building',
     'collection_site' => 'Site',
     'collection_culinary' => 'Culinary',
+    'collection_exchange' => 'Xxchange',
+    'collection_medal' => 'Medal',
+    'collection_navigation' => 'Navigation',
 
     // page vr
     'vr_title' => 'Virtual Tour',

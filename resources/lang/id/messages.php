@@ -103,6 +103,9 @@ return [
     'collection_historic_building' => 'Gedung Bersejarah',
     'collection_site' => 'Situs',
     'collection_culinary' => 'Kuliner',
+    'collection_exchange' => 'Alat Tukar',
+    'collection_medal' => 'Medali',
+    'collection_navigation' => 'Navigasi',
 
     // page vr
     'vr_title' => 'Tur Virtual',

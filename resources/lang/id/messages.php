@@ -23,7 +23,7 @@ return [
     // search
     'title_search' => 'Maaf,',
     'msg_search' => 'Data yang anda cari belum ditemukan',
-    'msg_search_event' => 'Silahkan, tentukan durasi waktu yang Anda cari',
+    'msg_search_event' => 'Silahkan tentukan durasi waktu yang Anda cari',
 
     // page home
     'home_title' => 'Jejaring Pusaka Budaya Indonesia',
@@ -64,6 +64,7 @@ return [
     // page collection
     'heritage_title' => 'Koleksi',
     'collection_address' => 'Alamat',
+    'collection_location' => 'Lokasi',
     'collection_creator' => 'Pembuat',
     'collection_year' => 'Tahun Pembuatan',
     'collection_type' => 'Jenis Koleksi',

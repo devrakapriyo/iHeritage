@@ -23,7 +23,7 @@ return [
     // search
     'title_search' => 'Sorry,',
     'msg_search' => 'The data you are looking for has not been found',
-    'msg_search_event' => 'Please, specify the time duration you are looking for',
+    'msg_search_event' => 'Please specify the time duration you are looking for',
 
     // page home
     'home_title' => 'The Indonesian Heritage Network',
@@ -64,6 +64,7 @@ return [
     // page collection
     'heritage_title' => 'Collection',
     'collection_address' => 'Address',
+    'collection_location' => 'Location',
     'collection_creator' => 'Creator',
     'collection_year' => 'Created Year',
     'collection_type' => 'Type of Collection',

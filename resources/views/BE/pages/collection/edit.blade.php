@@ -137,7 +137,7 @@
                                         <option value="collection_traditional_music">@lang('messages.collection_traditional_music')</option>
                                         <option value="collection_ceramic">@lang('messages.collection_ceramic')</option>
                                         <option value="collection_painting">@lang('messages.collection_painting')</option>
-                                        <option value="collection_traditional_house)">@lang('messages.collection_traditional_house')</option>
+                                        <option value="collection_traditional_house">@lang('messages.collection_traditional_house')</option>
                                         <option value="collection_performing_arts">@lang('messages.collection_performing_arts')</option>
                                         <option value="collection_temple">@lang('messages.collection_temple')</option>
                                         <option value="collection_statue">@lang('messages.collection_statue')</option>

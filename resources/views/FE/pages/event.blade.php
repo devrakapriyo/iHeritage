@@ -172,6 +172,7 @@
                 </div>
             @endforelse
         </div>
+        {{ $data->links() }}
         <!-- /.row -->
     </div>
 @endsection

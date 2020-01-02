@@ -283,7 +283,7 @@ class InterfaceController extends Controller
 
     public function collection()
     {
-        $data = content_collection_tbl::where('is_active',"Y")->get();
+        $data = content_collection_tbl::where('is_active',"Y")->paginate(9);
         return view('FE.pages.collection', compact('data'));
     }
 
@@ -377,7 +377,7 @@ class InterfaceController extends Controller
 
     public function news()
     {
-        $data = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->get();
+        $data = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->paginate(10);
         return view('FE.pages.news', compact('data'));
     }
 
@@ -395,7 +395,7 @@ class InterfaceController extends Controller
             ->where('end_date', '>=', date("Y-m-d"))
             ->where('is_publish',"Y")
             ->orderBy('end_date', "DESC")
-            ->get();
+            ->paginate(9);
         return view('FE.pages.event', compact('data'));
     }
 
@@ -458,7 +458,7 @@ class InterfaceController extends Controller
     {
         $data = content_edu_tbl::where('is_active',"Y")
             ->where('is_publish',"Y")
-            ->get();
+            ->paginate(9);
         return view('FE.pages.edu-program', compact('data'));
     }
 

@@ -227,6 +227,7 @@
             </div>
         @endforelse
     </div>
+    {{ $data->links() }}
     <!-- /.row -->
 </div>
 <!-- /.container -->

@@ -310,7 +310,7 @@ class InterfaceController extends Controller
 
         $data = $query->where('content_collection.is_active',"Y")
             ->get();
-        return view('FE.pages.collection', compact('data'));
+        return view('FE.pages.collection-search', compact('data'));
     }
 
     public function collectionDetail($id)
@@ -440,7 +440,7 @@ class InterfaceController extends Controller
             ->where('content_event.is_active',"Y")
             ->where('is_publish',"Y")
             ->get();
-        return view('FE.pages.event', compact('data'));
+        return view('FE.pages.event-search', compact('data'));
     }
 
     public function eventDetail($seo, $id)
@@ -478,7 +478,7 @@ class InterfaceController extends Controller
         $data = $query->where('content_edu_program.is_active',"Y")
             ->where('is_publish',"Y")
             ->get();
-        return view('FE.pages.edu-program', compact('data'));
+        return view('FE.pages.edu-program-search', compact('data'));
     }
 
     public function educationProgramDetail($seo, $id)

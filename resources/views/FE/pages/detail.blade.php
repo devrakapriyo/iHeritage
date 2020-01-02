@@ -54,8 +54,9 @@
                                             <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{App::isLocale('id') ? $item->name : $item->name_en}}</a>
                                         </h5>
                                         <small class="card-text">
-                                            @lang('messages.collection_address') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
-                                            media :
+                                            @lang('messages.collection_topic') : <a href="{{url('collection-search?place_id=all&media_type=all&topic='.$item->topic.'&institutional_id=all')}}">@lang('messages.'.$item->topic)</a><br>
+                                            @lang('messages.collection_location') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
+                                            @lang('messages.collection_type') :
                                             <span class="text text-dark">
                                                 @if($item->media_type == "url")
                                                     HTML5

@@ -67,7 +67,7 @@ return [
     'collection_location' => 'Lokasi',
     'collection_creator' => 'Pembuat',
     'collection_year' => 'Tahun Pembuatan',
-    'collection_type' => 'Jenis Koleksi',
+    'collection_type' => 'Media',
     'collection_type_document' => 'Dokumen',
     'collection_type_audio' => 'Audio',
     'collection_type_image' => 'Gambar',

@@ -67,7 +67,7 @@ return [
     'collection_location' => 'Location',
     'collection_creator' => 'Creator',
     'collection_year' => 'Created Year',
-    'collection_type' => 'Type of Collection',
+    'collection_type' => 'Media',
     'collection_type_document' => 'Document',
     'collection_type_audio' => 'Audio',
     'collection_type_image' => 'Image',

@@ -202,7 +202,7 @@ class InterfaceController extends Controller
     public function detailContent($seo, $id)
     {
         $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $seo)->where('content.id', $id)->first();
-        $collection = content_collection_tbl::select('id','name','name_en','banner','media_type','description_ind','description_en','place_id','media_type')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
+        $collection = content_collection_tbl::select('id','name','name_en','banner','media_type','description_ind','description_en','place_id','media_type','topic')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
         $education = content_edu_tbl::select('id','name','name_en','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $event = content_event_tbl::select('id','name','name_en','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $gallery = content_gallery_tbl::select('photo','id','description_ind','description_en')->where('content_id', $id)->orderBy('id','desc')->take(3)->get();

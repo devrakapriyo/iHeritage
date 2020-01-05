@@ -1,4 +1,46 @@
 @extends('BE.layout')
+@section('header')
+    @php
+        $institutional_id = auth('admin')->user()->is_admin_master == "Y" ? "all" : auth('admin')->user()->institutional_id;
+    @endphp
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        var visitor = <?php echo \App\Model\visitor_counting::visitorLineChart($institutional_id); ?>;
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(visitor);
+            var options = {
+                title: 'Number of visitors per day',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    {{--<script type="text/javascript">--}}
+        {{--google.charts.load("current", {packages:["corechart"]});--}}
+        {{--google.charts.setOnLoadCallback(drawChart);--}}
+        {{--function drawChart() {--}}
+            {{--var data = google.visualization.arrayToDataTable([--}}
+                {{--['View', 'All'],--}}
+                {{--['Collection',     "{{\App\Model\visitor_counting::viewPieChart($institutional_id, "collection")}}"],--}}
+                {{--['Education',      "{{\App\Model\visitor_counting::viewPieChart($institutional_id, "education")}}"],--}}
+                {{--['Event',  "{{\App\Model\visitor_counting::viewPieChart($institutional_id, "event")}}"]--}}
+            {{--]);--}}
+
+            {{--var options = {--}}
+                {{--title: 'All View',--}}
+                {{--pieHole: 0.5,--}}
+            {{--};--}}
+
+            {{--var chart = new google.visualization.PieChart(document.getElementById('donutchart'));--}}
+            {{--chart.draw(data, options);--}}
+        {{--}--}}
+    {{--</script>--}}
+@endsection
 @section('content')
 <div class="container-fluid">
 
@@ -17,7 +59,7 @@
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Visitor Today</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">80</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Model\visitor_counting::visitor_perday($institutional_id)}}</div>
             </div>
             <div class="col-auto">
                 <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -94,72 +136,47 @@
 
     <div class="row">
 
-    <!-- Area Chart -->
-    <div class="col-xl-8 col-lg-7">
-        <div class="card shadow mb-4">
-        <!-- Card Header - Dropdown -->
-        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Visitor</h6>
-            <div class="dropdown no-arrow">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                <div class="dropdown-header">Dropdown Header:</div>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+        <!-- Area Chart -->
+        @if(\App\Model\visitor_counting::visitorLineChart($institutional_id) != '[["Date","Visit"]]')
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Visitor</h6>
+                    {{--<div class="dropdown no-arrow">--}}
+                    {{--<a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                        {{--<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>--}}
+                    {{--</a>--}}
+                    {{--<div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">--}}
+                        {{--<div class="dropdown-header">Dropdown Header:</div>--}}
+                        {{--<a class="dropdown-item" href="#">Action</a>--}}
+                        {{--<a class="dropdown-item" href="#">Another action</a>--}}
+                        {{--<div class="dropdown-divider"></div>--}}
+                        {{--<a class="dropdown-item" href="#">Something else here</a>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div id="linechart" style="width: 100%; height: 320px;"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Card Body -->
-        <div class="card-body">
-            <div class="chart-area">
-            <canvas id="myAreaChart"></canvas>
-            </div>
-        </div>
-        </div>
-    </div>
+        @endif
 
-    <!-- Pie Chart -->
-    <div class="col-xl-4 col-lg-5">
-        <div class="card shadow mb-4">
-        <!-- Card Header - Dropdown -->
-        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Interesting Content This Month</h6>
-            <div class="dropdown no-arrow">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                <div class="dropdown-header">Dropdown Header:</div>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-            </div>
-        </div>
-        <!-- Card Body -->
-        <div class="card-body">
-            <div class="chart-pie pt-4 pb-2">
-            <canvas id="myPieChart"></canvas>
-            </div>
-            <div class="mt-4 text-center small">
-            <span class="mr-2">
-                <i class="fas fa-circle text-primary"></i> VR Tour 360<sup>o</sup>
-            </span>
-            <span class="mr-2">
-                <i class="fas fa-circle text-success"></i> Event
-            </span>
-            <span class="mr-2">
-                <i class="fas fa-circle text-info"></i> Education Program
-            </span>
-            </div>
-        </div>
-        </div>
-    </div>
+        <!-- Pie Chart -->
+        {{--<div class="col-xl-12 col-lg-12">--}}
+            {{--<div class="card shadow mb-4">--}}
+                {{--<!-- Card Body -->--}}
+                {{--<div class="card-body">--}}
+                    {{--<div class="table-responsive">--}}
+                        {{--<div id="donutchart" style="width: 100%; height: 373px;"></div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 
 </div>

@@ -11,7 +11,9 @@ use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
+use App\Model\institutional;
 use App\Model\visiting_order;
+use App\Model\visitor_counting;
 use App\User;
 use App\UserVisitor;
 use Illuminate\Http\Request;
@@ -199,13 +201,14 @@ class InterfaceController extends Controller
         return view('FE.pages.search', compact('data'));
     }
 
-    public function detailContent($seo, $id)
+    public function detailContent(Request $request, $seo, $id)
     {
         $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $seo)->where('content.id', $id)->first();
         $collection = content_collection_tbl::select('id','name','name_en','banner','media_type','description_ind','description_en','place_id','media_type','topic')->where('content_id', $id)->where('is_active',"Y")->orderBy('id','desc')->take(4)->get();
         $education = content_edu_tbl::select('id','name','name_en','banner','seo','description_ind','description_en','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $event = content_event_tbl::select('id','name','name_en','banner','seo','short_description_ind','short_description_en','price','start_date','map_area_detail')->where('content_id', $id)->where('is_active',"Y")->where('is_publish',"Y")->orderBy('id','desc')->take(4)->get();
         $gallery = content_gallery_tbl::select('photo','id','description_ind','description_en')->where('content_id', $id)->orderBy('id','desc')->take(3)->get();
+        visitor_counting::simpan(institutional::getId($id), $_SERVER['REMOTE_ADDR'], "content", $request->fullUrl());
         return view('FE.pages.detail', compact('id', 'detail','collection','education','event','gallery'));
     }
 
@@ -313,11 +316,12 @@ class InterfaceController extends Controller
         return view('FE.pages.collection-search', compact('data'));
     }
 
-    public function collectionDetail($id)
+    public function collectionDetail(Request $request, $id)
     {
         $detail = content_collection_tbl::where('id',$id)->where('is_active',"Y")->first();
         $facebook = Share::load(route('collection-detail', ['id'=>$id]), "iHeritage.id - ".$detail->name)->facebook();
         $twitter = Share::load(route('collection-detail', ['id'=>$id]), "iHeritage.id - ".$detail->name)->twitter();
+        visitor_counting::simpan(content_tbl::fieldContent($detail->content_id, "institutional_id"), $_SERVER['REMOTE_ADDR'], "collection", $request->fullUrl());
         return view('FE.pages.collection-detail', compact('detail', 'facebook', 'twitter'));
     }
 
@@ -443,7 +447,7 @@ class InterfaceController extends Controller
         return view('FE.pages.event-search', compact('data'));
     }
 
-    public function eventDetail($seo, $id)
+    public function eventDetail(Request $request, $seo, $id)
     {
         $detail = content_event_tbl::where('seo',$seo)
             ->where('id',$id)
@@ -451,6 +455,7 @@ class InterfaceController extends Controller
             ->where('is_active',"Y")
             ->where('is_publish',"Y")
             ->first();
+        visitor_counting::simpan(content_tbl::fieldContent($detail->content_id, "institutional_id"), $_SERVER['REMOTE_ADDR'], "event", $request->fullUrl());
         return view('FE.pages.event-detail', compact('detail','id'));
     }
 
@@ -481,13 +486,14 @@ class InterfaceController extends Controller
         return view('FE.pages.edu-program-search', compact('data'));
     }
 
-    public function educationProgramDetail($seo, $id)
+    public function educationProgramDetail(Request $request, $seo, $id)
     {
         $detail = content_edu_tbl::where('seo',$seo)
             ->where('id',$id)
             ->where('is_active',"Y")
             ->where('is_publish',"Y")
             ->first();
+        visitor_counting::simpan(content_tbl::fieldContent($detail->content_id, "institutional_id"), $_SERVER['REMOTE_ADDR'], "education", $request->fullUrl());
         return view('FE.pages.edu-program-detail', compact('detail','id'));
     }
 }

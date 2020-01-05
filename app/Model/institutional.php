@@ -18,6 +18,11 @@ class institutional extends Model
         return self::select($field)->where('id', $parameter)->first();
     }
 
+    public static function getId($id)
+    {
+        return content_tbl::select('institutional_id')->where('id',$id)->first()->institutional_id;
+    }
+
     public static function getName($id)
     {
         $content = content_tbl::select('institutional_id')->where('id',$id)->first()->institutional_id;

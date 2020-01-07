@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Helper\helpers;
 use App\Model\admin_our_services_tbl;
 use App\Model\form_question_tbl;
+use App\Model\log_error;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\DataTables;
 
 use Alert;
+use DB;
 
 use Illuminate\Support\Facades\Mail;
 
@@ -52,34 +54,44 @@ class OurServicesController extends Controller
 
     public function our_services_post(Request $request)
     {
-        if (!empty($request->file('banner')))
-        {
-            $valid = helpers::validationImage($request->file("banner"));
-            if ($valid != true)
+        DB::begintransaction();
+        try{
+            if (!empty($request->file('banner')))
             {
-                return redirect()->back();
-            }
+                $valid = helpers::validationImage($request->file("banner"));
+                if ($valid != true)
+                {
+                    return redirect()->back();
+                }
 
-            $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/our_services");
-            if ($banner != true)
-            {
-                return redirect()->back();
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/our_services");
+                if ($banner != true)
+                {
+                    return redirect()->back();
+                }else{
+                    $banner = url('/img/Admin/our_services/'.$banner);
+                }
             }else{
-                $banner = url('/img/Admin/our_services/'.$banner);
+                $banner = 'https://via.placeholder.com/300';
             }
-        }else{
-            $banner = 'https://via.placeholder.com/300';
-        }
 
-        $simpan = new admin_our_services_tbl;
-        $simpan->title_en = $request->title_en;
-        $simpan->title_ind = $request->title_ind;
-        $simpan->description_en = $request->description_en;
-        $simpan->description_ind = $request->description_ind;
-        $simpan->banner = $banner;
-        $simpan->is_active = "Y";
-        $simpan->created_at = date("Y-m-d H:i:s");
-        $simpan->save();
+            $simpan = new admin_our_services_tbl;
+            $simpan->title_en = $request->title_en;
+            $simpan->title_ind = $request->title_ind;
+            $simpan->description_en = $request->description_en;
+            $simpan->description_ind = $request->description_ind;
+            $simpan->banner = $banner;
+            $simpan->is_active = "Y";
+            $simpan->created_at = date("Y-m-d H:i:s");
+            $simpan->save();
+        }catch (\Exception $exception){
+            DB::rollback();
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
+        }
+        DB::commit();
 
         Alert::success('Service successfuly save');
         return redirect()->route('our-services-pages');
@@ -93,40 +105,51 @@ class OurServicesController extends Controller
 
     public function our_services_update(Request $request, $id)
     {
-        if (!empty($request->file('banner')))
-        {
-            $valid = helpers::validationImage($request->file("banner"));
-            if ($valid != true)
+        DB::begintransaction();
+        try{
+            if (!empty($request->file('banner')))
             {
-                return redirect()->back();
-            }
-
-            $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/our_services");
-            if ($banner != true)
-            {
-                return redirect()->back();
-            }else{
-                // delete file storage
-                $path = admin_our_services_tbl::select('banner')->where('id',$id)->first()->banner;
-                $file = substr($path, strrpos($path, '/') + 1);
-                if(file_exists(public_path('img/Admin/our_services/'.$file)))
+                $valid = helpers::validationImage($request->file("banner"));
+                if ($valid != true)
                 {
-                    unlink(public_path('img/Admin/our_services/'.$file));
+                    return redirect()->back();
                 }
 
-                $banner = url('/img/Admin/our_services/'.$banner);
-            }
-        }else{
-            $banner = admin_our_services_tbl::select('banner')->where('id',$id)->first()->banner;
-        }
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/our_services");
+                if ($banner != true)
+                {
+                    return redirect()->back();
+                }else{
+                    // delete file storage
+                    $path = admin_our_services_tbl::select('banner')->where('id',$id)->first()->banner;
+                    $file = substr($path, strrpos($path, '/') + 1);
+                    if(file_exists(public_path('img/Admin/our_services/'.$file)))
+                    {
+                        unlink(public_path('img/Admin/our_services/'.$file));
+                    }
 
-        admin_our_services_tbl::where('id',$id)->update([
-            'title_en'=>$request->title_en,
-            'title_ind'=>$request->title_ind,
-            'description_en'=>$request->description_en,
-            'description_ind'=>$request->description_ind,
-            'banner'=>$banner,
-        ]);
+                    $banner = url('/img/Admin/our_services/'.$banner);
+                }
+            }else{
+                $banner = admin_our_services_tbl::select('banner')->where('id',$id)->first()->banner;
+            }
+
+            admin_our_services_tbl::where('id',$id)->update([
+                'title_en'=>$request->title_en,
+                'title_ind'=>$request->title_ind,
+                'description_en'=>$request->description_en,
+                'description_ind'=>$request->description_ind,
+                'banner'=>$banner,
+            ]);
+
+        }catch (\Exception $exception){
+            DB::rollback();
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
+        }
+        DB::commit();
 
         Alert::success('Service successfuly updated');
         return redirect()->route('our-services-pages');
@@ -166,29 +189,40 @@ class OurServicesController extends Controller
 
     public function form_question_update(Request $request, $id)
     {
-        $data = form_question_tbl::where('id',$id);
+        DB::begintransaction();
+        try{
+            $data = form_question_tbl::where('id',$id);
 
-        $data->update([
-            'status' => $request->status,
-            'messages_response' => $request->messages_response
-        ]);
+            $data->update([
+                'status' => $request->status,
+                'messages_response' => $request->messages_response
+            ]);
 
-        if($request->status == "response")
-        {
-            Mail::send('BE.email.form-question', [
-                'judul_pertanyaan' => $data->first()->subject,
-                'nama' => $data->first()->name,
-                'pertanyaan' => $data->first()->messages,
-                'response' => $data->first()->messages_response,
-            ], function ($m) use ($data) {
-                $m->from('info@iheritage.id', 'Info iHeritage ID');
-                $m->to($data->first()->email, $data->first()->nama)->subject('iHeritage.id - reply to the question '.$data->first()->subject);
-            });
-            Alert::success('messages succesfuly send to email');
-        }else{
-            Alert::success('messages succesfuly deleted');
+            if($request->status == "response")
+            {
+                Mail::send('BE.email.form-question', [
+                    'judul_pertanyaan' => $data->first()->subject,
+                    'nama' => $data->first()->name,
+                    'pertanyaan' => $data->first()->messages,
+                    'response' => $data->first()->messages_response,
+                ], function ($m) use ($data) {
+                    $m->from('info@iheritage.id', 'Info iHeritage ID');
+                    $m->to($data->first()->email, $data->first()->nama)->subject('iHeritage.id - reply to the question '.$data->first()->subject);
+                });
+                $messages = "messages succesfuly send to email";
+            }else{
+                $messages = "messages succesfuly deleted";
+            }
+        }catch (\Exception $exception){
+            DB::rollback();
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
+        DB::commit();
 
+        Alert::success($messages);
         return redirect()->route('form-question-pages');
     }
 }

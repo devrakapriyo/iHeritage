@@ -5,11 +5,14 @@ namespace App\Http\Controllers\BE;
 use App\Helper\helpers;
 use App\Model\content_event_tbl;
 use App\Model\content_tbl;
+use App\Model\log_error;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Yajra\DataTables\DataTables;
+
+use Alert;
 
 class EventController extends Controller
 {
@@ -121,7 +124,10 @@ class EventController extends Controller
 
         }catch (\Exception $exception){
             DB::rollback();
-            return $exception;
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
         DB::commit();
         return redirect()->route('event-page');
@@ -184,7 +190,10 @@ class EventController extends Controller
                 ]);
         }catch (\Exception $exception){
             DB::rollback();
-            return $exception;
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
         DB::commit();
         return redirect()->route('event-page');

@@ -5,11 +5,14 @@ namespace App\Http\Controllers\BE;
 use App\Helper\helpers;
 use App\Model\content_edu_tbl;
 use App\Model\content_tbl;
+use App\Model\log_error;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Yajra\DataTables\DataTables;
+
+use Alert;
 
 class EduController extends Controller
 {
@@ -124,7 +127,10 @@ class EduController extends Controller
 
         }catch (\Exception $exception){
             DB::rollback();
-            return $exception;
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
         DB::commit();
         return redirect()->route('edu-page');
@@ -191,7 +197,10 @@ class EduController extends Controller
 
         }catch (\Exception $exception){
             DB::rollback();
-            return $exception;
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
         DB::commit();
         return redirect()->route('edu-page');

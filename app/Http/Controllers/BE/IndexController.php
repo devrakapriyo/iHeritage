@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BE;
 
 use App\Model\category_content_tbl;
 use App\Model\institutional;
+use App\Model\log_error;
 use App\User;
 use App\UserVisitor;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ use App\Model\users;
 
 use Alert;
 use Auth;
+use DB;
 
 use Illuminate\Support\Facades\Mail;
 
@@ -79,56 +81,66 @@ class IndexController extends Controller
     }
     public function register_post(Request $request)
     {
-        $email = User::select('email')->where('email',$request->email)->first();
-        if($email == true)
-        {
-            Alert::error('Email is already registered');
+        DB::begintransaction();
+        try{
+            $email = User::select('email')->where('email',$request->email)->first();
+            if($email == true)
+            {
+                Alert::error('Email is already registered');
+                return redirect()->back();
+            }
+
+            if($request->password != $request->re_password)
+            {
+                Alert::error('Password incorect');
+                return redirect()->back();
+            }
+
+            $instansi = institutional::select('institutional_name')->where('institutional_name',$request->institutional_name)->first();
+            if($instansi == true)
+            {
+                Alert::error('Institutional is already registered');
+                return redirect()->back();
+            }
+
+            $instansi = new institutional;
+            $instansi->institutional_name = $request->institutional_name;
+            $instansi->address = $request->address;
+            $instansi->place_id = $request->place_id;
+            $instansi->email = $request->email;
+            $instansi->phone = $request->phone;
+            $instansi->category = $request->category;
+            $instansi->save();
+
+            $simpan = new users;
+            $simpan->name = $request->name;
+            $simpan->email = $request->email;
+            $simpan->phone = $request->phone;
+            $simpan->password = Hash::make($request->password);
+            $simpan->none_has_pass = $request->password;
+            $simpan->institutional_id = $instansi->id;
+            $simpan->is_admin = "Y";
+            $simpan->save();
+
+            Mail::send('BE.email.register', [
+                'name' => $simpan->name,
+                'email' => $simpan->email,
+                'password' => $simpan->none_has_pass,
+                'role' => "Admin",
+                'link' => url('login'),
+                'active' => "N"
+            ], function ($m) use ($simpan) {
+                $m->from('info@iheritage.id', 'Info iHeritage ID');
+                $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');
+            });
+        }catch (\Exception $exception){
+            DB::rollback();
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
             return redirect()->back();
         }
-
-        if($request->password != $request->re_password)
-        {
-            Alert::error('Password incorect');
-            return redirect()->back();
-        }
-
-        $instansi = institutional::select('institutional_name')->where('institutional_name',$request->institutional_name)->first();
-        if($instansi == true)
-        {
-            Alert::error('Institutional is already registered');
-            return redirect()->back();
-        }
-
-        $instansi = new institutional;
-        $instansi->institutional_name = $request->institutional_name;
-        $instansi->address = $request->address;
-        $instansi->place_id = $request->place_id;
-        $instansi->email = $request->email;
-        $instansi->phone = $request->phone;
-        $instansi->category = $request->category;
-        $instansi->save();
-
-        $simpan = new users;
-        $simpan->name = $request->name;
-        $simpan->email = $request->email;
-        $simpan->phone = $request->phone;
-        $simpan->password = Hash::make($request->password);
-        $simpan->none_has_pass = $request->password;
-        $simpan->institutional_id = $instansi->id;
-        $simpan->is_admin = "Y";
-        $simpan->save();
-
-        Mail::send('BE.email.register', [
-            'name' => $simpan->name,
-            'email' => $simpan->email,
-            'password' => $simpan->none_has_pass,
-            'role' => "Admin",
-            'link' => url('login'),
-            'active' => "N"
-        ], function ($m) use ($simpan) {
-            $m->from('info@iheritage.id', 'Info iHeritage ID');
-            $m->to($simpan->email, $simpan->name)->subject('iHeritage.id - thank you for registering an account at iHeritage.id');
-        });
+        DB::commit();
 
         Alert::success('congratulations your account has been saved, please wait for admin confirmation to activate the account');
         return redirect()->back()->with('info', "congratulations your account has been saved, please wait for admin confirmation to activate the account");

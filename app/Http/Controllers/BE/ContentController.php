@@ -249,7 +249,10 @@ class ContentController extends Controller
                 ]);
         }catch (\Exception $exception){
             DB::rollback();
-            return $exception;
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
         DB::commit();
         Alert::success('Content updated successfully');
@@ -338,28 +341,38 @@ class ContentController extends Controller
 
     public function content_visiting_send(Request $request, $id)
     {
-        $data = visiting_order::where('id',$id);
+        DB::begintransaction();
+        try{
+            $data = visiting_order::where('id',$id);
 
-        if($data->first()->is_send == "N")
-        {
-            $data->update([
-                'is_send' => "Y",
-                'messages_response' => $request->messages_response
-            ]);
+            if($data->first()->is_send == "N")
+            {
+                $data->update([
+                    'is_send' => "Y",
+                    'messages_response' => $request->messages_response
+                ]);
 
-            Mail::send('BE.email.visiting-order', [
-                'code_booking' => $data->first()->code_booking,
-                'institutional_name' => $data->first()->institutional_name,
-                'phone' => $data->first()->phone,
-                'pax' => $data->first()->visitor,
-                'date' => $data->first()->date,
-                'information' => $data->first()->information,
-                'messages_response' => $request->messages_response,
-            ], function ($m) use ($data) {
-                $m->from(auth('admin')->user()->email, auth('admin')->user()->name);
-                $m->to($data->first()->email, $data->first()->institutional_name)->subject('iHeritage.id - reply to visiting order '.$data->first()->kode_booking);
-            });
+                Mail::send('BE.email.visiting-order', [
+                    'code_booking' => $data->first()->code_booking,
+                    'institutional_name' => $data->first()->institutional_name,
+                    'phone' => $data->first()->phone,
+                    'pax' => $data->first()->visitor,
+                    'date' => $data->first()->date,
+                    'information' => $data->first()->information,
+                    'messages_response' => $request->messages_response,
+                ], function ($m) use ($data) {
+                    $m->from(auth('admin')->user()->email, auth('admin')->user()->name);
+                    $m->to($data->first()->email, $data->first()->institutional_name)->subject('iHeritage.id - reply to visiting order '.$data->first()->kode_booking);
+                });
+            }
+        }catch (\Exception $exception){
+            DB::rollback();
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
+        DB::commit();
 
         Alert::success('messages succesfuly send to email');
         return redirect()->route('content-visiting');

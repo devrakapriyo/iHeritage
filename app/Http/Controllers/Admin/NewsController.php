@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helper\helpers;
 use App\Model\admin_news_tbl;
+use App\Model\log_error;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\DataTables;
 use Alert;
+use DB;
 
 class NewsController extends Controller
 {
@@ -48,36 +50,46 @@ class NewsController extends Controller
 
     public function news_post(Request $request)
     {
-        if (!empty($request->file('banner')))
-        {
-            $valid = helpers::validationImage($request->file("banner"));
-            if ($valid != true)
+        DB::begintransaction();
+        try{
+            if (!empty($request->file('banner')))
             {
-                Alert::error("Validation banner not valid");
-                return redirect()->back();
-            }
+                $valid = helpers::validationImage($request->file("banner"));
+                if ($valid != true)
+                {
+                    Alert::error("Validation banner not valid");
+                    return redirect()->back();
+                }
 
-            $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/news");
-            if ($banner != true)
-            {
-                Alert::error("Banner failed to uploaded");
-                return redirect()->back();
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/news");
+                if ($banner != true)
+                {
+                    Alert::error("Banner failed to uploaded");
+                    return redirect()->back();
+                }else{
+                    $banner = url('/img/Admin/news/'.$banner);
+                }
             }else{
-                $banner = url('/img/Admin/news/'.$banner);
+                $banner = 'https://via.placeholder.com/300';
             }
-        }else{
-            $banner = 'https://via.placeholder.com/300';
-        }
 
-        $simpan = new admin_news_tbl;
-        $simpan->title_en = $request->title_en;
-        $simpan->title_ind = $request->title_ind;
-        $simpan->description_en = $request->description_en;
-        $simpan->description_ind = $request->description_ind;
-        $simpan->banner = $banner;
-        $simpan->is_active = "Y";
-        $simpan->created_at = date("Y-m-d H:i:s");
-        $simpan->save();
+            $simpan = new admin_news_tbl;
+            $simpan->title_en = $request->title_en;
+            $simpan->title_ind = $request->title_ind;
+            $simpan->description_en = $request->description_en;
+            $simpan->description_ind = $request->description_ind;
+            $simpan->banner = $banner;
+            $simpan->is_active = "Y";
+            $simpan->created_at = date("Y-m-d H:i:s");
+            $simpan->save();
+        }catch (\Exception $exception){
+            DB::rollback();
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
+        }
+        DB::commit();
 
         Alert::success('News successfuly save');
         return redirect()->route('news-pages');

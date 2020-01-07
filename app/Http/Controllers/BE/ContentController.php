@@ -5,10 +5,9 @@ namespace App\Http\Controllers\BE;
 use App\Helper\helpers;
 use App\Model\content_collection_tbl;
 use App\Model\content_detail_tbl;
-use App\Model\content_edu_tbl;
-use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\institutional;
+use App\Model\log_error;
 use App\Model\visiting_order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -162,7 +161,10 @@ class ContentController extends Controller
             $detail->save();
         }catch (\Exception $exception){
             DB::rollback();
-            return $exception;
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
         }
         DB::commit();
         Alert::success('Content uploaded successfully');

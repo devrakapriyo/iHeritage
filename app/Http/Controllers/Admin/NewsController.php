@@ -103,42 +103,52 @@ class NewsController extends Controller
 
     public function news_update(Request $request, $id)
     {
-        if (!empty($request->file('banner')))
-        {
-            $valid = helpers::validationImage($request->file("banner"));
-            if ($valid != true)
+        DB::begintransaction();
+        try{
+            if (!empty($request->file('banner')))
             {
-                Alert::error("Validation banner not valid");
-                return redirect()->back();
-            }
-
-            $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/news");
-            if ($banner != true)
-            {
-                Alert::error("Banner failed to uploaded");
-                return redirect()->back();
-            }else{
-                // delete file storage
-                $path = admin_news_tbl::select('banner')->where('id',$id)->first()->banner;
-                $file = substr($path, strrpos($path, '/') + 1);
-                if(file_exists(public_path('img/Admin/news/'.$file)))
+                $valid = helpers::validationImage($request->file("banner"));
+                if ($valid != true)
                 {
-                    unlink(public_path('img/Admin/news/'.$file));
+                    Alert::error("Validation banner not valid");
+                    return redirect()->back();
                 }
 
-                $banner = url('/img/Admin/news/'.$banner);
-            }
-        }else{
-            $banner = admin_news_tbl::select('banner')->where('id',$id)->first()->banner;
-        }
+                $banner = helpers::uploadImage($request->file("banner"),date("Ymd").rand(100,999),"img/Admin/news");
+                if ($banner != true)
+                {
+                    Alert::error("Banner failed to uploaded");
+                    return redirect()->back();
+                }else{
+                    // delete file storage
+                    $path = admin_news_tbl::select('banner')->where('id',$id)->first()->banner;
+                    $file = substr($path, strrpos($path, '/') + 1);
+                    if(file_exists(public_path('img/Admin/news/'.$file)))
+                    {
+                        unlink(public_path('img/Admin/news/'.$file));
+                    }
 
-        admin_news_tbl::where('id',$id)->update([
-            'title_en'=>$request->title_en,
-            'title_ind'=>$request->title_ind,
-            'description_en'=>$request->description_en,
-            'description_ind'=>$request->description_ind,
-            'banner'=>$banner,
-        ]);
+                    $banner = url('/img/Admin/news/'.$banner);
+                }
+            }else{
+                $banner = admin_news_tbl::select('banner')->where('id',$id)->first()->banner;
+            }
+
+            admin_news_tbl::where('id',$id)->update([
+                'title_en'=>$request->title_en,
+                'title_ind'=>$request->title_ind,
+                'description_en'=>$request->description_en,
+                'description_ind'=>$request->description_ind,
+                'banner'=>$banner,
+            ]);
+        }catch (\Exception $exception){
+            DB::rollback();
+
+            log_error::simpan($request->fullUrl(), $exception);
+            Alert::warning("please contact admin");
+            return redirect()->back();
+        }
+        DB::commit();
 
         Alert::success('News successfuly updated');
         return redirect()->route('news-pages');

@@ -109,7 +109,7 @@
             </div>
             <hr>
             <div class="form-group">
-                <p class="text-capitalize">@lang('messages.collection_link') : <br><strong>{{$detail->link_url}}</strong></p>
+                <p>@lang('messages.collection_link') : <br><strong>{{$detail->link_url}}</strong></p>
             </div>
             <hr>
 

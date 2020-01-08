@@ -102,13 +102,13 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Created Year : </label>
-                                    <input type="text" name="created_year" class="form-control" required>
+                                    <input type="text" name="created_year" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Language : </label>
-                                    <input type="text" name="lang" class="form-control" required>
+                                    <input type="text" name="lang" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">

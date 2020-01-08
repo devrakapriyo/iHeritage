@@ -160,11 +160,12 @@ class InterfaceController extends Controller
 
     public function home()
     {
+        $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
         $museum = $this->listContent("museum");
         $palace = $this->listContent("palace");
         $nature = $this->listContent("nature");
         $news = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->take(4)->get();
-        return view('FE.pages.home', compact('museum','palace', 'nature', 'news'));
+        return view('FE.pages.home', compact('about','museum','palace', 'nature', 'news'));
     }
 
     public function search(Request $request)

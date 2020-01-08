@@ -74,7 +74,7 @@ return [
     'collection_type_video' => 'Video',
     'collection_lang' => 'Language',
     'collection_topic' => 'Topic',
-    'collection_place' => 'Place/Provice',
+    'collection_place' => 'Place/Province',
     'collection_physical' => 'Physical Description',
     'collection_publisher' => 'Publisher',
     'collection_institution' => 'Institution Owner',

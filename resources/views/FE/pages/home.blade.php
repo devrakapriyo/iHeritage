@@ -8,8 +8,8 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
-                    <h1 class="display-4 text-white mt-5 mb-2">@lang('messages.home_title')</h1>
-                    <p class="lead mb-5 text-dark">@lang('messages.home_description')</p>
+                    <h1 class="display-4 text-white mt-5 mb-2">{{App::isLocale('id') ? $about->title_ind : $about->title_en}}</h1>
+                    <p class="lead mb-5 text-dark">{{App::isLocale('id') ? $about->description_ind : $about->description_en}}</p>
                 </div>
             </div>
         </div>

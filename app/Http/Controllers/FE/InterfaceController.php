@@ -153,20 +153,26 @@ class InterfaceController extends Controller
         return redirect('/');
     }
 
-    public function listContent($category)
+    public function listContent($category, $limit)
     {
-        return content_tbl::select('content.*','category_content.category')->join('category_content','category_content.id',"=",'content.category_ctn_id')->where('category', $category)->where('content.is_active', "Y")->orderBy('content.created_at', 'desc')->take(6)->get();
+        return content_tbl::listContentCategory($category, $limit);
     }
 
     public function home()
     {
         $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
-        $museum = $this->listContent("museum");
-        $palace = $this->listContent("palace");
-        $archive = $this->listContent("archive");
-        $nature = $this->listContent("nature");
+        $museum = $this->listContent("museum", 4);
+        $library = $this->listContent("library", 4);
+        $gallery = $this->listContent("gallery", 4);
+        $archive = $this->listContent("archive", 4);
+        $temple = $this->listContent("temple", 4);
+        $palace = $this->listContent("palace", 4);
+        $nature = $this->listContent("nature", 4);
+        $historical_building = $this->listContent("historical-building", 4);
+        $personal = $this->listContent("personal-activities", 4);
+        $site = $this->listContent("site", 4);
         $news = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->take(4)->get();
-        return view('FE.pages.home', compact('about','museum','palace', 'archive', 'nature', 'news'));
+        return view('FE.pages.home', compact('about','museum','library','gallery','archive','temple','palace','nature','historical_building','personal','site','news'));
     }
 
     public function search(Request $request)
@@ -186,7 +192,8 @@ class InterfaceController extends Controller
         $data = $query->where('content.is_active', "Y")
             ->orderBy('content.created_at', 'desc')
             ->get();
-        return view('FE.pages.search', compact('data'));
+        $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
+        return view('FE.pages.search', compact('data', 'about'));
     }
 
     public function searchInstantion($instantion)
@@ -200,7 +207,8 @@ class InterfaceController extends Controller
         $data = $query->where('content.is_active', "Y")
             ->orderBy('content.created_at', 'desc')
             ->get();
-        return view('FE.pages.search', compact('data'));
+        $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
+        return view('FE.pages.search', compact('data','about'));
     }
 
     public function detailContent(Request $request, $seo, $id)

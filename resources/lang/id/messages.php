@@ -48,6 +48,7 @@ return [
     'home_select_place' => 'Semua Provinsi di Indonesia',
     'home_select_heritage' => 'Semua Pusaka di Indonesia',
     'home_select_search' => 'Cari',
+    'home_more_search' => 'Lihat Semua',
 
     'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda Dengan Aplikasi Kami',
     'home_banner_description' => 'Gratis dan mudah...',
@@ -193,4 +194,15 @@ return [
     'category_historical_building' => 'Bangunan Bersejarah',
     'category_personal_activities' => 'Aktivitas Pribadi',
     'category_site' => 'Situs',
+
+    'museum' => 'Museum',
+    'library' => 'Perpustakaan',
+    'gallery' => 'Galeri',
+    'archive' => 'Arsip',
+    'temple' => 'Candi',
+    'palace' => 'Keraton',
+    'nature' => 'Wisata Alam',
+    'historical-building' => 'Bangunan Bersejarah',
+    'personal-activities' => 'Aktivitas Pribadi',
+    'site' => 'Situs',
 ];

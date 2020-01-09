@@ -13,6 +13,11 @@ class content_tbl extends Model
         return self::select('id','name')->where('institutional_id',$user)->where('is_active', "Y")->get();
     }
 
+    public static function listContentCategory($category, $limit)
+    {
+        return self::select('content.*','category_content.category')->join('category_content','category_content.id',"=",'content.category_ctn_id')->where('category', $category)->where('content.is_active', "Y")->orderBy('content.created_at', 'desc')->take($limit)->get();
+    }
+
     public static function content($user)
     {
         return self::select('id','name')->where('institutional_id',$user)->where('is_active', "Y")->first();

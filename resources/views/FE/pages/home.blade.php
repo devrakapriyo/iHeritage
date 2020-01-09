@@ -40,7 +40,7 @@
                                 <option value="archive">@lang('messages.category_archive')</option>
                                 <option value="temple">@lang('messages.category_temple')</option>
                                 <option value="palace">@lang('messages.category_palace')</option>
-                                <option value="natural-place">@lang('messages.category_natural_place')</option>
+                                <option value="nature">@lang('messages.category_natural_place')</option>
                                 <option value="historical-building">@lang('messages.category_historical_building')</option>
                                 <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                                 <option value="site">@lang('messages.category_site')</option>
@@ -82,7 +82,7 @@
                                 <option value="archive">@lang('messages.category_archive')</option>
                                 <option value="temple">@lang('messages.category_temple')</option>
                                 <option value="palace">@lang('messages.category_palace')</option>
-                                <option value="natural-place">@lang('messages.category_natural_place')</option>
+                                <option value="nature">@lang('messages.category_natural_place')</option>
                                 <option value="historical-building">@lang('messages.category_historical_building')</option>
                                 <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                                 <option value="site">@lang('messages.category_site')</option>
@@ -120,8 +120,8 @@
                     {{--</div>--}}
                 {{--</form>--}}
             </div>
-            @foreach($museum as $list)
-                <div class="col-md-4 mb-5">
+            @foreach(\App\Model\content_tbl::listContentCategory("museum", 3) as $list)
+                <div class="col-md-4 mb-2">
                     <div class="card h-100">
                         <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                             <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -136,16 +136,21 @@
                                 <small class="card-text text-uppercase">{{$list->location}}</small>
                             </p>
                             {{--<p class="card-text">--}}
-                                {{--@php--}}
-                                    {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
-                                    {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
-                                {{--@endphp--}}
-                                {{--{!! $limit_text !!}--}}
+                            {{--@php--}}
+                            {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                            {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                            {{--@endphp--}}
+                            {{--{!! $limit_text !!}--}}
                             {{--</p>--}}
                         </div>
                     </div>
                 </div>
             @endforeach
+            @if(count($museum) > 3)
+                <div class="col-md-12">
+                    <a href="{{url('search-instantion/museum')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                </div>
+            @endif
         </div>
         <!-- /.row -->
 
@@ -188,13 +193,13 @@
         </div>
         <!-- /.row -->
 
-        <!-- List Palace -->
-        @if(count($palace) != 0)
-            <div class="row">
+        <!-- List Library -->
+        @if(count($library) != 0)
+            <div class="row mt-3">
                 <div class="col-md-12">
                     <h2>
-                        <a href="{{url('search-instantion/palace')}}" class="text-dark">
-                            @lang('messages.home_palace_title')
+                        <a href="{{url('search-instantion/library')}}" class="text-dark">
+                            @lang('messages.category_library')
                         </a>
                     </h2>
                     <hr>
@@ -207,8 +212,8 @@
                         {{--</div>--}}
                     {{--</form>--}}
                 </div>
-                @foreach($palace as $list)
-                    <div class="col-md-4 mb-5">
+                @foreach(\App\Model\content_tbl::listContentCategory("library", 3) as $list)
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -234,16 +239,71 @@
                     </div>
                 @endforeach
             </div>
+            @if(count($library) > 3)
+                <a href="{{url('search-instantion/library')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
+        @endif
+        <!-- /.row -->
+
+        <!-- List Gallery -->
+        @if(count($gallery) != 0)
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h2>
+                        <a href="{{url('search-instantion/gallery')}}" class="text-dark">
+                            @lang('messages.category_gallery')
+                        </a>
+                    </h2>
+                    <hr>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                </div>
+                @foreach(\App\Model\content_tbl::listContentCategory("gallery", 3) as $list)
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(count($gallery) > 3)
+                <a href="{{url('search-instantion/gallery')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
         @endif
         <!-- /.row -->
 
         <!-- List Archive -->
         @if(count($archive) != 0)
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md-12">
                     <h2>
                         <a href="{{url('search-instantion/archive')}}" class="text-dark">
-                            @lang('messages.home_archive_title')
+                            @lang('messages.category_archive')
                         </a>
                     </h2>
                     <hr>
@@ -256,7 +316,7 @@
                         {{--</div>--}}
                     {{--</form>--}}
                 </div>
-                @foreach($archive as $list)
+                @foreach(\App\Model\content_tbl::listContentCategory("archive", 3) as $list)
                     <div class="col-md-4 mb-5">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
@@ -283,16 +343,123 @@
                     </div>
                 @endforeach
             </div>
+            @if(count($archive) > 3)
+                <a href="{{url('search-instantion/archive')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
+        @endif
+        <!-- /.row -->
+
+        <!-- List Temple -->
+        @if(count($temple) != 0)
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h2>
+                        <a href="{{url('search-instantion/temple')}}" class="text-dark">
+                            @lang('messages.category_temple')
+                        </a>
+                    </h2>
+                    <hr>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                </div>
+                @foreach(\App\Model\content_tbl::listContentCategory("temple", 3) as $list)
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(count($temple) > 3)
+                <a href="{{url('search-instantion/temple')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
+        @endif
+        <!-- /.row -->
+
+        <!-- List Palace -->
+        @if(count($palace) != 0)
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h2>
+                        <a href="{{url('search-instantion/palace')}}" class="text-dark">
+                            @lang('messages.category_palace')
+                        </a>
+                    </h2>
+                    <hr>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                </div>
+                @foreach(\App\Model\content_tbl::listContentCategory("palace", 3) as $list)
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(count($palace) > 3)
+                <a href="{{url('search-instantion/palace')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
         @endif
         <!-- /.row -->
 
         <!-- List Nature -->
         @if(count($nature) != 0)
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md-12">
                     <h2>
                         <a href="{{url('search-instantion/nature')}}" class="text-dark">
-                            @lang('messages.home_nature_title')
+                            @lang('messages.category_natural_place')
                         </a>
                     </h2>
                     <hr>
@@ -305,7 +472,7 @@
                         {{--</div>--}}
                     {{--</form>--}}
                 </div>
-                @foreach($nature as $list)
+                @foreach(\App\Model\content_tbl::listContentCategory("nature", 3) as $list)
                     <div class="col-md-4 mb-5">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
@@ -332,6 +499,164 @@
                     </div>
                 @endforeach
             </div>
+            @if(count($nature) > 3)
+                <a href="{{url('search-instantion/nature')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
+        @endif
+        <!-- /.row -->
+
+        <!-- List Historical Building -->
+        @if(count($historical_building) != 0)
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h2>
+                        <a href="{{url('search-instantion/historical-building')}}" class="text-dark">
+                            @lang('messages.category_historical_building')
+                        </a>
+                    </h2>
+                    <hr>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                </div>
+                @foreach(\App\Model\content_tbl::listContentCategory("historical-building", 3) as $list)
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(count($historical_building) > 3)
+                <a href="{{url('search-instantion/historical-building')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
+        @endif
+        <!-- /.row -->
+
+        <!-- List Personal Activities -->
+        @if(count($personal) != 0)
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h2>
+                        <a href="{{url('search-instantion/personal-activities')}}" class="text-dark">
+                            @lang('messages.category_personal_activities')
+                        </a>
+                    </h2>
+                    <hr>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                </div>
+                @foreach(\App\Model\content_tbl::listContentCategory("personal-activities", 3) as $list)
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(count($personal) > 3)
+                <a href="{{url('search-instantion/personal-activities')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
+        @endif
+
+        <!-- List Site -->
+        @if(count($site) != 0)
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h2>
+                        <a href="{{url('search-instantion/site')}}" class="text-dark">
+                            @lang('messages.category_site')
+                        </a>
+                    </h2>
+                    <hr>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                </div>
+                @foreach(\App\Model\content_tbl::listContentCategory("site", 3) as $list)
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                    {{App::isLocale('id') ? $list->name : $list->name_en}}
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                                </p>
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(count($site) > 3)
+                <a href="{{url('search-instantion/site')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+            @endif
         @endif
         <!-- /.row -->
 

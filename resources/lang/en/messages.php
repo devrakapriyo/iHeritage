@@ -48,6 +48,7 @@ return [
     'home_select_place' => 'All Province in Indonesia',
     'home_select_heritage' => 'All Heritage in Indonesia',
     'home_select_search' => 'Search',
+    'home_more_search' => 'See All',
 
     'home_banner_title' => 'Promote your Heritage Events & Collections with our platform',
     'home_banner_description' => 'Its Free and easy...',
@@ -185,7 +186,7 @@ return [
     'category' => 'Category',
     'category_museum' => 'Museum',
     'category_library' => 'Library',
-    'category_gallery' => 'Gallery',
+    'category_gallery' => 'Library',
     'category_archive' => 'Archive',
     'category_temple' => 'Temple',
     'category_palace' => 'Palace',
@@ -193,4 +194,15 @@ return [
     'category_historical_building' => 'Historical Building',
     'category_personal_activities' => 'Personal Activities',
     'category_site' => 'Site',
+
+    'museum' => 'Museum',
+    'library' => 'Library',
+    'gallery' => 'Library',
+    'archive' => 'Archive',
+    'temple' => 'Temple',
+    'palace' => 'Palace',
+    'nature' => 'Natural Place',
+    'historical-building' => 'Historical Building',
+    'personal-activities' => 'Personal Activities',
+    'site' => 'Site',
 ];

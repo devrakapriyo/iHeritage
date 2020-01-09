@@ -55,6 +55,8 @@ return [
 
     'home_palace_title' => 'Palace',
 
+    'home_archive_title' => 'Archive',
+
     'home_nature_title' => 'Nature',
 
     'home_news_title' => 'News',

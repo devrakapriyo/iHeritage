@@ -47,7 +47,7 @@
             @php
                 $text = App::isLocale('id') ? $detail->description_ind : $detail->description_en;
             @endphp
-            <small>{!! $text !!}</small>
+            {!! $text !!}
 
             <div class="form-group mt-5">
                 <p class="text-capitalize">

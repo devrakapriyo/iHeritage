@@ -250,13 +250,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Closing Hours (bahasa indonesia): </label>
+                                            <label>Closing Days (bahasa indonesia): </label>
                                             <input type="text" name="close_ind" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Closing Hours (bahasa inggris): </label>
+                                            <label>Closing Days (bahasa inggris): </label>
                                             <input type="text" name="close_en" class="form-control">
                                         </div>
                                     </div>

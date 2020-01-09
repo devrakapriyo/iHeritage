@@ -118,6 +118,22 @@ class ContentController extends Controller
                     'is_active' => "Y"
                 ]);
 
+            if(auth('admin')->user()->is_admin_master == "Y")
+            {
+                $instansi = new institutional;
+                $instansi->institutional_name = $request->name;
+                $instansi->address = $request->address;
+                $instansi->place_id = $request->place_id;
+                $instansi->email = $request->email;
+                $instansi->phone = $request->phone;
+                $instansi->category = $category;
+                $instansi->save();
+
+                $instansi_id = $instansi->id;
+            }else{
+                $instansi_id = auth('admin')->user()->institutional_id;
+            }
+
             $content = new content_tbl;
             $content->photo = $photo;
             $content->name = $request->name;
@@ -129,7 +145,7 @@ class ContentController extends Controller
             //$content->short_description_ind = $request->short_description_ind;
             $content->long_description_en = $request->long_description_en;
             $content->long_description_ind = $request->long_description_ind;
-            $content->institutional_id = auth('admin')->user()->institutional_id;
+            $content->institutional_id = $instansi_id;
             $content->created_by = auth('admin')->user()->id;
             $content->is_active = "Y";
             $content->save();

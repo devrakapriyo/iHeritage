@@ -55,6 +55,8 @@ return [
 
     'home_palace_title' => 'Keraton',
 
+    'home_archive_title' => 'Archive',
+
     'home_nature_title' => 'Alam',
 
     'home_news_title' => 'Berita',

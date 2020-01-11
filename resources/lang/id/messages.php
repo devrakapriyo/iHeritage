@@ -110,6 +110,7 @@ return [
     'collection_exchange' => 'Alat Tukar',
     'collection_medal' => 'Medali',
     'collection_navigation' => 'Navigasi',
+    'collection_folklore' => 'Cerita Rakyat',
 
     // page vr
     'vr_title' => 'Tur Virtual',

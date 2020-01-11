@@ -32,4 +32,9 @@ class content_collection_tbl extends Model
     {
         return self::select($field)->where('id',$id)->first()->$field;
     }
+
+    public static function listCollection($content_id, $limit)
+    {
+        return self::select('id','name','name_en','banner','media_type','description_ind','description_en','place_id','media_type','topic')->where('content_id', $content_id)->where('is_active',"Y")->orderBy('id','desc')->take($limit)->get();
+    }
 }

@@ -148,7 +148,7 @@
             @endforeach
             @if(count($museum) > 3)
                 <div class="col-md-12">
-                    <a href="{{url('search-instantion/museum')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                    <a href="{{url('search-instantion/museum')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') Museum</a>
                 </div>
             @endif
         </div>
@@ -240,7 +240,7 @@
                 @endforeach
             </div>
             @if(count($library) > 3)
-                <a href="{{url('search-instantion/library')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/library')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_library')</a>
             @endif
         @endif
         <!-- /.row -->
@@ -292,7 +292,7 @@
                 @endforeach
             </div>
             @if(count($gallery) > 3)
-                <a href="{{url('search-instantion/gallery')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/gallery')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_gallery')</a>
             @endif
         @endif
         <!-- /.row -->
@@ -344,7 +344,7 @@
                 @endforeach
             </div>
             @if(count($archive) > 3)
-                <a href="{{url('search-instantion/archive')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/archive')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_archive')</a>
             @endif
         @endif
         <!-- /.row -->
@@ -396,7 +396,7 @@
                 @endforeach
             </div>
             @if(count($temple) > 3)
-                <a href="{{url('search-instantion/temple')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/temple')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_temple')</a>
             @endif
         @endif
         <!-- /.row -->
@@ -448,7 +448,7 @@
                 @endforeach
             </div>
             @if(count($palace) > 3)
-                <a href="{{url('search-instantion/palace')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/palace')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_palace')</a>
             @endif
         @endif
         <!-- /.row -->
@@ -500,7 +500,7 @@
                 @endforeach
             </div>
             @if(count($nature) > 3)
-                <a href="{{url('search-instantion/nature')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/nature')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_natural_place')</a>
             @endif
         @endif
         <!-- /.row -->
@@ -552,7 +552,7 @@
                 @endforeach
             </div>
             @if(count($historical_building) > 3)
-                <a href="{{url('search-instantion/historical-building')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/historical-building')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_historical_building')</a>
             @endif
         @endif
         <!-- /.row -->
@@ -604,7 +604,7 @@
                 @endforeach
             </div>
             @if(count($personal) > 3)
-                <a href="{{url('search-instantion/personal-activities')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/personal-activities')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_personal_activities')</a>
             @endif
         @endif
 
@@ -655,7 +655,7 @@
                 @endforeach
             </div>
             @if(count($site) > 3)
-                <a href="{{url('search-instantion/site')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search')</a>
+                <a href="{{url('search-instantion/site')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_site')</a>
             @endif
         @endif
         <!-- /.row -->

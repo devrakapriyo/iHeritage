@@ -110,6 +110,7 @@ return [
     'collection_exchange' => 'Xxchange',
     'collection_medal' => 'Medal',
     'collection_navigation' => 'Navigation',
+    'collection_folklore' => 'Folklore',
 
     // page vr
     'vr_title' => 'Virtual Tour',

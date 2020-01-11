@@ -12,4 +12,9 @@ class content_gallery_tbl extends Model
     {
         return self::select('photo')->where('content_id',$content_id)->count();
     }
+
+    public static function listGallery($content_id, $limit)
+    {
+        return self::select('photo','id','description_ind','description_en')->where('content_id', $content_id)->orderBy('id','desc')->take($limit)->get();
+    }
 }

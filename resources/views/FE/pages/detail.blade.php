@@ -44,7 +44,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    @foreach($collection as $item)
+                    @foreach(\App\Model\content_collection_tbl::listCollection($id, 4) as $item)
                         <div class="col-md-6 mb-4">
                             <div class="card h-100">
                                 <a href="{{route('collection-detail', ['id'=>$item->id])}}">
@@ -80,6 +80,11 @@
                             </div>
                         </div>
                     @endforeach
+                    @if(count($collection) > 4)
+                        <div class="col-md-12">
+                            <a href="{{url('collection-search?place_id=all&media_type=all&topic=all&institutional_id='.\App\Model\content_tbl::fieldContent($id, "institutional_id"))}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.heritage_title')</a>
+                        </div>
+                    @endif
                 </div>
             @endif
 
@@ -90,7 +95,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    @foreach($education as $item)
+                    @foreach(\App\Model\content_edu_tbl::listEducation($id, 4) as $item)
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <a href="{{url('education-program/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
@@ -111,6 +116,11 @@
                             </div>
                         </div>
                     @endforeach
+                    @if(count($education) > 4)
+                        <div class="col-md-12 mt-3">
+                            <a href="{{url('education-program-search?place_id=all&institutional_id='.\App\Model\content_tbl::fieldContent($id, "institutional_id"))}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.edu_title')</a>
+                        </div>
+                    @endif
                 </div>
             @endif
 
@@ -121,7 +131,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    @foreach($event as $item)
+                    @foreach(\App\Model\content_event_tbl::listEvent($id, 4) as $item)
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <a href="{{url('event/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
@@ -155,6 +165,11 @@
                             </div>
                         </div>
                     @endforeach
+                    @if(count($event) > 4)
+                        <div class="col-md-12 mt-3">
+                            <a href="{{url('event-search?place_id=all&price=all&duration=all&institutional_id='.\App\Model\content_tbl::fieldContent($id, "institutional_id"))}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.event_title')</a>
+                        </div>
+                    @endif
                 </div>
             @endif
 
@@ -165,7 +180,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    @foreach($gallery as $item)
+                    @foreach($gallery as $key=>$item)
                         <div class="col-md-4">
                             <div class="card mb-3">
                                 <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}" height="150" data-toggle="modal" data-target=".bd-example-modal-xl-{{$item->id}}">
@@ -183,7 +198,25 @@
                         <div class="modal fade bd-example-modal-xl-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
-                                    <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}">
+
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}" class="{{$key == 0 ? "active" : "active"}}"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item {{$key == 0 ? "active" : "active"}}">
+                                                <img class="d-block w-100" src="{{$item->photo}}" alt="{{$item->photo}}">
+                                            </div>
+                                        </div>
+                                        {{--<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">--}}
+                                            {{--<span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+                                            {{--<span class="sr-only">Previous</span>--}}
+                                        {{--</a>--}}
+                                        {{--<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">--}}
+                                            {{--<span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+                                            {{--<span class="sr-only">Next</span>--}}
+                                        {{--</a>--}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -191,11 +224,11 @@
                     @endforeach
                 </div>
             @endif
-            @if(count($gallery) > 3)
-                <div class="form-group">
-                    <button class="btn btn-block btn-outline-dark text-capitalize">@lang('messages.museum_gallery_button')</button>
-                </div>
-            @endif
+            {{--@if(count($gallery) > 3)--}}
+                {{--<div class="form-group">--}}
+                    {{--<button class="btn btn-block btn-outline-dark text-capitalize">@lang('messages.museum_gallery_button')</button>--}}
+                {{--</div>--}}
+            {{--@endif--}}
         </div>
         <div class="col-md-4 mt-2">
             <div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:100%;}</style></div>

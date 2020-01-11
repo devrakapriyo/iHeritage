@@ -67,6 +67,7 @@
                                     <option value="collection_exchange">@lang('messages.collection_exchange')</option>
                                     <option value="collection_medal">@lang('messages.collection_medal')</option>
                                     <option value="collection_navigation">@lang('messages.collection_navigation')</option>
+                                    <option value="collection_folklore">@lang('messages.collection_folklore')</option>
                                 </select>
                             </div>
                         </div>
@@ -155,6 +156,7 @@
                                     <option value="collection_exchange">@lang('messages.collection_exchange')</option>
                                     <option value="collection_medal">@lang('messages.collection_medal')</option>
                                     <option value="collection_navigation">@lang('messages.collection_navigation')</option>
+                                    <option value="collection_folklore">@lang('messages.collection_folklore')</option>
                                 </select>
                             </div>
                         </div>

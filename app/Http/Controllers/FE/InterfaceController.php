@@ -214,9 +214,9 @@ class InterfaceController extends Controller
     public function detailContent(Request $request, $seo, $id)
     {
         $detail = content_tbl::join('content_detail', 'content_detail.content_id', "=", 'content.id')->where('is_active', "Y")->where('seo', $seo)->where('content.id', $id)->first();
-        $collection = content_collection_tbl::listCollection($id, 4);
-        $education = content_edu_tbl::listEducation($id, 4);
-        $event = content_event_tbl::listEvent($id, 4);
+        $collection = content_collection_tbl::listCollection($id, 5);
+        $education = content_edu_tbl::listEducation($id, 5);
+        $event = content_event_tbl::listEvent($id, 5);
         $gallery = content_gallery_tbl::listGallery($id, 3);
         visitor_counting::simpan(institutional::getId($id), $_SERVER['REMOTE_ADDR'], "content", $request->fullUrl());
         return view('FE.pages.detail', compact('id', 'detail','collection','education','event','gallery'));

@@ -113,6 +113,7 @@ return [
     'collection_folklore' => 'Folklore',
     'collection_natural_place' => 'Natural Place',
     'collection_relief' => 'Relief',
+    'collection_historical_building' => 'Historical Building',
 
     // page vr
     'vr_title' => 'Virtual Tour',

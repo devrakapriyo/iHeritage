@@ -113,6 +113,7 @@ return [
     'collection_folklore' => 'Cerita Rakyat',
     'collection_natural_place' => 'Wisata Alam',
     'collection_relief' => 'Relief',
+    'collection_historical_building' => 'Bangungan Bersejarah',
 
     // page vr
     'vr_title' => 'Tur Virtual',

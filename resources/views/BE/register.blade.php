@@ -68,7 +68,7 @@
                         <option value="nature">@lang('messages.category_natural_place')</option>
                         <option value="historical-building">@lang('messages.category_historical_building')</option>
                         <option value="personal-activities">@lang('messages.category_personal_activities')</option>
-                        <option value="site">@lang('messages.category_site')</option>
+                        {{--<option value="site">@lang('messages.category_site')</option>--}}
                     </select>
                 </div>
 

@@ -111,6 +111,8 @@ return [
     'collection_medal' => 'Medali',
     'collection_navigation' => 'Navigasi',
     'collection_folklore' => 'Cerita Rakyat',
+    'collection_natural_place' => 'Wisata Alam',
+    'collection_relief' => 'Relief',
 
     // page vr
     'vr_title' => 'Tur Virtual',
@@ -195,6 +197,7 @@ return [
     'category_historical_building' => 'Bangunan Bersejarah',
     'category_personal_activities' => 'Aktivitas Pribadi',
     'category_site' => 'Situs',
+    'category_community' => 'Komunitas',
 
     'museum' => 'Museum',
     'library' => 'Perpustakaan',
@@ -206,4 +209,5 @@ return [
     'historical-building' => 'Bangunan Bersejarah',
     'personal-activities' => 'Aktivitas Pribadi',
     'site' => 'Situs',
+    'community' => 'Komunitas',
 ];

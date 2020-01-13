@@ -77,22 +77,24 @@
                     $notif_museum = \App\Model\content_tbl::countWaitingAppr("museum");
                     $notif_library = \App\Model\content_tbl::countWaitingAppr("library");
                     $notif_gallery = \App\Model\content_tbl::countWaitingAppr("gallery");
-                    $notif_archive = \App\Model\content_tbl::countWaitingAppr("archive");
+                    //$notif_archive = \App\Model\content_tbl::countWaitingAppr("archive");
                     $notif_temple = \App\Model\content_tbl::countWaitingAppr("temple");
                     $notif_palace = \App\Model\content_tbl::countWaitingAppr("palace");
                     $notif_nature = \App\Model\content_tbl::countWaitingAppr("nature");
                     $notif_historical = \App\Model\content_tbl::countWaitingAppr("historical-building");
                     $notif_personal_activities = \App\Model\content_tbl::countWaitingAppr("personal-activities");
-                    $notif_site = \App\Model\content_tbl::countWaitingAppr("sacred-site");
+                    $notif_site = \App\Model\content_tbl::countWaitingAppr("site");
+                    $notif_comunity = \App\Model\content_tbl::countWaitingAppr("community");
                 @endphp
                 @if($auth->is_admin_master == "Y")
                     <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum @if($notif_museum != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_museum}}</span>@endif</a>
                     <a class="collapse-item @yield('library')" href="{{route('content-pages', ['category'=>'library'])}}">Library @if($notif_library != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_library}}</span>@endif</a>
                     <a class="collapse-item @yield('gallery')" href="{{route('content-pages', ['category'=>'gallery'])}}">Gallery @if($notif_gallery != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_gallery}}</span>@endif</a>
-                    <a class="collapse-item @yield('archive')" href="{{route('content-pages', ['category'=>'archive'])}}">Archive @if($notif_archive != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_archive}}</span>@endif</a>
+                    {{--<a class="collapse-item @yield('archive')" href="{{route('content-pages', ['category'=>'archive'])}}">Archive @if($notif_archive != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_archive}}</span>@endif</a>--}}
+                    <a class="collapse-item @yield('community')" href="{{route('content-pages', ['category'=>'community'])}}">Community @if($notif_comunity != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_comunity}}</span>@endif</a>
                     <a class="collapse-item @yield('temple')" href="{{route('content-pages', ['category'=>'temple'])}}">Temple @if($notif_temple != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_temple}}</span>@endif</a>
                     <a class="collapse-item @yield('palace')" href="{{route('content-pages', ['category'=>'palace'])}}">Palace @if($notif_palace != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_palace}}</span>@endif</a>
-                    <a class="collapse-item @yield('nature')" href="{{route('content-pages', ['category'=>'nature'])}}">Nature @if($notif_nature != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_nature}}</span>@endif</a>
+                    {{--<a class="collapse-item @yield('nature')" href="{{route('content-pages', ['category'=>'nature'])}}">Nature @if($notif_nature != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_nature}}</span>@endif</a>--}}
                     <a class="collapse-item @yield('historical-building')" href="{{route('content-pages', ['category'=>'historical-building'])}}">Historical Building @if($notif_historical != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_historical}}</span>@endif</a>
                     <a class="collapse-item @yield('personal-activities')" href="{{route('content-pages', ['category'=>'personal-activities'])}}">Personal Activities @if($notif_personal_activities != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_personal_activities}}</span>@endif</a>
                     <a class="collapse-item @yield('site')" href="{{route('content-pages', ['category'=>'site'])}}">Site @if($notif_site != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_site}}</span>@endif</a>

@@ -111,6 +111,8 @@ return [
     'collection_medal' => 'Medal',
     'collection_navigation' => 'Navigation',
     'collection_folklore' => 'Folklore',
+    'collection_natural_place' => 'Natural Place',
+    'collection_relief' => 'Relief',
 
     // page vr
     'vr_title' => 'Virtual Tour',
@@ -195,6 +197,7 @@ return [
     'category_historical_building' => 'Historical Building',
     'category_personal_activities' => 'Personal Activities',
     'category_site' => 'Site',
+    'category_community' => 'Community',
 
     'museum' => 'Museum',
     'library' => 'Library',
@@ -206,4 +209,5 @@ return [
     'historical-building' => 'Historical Building',
     'personal-activities' => 'Personal Activities',
     'site' => 'Site',
+    'community' => 'Community',
 ];

@@ -37,10 +37,11 @@
                                 <option value="museum">@lang('messages.category_museum')</option>
                                 <option value="library">@lang('messages.category_library')</option>
                                 <option value="gallery">@lang('messages.category_gallery')</option>
-                                <option value="archive">@lang('messages.category_archive')</option>
+                                {{--<option value="archive">@lang('messages.category_archive')</option>--}}
+                                <option value="community">@lang('messages.category_community')</option>
                                 <option value="temple">@lang('messages.category_temple')</option>
                                 <option value="palace">@lang('messages.category_palace')</option>
-                                <option value="nature">@lang('messages.category_natural_place')</option>
+                                {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
                                 <option value="historical-building">@lang('messages.category_historical_building')</option>
                                 <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                                 <option value="site">@lang('messages.category_site')</option>
@@ -79,10 +80,11 @@
                                 <option value="museum">@lang('messages.category_museum')</option>
                                 <option value="library">@lang('messages.category_library')</option>
                                 <option value="gallery">@lang('messages.category_gallery')</option>
-                                <option value="archive">@lang('messages.category_archive')</option>
+                                {{--<option value="archive">@lang('messages.category_archive')</option>--}}
+                                <option value="community">@lang('messages.category_community')</option>
                                 <option value="temple">@lang('messages.category_temple')</option>
                                 <option value="palace">@lang('messages.category_palace')</option>
-                                <option value="nature">@lang('messages.category_natural_place')</option>
+                                {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
                                 <option value="historical-building">@lang('messages.category_historical_building')</option>
                                 <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                                 <option value="site">@lang('messages.category_site')</option>
@@ -298,12 +300,64 @@
         <!-- /.row -->
 
         <!-- List Archive -->
-        @if(count($archive) != 0)
+        {{--@if(count($archive) != 0)--}}
+            {{--<div class="row mt-3">--}}
+                {{--<div class="col-md-12">--}}
+                    {{--<h2>--}}
+                        {{--<a href="{{url('search-instantion/archive')}}" class="text-dark">--}}
+                            {{--@lang('messages.category_archive')--}}
+                        {{--</a>--}}
+                    {{--</h2>--}}
+                    {{--<hr>--}}
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                        {{--<div class="input-group mb-3">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                {{--</div>--}}
+                {{--@foreach(\App\Model\content_tbl::listContentCategory("archive", 3) as $list)--}}
+                    {{--<div class="col-md-4 mb-5">--}}
+                        {{--<div class="card h-100">--}}
+                            {{--<a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">--}}
+                                {{--<img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">--}}
+                            {{--</a>--}}
+                            {{--<div class="card-body">--}}
+                                {{--<h5 class="card-title">--}}
+                                    {{--<a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">--}}
+                                    {{--{{App::isLocale('id') ? $list->name : $list->name_en}}--}}
+                                    {{--</a>--}}
+                                {{--</h5>--}}
+                                {{--<p class="card-text">--}}
+                                    {{--<small class="card-text text-uppercase">{{$list->location}}</small>--}}
+                                {{--</p>--}}
+                                {{--<p class="card-text">--}}
+                                    {{--@php--}}
+                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                    {{--@endphp--}}
+                                    {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--@endforeach--}}
+            {{--</div>--}}
+            {{--@if(count($archive) > 3)--}}
+                {{--<a href="{{url('search-instantion/archive')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_archive')</a>--}}
+            {{--@endif--}}
+        {{--@endif--}}
+        <!-- /.row -->
+
+        <!-- List Community -->
+        @if(count($community) != 0)
             <div class="row mt-3">
                 <div class="col-md-12">
                     <h2>
-                        <a href="{{url('search-instantion/archive')}}" class="text-dark">
-                            @lang('messages.category_archive')
+                        <a href="{{url('search-instantion/community')}}" class="text-dark">
+                            @lang('messages.category_community')
                         </a>
                     </h2>
                     <hr>
@@ -316,7 +370,7 @@
                         {{--</div>--}}
                     {{--</form>--}}
                 </div>
-                @foreach(\App\Model\content_tbl::listContentCategory("archive", 3) as $list)
+                @foreach(\App\Model\content_tbl::listContentCategory("community", 3) as $list)
                     <div class="col-md-4 mb-5">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
@@ -343,8 +397,8 @@
                     </div>
                 @endforeach
             </div>
-            @if(count($archive) > 3)
-                <a href="{{url('search-instantion/archive')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_archive')</a>
+            @if(count($community) > 3)
+                <a href="{{url('search-instantion/community')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_community')</a>
             @endif
         @endif
         <!-- /.row -->

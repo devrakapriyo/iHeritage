@@ -180,10 +180,10 @@
                 </div>
                 <hr>
                 <div class="row">
-                    @foreach($gallery as $key=>$item)
+                    @foreach($gallery as $item)
                         <div class="col-md-4">
                             <div class="card mb-3">
-                                <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}" height="150" data-toggle="modal" data-target=".bd-example-modal-xl-{{$item->id}}">
+                                <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}" height="150" data-toggle="modal" data-target=".bd-example-modal-xl">
                                 @if(($item->description_ind != "") || ($item->description_en != ""))
                                     <div class="card-body">
                                         <p>
@@ -193,35 +193,37 @@
                                 @endif
                             </div>
                         </div>
+                    @endforeach
+                    {{--modal--}}
+                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
 
-                        {{--modal--}}
-                        <div class="modal fade bd-example-modal-xl-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}" class="{{$key == 0 ? "active" : "active"}}"></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item {{$key == 0 ? "active" : "active"}}">
-                                                <img class="d-block w-100" src="{{$item->photo}}" alt="{{$item->photo}}">
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        @foreach($gallery as $key => $slider)
+                                            <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                <img src="{{$slider->photo}}" class="d-block w-100"  alt="...">
                                             </div>
-                                        </div>
-                                        {{--<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">--}}
-                                            {{--<span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-                                            {{--<span class="sr-only">Previous</span>--}}
-                                        {{--</a>--}}
-                                        {{--<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">--}}
-                                            {{--<span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-                                            {{--<span class="sr-only">Next</span>--}}
-                                        {{--</a>--}}
+                                        @endforeach
                                     </div>
+                                    <a class="carousel-control-prev" href="#myCarousel" role="button"  data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true">     </span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
-                        {{--end modal--}}
-                    @endforeach
+                    </div>
+                    {{--end modal--}}
                 </div>
             @endif
             {{--@if(count($gallery) > 3)--}}

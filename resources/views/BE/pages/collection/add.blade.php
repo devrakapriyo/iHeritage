@@ -144,6 +144,8 @@
                                         <option value="collection_medal">@lang('messages.collection_medal')</option>
                                         <option value="collection_navigation">@lang('messages.collection_navigation')</option>
                                         <option value="collection_folklore">@lang('messages.collection_folklore')</option>
+                                        <option value="collection_natural_place">@lang('messages.collection_natural_place')</option>
+                                        <option value="collection_relief">@lang('messages.collection_relief')</option>
                                     </select>
                                 </div>
                             </div>

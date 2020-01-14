@@ -15,6 +15,11 @@ class content_gallery_tbl extends Model
 
     public static function listGallery($content_id, $limit)
     {
-        return self::select('photo','id','description_ind','description_en')->where('content_id', $content_id)->orderBy('id','desc')->take($limit)->get();
+        if($limit == "all")
+        {
+            return self::select('photo','id','description_ind','description_en')->where('content_id', $content_id)->orderBy('id','desc')->get();
+        }else{
+            return self::select('photo','id','description_ind','description_en')->where('content_id', $content_id)->orderBy('id','desc')->take($limit)->get();
+        }
     }
 }

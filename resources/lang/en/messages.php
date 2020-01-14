@@ -46,7 +46,7 @@ return [
     'nav_menu_vr' => 'Virtual Tour',
 
     'home_select_place' => 'All Province in Indonesia',
-    'home_select_heritage' => 'All Heritage in Indonesia',
+    'home_select_heritage' => 'All Institution in Indonesia',
     'home_select_search' => 'Search',
     'home_more_search' => 'See All',
 

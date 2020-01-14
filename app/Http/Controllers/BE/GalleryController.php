@@ -80,6 +80,25 @@ class GalleryController extends Controller
         return redirect()->route('gallery-pages');
     }
 
+    public function gallery_edit($id)
+    {
+        $content = content_tbl::select('id', 'name')->where('is_active', "Y")->get();
+        $data = content_gallery_tbl::select('photo', 'description_ind', 'description_en')->where('id', $id)->first();
+        return view('BE.pages.gallery.edit', compact('data', 'content', 'id'));
+    }
+
+    public function gallery_update(Request $request, $id)
+    {
+        content_gallery_tbl::where('id', $id)
+            ->update([
+                 'description_ind' => $request->description_ind,
+                 'description_en' => $request->description_en
+            ]);
+
+        Alert::success('Description successfully update');
+        return redirect()->route('gallery-pages');
+    }
+
     public function gallery_delete($id)
     {
         // delete file storage

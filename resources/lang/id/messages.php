@@ -46,7 +46,7 @@ return [
     'nav_menu_vr' => 'Tur Virtual',
 
     'home_select_place' => 'Semua Provinsi di Indonesia',
-    'home_select_heritage' => 'Semua Pusaka di Indonesia',
+    'home_select_heritage' => 'Semua Institusi di Indonesia',
     'home_select_search' => 'Cari',
     'home_more_search' => 'Lihat Semua',
 

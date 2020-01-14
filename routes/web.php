@@ -148,6 +148,8 @@ Route::prefix('dashboard')->namespace('BE')->middleware('admin')->group(function
     Route::get('/gallery-pages', 'GalleryController@gallery_pages')->name('gallery-pages');
     Route::get('/gallery-add', 'GalleryController@gallery_add')->name('gallery-add');
     Route::post('/gallery-add', 'GalleryController@gallery_upload')->name('gallery-upload');
+    Route::get('/gallery-edit/{id}', 'GalleryController@gallery_edit')->name('gallery-edit');
+    Route::post('/gallery-update/{id}', 'GalleryController@gallery_update')->name('gallery-update');
     Route::get('/gallery-delete/{id}', 'GalleryController@gallery_delete')->name('gallery-delete');
 
     // category

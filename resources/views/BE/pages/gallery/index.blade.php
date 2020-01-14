@@ -19,9 +19,7 @@
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary text-capitalize">list photo</h6>
-                        @if(\App\Model\content_tbl::select('id')->where('institutional_id', auth('admin')->user()->institutional_id)->first())
-                            <a href="{{route('gallery-add')}}" class="btn btn-success text-capitalize">add new photo</a>
-                        @endif
+                        <a href="{{route('gallery-add')}}" class="btn btn-success text-capitalize">add new photo</a>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -43,7 +41,12 @@
                                                         {{$item->description_ind == "" ? "" : "Bahasa Indonesia : ".$item->description_ind}}<br>
                                                         {{$item->description_en == "" ? "" : "Bahasa Inggris : ".$item->description_en}}
                                                     </p>
-                                                    <a onclick="return confirm('Are you sure you want to delete this data?');" href="{{route('gallery-delete',['id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Photo</a>
+                                                    <div class="form-group">
+                                                        <a href="{{route('gallery-edit', ['id' => $item->id])}}" class="btn btn-block btn-warning">EDIT</a>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <a onclick="return confirm('Are you sure you want to delete this data?');" href="{{route('gallery-delete',['id'=>$item->id])}}" class="btn btn-block btn-danger">Delete Photo</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

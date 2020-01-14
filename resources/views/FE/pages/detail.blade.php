@@ -204,9 +204,14 @@
                                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                     </ol>
                                     <div class="carousel-inner">
-                                        @foreach($gallery as $key => $slider)
+                                        @foreach(\App\Model\content_gallery_tbl::listGallery($id, "all") as $key => $slider)
                                             <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
                                                 <img src="{{$slider->photo}}" class="d-block w-100"  alt="...">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h3>
+                                                        {{App::isLocale('id') ? $slider->description_ind : $slider->description_en}}
+                                                    </h3>
+                                                </div>
                                             </div>
                                         @endforeach
                                     </div>

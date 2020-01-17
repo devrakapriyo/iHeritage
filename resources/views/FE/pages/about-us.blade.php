@@ -13,6 +13,13 @@
             </div>
             <div class="col-md-6">
                 <img src="{{$data->banner}}" class="img-fluid" alt="{{$data->banner}}">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="https://play.google.com/store/apps/details?id=com.pmli.iHeritage" target="_blank">
+                            <img src="{{asset('img/play-store.png')}}" class="img float-right" style="width: 100%; height: 100px;">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.row -->

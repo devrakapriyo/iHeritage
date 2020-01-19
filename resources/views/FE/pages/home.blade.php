@@ -37,7 +37,7 @@
                                 <option value="museum">@lang('messages.category_museum')</option>
                                 <option value="library">@lang('messages.category_library')</option>
                                 <option value="gallery">@lang('messages.category_gallery')</option>
-                                {{--<option value="archive">@lang('messages.category_archive')</option>--}}
+                                <option value="archive">@lang('messages.category_archive')</option>
                                 <option value="community">@lang('messages.category_community')</option>
                                 <option value="temple">@lang('messages.category_temple')</option>
                                 <option value="palace">@lang('messages.category_palace')</option>
@@ -80,7 +80,7 @@
                                 <option value="museum">@lang('messages.category_museum')</option>
                                 <option value="library">@lang('messages.category_library')</option>
                                 <option value="gallery">@lang('messages.category_gallery')</option>
-                                {{--<option value="archive">@lang('messages.category_archive')</option>--}}
+                                <option value="archive">@lang('messages.category_archive')</option>
                                 <option value="community">@lang('messages.category_community')</option>
                                 <option value="temple">@lang('messages.category_temple')</option>
                                 <option value="palace">@lang('messages.category_palace')</option>

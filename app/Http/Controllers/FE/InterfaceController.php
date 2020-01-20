@@ -164,7 +164,7 @@ class InterfaceController extends Controller
         $museum = $this->listContent("museum", 4);
         $library = $this->listContent("library", 4);
         $gallery = $this->listContent("gallery", 4);
-        //$archive = $this->listContent("archive", 4);
+        $archive = $this->listContent("archive", 4);
         $community = $this->listContent("community", 4);
         $temple = $this->listContent("temple", 4);
         $palace = $this->listContent("palace", 4);

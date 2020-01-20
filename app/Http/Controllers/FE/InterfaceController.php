@@ -339,7 +339,7 @@ class InterfaceController extends Controller
     public function vrTour()
     {
         $data = content_detail_tbl::join('content', 'content_detail.content_id', '=', 'content.id')
-            ->select('name', 'name_en', 'photo', 'url_vr', 'place_id')
+            ->select('name', 'name_en', 'photo', 'url_vr', 'place_id', 'content_id')
             ->where('url_vr', '!=', "")
             ->get();
         return view('FE.pages.vr', compact('data'));

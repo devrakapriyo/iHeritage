@@ -20,7 +20,7 @@
         {{--desktop view--}}
         <div class="col-md-6 mb-4 d-none d-lg-block">
             <div class="card">
-                <a href="{{auth('visitor')->check() ? $item->url_vr : url('login-visitor')}}" target="_blank" class="text-dark">
+                <a href="{{auth('visitor')->check() ? $item->url_vr : route('login-visitor-vr', ['content_id'=>$item->content_id])}}" target="_blank" class="text-dark">
                     <div class="row no-gutters">
                         <div class="col-md-5">
                             <img src="{{$item->photo}}" class="card-img" alt="{{$item->photo}}" width="200" height="190">
@@ -42,7 +42,7 @@
         {{--mobile view--}}
         <div class="col-md-12 mb-5 d-lg-none">
             <div class="card h-100">
-                <a href="{{auth('visitor')->check() ? $item->url_vr : url('login-visitor')}}" target="_blank" class="text-dark">
+                <a href="{{auth('visitor')->check() ? $item->url_vr : route('login-visitor-vr', ['content_id'=>$item->content_id])}}" target="_blank" class="text-dark">
                     <img class="card-img-top" src="{{$item->photo}}" alt="" height="200" widht="400">
                     <div class="card-body">
                         <h5 class="card-title">{{App::isLocale('id') ? $item->name : $item->name_en}}</h5>

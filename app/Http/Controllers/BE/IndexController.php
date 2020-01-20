@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\BE;
 
 use App\Model\category_content_tbl;
+use App\Model\content_detail_tbl;
+use App\Model\content_tbl;
 use App\Model\institutional;
 use App\Model\log_error;
 use App\User;
@@ -58,6 +60,29 @@ class IndexController extends Controller
             $auth = auth('visitor');
             if ($auth->attempt(['email' => $request->email, 'password' => $request->password])) {
                 return redirect('/');
+            } else {
+                Alert::error('Password wrong');
+                return redirect()->back();
+            }
+        }else{
+            Alert::error('Account not registered');
+            return redirect()->back();
+        }
+    }
+
+    public function login_visitor_vr($content_id)
+    {
+        return view('BE.login-visitor-vr', compact('content_id'));
+    }
+    public function login_visitor_vr_action(Request $request, $content_id)
+    {
+        $email = UserVisitor::select('email')->where('email',$request->email)->first();
+        if($email == true)
+        {
+            $auth = auth('visitor');
+            if ($auth->attempt(['email' => $request->email, 'password' => $request->password])) {
+                $url = content_detail_tbl::select('url_vr')->where('content_id', $content_id)->first()->url_vr;
+                return $url;
             } else {
                 Alert::error('Password wrong');
                 return redirect()->back();

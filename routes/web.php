@@ -62,6 +62,9 @@ Route::get('/login', 'BE\IndexController@login')->name('login');
 Route::post('/login', 'BE\IndexController@login_action');
 Route::get('/login-visitor', 'BE\IndexController@login_visitor')->name('login-visitor');
 Route::post('/login-visitor', 'BE\IndexController@login_visitor_action');
+
+Route::get('/login-visitor-vr/{content_id}', 'BE\IndexController@login_visitor_vr')->name('login-visitor-vr');
+Route::post('/login-visitor/{content_id}', 'BE\IndexController@login_visitor_vr_action');
 Route::get('/logout', 'BE\IndexController@logout');
 
 Route::get('/register', 'BE\IndexController@register');

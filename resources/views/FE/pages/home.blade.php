@@ -309,14 +309,14 @@
                         </a>
                     </h2>
                     <hr>
-                    <form method="get" action="{{url('search-instantion/nature')}}">
-                        <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>
-                            </div>
-                        </div>
-                    </form>
+                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<div class="input-group mb-3">--}}
+                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                    {{--<div class="input-group-append">--}}
+                    {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("archive", 3) as $list)
                     <div class="col-md-4 mb-5">
@@ -333,13 +333,13 @@
                                 <p class="card-text">
                                     <small class="card-text text-uppercase">{{$list->location}}</small>
                                 </p>
-                                <p class="card-text">
-                                    @php
-                                        $text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);
-                                        $limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;
-                                    @endphp
-                                    {!! $limit_text !!}
-                                </p>
+                                {{--<p class="card-text">--}}
+                                {{--@php--}}
+                                {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                {{--@endphp--}}
+                                {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
                             </div>
                         </div>
                     </div>

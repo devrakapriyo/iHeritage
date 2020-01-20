@@ -173,7 +173,7 @@ class InterfaceController extends Controller
         $personal = $this->listContent("personal-activities", 4);
         $site = $this->listContent("site", 4);
         $news = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->take(4)->get();
-        return view('FE.pages.home', compact('about','museum','library','gallery','community','temple','palace','nature','historical_building','personal','site','news'));
+        return view('FE.pages.home', compact('about','museum','library','gallery','archive','community','temple','palace','nature','historical_building','personal','site','news'));
     }
 
     public function search(Request $request)

@@ -36,7 +36,7 @@ class UserController extends Controller
         }
         return DataTables::of($data)
             ->editColumn('institutional_name', function ($data){
-                return "<span class='btn btn-success btn-sm'>".$data->institutional_name."</span>";
+                return "<span class='btn btn-success btn-sm'><a href='".route('users-institutional', ['id'=>$data->id])."'>".$data->institutional_name."</a></span>";
             })
             ->editColumn('is_admin', function ($data){
                 return $data->is_admin == "Y" ? "Admin" : "";

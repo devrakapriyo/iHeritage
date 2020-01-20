@@ -44,7 +44,7 @@ class UserController extends Controller
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('users-edit', ['id'=>$data->id]).'" class="btn btn-warning">Edit</a>';
                 $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('users-delete', ['id'=>$data->id]).'" class="btn btn-danger">Delete</a>';
-                $btn_active = '<a onclick="return confirm(\'Are you sure you want active this account?\');" href="'.route('users-active', ['id'=>$data->id]).'" class="btn btn-success">Active</a>';
+                $btn_active = '<a onclick="return confirm(\'Are you sure you want active this account?\');" href="'.route('users-active', ['id'=>$data->id]).'" class="btn btn-success">Activate Account</a>';
                 if((auth('admin')->user()->is_admin == "Y") || (auth('admin')->user()->is_admin_master == "Y"))
                 {
                     if($data->is_active == "N")
@@ -182,5 +182,11 @@ class UserController extends Controller
 
         Alert::success('Congratulations account has been active');
         return redirect()->route('users-pages');
+    }
+
+    public function users_institutional($id)
+    {
+        $data = institutional::find(User::select('institutional_id')->where('id', $id)->first()->institutional_id);
+        return view('BE.pages.usersManagement.institutional', compact('id', 'data'));
     }
 }

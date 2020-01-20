@@ -115,6 +115,7 @@ Route::prefix('dashboard')->namespace('BE')->middleware('admin')->group(function
     Route::post('/users-management/update/{id}', 'UserController@users_update')->name('users-update');
     Route::get('/users-management/delete/{id}', 'UserController@users_delete')->name('users-delete');
     Route::get('/users-management/active/{id}', 'UserController@users_active')->name('users-active');
+    Route::get('/users-management/institutional/{id}', 'UserController@users_institutional')->name('users-institutional');
 
     // content pages
     Route::get('/content-pages/{category}', 'ContentController@content_pages')->name('content-pages');

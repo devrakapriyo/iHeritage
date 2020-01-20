@@ -36,7 +36,7 @@ class UserController extends Controller
         }
         return DataTables::of($data)
             ->editColumn('institutional_name', function ($data){
-                return "<span class='btn btn-success btn-sm'><a href='".route('users-institutional', ['id'=>$data->id])."'>".$data->institutional_name."</a></span>";
+                return "<span class='btn btn-success btn-sm'><a class='text-white' href='".route('users-institutional', ['id'=>$data->id])."'>".$data->institutional_name."</a></span>";
             })
             ->editColumn('is_admin', function ($data){
                 return $data->is_admin == "Y" ? "Admin" : "";
@@ -44,7 +44,7 @@ class UserController extends Controller
             ->addColumn('action', function ($data) {
                 $btn_edit = '<a href="'.route('users-edit', ['id'=>$data->id]).'" class="btn btn-warning">Edit</a>';
                 $btn_hapus = '<a onclick="return confirm(\'Are you sure you want to delete this data?\');" href="'.route('users-delete', ['id'=>$data->id]).'" class="btn btn-danger">Delete</a>';
-                $btn_active = '<a onclick="return confirm(\'Are you sure you want active this account?\');" href="'.route('users-active', ['id'=>$data->id]).'" class="btn btn-success">Activate Account</a>';
+                $btn_active = '<a href="'.route('users-institutional', ['id'=>$data->id]).'" class="btn btn-success">Activate Account</a>';
                 if((auth('admin')->user()->is_admin == "Y") || (auth('admin')->user()->is_admin_master == "Y"))
                 {
                     if($data->is_active == "N")

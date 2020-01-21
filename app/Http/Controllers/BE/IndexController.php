@@ -81,8 +81,13 @@ class IndexController extends Controller
         {
             $auth = auth('visitor');
             if ($auth->attempt(['email' => $request->email, 'password' => $request->password])) {
-                $url = content_detail_tbl::select('url_vr')->where('content_id', $content_id)->first()->url_vr;
-                return redirect($url);
+                if($content_id == "all")
+                {
+                    return redirect('vr-tour');
+                }else{
+                    $url = content_detail_tbl::select('url_vr')->where('content_id', $content_id)->first()->url_vr;
+                    return redirect($url);
+                }
             } else {
                 Alert::error('Password wrong');
                 return redirect()->back();

@@ -50,6 +50,9 @@ return [
     'home_select_search' => 'Cari',
     'home_more_search' => 'Lihat Semua',
 
+    'home_detail_btn_vr' => 'Kunjungi Virtual Reality',
+    'home_detail_btn_photo' => 'Lihat Koleksi Foto',
+
     'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda Dengan Aplikasi Kami',
     'home_banner_description' => 'Gratis dan mudah...',
     'home_banner_button' => 'Coba sekarang!',

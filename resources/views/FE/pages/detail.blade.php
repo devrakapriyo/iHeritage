@@ -192,9 +192,9 @@
                                     </div>
                                 @endif
                                 @if($key == 0)
-                                <div class="card-footer">
-                                    <a data-toggle="modal" data-target=".bd-example-modal-xl" class="btn btn-dark btn-block text-white">Lihat Koleksi Foto</a>
-                                </div>
+                                    <div class="card-footer">
+                                        <a data-toggle="modal" data-target=".bd-example-modal-xl" class="btn btn-dark btn-block text-white">@lang('messages.home_detail_btn_photo')</a>
+                                    </div>
                                 @endif
                             </div>
                         </div>
@@ -266,6 +266,9 @@
             </div>
             <div class="form-group">
                 <p>Email : {{$detail->email}}</p>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-primary btn-block" href="{{auth('visitor')->check() ? $detail->url_vr : route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank">@lang('messages.home_detail_btn_vr')</a>
             </div>
             <div class="card">
                 <div class="card-body">

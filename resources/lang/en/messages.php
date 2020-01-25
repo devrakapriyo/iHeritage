@@ -50,6 +50,9 @@ return [
     'home_select_search' => 'Search',
     'home_more_search' => 'See All',
 
+    'home_detail_btn_vr' => 'Visit Virtual Reality',
+    'home_detail_btn_photo' => 'See Photo Collection',
+
     'home_banner_title' => 'Promote your Heritage Events & Collections with our platform',
     'home_banner_description' => 'Its Free and easy...',
     'home_banner_button' => 'Try it out!',

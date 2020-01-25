@@ -268,7 +268,9 @@
                 <p>Email : {{$detail->email}}</p>
             </div>
             <div class="form-group">
-                <a class="btn btn-primary btn-block" href="{{auth('visitor')->check() ? $detail->url_vr : route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank">@lang('messages.home_detail_btn_vr')</a>
+                @if($detail->url_vr != "")
+                    <a class="btn btn-primary btn-block" href="{{auth('visitor')->check() ? $detail->url_vr : route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank">@lang('messages.home_detail_btn_vr')</a>
+                @endif
             </div>
             <div class="card">
                 <div class="card-body">

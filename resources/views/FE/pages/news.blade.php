@@ -38,10 +38,7 @@
                         <a href="{{url('news/detail/'.$item->id)}}" class="text-dark">
                             <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">
                             <div class="card-body">
-                                <h5 class="card-title">{{$item->name}}</h5>
-                                <p class="card-text">
-                                    <small class="card-text text-uppercase">{{$item->location}}</small>
-                                </p>
+                                <h5 class="card-title">{{App::isLocale('id') ? $item->title_ind : $item->title_en}}</h5>
                                 <p class="card-text">
                                     @php
                                         $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);

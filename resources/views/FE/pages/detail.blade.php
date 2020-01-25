@@ -180,20 +180,26 @@
                 </div>
                 <hr>
                 <div class="row">
-                    @foreach($gallery as $item)
+                    @foreach($gallery as $key => $item)
                         <div class="col-md-4">
                             <div class="card mb-3">
-                                <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->photo}}" height="150" data-toggle="modal" data-target=".bd-example-modal-xl">
+                                <img src="{{$item->photo}}" class="card-img-top d-none d-lg-block" alt="{{$item->photo}}" height="150" data-toggle="modal" data-target=".bd-example-modal-xl">
+                                <img src="{{$item->photo}}" class="card-img-top d-lg-none" alt="{{$item->photo}}" data-toggle="modal" data-target=".bd-example-modal-xl">
                                 @if(($item->description_ind != "") || ($item->description_en != ""))
                                     <div class="card-body">
-                                        <p>
-                                            {{App::isLocale('id') ? $item->description_ind : $item->description_en}}
-                                        </p>
+                                        <small class="d-none d-lg-block">{{App::isLocale('id') ? $item->description_ind : $item->description_en}}</small>
+                                        <p class="d-lg-none">{{App::isLocale('id') ? $item->description_ind : $item->description_en}}</p>
                                     </div>
+                                @endif
+                                @if($key == 0)
+                                <div class="card-footer">
+                                    <a data-toggle="modal" data-target=".bd-example-modal-xl" class="btn btn-dark btn-block text-white">Lihat Koleksi Foto</a>
+                                </div>
                                 @endif
                             </div>
                         </div>
                     @endforeach
+
                     {{--modal--}}
                     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
@@ -206,17 +212,18 @@
                                     <div class="carousel-inner">
                                         @foreach(\App\Model\content_gallery_tbl::listGallery($id, "all") as $key => $slider)
                                             <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                <img src="{{$slider->photo}}" class="d-block w-100"  alt="...">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h3>
-                                                        {{App::isLocale('id') ? $slider->description_ind : $slider->description_en}}
-                                                    </h3>
+                                                <img src="{{$slider->photo}}" class="d-lg-block w-100"  alt="...">
+                                                <div class="carousel-caption d-none d-lg-block">
+                                                    <h3 class="text-uppercase">{{App::isLocale('id') ? $slider->description_ind : $slider->description_en}}</h3>
+                                                </div>
+                                                <div class="carousel-caption d-lg-none">
+                                                    <p class="text-uppercase">{{App::isLocale('id') ? $slider->description_ind : $slider->description_en}}</p>
                                                 </div>
                                             </div>
                                         @endforeach
                                     </div>
                                     <a class="carousel-control-prev" href="#myCarousel" role="button"  data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true">     </span>
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
                                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">

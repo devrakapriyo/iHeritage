@@ -758,13 +758,10 @@
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
-                                    {{$item->name}}
+                                <a href="{{url('news/detail/'.$item->id)}}" class="text-dark">
+                                    {{App::isLocale('id') ? $item->title_ind : $item->title_en}}
                                 </a>
                             </h5>
-                            <p class="card-text">
-                                <small class="card-text text-uppercase">{{$item->location}}</small>
-                            </p>
                             <p class="card-text">
                                 @php
                                     $text = App::isLocale('id') ? strip_tags($item->description_ind) : strip_tags($item->description_en);

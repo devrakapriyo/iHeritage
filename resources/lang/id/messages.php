@@ -43,14 +43,14 @@ return [
     'nav_menu_heritage' => 'Koleksi',
     'nav_menu_event' => 'Acara',
     'nav_menu_edu_pro' => 'Edukasi',
-    'nav_menu_vr' => 'Tur Virtual',
+    'nav_menu_vr' => 'Virtual Tour',
 
     'home_select_place' => 'Semua Provinsi di Indonesia',
     'home_select_heritage' => 'Semua Institusi di Indonesia',
     'home_select_search' => 'Cari',
     'home_more_search' => 'Lihat Semua',
 
-    'home_detail_btn_vr' => 'Kunjungi Virtual Reality',
+    'home_detail_btn_vr' => 'Kunjungi Virtual Tour',
     'home_detail_btn_photo' => 'Lihat Koleksi Foto',
 
     'home_banner_title' => 'Promosikan Acara & Koleksi Pusaka Anda Dengan Aplikasi Kami',
@@ -119,9 +119,9 @@ return [
     'collection_historical_building' => 'Bangungan Bersejarah',
 
     // page vr
-    'vr_title' => 'Tur Virtual',
+    'vr_title' => 'Virtual Tour',
 
-    'vr_banner_title' => 'Anda harus masuk untuk mengakses Tur Virtual ... Ini gratis',
+    'vr_banner_title' => 'Anda harus masuk untuk mengakses Virtual Tour... Ini gratis',
     'vr_banner_button' => 'Masuk Sekarang',
 
     // page museum

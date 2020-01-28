@@ -40,37 +40,40 @@
                             <div class="form-group">
                                 <select name="topic" class="form-control">
                                     <option value="all">@lang('messages.collection_topic')</option>
-                                    <option value="collection_manuscript">@lang('messages.collection_manuscript')</option>
-                                    <option value="collection_traditional_weapon">@lang('messages.collection_traditional_weapon')</option>
-                                    <option value="collection_traditional_music">@lang('messages.collection_traditional_music')</option>
-                                    <option value="collection_ceramic">@lang('messages.collection_ceramic')</option>
-                                    <option value="collection_painting">@lang('messages.collection_painting')</option>
-                                    <option value="collection_traditional_house">@lang('messages.collection_traditional_house')</option>
-                                    <option value="collection_performing_arts">@lang('messages.collection_performing_arts')</option>
-                                    <option value="collection_temple">@lang('messages.collection_temple')</option>
-                                    <option value="collection_statue">@lang('messages.collection_statue')</option>
-                                    <option value="collection_crown">@lang('messages.collection_crown')</option>
-                                    <option value="collection_jewelry">@lang('messages.collection_jewelry')</option>
-                                    <option value="collection_vehicle">@lang('messages.collection_vehicle')</option>
-                                    <option value="collection_literature">@lang('messages.collection_literature')</option>
-                                    <option value="collection_traditional_cloth">@lang('messages.collection_traditional_cloth')</option>
-                                    <option value="collection_movie">@lang('messages.collection_movie')</option>
-                                    <option value="collection_inscription">@lang('messages.collection_inscription')</option>
-                                    <option value="collection_puppet">@lang('messages.collection_puppet')</option>
-                                    <option value="collection_mask">@lang('messages.collection_mask')</option>
-                                    <option value="collection_dance">@lang('messages.collection_dance')</option>
-                                    <option value="collection_material_art">@lang('messages.collection_material_art')</option>
-                                    <option value="collection_history">@lang('messages.collection_history')</option>
-                                    <option value="collection_historic_building">@lang('messages.collection_historic_building')</option>
-                                    <option value="collection_site">@lang('messages.collection_site')</option>
-                                    <option value="collection_culinary">@lang('messages.collection_culinary')</option>
-                                    <option value="collection_exchange">@lang('messages.collection_exchange')</option>
-                                    <option value="collection_medal">@lang('messages.collection_medal')</option>
-                                    <option value="collection_navigation">@lang('messages.collection_navigation')</option>
-                                    <option value="collection_folklore">@lang('messages.collection_folklore')</option>
-                                    <option value="collection_natural_place">@lang('messages.collection_natural_place')</option>
-                                    <option value="collection_relief">@lang('messages.collection_relief')</option>
-                                    <option value="collection_historical_building">@lang('messages.collection_historical_building')</option>
+                                    @foreach(\App\Model\content_collection_tbl::groupTopic() as $topic)
+                                        <option value="{{$topic->topic}}">@lang('messages.'.$topic->topic)</option>
+                                    @endforeach
+                                    {{--<option value="collection_manuscript">@lang('messages.collection_manuscript')</option>--}}
+                                    {{--<option value="collection_traditional_weapon">@lang('messages.collection_traditional_weapon')</option>--}}
+                                    {{--<option value="collection_traditional_music">@lang('messages.collection_traditional_music')</option>--}}
+                                    {{--<option value="collection_ceramic">@lang('messages.collection_ceramic')</option>--}}
+                                    {{--<option value="collection_painting">@lang('messages.collection_painting')</option>--}}
+                                    {{--<option value="collection_traditional_house">@lang('messages.collection_traditional_house')</option>--}}
+                                    {{--<option value="collection_performing_arts">@lang('messages.collection_performing_arts')</option>--}}
+                                    {{--<option value="collection_temple">@lang('messages.collection_temple')</option>--}}
+                                    {{--<option value="collection_statue">@lang('messages.collection_statue')</option>--}}
+                                    {{--<option value="collection_crown">@lang('messages.collection_crown')</option>--}}
+                                    {{--<option value="collection_jewelry">@lang('messages.collection_jewelry')</option>--}}
+                                    {{--<option value="collection_vehicle">@lang('messages.collection_vehicle')</option>--}}
+                                    {{--<option value="collection_literature">@lang('messages.collection_literature')</option>--}}
+                                    {{--<option value="collection_traditional_cloth">@lang('messages.collection_traditional_cloth')</option>--}}
+                                    {{--<option value="collection_movie">@lang('messages.collection_movie')</option>--}}
+                                    {{--<option value="collection_inscription">@lang('messages.collection_inscription')</option>--}}
+                                    {{--<option value="collection_puppet">@lang('messages.collection_puppet')</option>--}}
+                                    {{--<option value="collection_mask">@lang('messages.collection_mask')</option>--}}
+                                    {{--<option value="collection_dance">@lang('messages.collection_dance')</option>--}}
+                                    {{--<option value="collection_material_art">@lang('messages.collection_material_art')</option>--}}
+                                    {{--<option value="collection_history">@lang('messages.collection_history')</option>--}}
+                                    {{--<option value="collection_historic_building">@lang('messages.collection_historic_building')</option>--}}
+                                    {{--<option value="collection_site">@lang('messages.collection_site')</option>--}}
+                                    {{--<option value="collection_culinary">@lang('messages.collection_culinary')</option>--}}
+                                    {{--<option value="collection_exchange">@lang('messages.collection_exchange')</option>--}}
+                                    {{--<option value="collection_medal">@lang('messages.collection_medal')</option>--}}
+                                    {{--<option value="collection_navigation">@lang('messages.collection_navigation')</option>--}}
+                                    {{--<option value="collection_folklore">@lang('messages.collection_folklore')</option>--}}
+                                    {{--<option value="collection_natural_place">@lang('messages.collection_natural_place')</option>--}}
+                                    {{--<option value="collection_relief">@lang('messages.collection_relief')</option>--}}
+                                    {{--<option value="collection_historical_building">@lang('messages.collection_historical_building')</option>--}}
                                 </select>
                             </div>
                         </div>
@@ -132,37 +135,40 @@
                             <div class="form-group mt-3">
                                 <select name="topic" class="form-control">
                                     <option value="all">@lang('messages.collection_topic')</option>
-                                    <option value="collection_manuscript">@lang('messages.collection_manuscript')</option>
-                                    <option value="collection_traditional_weapon">@lang('messages.collection_traditional_weapon')</option>
-                                    <option value="collection_traditional_music">@lang('messages.collection_traditional_music')</option>
-                                    <option value="collection_ceramic">@lang('messages.collection_ceramic')</option>
-                                    <option value="collection_painting">@lang('messages.collection_painting')</option>
-                                    <option value="collection_traditional_house">@lang('messages.collection_traditional_house')</option>
-                                    <option value="collection_performing_arts">@lang('messages.collection_performing_arts')</option>
-                                    <option value="collection_temple">@lang('messages.collection_temple')</option>
-                                    <option value="collection_statue">@lang('messages.collection_statue')</option>
-                                    <option value="collection_crown">@lang('messages.collection_crown')</option>
-                                    <option value="collection_jewelry">@lang('messages.collection_jewelry')</option>
-                                    <option value="collection_vehicle">@lang('messages.collection_vehicle')</option>
-                                    <option value="collection_literature">@lang('messages.collection_literature')</option>
-                                    <option value="collection_traditional_cloth">@lang('messages.collection_traditional_cloth')</option>
-                                    <option value="collection_movie">@lang('messages.collection_movie')</option>
-                                    <option value="collection_inscription">@lang('messages.collection_inscription')</option>
-                                    <option value="collection_puppet">@lang('messages.collection_puppet')</option>
-                                    <option value="collection_mask">@lang('messages.collection_mask')</option>
-                                    <option value="collection_dance">@lang('messages.collection_dance')</option>
-                                    <option value="collection_material_art">@lang('messages.collection_material_art')</option>
-                                    <option value="collection_history">@lang('messages.collection_history')</option>
-                                    <option value="collection_historic_building">@lang('messages.collection_historic_building')</option>
-                                    <option value="collection_site">@lang('messages.collection_site')</option>
-                                    <option value="collection_culinary">@lang('messages.collection_culinary')</option>
-                                    <option value="collection_exchange">@lang('messages.collection_exchange')</option>
-                                    <option value="collection_medal">@lang('messages.collection_medal')</option>
-                                    <option value="collection_navigation">@lang('messages.collection_navigation')</option>
-                                    <option value="collection_folklore">@lang('messages.collection_folklore')</option>
-                                    <option value="collection_natural_place">@lang('messages.collection_natural_place')</option>
-                                    <option value="collection_relief">@lang('messages.collection_relief')</option>
-                                    <option value="collection_historical_building">@lang('messages.collection_historical_building')</option>
+                                    @foreach(\App\Model\content_collection_tbl::groupTopic() as $topic)
+                                        <option value="{{$topic->topic}}">@lang('messages.'.$topic->topic)</option>
+                                    @endforeach
+                                    {{--<option value="collection_manuscript">@lang('messages.collection_manuscript')</option>--}}
+                                    {{--<option value="collection_traditional_weapon">@lang('messages.collection_traditional_weapon')</option>--}}
+                                    {{--<option value="collection_traditional_music">@lang('messages.collection_traditional_music')</option>--}}
+                                    {{--<option value="collection_ceramic">@lang('messages.collection_ceramic')</option>--}}
+                                    {{--<option value="collection_painting">@lang('messages.collection_painting')</option>--}}
+                                    {{--<option value="collection_traditional_house">@lang('messages.collection_traditional_house')</option>--}}
+                                    {{--<option value="collection_performing_arts">@lang('messages.collection_performing_arts')</option>--}}
+                                    {{--<option value="collection_temple">@lang('messages.collection_temple')</option>--}}
+                                    {{--<option value="collection_statue">@lang('messages.collection_statue')</option>--}}
+                                    {{--<option value="collection_crown">@lang('messages.collection_crown')</option>--}}
+                                    {{--<option value="collection_jewelry">@lang('messages.collection_jewelry')</option>--}}
+                                    {{--<option value="collection_vehicle">@lang('messages.collection_vehicle')</option>--}}
+                                    {{--<option value="collection_literature">@lang('messages.collection_literature')</option>--}}
+                                    {{--<option value="collection_traditional_cloth">@lang('messages.collection_traditional_cloth')</option>--}}
+                                    {{--<option value="collection_movie">@lang('messages.collection_movie')</option>--}}
+                                    {{--<option value="collection_inscription">@lang('messages.collection_inscription')</option>--}}
+                                    {{--<option value="collection_puppet">@lang('messages.collection_puppet')</option>--}}
+                                    {{--<option value="collection_mask">@lang('messages.collection_mask')</option>--}}
+                                    {{--<option value="collection_dance">@lang('messages.collection_dance')</option>--}}
+                                    {{--<option value="collection_material_art">@lang('messages.collection_material_art')</option>--}}
+                                    {{--<option value="collection_history">@lang('messages.collection_history')</option>--}}
+                                    {{--<option value="collection_historic_building">@lang('messages.collection_historic_building')</option>--}}
+                                    {{--<option value="collection_site">@lang('messages.collection_site')</option>--}}
+                                    {{--<option value="collection_culinary">@lang('messages.collection_culinary')</option>--}}
+                                    {{--<option value="collection_exchange">@lang('messages.collection_exchange')</option>--}}
+                                    {{--<option value="collection_medal">@lang('messages.collection_medal')</option>--}}
+                                    {{--<option value="collection_navigation">@lang('messages.collection_navigation')</option>--}}
+                                    {{--<option value="collection_folklore">@lang('messages.collection_folklore')</option>--}}
+                                    {{--<option value="collection_natural_place">@lang('messages.collection_natural_place')</option>--}}
+                                    {{--<option value="collection_relief">@lang('messages.collection_relief')</option>--}}
+                                    {{--<option value="collection_historical_building">@lang('messages.collection_historical_building')</option>--}}
                                 </select>
                             </div>
                         </div>

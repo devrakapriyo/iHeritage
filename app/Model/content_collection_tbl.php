@@ -37,4 +37,9 @@ class content_collection_tbl extends Model
     {
         return self::select('id','name','name_en','banner','media_type','description_ind','description_en','place_id','media_type','topic')->where('content_id', $content_id)->where('is_active',"Y")->orderBy('id','desc')->take($limit)->get();
     }
+
+    public static function groupTopic()
+    {
+        return self::select('topic')->where('is_active', "Y")->groupBy('topic')->get();
+    }
 }

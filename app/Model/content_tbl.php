@@ -55,6 +55,6 @@ class content_tbl extends Model
 
     public static function groupInstitution()
     {
-        return self::select('category_ctn_id')->groupBy('category_ctn_id')->get();
+        return self::select('category_ctn_id')->where('is_active', "Y")->groupBy('category_ctn_id')->get();
     }
 }

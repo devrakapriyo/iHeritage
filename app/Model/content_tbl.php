@@ -52,4 +52,9 @@ class content_tbl extends Model
             return $data->count();
         }
     }
+
+    public static function groupInstitution()
+    {
+        return self::select('category_ctn_id')->groupBy('category_ctn_id')->get();
+    }
 }

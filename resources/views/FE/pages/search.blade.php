@@ -33,17 +33,20 @@
                     <div class="col-md-4">
                         <div class="form-group mt-5 mb-5">
                             <select name="category" class="form-control">
-                                <option value="all">@lang('messages.home_select_heritage')</option>
-                                <option value="museum">@lang('messages.category_museum')</option>
-                                <option value="library">@lang('messages.category_library')</option>
-                                <option value="gallery">@lang('messages.category_gallery')</option>
+                                @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
+                                    <option value="{{\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category}}">@lang('messages.'.\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category)</option>
+                                @endforeach
+                                {{--<option value="museum">@lang('messages.category_museum')</option>--}}
+                                {{--<option value="palace">@lang('messages.category_palace')</option>--}}
+                                {{--<option value="temple">@lang('messages.category_temple')</option>--}}
                                 {{--<option value="archive">@lang('messages.category_archive')</option>--}}
-                                <option value="community">@lang('messages.category_community')</option>
-                                <option value="temple">@lang('messages.category_temple')</option>
-                                <option value="palace">@lang('messages.category_palace')</option>
+                                {{--<option value="library">@lang('messages.category_library')</option>--}}
+                                {{--<option value="gallery">@lang('messages.category_gallery')</option>--}}
+                                {{--<option value="community">@lang('messages.category_community')</option>--}}
+                                {{--<option value="personal-activities">@lang('messages.category_personal_activities')</option>--}}
+
                                 {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
                                 {{--<option value="historical-building">@lang('messages.category_historical_building')</option>--}}
-                                <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                                 {{--<option value="site">@lang('messages.category_site')</option>--}}
                             </select>
                         </div>
@@ -76,17 +79,20 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <select name="category" class="form-control">
-                                <option value="all">@lang('messages.home_select_heritage')</option>
-                                <option value="museum">@lang('messages.category_museum')</option>
-                                <option value="library">@lang('messages.category_library')</option>
-                                <option value="gallery">@lang('messages.category_gallery')</option>
+                                @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
+                                    <option value="{{\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category}}">@lang('messages.'.\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category)</option>
+                                @endforeach
+                                {{--<option value="museum">@lang('messages.category_museum')</option>--}}
+                                {{--<option value="palace">@lang('messages.category_palace')</option>--}}
+                                {{--<option value="temple">@lang('messages.category_temple')</option>--}}
                                 {{--<option value="archive">@lang('messages.category_archive')</option>--}}
-                                <option value="community">@lang('messages.category_community')</option>
-                                <option value="temple">@lang('messages.category_temple')</option>
-                                <option value="palace">@lang('messages.category_palace')</option>
+                                {{--<option value="library">@lang('messages.category_library')</option>--}}
+                                {{--<option value="gallery">@lang('messages.category_gallery')</option>--}}
+                                {{--<option value="community">@lang('messages.category_community')</option>--}}
+                                {{--<option value="personal-activities">@lang('messages.category_personal_activities')</option>--}}
+
                                 {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
                                 {{--<option value="historical-building">@lang('messages.category_historical_building')</option>--}}
-                                <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                                 {{--<option value="site">@lang('messages.category_site')</option>--}}
                             </select>
                         </div>

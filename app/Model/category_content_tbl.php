@@ -17,4 +17,9 @@ class category_content_tbl extends Model
     {
         return self::select('id')->where('category', $category)->first()->id;
     }
+
+    public static function getData($parameter, $field)
+    {
+        return self::select($field)->where('id', $parameter)->first();
+    }
 }

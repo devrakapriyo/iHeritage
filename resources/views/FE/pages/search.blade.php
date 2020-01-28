@@ -33,6 +33,7 @@
                     <div class="col-md-4">
                         <div class="form-group mt-5 mb-5">
                             <select name="category" class="form-control">
+                                <option value="all">@lang('messages.home_select_heritage')</option>
                                 @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
                                     <option value="{{\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category}}">@lang('messages.'.\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category)</option>
                                 @endforeach
@@ -79,6 +80,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <select name="category" class="form-control">
+                                <option value="all">@lang('messages.home_select_heritage')</option>
                                 @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
                                     <option value="{{\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category}}">@lang('messages.'.\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category)</option>
                                 @endforeach

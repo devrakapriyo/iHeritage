@@ -179,7 +179,7 @@
             <li class="nav-item @yield('news')">
                 <a class="nav-link" href="{{route('news-pages')}}">
                     <i class="fas fa-fw fa-newspaper"></i>
-                    <span>List News</span>
+                    <span>List News & Article</span>
                 </a>
             </li>
             <li class="nav-item @yield('form-question')">

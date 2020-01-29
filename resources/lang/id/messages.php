@@ -122,7 +122,7 @@ return [
     'collection_natural_place' => 'Wisata Alam',
     'collection_relief' => 'Relief',
     'collection_historical_building' => 'Bangungan Bersejarah',
-    'collection_catalog' => 'Catalog',
+    'collection_catalog' => 'Katalog',
 
     // page vr
     'vr_title' => 'Virtual Tour',

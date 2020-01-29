@@ -32,6 +32,11 @@ return [
     'home_museum_search' => 'Cari nama museum disini',
     'home_palace_search' => 'Cari nama candi disini',
     'home_nature_search' => 'Cari nama alam disini',
+    'home_site_search' => 'Cari nama situs disini',
+    'home_history_building_search' => 'Cari nama gedung bersejarah disini',
+    'home_personal_search' => 'Cari nama aktivitas pribadi  disini',
+    'home_comunity_search' => 'Cari nama komunitas  disini',
+    'home_gallery_search' => 'Cari nama galleri  disini',
 
     'head_menu_about' => 'Tentang Kami',
     'head_menu_service' => 'Solusi',
@@ -117,6 +122,7 @@ return [
     'collection_natural_place' => 'Wisata Alam',
     'collection_relief' => 'Relief',
     'collection_historical_building' => 'Bangungan Bersejarah',
+    'collection_catalog' => 'Catalog',
 
     // page vr
     'vr_title' => 'Virtual Tour',

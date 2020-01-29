@@ -32,6 +32,11 @@ return [
     'home_museum_search' => 'Look for the name of the museum here',
     'home_palace_search' => 'Look for the name of the palace here',
     'home_nature_search' => 'Look for the name of the nature here',
+    'home_site_search' => 'Look for the name of the site here',
+    'home_history_building_search' => 'Look for the name of the history building here',
+    'home_personal_search' => 'Look for the name of the personal activities here',
+    'home_comunity_search' => 'Look for the name of the comunity here',
+    'home_gallery_search' => 'Look for the name of the gallery here',
 
     'head_menu_about' => 'About',
     'head_menu_service' => 'Solutions',
@@ -117,6 +122,7 @@ return [
     'collection_natural_place' => 'Natural Place',
     'collection_relief' => 'Relief',
     'collection_historical_building' => 'Historical Building',
+    'collection_catalog' => 'Katalog',
 
     // page vr
     'vr_title' => 'Virtual Tour',

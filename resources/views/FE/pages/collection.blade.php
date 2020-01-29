@@ -74,6 +74,7 @@
                                     {{--<option value="collection_natural_place">@lang('messages.collection_natural_place')</option>--}}
                                     {{--<option value="collection_relief">@lang('messages.collection_relief')</option>--}}
                                     {{--<option value="collection_historical_building">@lang('messages.collection_historical_building')</option>--}}
+                                    {{--<option value="collection_catalog">@lang('messages.collection_catalog')</option>--}}
                                 </select>
                             </div>
                         </div>
@@ -169,6 +170,7 @@
                                     {{--<option value="collection_natural_place">@lang('messages.collection_natural_place')</option>--}}
                                     {{--<option value="collection_relief">@lang('messages.collection_relief')</option>--}}
                                     {{--<option value="collection_historical_building">@lang('messages.collection_historical_building')</option>--}}
+                                    {{--<option value="collection_catalog">@lang('messages.collection_catalog')</option>--}}
                                 </select>
                             </div>
                         </div>

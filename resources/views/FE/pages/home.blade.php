@@ -213,9 +213,9 @@
                         </a>
                     </h2>
                     <hr>
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/palace')}}">--}}
                         {{--<div class="input-group mb-3">--}}
-                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_palace_search')" aria-label="@lang('messages.home_palace_search')" aria-describedby="button-addon-museum">--}}
                             {{--<div class="input-group-append">--}}
                                 {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
                             {{--</div>--}}
@@ -265,7 +265,7 @@
                         </a>
                     </h2>
                     <hr>
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/temple')}}">--}}
                     {{--<div class="input-group mb-3">--}}
                     {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
                     {{--<div class="input-group-append">--}}
@@ -317,7 +317,7 @@
                         </a>
                     </h2>
                     <hr>
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/archive')}}">--}}
                     {{--<div class="input-group mb-3">--}}
                     {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
                     {{--<div class="input-group-append">--}}
@@ -369,7 +369,7 @@
                         </a>
                     </h2>
                     <hr>
-                    {{--<form method="get" action="{{url('search-instantion/palace')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/library')}}">--}}
                     {{--<div class="input-group mb-3">--}}
                     {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_palace_search')" aria-label="@lang('messages.home_palace_search')" aria-describedby="button-addon-museum">--}}
                     {{--<div class="input-group-append">--}}
@@ -421,9 +421,9 @@
                         </a>
                     </h2>
                     <hr>
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/gallery')}}">--}}
                     {{--<div class="input-group mb-3">--}}
-                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_gallery_search')" aria-label="@lang('messages.home_gallery_search')" aria-describedby="button-addon-museum">--}}
                     {{--<div class="input-group-append">--}}
                     {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
                     {{--</div>--}}
@@ -473,9 +473,9 @@
                         </a>
                     </h2>
                     <hr>
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/community')}}">--}}
                     {{--<div class="input-group mb-3">--}}
-                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_comunity_search')" aria-label="@lang('messages.home_comunity_search')" aria-describedby="button-addon-museum">--}}
                     {{--<div class="input-group-append">--}}
                     {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
                     {{--</div>--}}
@@ -525,9 +525,9 @@
                         </a>
                     </h2>
                     <hr>
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/personal-activities')}}">--}}
                     {{--<div class="input-group mb-3">--}}
-                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_personal_search')" aria-label="@lang('messages.home_personal_search')" aria-describedby="button-addon-museum">--}}
                     {{--<div class="input-group-append">--}}
                     {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
                     {{--</div>--}}
@@ -628,9 +628,9 @@
                         {{--</a>--}}
                     {{--</h2>--}}
                     {{--<hr>--}}
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
+                    {{--<form method="get" action="{{url('search-instantion/historical-building')}}">--}}
                         {{--<div class="input-group mb-3">--}}
-                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
+                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_history_building_search')" aria-label="@lang('messages.home_history_building_search')" aria-describedby="button-addon-museum">--}}
                             {{--<div class="input-group-append">--}}
                                 {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
                             {{--</div>--}}
@@ -671,55 +671,55 @@
         <!-- /.row -->
 
         <!-- List Site -->
-        {{--@if(count($site) != 0)--}}
-            {{--<div class="row mt-3">--}}
-                {{--<div class="col-md-12">--}}
-                    {{--<h2>--}}
-                        {{--<a href="{{url('search-instantion/site')}}" class="text-dark">--}}
-                            {{--@lang('messages.category_site')--}}
-                        {{--</a>--}}
-                    {{--</h2>--}}
-                    {{--<hr>--}}
-                    {{--<form method="get" action="{{url('search-instantion/nature')}}">--}}
-                        {{--<div class="input-group mb-3">--}}
-                            {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_nature_search')" aria-label="@lang('messages.home_nature_search')" aria-describedby="button-addon-museum">--}}
-                            {{--<div class="input-group-append">--}}
-                                {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                {{--</div>--}}
-                {{--@foreach(\App\Model\content_tbl::listContentCategory("site", 3) as $list)--}}
-                    {{--<div class="col-md-4 mb-5">--}}
-                        {{--<div class="card h-100">--}}
-                            {{--<a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">--}}
-                                {{--<img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">--}}
-                            {{--</a>--}}
-                            {{--<div class="card-body">--}}
-                                {{--<h5 class="card-title">--}}
-                                    {{--<a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">--}}
-                                    {{--{{App::isLocale('id') ? $list->name : $list->name_en}}--}}
-                                    {{--</a>--}}
-                                {{--</h5>--}}
-                                {{--<p class="card-text">--}}
-                                    {{--<small class="card-text text-uppercase">{{$list->location}}</small>--}}
-                                {{--</p>--}}
-                                {{--<p class="card-text">--}}
-                                    {{--@php--}}
-                                        {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
-                                        {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
-                                    {{--@endphp--}}
-                                    {{--{!! $limit_text !!}--}}
-                                {{--</p>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+        @if(count($site) != 0)
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h2>
+                        <a href="{{url('search-instantion/site')}}" class="text-dark">
+                            @lang('messages.category_site')
+                        </a>
+                    </h2>
+                    <hr>
+                    {{--<form method="get" action="{{url('search-instantion/site')}}">--}}
+                    {{--<div class="input-group mb-3">--}}
+                    {{--<input type="text" name="name" class="form-control" placeholder="@lang('messages.home_site_search')" aria-label="@lang('messages.home_site_search')" aria-describedby="button-addon-museum">--}}
+                    {{--<div class="input-group-append">--}}
+                    {{--<button class="btn btn-secondary" type="button" id="button-addon-museum">@lang('messages.home_select_search')</button>--}}
                     {{--</div>--}}
-                {{--@endforeach--}}
-            {{--</div>--}}
-            {{--@if(count($site) > 3)--}}
-                {{--<a href="{{url('search-instantion/site')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_site')</a>--}}
-            {{--@endif--}}
-        {{--@endif--}}
+                    {{--</div>--}}
+                    {{--</form>--}}
+                </div>
+                @foreach(\App\Model\content_tbl::listContentCategory("site", 3) as $list)
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
+                                        {{App::isLocale('id') ? $list->name : $list->name_en}}
+                                    </a>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="card-text text-uppercase">{{$list->location}}</small>
+                                </p>
+                                {{--<p class="card-text">--}}
+                                {{--@php--}}
+                                {{--$text = App::isLocale('id') ? strip_tags($list->short_description_ind) : strip_tags($list->short_description_en);--}}
+                                {{--$limit_text = strlen($text) > 250 ? substr($text, 0, 250)."<a href='".url('content/'.$list->seo.'/'.$list->id)."'> ...readmore</a>" : $text;--}}
+                                {{--@endphp--}}
+                                {{--{!! $limit_text !!}--}}
+                                {{--</p>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(count($site) > 3)
+                <a href="{{url('search-instantion/site')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.category_site')</a>
+            @endif
+        @endif
         <!-- /.row -->
 
         <!-- List News -->

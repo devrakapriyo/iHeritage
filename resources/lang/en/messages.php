@@ -40,7 +40,7 @@ return [
 
     'head_menu_about' => 'About',
     'head_menu_service' => 'Solutions',
-    'head_menu_news' => 'News',
+    'head_menu_news' => 'News & Article',
     'head_menu_login' => 'Login Account',
     'head_menu_join' => 'Are you Interest to be Administator? Register Now!',
 
@@ -68,7 +68,7 @@ return [
 
     'home_nature_title' => 'Nature',
 
-    'home_news_title' => 'News',
+    'home_news_title' => 'News & Article',
 
     'service_form_title' => 'Get in touch with Us',
 
@@ -164,8 +164,8 @@ return [
     'services_btn_back' => 'return to our solutions page',
 
     // page news
-    'news_title' => 'News',
-    'news_list_title' => 'Other News',
+    'news_title' => 'News & Article',
+    'news_list_title' => 'Other News & Article',
 
     // page event
     'event_title' => 'Event',

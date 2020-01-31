@@ -153,7 +153,7 @@
                                         <option value="collection_dance">@lang('messages.collection_dance')</option>
                                         <option value="collection_material_art">@lang('messages.collection_material_art')</option>
                                         <option value="collection_history">@lang('messages.collection_history')</option>
-                                        <option value="collection_historic_building">@lang('messages.collection_historic_building')</option>
+                                        {{--<option value="collection_historic_building">@lang('messages.collection_historic_building')</option>--}}
                                         <option value="collection_site">@lang('messages.collection_site')</option>
                                         <option value="collection_culinary">@lang('messages.collection_culinary')</option>
                                         <option value="collection_exchange">@lang('messages.collection_exchange')</option>

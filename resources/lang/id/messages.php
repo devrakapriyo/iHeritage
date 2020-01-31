@@ -121,7 +121,7 @@ return [
     'collection_folklore' => 'Cerita Rakyat',
     'collection_natural_place' => 'Wisata Alam',
     'collection_relief' => 'Relief',
-    'collection_historical_building' => 'Bangungan Bersejarah',
+    'collection_historical_building' => 'Bangunan Bersejarah',
     'collection_catalog' => 'Katalog',
 
     // page vr

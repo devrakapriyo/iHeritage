@@ -40,7 +40,7 @@ return [
 
     'head_menu_about' => 'Tentang Kami',
     'head_menu_service' => 'Solusi',
-    'head_menu_news' => 'Berita & Artikel',
+    'head_menu_news' => 'Berita',
     'head_menu_login' => 'Masuk Akun',
     'head_menu_join' => 'Tertarik Berpartisipasi? Daftar Sekarang!',
 
@@ -68,7 +68,7 @@ return [
 
     'home_nature_title' => 'Alam',
 
-    'home_news_title' => 'Berita & Artikel',
+    'home_news_title' => 'Berita',
 
     'service_form_title' => 'Hubungi Kami',
 
@@ -164,8 +164,8 @@ return [
     'services_btn_back' => 'kembali ke halaman solusi kami',
 
     // page news
-    'news_title' => 'Berita & Artikel',
-    'news_list_title' => 'Berita & Artikel Lainnya',
+    'news_title' => 'Berita',
+    'news_list_title' => 'Berita Lainnya',
 
     // page event
     'event_title' => 'Acara',

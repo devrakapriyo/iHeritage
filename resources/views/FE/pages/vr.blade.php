@@ -6,13 +6,13 @@
 
 <!-- Page Content -->
 <div class="container mt-5">
-    @if(auth('visitor')->check() == false)
-    <div class="jumbotron">
-        <h3 class="display-5 text-capitalize">@lang('messages.vr_banner_title')</h3>
-        <hr class="my-4">
-        <a class="btn btn-warning" href="{{route('login-visitor-vr', ['content_id'=>"all"])}}">@lang('messages.vr_banner_button')</a>
-    </div>
-    @endif
+    {{--@if(auth('visitor')->check() == false)--}}
+    {{--<div class="jumbotron">--}}
+        {{--<h3 class="display-5 text-capitalize">@lang('messages.vr_banner_title')</h3>--}}
+        {{--<hr class="my-4">--}}
+        {{--<a class="btn btn-warning" href="{{route('login-visitor-vr', ['content_id'=>"all"])}}">@lang('messages.vr_banner_button')</a>--}}
+    {{--</div>--}}
+    {{--@endif--}}
     <h2 class="text-capitalize mt-5">@lang('messages.vr_title') 360&deg;</h2>
     <hr>
     <div class="row">
@@ -20,7 +20,8 @@
         {{--desktop view--}}
         <div class="col-md-6 mb-4 d-none d-lg-block">
             <div class="card">
-                <a href="{{auth('visitor')->check() ? $item->url_vr : route('login-visitor-vr', ['content_id'=>$item->content_id])}}" target="_blank" class="text-dark">
+                {{--<a href="{{auth('visitor')->check() ? $item->url_vr : route('login-visitor-vr', ['content_id'=>$item->content_id])}}" target="_blank" class="text-dark">--}}
+                <a href="{{route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank" class="text-dark">
                     <div class="row no-gutters">
                         <div class="col-md-5">
                             <img src="{{$item->photo}}" class="card-img" alt="{{$item->photo}}" width="200" height="190">

@@ -7,6 +7,7 @@ use App\Model\content_detail_tbl;
 use App\Model\content_tbl;
 use App\Model\institutional;
 use App\Model\log_error;
+use App\Model\visitor_counting;
 use App\User;
 use App\UserVisitor;
 use Illuminate\Http\Request;
@@ -72,7 +73,11 @@ class IndexController extends Controller
 
     public function login_visitor_vr($content_id)
     {
-        return view('BE.login-visitor-vr', compact('content_id'));
+        //return view('BE.login-visitor-vr', compact('content_id'));
+
+        $url = content_detail_tbl::select('url_vr')->where('content_id', $content_id)->first()->url_vr;
+        visitor_counting::simpan(institutional::getId(content_tbl::fieldContent($content_id, 'institutional_id')), $_SERVER['REMOTE_ADDR'], "content", $url);
+        return redirect($url);
     }
     public function login_visitor_vr_action(Request $request, $content_id)
     {

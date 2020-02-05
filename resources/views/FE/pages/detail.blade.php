@@ -269,7 +269,8 @@
             </div>
             <div class="form-group">
                 @if($detail->url_vr != "")
-                    <a class="btn btn-primary btn-block" href="{{auth('visitor')->check() ? $detail->url_vr : route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank">@lang('messages.home_detail_btn_vr')</a>
+                    {{--<a class="btn btn-primary btn-block" href="{{auth('visitor')->check() ? $detail->url_vr : route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank">@lang('messages.home_detail_btn_vr')</a>--}}
+                    <a class="btn btn-primary btn-block" href="{{route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank">@lang('messages.home_detail_btn_vr')</a>
                 @endif
             </div>
             <div class="card">

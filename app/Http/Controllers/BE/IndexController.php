@@ -76,7 +76,7 @@ class IndexController extends Controller
         //return view('BE.login-visitor-vr', compact('content_id'));
 
         $url = content_detail_tbl::select('url_vr')->where('content_id', $content_id)->first()->url_vr;
-        visitor_counting::simpan(institutional::getId(content_tbl::fieldContent($content_id, 'institutional_id')), $_SERVER['REMOTE_ADDR'], "content", $url);
+        visitor_counting::simpan(institutional::getId(content_tbl::fieldContent($content_id, 'institutional_id')), $_SERVER['REMOTE_ADDR'], "vr", $url);
         return redirect($url);
     }
     public function login_visitor_vr_action(Request $request, $content_id)

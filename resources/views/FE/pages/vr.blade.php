@@ -21,7 +21,7 @@
         <div class="col-md-6 mb-4 d-none d-lg-block">
             <div class="card">
                 {{--<a href="{{auth('visitor')->check() ? $item->url_vr : route('login-visitor-vr', ['content_id'=>$item->content_id])}}" target="_blank" class="text-dark">--}}
-                <a href="{{route('login-visitor-vr', ['content_id'=>$id])}}" target="_blank" class="text-dark">
+                <a href="{{route('login-visitor-vr', ['content_id'=>$item->content_id])}}" target="_blank" class="text-dark">
                     <div class="row no-gutters">
                         <div class="col-md-5">
                             <img src="{{$item->photo}}" class="card-img" alt="{{$item->photo}}" width="200" height="190">

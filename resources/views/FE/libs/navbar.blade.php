@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 @else
-                    <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login-visitor')}}">@lang('messages.head_menu_login')</a>
+                    <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login')}}">@lang('messages.head_menu_login')</a>
                 @endif
             </li>
             <li class="nav-item">
@@ -137,7 +137,7 @@
                         <a class="nav-link">Hai, {{auth('visitor')->user()->name}}</a>
                         <a class="nav-link" href="{{url('logout')}}">Logout</a>
                     @else
-                        <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login-visitor')}}">@lang('messages.head_menu_login')</a>
+                        <a class="nav-link btn btn-block btn-outline-warning btn-sm  text-uppercase" href="{{url('login')}}">@lang('messages.head_menu_login')</a>
                     @endif
                 </li>
             </ul>

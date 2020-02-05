@@ -27,8 +27,8 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="78" column="143" lean-forward="false" selection-start-line="78" selection-start-column="143" selection-end-line="78" selection-end-column="143" />
+            <state relative-caret-position="193">
+              <caret line="78" column="91" lean-forward="false" selection-start-line="78" selection-start-column="91" selection-end-line="78" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -135,8 +135,8 @@
       <find>news</find>
       <find>Berita</find>
       <find>News</find>
-      <find>login-visitor-vr</find>
       <find>login_visitor_vr</find>
+      <find>login-visitor-vr</find>
     </findStrings>
     <replaceStrings>
       <replace>our_services</replace>
@@ -533,12 +533,12 @@
       <workItem from="1579509964973" duration="10059000" />
       <workItem from="1580099829094" duration="5809000" />
       <workItem from="1580697565393" duration="452000" />
-      <workItem from="1580874622855" duration="1160000" />
+      <workItem from="1580874622855" duration="1630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411643000" />
+    <option name="totallyTimeSpent" value="412113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -601,13 +601,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Model/content_event_tbl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="57" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/content_edu_tbl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -780,13 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="46" column="128" lean-forward="false" selection-start-line="46" selection-start-column="128" selection-end-line="46" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/institutional.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -970,10 +956,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/visitor_counting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/institutional.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BE/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="78" column="143" lean-forward="false" selection-start-line="78" selection-start-column="143" selection-end-line="78" selection-end-column="143" />
+        <state relative-caret-position="193">
+          <caret line="78" column="91" lean-forward="false" selection-start-line="78" selection-start-column="91" selection-end-line="78" selection-end-column="91" />
           <folding />
         </state>
       </provider>

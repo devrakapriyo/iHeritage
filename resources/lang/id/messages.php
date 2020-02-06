@@ -148,7 +148,7 @@ return [
     'museum_information_close' => 'Senin dan Hari Libur Nasional Indonesia',
     'museum_close' => '(TUTUP)',
 
-    'museum_visiting_order' => 'Memesan Kunjungan',
+    'museum_visiting_order' => 'Pesan Kunjungan',
     'museum_detail_visiting_order' => 'Pendaftaran',
     'museum_institution' => 'Institusi atau Nama Pribadi',
     'museum_phone' => 'Kontak Handphone',

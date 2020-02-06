@@ -115,6 +115,43 @@
 
         </div>
     </div>
+    @if(count(\App\Model\content_collection_tbl::listCollectionMetaTopic($id, $detail->topic, 6)) > 0)
+        <h3 class="card-title mb-3 mt-5">
+            "@lang('messages.heritage_topic_related')"
+        </h3>
+        <hr>
+        <div class="row">
+            @foreach(\App\Model\content_collection_tbl::listCollectionMetaTopic($id, $detail->topic, 6) as $item)
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <a href="{{route('collection-detail', ['id'=>$item->id])}}">
+                            <img class="card-img-top" src="{{$item->banner}}" alt="{{$item->banner}}" height="200" widht="200">
+                            <div class="card-body">
+                                <h5 class="card-title text-uppercase">
+                                    <a href="{{route('collection-detail', ['id'=>$item->id])}}" class="text-dark">{{App::isLocale('id') ? $item->name : $item->name_en}}</a>
+                                </h5>
+                                <small class="card-text">
+                                    @lang('messages.collection_institution') : <a href="{{url('collection-search?place_id=all&media_type=all&topic=all&institutional_id='.App\Model\content_tbl::fieldContent($item->content_id, "institutional_id"))}}">{{\App\Model\institutional::getName($item->content_id)}}</a><br>
+                                    @lang('messages.collection_topic') : <a href="{{url('collection-search?place_id=all&media_type=all&topic='.$item->topic.'&institutional_id=all')}}">@lang('messages.'.$item->topic)</a><br>
+                                    @lang('messages.collection_location') : {{\App\Model\place_tbl::placeNameLang($item->place_id)}}<br>
+                                    @lang('messages.collection_type') :
+                                    <span class="text text-dark">
+                                    @if($item->media_type == "url")
+                                            HTML5
+                                        @elseif($item->media_type == "document")
+                                            PDF
+                                        @else
+                                            {{$item->media_type}}
+                                        @endif
+                                </span>
+                                </small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    @endif
     <!-- /.row -->
 
     <!-- Modal -->

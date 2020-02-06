@@ -74,6 +74,7 @@ return [
 
     // page collection
     'heritage_title' => 'Collection',
+    'heritage_topic_related' => 'Related Topic',
     'collection_address' => 'Address',
     'collection_location' => 'Location',
     'collection_creator' => 'Creator',

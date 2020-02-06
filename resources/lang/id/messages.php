@@ -74,6 +74,7 @@ return [
 
     // page collection
     'heritage_title' => 'Koleksi',
+    'heritage_topic_related' => 'Topik Yang Terkait',
     'collection_address' => 'Alamat',
     'collection_location' => 'Lokasi',
     'collection_creator' => 'Pembuat',

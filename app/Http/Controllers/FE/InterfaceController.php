@@ -333,7 +333,7 @@ class InterfaceController extends Controller
         $facebook = Share::load(route('collection-detail', ['id'=>$id]), "iHeritage.id - ".$detail->name)->facebook();
         $twitter = Share::load(route('collection-detail', ['id'=>$id]), "iHeritage.id - ".$detail->name)->twitter();
         visitor_counting::simpan(content_tbl::fieldContent($detail->content_id, "institutional_id"), $_SERVER['REMOTE_ADDR'], "collection", $request->fullUrl());
-        return view('FE.pages.collection-detail', compact('detail', 'facebook', 'twitter'));
+        return view('FE.pages.collection-detail', compact('id', 'detail', 'facebook', 'twitter'));
     }
 
     public function vrTour()

@@ -323,7 +323,14 @@ class InterfaceController extends Controller
         });
 
         $data = $query->where('content_collection.is_active',"Y")
-            ->get();
+            ->paginate(9);
+        $data->appends([
+            'media_type' => $request->media_type,
+            'topic' => $request->topic,
+            'place_id' => $request->place_id,
+            'institutional_id' => $request->institutional_id
+        ]);
+
         return view('FE.pages.collection-search', compact('data'));
     }
 

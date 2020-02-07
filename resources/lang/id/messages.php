@@ -209,6 +209,7 @@ return [
     'category_personal_activities' => 'Aktivitas Pribadi',
     'category_site' => 'Situs',
     'category_community' => 'Komunitas',
+    'category_education_institution' => 'Lembaga Pendidikan',
 
     'museum' => 'Museum',
     'library' => 'Perpustakaan',
@@ -221,4 +222,5 @@ return [
     'personal-activities' => 'Aktivitas Pribadi',
     'site' => 'Situs',
     'community' => 'Komunitas',
+    'education-institution' => 'Lembaga Pendidikan',
 ];

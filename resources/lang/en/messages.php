@@ -209,6 +209,7 @@ return [
     'category_personal_activities' => 'Personal Activities',
     'category_site' => 'Site',
     'category_community' => 'Community',
+    'category_education_institution' => 'Education Institution',
 
     'museum' => 'Museum',
     'library' => 'Library',
@@ -221,4 +222,5 @@ return [
     'personal-activities' => 'Personal Activities',
     'site' => 'Site',
     'community' => 'Community',
+    'education-institution' => 'Education Institution',
 ];

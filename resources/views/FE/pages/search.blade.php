@@ -49,6 +49,7 @@
                                 {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
                                 {{--<option value="historical-building">@lang('messages.category_historical_building')</option>--}}
                                 {{--<option value="site">@lang('messages.category_site')</option>--}}
+                                {{--<option value="education-institution">@lang('messages.category_education_institution')</option>--}}
                             </select>
                         </div>
                     </div>
@@ -96,6 +97,7 @@
                                 {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
                                 {{--<option value="historical-building">@lang('messages.category_historical_building')</option>--}}
                                 {{--<option value="site">@lang('messages.category_site')</option>--}}
+                                {{--<option value="education-institution">@lang('messages.category_education_institution')</option>--}}
                             </select>
                         </div>
                     </div>

@@ -99,7 +99,7 @@
                     {{--<a class="collapse-item @yield('historical-building')" href="{{route('content-pages', ['category'=>'historical-building'])}}">Historical Building @if($notif_historical != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_historical}}</span>@endif</a>--}}
                     <a class="collapse-item @yield('personal-activities')" href="{{route('content-pages', ['category'=>'personal-activities'])}}">Personal Activities @if($notif_personal_activities != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_personal_activities}}</span>@endif</a>
                     <a class="collapse-item @yield('site')" href="{{route('content-pages', ['category'=>'site'])}}">Site @if($notif_site != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_site}}</span>@endif</a>
-                    <a class="collapse-item @yield('education-institution')" href="{{route('content-pages', ['category'=>'education-institution'])}}">Site @if($education_institution != 0)<span class="badge badge-warning" title="waiting approve">{{$education_institution}}</span>@endif</a>
+                    <a class="collapse-item @yield('education-institution')" href="{{route('content-pages', ['category'=>'education-institution'])}}">Education Institution @if($education_institution != 0)<span class="badge badge-warning" title="waiting approve">{{$education_institution}}</span>@endif</a>
                 @else
                     <a class="collapse-item @yield($category) text-capitalize" href="{{route('content-pages', ['category'=>$category])}}">{{str_replace("-", " ",$category)}}</a>
                 @endif

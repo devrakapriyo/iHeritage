@@ -210,6 +210,7 @@ return [
     'category_site' => 'Site',
     'category_community' => 'Community',
     'category_education_institution' => 'Education Institution',
+    'category_ebook' => 'eBook',
 
     'museum' => 'Museum',
     'library' => 'Library',

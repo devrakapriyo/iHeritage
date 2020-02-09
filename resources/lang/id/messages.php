@@ -210,6 +210,7 @@ return [
     'category_site' => 'Situs',
     'category_community' => 'Komunitas',
     'category_education_institution' => 'Lembaga Pendidikan',
+    'category_ebook' => 'eBook',
 
     'museum' => 'Museum',
     'library' => 'Perpustakaan',

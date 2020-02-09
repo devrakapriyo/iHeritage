@@ -83,6 +83,7 @@
                                         <option value="audio">Audio</option>
                                         <option value="document">PDF</option>
                                         <option value="url">HTML5</option>
+                                        <option value="ebook">eBook</option>
                                     </select>
                                 </div>
                             </div>
@@ -284,6 +285,19 @@
                         '<label>Link Website : </label>\n' +
                         '<input type="text" name="media" class="form-control" required>\n' +
                         '<small class="text-danger">paste your link website</small>');
+
+                    $("#banner").append('' +
+                        '<div class="col-md-12">\n' +
+                        '                                <div class="form-group">\n' +
+                        '                                    <label>Upload Banner : </label>\n' +
+                        '                                    <input type="file" name="banner" class="form-control" required>\n' +
+                        '                                </div>\n' +
+                        '                            </div>');
+                }else if($("#media_type").val() === "ebook"){
+                    $("#media").append('' +
+                        '<label>Link Website eBook : </label>\n' +
+                        '<input type="text" name="media" class="form-control" required>\n' +
+                        '<small class="text-danger">paste your link website eBook</small>');
 
                     $("#banner").append('' +
                         '<div class="col-md-12">\n' +

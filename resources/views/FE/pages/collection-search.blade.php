@@ -33,6 +33,7 @@
                                     <option value="image">@lang('messages.collection_type_image')</option>
                                     <option value="video">@lang('messages.collection_type_video')</option>
                                     <option value="url">HTML5</option>
+                                    <option value="ebook">eBook</option>
                                 </select>
                             </div>
                         </div>
@@ -129,6 +130,7 @@
                                     <option value="image">@lang('messages.collection_type_image')</option>
                                     <option value="video">@lang('messages.collection_type_video')</option>
                                     <option value="url">HTML5</option>
+                                    <option value="ebook">eBook</option>
                                 </select>
                             </div>
                         </div>

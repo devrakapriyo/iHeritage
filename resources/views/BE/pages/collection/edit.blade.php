@@ -99,6 +99,12 @@
                                         <input type="text" name="media" class="form-control" value="{{$detail->media}}" required>
                                         <small class="text-danger">paste your link website</small>
                                     </div>
+                                @elseif($detail->media_type == "ebook")
+                                    <div class="form-group">
+                                        <label>Link Website eBook : </label>
+                                        <input type="text" name="media" class="form-control" value="{{$detail->media}}" required>
+                                        <small class="text-danger">paste your link website eBook</small>
+                                    </div>
                                 @else
                                     <div class="form-group">
                                         <label>Upload Media : </label>

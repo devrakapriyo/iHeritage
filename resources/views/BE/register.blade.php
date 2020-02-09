@@ -70,7 +70,7 @@
                         <option value="personal-activities">@lang('messages.category_personal_activities')</option>
                         <option value="site">@lang('messages.category_site')</option>
                         <option value="education-institution">@lang('messages.category_education_institution')</option>
-                        <option value="ebook">@lang('messages.category_ebook')</option>
+                        {{--<option value="ebook">@lang('messages.category_ebook')</option>--}}
                     </select>
                 </div>
 

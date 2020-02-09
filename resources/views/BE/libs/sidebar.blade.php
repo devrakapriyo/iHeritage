@@ -86,7 +86,7 @@
                     $notif_site = \App\Model\content_tbl::countWaitingAppr("site");
                     $notif_comunity = \App\Model\content_tbl::countWaitingAppr("community");
                     $education_institution = \App\Model\content_tbl::countWaitingAppr("education-institution");
-                    $ebook = \App\Model\content_tbl::countWaitingAppr("ebook");
+                    //$ebook = \App\Model\content_tbl::countWaitingAppr("ebook");
                 @endphp
                 @if($auth->is_admin_master == "Y")
                     <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum @if($notif_museum != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_museum}}</span>@endif</a>
@@ -101,7 +101,7 @@
                     <a class="collapse-item @yield('personal-activities')" href="{{route('content-pages', ['category'=>'personal-activities'])}}">Personal Activities @if($notif_personal_activities != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_personal_activities}}</span>@endif</a>
                     <a class="collapse-item @yield('site')" href="{{route('content-pages', ['category'=>'site'])}}">Site @if($notif_site != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_site}}</span>@endif</a>
                     <a class="collapse-item @yield('education-institution')" href="{{route('content-pages', ['category'=>'education-institution'])}}">Education Institution @if($education_institution != 0)<span class="badge badge-warning" title="waiting approve">{{$education_institution}}</span>@endif</a>
-                    <a class="collapse-item @yield('ebook')" href="{{route('content-pages', ['category'=>'ebook'])}}">eBook @if($ebook != 0)<span class="badge badge-warning" title="waiting approve">{{$ebook}}</span>@endif</a>
+                    {{--<a class="collapse-item @yield('ebook')" href="{{route('content-pages', ['category'=>'ebook'])}}">eBook @if($ebook != 0)<span class="badge badge-warning" title="waiting approve">{{$ebook}}</span>@endif</a>--}}
                 @else
                     <a class="collapse-item @yield($category) text-capitalize" href="{{route('content-pages', ['category'=>$category])}}">{{str_replace("-", " ",$category)}}</a>
                 @endif

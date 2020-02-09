@@ -45,6 +45,9 @@ class CollectionController extends Controller
                 if($data->media_type == "url")
                 {
                     $media_type = "HTML5";
+                }elseif($data->media_type == "ebook")
+                {
+                    $media_type = "eBook";
                 }elseif($data->media_type == "document")
                 {
                     $media_type = "PDF";

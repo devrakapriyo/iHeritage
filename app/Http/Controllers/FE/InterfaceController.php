@@ -173,9 +173,9 @@ class InterfaceController extends Controller
         $personal = $this->listContent("personal-activities", 4);
         $site = $this->listContent("site", 4);
         $education_institution = $this->listContent("education-institution", 4);
-        $ebook = $this->listContent("ebook", 4);
+        //$ebook = $this->listContent("ebook", 4);
         $news = admin_news_tbl::where('is_active',"Y")->orderBy('id', "DESC")->take(4)->get();
-        return view('FE.pages.home', compact('about','museum','library','gallery','archive','community','temple','palace','nature','historical_building','personal','site','education_institution','ebook','news'));
+        return view('FE.pages.home', compact('about','museum','library','gallery','archive','community','temple','palace','nature','historical_building','personal','site','education_institution','news'));
     }
 
     public function search(Request $request)

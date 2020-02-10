@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card mb-3">
-                @if(($detail->media_type == "url") || ($detail->media_type == "document"))
+                @if(($detail->media_type == "url") || ($detail->media_type == "document") || ($detail->media_type == "ebook"))
                     <a href="{{$detail->media}}" target="_blank">
                         <iframe src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px; border-width:0" allowfullscreen="" frameborder="0" scrolling="no"></iframe>
                     </a>
@@ -25,7 +25,7 @@
                     </a>
                 @endif
                 <div class="card-body">
-                    @if(($detail->media_type == "url") || ($detail->media_type == "document") || ($detail->media_type == "video"))
+                    @if(($detail->media_type == "url") || ($detail->media_type == "document") || ($detail->media_type == "ebook") || ($detail->media_type == "video"))
                         <a href="{{$detail->media}}" target="_blank" class="btn btn-warning btn-sm btn-block text-uppercase">@lang('messages.collection_btn_view')</a>
                     @elseif($detail->media_type == "image")
                         <a href="" data-toggle="modal" data-target="#exampleModal" class="btn btn-warning btn-sm btn-block text-uppercase">@lang('messages.collection_btn_view')</a>
@@ -69,6 +69,8 @@
                             HTML5
                         @elseif($detail->media_type == "document")
                             PDF
+                        @elseif($detail->media_type == "ebook")
+                            eBook
                         @else
                             {{$detail->media_type}}
                         @endif
@@ -138,11 +140,13 @@
                                     <span class="text text-dark">
                                     @if($item->media_type == "url")
                                             HTML5
-                                        @elseif($item->media_type == "document")
-                                            PDF
-                                        @else
-                                            {{$item->media_type}}
-                                        @endif
+                                    @elseif($item->media_type == "document")
+                                        PDF
+                                    @elseif($item->media_type == "ebook")
+                                        eBook
+                                    @else
+                                        {{$item->media_type}}
+                                    @endif
                                 </span>
                                 </small>
                             </div>
@@ -178,6 +182,8 @@
                         {{--<a href="{{$detail->media}}" class="btn btn-block btn-primary" target="_blank">lihat {{$detail->name}}</a>--}}
                         <embed src="{{$detail->media}}" type="application/pdf" style="width: 100%; height: 515px;">
                     @elseif($detail->media_type == "url")
+                        <embed src="{{$detail->media}}" style="width: 100%; height: 515px;">
+                    @elseif($detail->media_type == "ebook")
                         <embed src="{{$detail->media}}" style="width: 100%; height: 515px;">
                     @endif
                 </div>

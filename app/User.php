@@ -42,15 +42,15 @@ class User extends Authenticatable
     {
         if($admin_master == "Y")
         {
-            return self::where('is_active', "Y")->count();
+            return self::where('is_active', "Y")->where('is_delete',"N")->count();
         }else{
-            return self::where('institutional_id', $instantion)->where('is_active', "Y")->count();
+            return self::where('institutional_id', $instantion)->where('is_active', "Y")->where('is_delete',"N")->count();
         }
     }
 
     public static function countWaitingAppr()
     {
-        $data = self::select('is_active')->where('is_active',"N");
+        $data = self::select('is_active')->where('is_active',"N")->where('is_delete',"N");
 
         if(empty($data->first()))
         {

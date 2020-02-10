@@ -25,13 +25,13 @@ class UserController extends Controller
         {
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
-                ->orderBy('user_admin.updated_at', "DESC")
-                ->where('user_admin.is_active', "Y");
+                ->orderBy('user_admin.updated_at', "DESC");
         }else{
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
                 ->where('institutional_id', auth('admin')->user()->institutional_id)
                 ->where('user_admin.is_active', "Y")
+                ->where('user_admin.is_delete', "N")
                 ->orderBy('user_admin.updated_at', "DESC");
         }
         return DataTables::of($data)
@@ -47,11 +47,16 @@ class UserController extends Controller
                 $btn_active = '<a href="'.route('users-institutional', ['id'=>$data->id]).'" class="btn btn-success">Activate Account</a>';
                 if((auth('admin')->user()->is_admin == "Y") || (auth('admin')->user()->is_admin_master == "Y"))
                 {
-                    if($data->is_active == "N")
+                    if($data->is_delete == "N")
                     {
-                        return "<div class='btn-group'>".$btn_active." ".$btn_edit." ".$btn_hapus."</div>";
+                        if($data->is_active == "N")
+                        {
+                            return "<div class='btn-group'>".$btn_active." ".$btn_edit." ".$btn_hapus."</div>";
+                        }else{
+                            return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                        }
                     }else{
-                        return "<div class='btn-group'>".$btn_edit." ".$btn_hapus."</div>";
+                        return "<span class='badge badge-danger'>DELETED</span>";
                     }
                 }
             })
@@ -153,7 +158,7 @@ class UserController extends Controller
         }
 
         $data->update([
-            'is_active'=>'N'
+            'is_delete'=>'N'
         ]);
 
         Alert::success('User nonactive');

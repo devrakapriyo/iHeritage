@@ -20,8 +20,10 @@
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary text-capitalize">edit user</h6>
                         @if((auth('admin')->user()->is_admin_master == "Y"))
-                            @if((\App\User::where('id', $id)->first()->is_active == "N"))
-                                <a onclick="return confirm('Are you sure you want active this account?');" href="{{route('users-active', ['id'=>$id])}}" class="btn btn-success">Activate Account</a>
+                            @if((\App\User::where('id', $id)->first()->is_delete == "N"))
+                                @if((\App\User::where('id', $id)->first()->is_active == "N"))
+                                    <a onclick="return confirm('Are you sure you want active this account?');" href="{{route('users-active', ['id'=>$id])}}" class="btn btn-success">Activate Account</a>
+                                @endif
                             @endif
                         @endif
                     </div>

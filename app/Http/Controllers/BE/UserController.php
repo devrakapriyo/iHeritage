@@ -25,8 +25,8 @@ class UserController extends Controller
         {
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')
-                ->orderBy('user_admin.updated_at', "DESC");
-                //->where('user_admin.is_active', "Y");
+                ->orderBy('user_admin.updated_at', "DESC")
+                ->where('user_admin.is_active', "Y");
         }else{
             $data = User::select(['user_admin.*', 'institutional.institutional_name'])
                 ->join('institutional', 'institutional.id', '=', 'user_admin.institutional_id')

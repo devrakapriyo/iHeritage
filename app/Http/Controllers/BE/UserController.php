@@ -158,7 +158,7 @@ class UserController extends Controller
         }
 
         $data->update([
-            'is_delete'=>'N'
+            'is_delete'=>'Y'
         ]);
 
         Alert::success('User nonactive');

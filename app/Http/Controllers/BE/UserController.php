@@ -146,7 +146,7 @@ class UserController extends Controller
     public function users_delete($id)
     {
         $data = User::where('id',$id);
-        if(($data->first()->is_admin == "N") || ($data->first()->is_admin_master == "N"))
+        if(($data->first()->is_admin_master == "N"))
         {
             Alert::error('User cannot to delete');
             return redirect()->back();

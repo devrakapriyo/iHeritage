@@ -173,6 +173,11 @@ class UserController extends Controller
             'is_active'=>"Y"
         ]);
 
+        institutional::where('id', $data->first()->institutional_id)
+            ->update([
+                'is_active'=>"Y"
+            ]);
+
         Mail::send('BE.email.register', [
             'name' => $data->first()->name,
             'email' => $data->first()->email,

@@ -32,7 +32,7 @@ class IndexController extends Controller
     }
     public function login_action(Request $request)
     {
-        $email = User::select('email')->where('email',$request->email)->where('is_active', "Y")->first();
+        $email = User::select('email')->where('email',$request->email)->where('is_active', "Y")->where('is_delete', "N")->first();
         if($email == true)
         {
             $auth = auth('admin');

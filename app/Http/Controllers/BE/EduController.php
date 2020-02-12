@@ -25,11 +25,11 @@ class EduController extends Controller
     {
         if(auth('admin')->user()->is_admin_master == "Y")
         {
-            $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind', 'is_publish'])
+            $data = content_edu_tbl::select(['content_edu_program.*', 'content_edu_program.name as edu_name', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_edu_program.content_id')
                 ->join('place', 'place.id', '=', 'content_edu_program.place_id');
         }else{
-            $data = content_edu_tbl::select(['content_edu_program.*', 'content.name', 'place.place_ind', 'is_publish'])
+            $data = content_edu_tbl::select(['content_edu_program.*', 'content_edu_program.name as edu_name', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_edu_program.content_id')
                 ->join('place', 'place.id', '=', 'content_edu_program.place_id')
                 ->where('institutional_id', auth('admin')->user()->institutional_id)

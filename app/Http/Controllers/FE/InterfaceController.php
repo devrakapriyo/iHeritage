@@ -196,7 +196,8 @@ class InterfaceController extends Controller
             ->orderBy('content.created_at', 'desc')
             ->get();
         $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
-        return view('FE.pages.search', compact('data', 'about'));
+        $category = $request->category;
+        return view('FE.pages.search', compact('data', 'about', 'category'));
     }
 
     public function searchInstantion($instantion)
@@ -211,7 +212,8 @@ class InterfaceController extends Controller
             ->orderBy('content.created_at', 'desc')
             ->get();
         $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
-        return view('FE.pages.search', compact('data','about'));
+        $category = $instantion;
+        return view('FE.pages.search', compact('data','about', 'category'));
     }
 
     public function detailContent(Request $request, $seo, $id)
@@ -416,7 +418,7 @@ class InterfaceController extends Controller
     {
         //$data = content_event_tbl::where('close_registration','>=',date('Y-m-d H:i:s'))
         $data = content_event_tbl::where('is_active',"Y")
-            ->where('end_date', '>=', date("Y-m-d"))
+            //->where('end_date', '>=', date("Y-m-d"))
             ->where('is_publish',"Y")
             ->orderBy('end_date', "DESC")
             ->paginate(9);
@@ -463,6 +465,7 @@ class InterfaceController extends Controller
         $data = $query
             ->where('content_event.is_active',"Y")
             ->where('is_publish',"Y")
+            ->orderBy('end_date', "DESC")
             ->get();
         return view('FE.pages.event-search', compact('data'));
     }

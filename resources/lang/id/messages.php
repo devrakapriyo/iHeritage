@@ -28,7 +28,7 @@ return [
     // page home
     'home_title' => 'Jejaring Pusaka Budaya Indonesia',
     'home_description' => 'Mari kita jelajahi pusaka bangsa yang luar biasa untuk mendorong batas-batas pemahaman di masa lalu dan hari ini.',
-    'home_result_search' => 'Hasil Pencarian...',
+    'home_result_search' => 'Hasil Pencarian',
     'home_museum_search' => 'Cari nama museum disini',
     'home_palace_search' => 'Cari nama candi disini',
     'home_nature_search' => 'Cari nama alam disini',

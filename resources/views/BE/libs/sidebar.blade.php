@@ -199,7 +199,14 @@
             <li class="nav-item @yield('users')">
                 <a class="nav-link" href="{{route('users-pages')}}">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>List Users @if($notif_user != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_user}}</span>@endif</span>
+                    <span>
+                        List Users
+                        @if($auth->is_admin_master == "Y")
+                            @if($notif_user != 0)
+                                <span class="badge badge-warning" title="waiting approve">{{$notif_user}}</span>
+                            @endif
+                        @endif
+                    </span>
                 </a>
             </li>
         @endif

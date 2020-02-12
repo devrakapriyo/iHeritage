@@ -32,8 +32,9 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <table class="table" id="datatable">
-                        <thead>
+                    <div class="table-responsive">
+                        <table class="table" id="datatable">
+                            <thead>
                             <tr>
                                 <th>Institutional</th>
                                 <th>Name</th>
@@ -42,8 +43,9 @@
                                 <th>Status</th>
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>
                             </tr>
-                        </thead>
-                    </table>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,7 +65,7 @@
             serverSide: true,
             ajax: '{{route('users-get')}}',
             columns: [
-                { data: 'institutional_name', name: 'institutional_name' },
+                { data: 'institutional_name', name: 'institutional.institutional_name' },
                 { data: 'name', name: 'name' },
                 { data: 'email', name: 'email' },
                 { data: 'phone', name: 'phone' },

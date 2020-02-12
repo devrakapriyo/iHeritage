@@ -63,7 +63,7 @@
             ajax: '{{route('event-get')}}',
             columns: [
                 { data: 'name', name: 'content.name' },
-                { data: 'name', name: 'content_event.name' },
+                { data: 'event_name', name: 'content_event.name' },
                 { data: 'place_ind', name: 'place.place_ind' },
                 { data: 'start_date', name: 'start_date' },
                 { data: 'end_date', name: 'end_date' },

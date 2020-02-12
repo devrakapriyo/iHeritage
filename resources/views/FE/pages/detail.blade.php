@@ -96,7 +96,7 @@
                 <hr>
                 <div class="row">
                     @foreach(\App\Model\content_edu_tbl::listEducation($id, 4) as $item)
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-4">
                             <div class="card h-100">
                                 <a href="{{url('education-program/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
                                     <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">
@@ -117,7 +117,7 @@
                         </div>
                     @endforeach
                     @if(count($education) > 4)
-                        <div class="col-md-12 mt-3">
+                        <div class="col-md-12">
                             <a href="{{url('education-program-search?place_id=all&institutional_id='.\App\Model\content_tbl::fieldContent($id, "institutional_id"))}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.edu_title')</a>
                         </div>
                     @endif
@@ -132,7 +132,7 @@
                 <hr>
                 <div class="row">
                     @foreach(\App\Model\content_event_tbl::listEvent($id, 4) as $item)
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-4">
                             <div class="card h-100">
                                 <a href="{{url('event/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
                                     <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">
@@ -166,7 +166,7 @@
                         </div>
                     @endforeach
                     @if(count($event) > 4)
-                        <div class="col-md-12 mt-3">
+                        <div class="col-md-12">
                             <a href="{{url('event-search?place_id=all&price=all&duration=all&institutional_id='.\App\Model\content_tbl::fieldContent($id, "institutional_id"))}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.event_title')</a>
                         </div>
                     @endif

@@ -32,9 +32,9 @@
                     <table class="table" id="datatable">
                         <thead>
                             <tr>
-                                <th>Content Name</th>
+                                <th>Institution</th>
                                 <th>Name Education</th>
-                                <th>Close Program</th>
+                                <th>Close Days</th>
                                 <th>Description</th>
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>
                             </tr>
@@ -60,7 +60,7 @@
             ajax: '{{route('edu-get')}}',
             columns: [
                 { data: 'name', name: 'content.name' },
-                { data: 'name', name: 'content_edu_program.name' },
+                { data: 'edu_name', name: 'content_edu_program.name' },
                 { data: 'close_ind', name: 'close_ind' },
                 { data: 'description_en', name: 'description_en' },
                 { data: 'action', name: 'action', orderable: false, searchable: false}

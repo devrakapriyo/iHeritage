@@ -3,25 +3,14 @@
     active
 @endsection
 @section('content')
-    <!-- Header -->
-    <header class="bg-warning py-5">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-lg-12">
-                    <h1 class="display-4 text-white mt-5 mb-2">{{App::isLocale('id') ? $about->title_ind : $about->title_en}}</h1>
-                    <p class="lead mb-5 text-dark">{{App::isLocale('id') ? $about->description_ind : $about->description_en}}</p>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- Page Search Desktop-->
-    <div class="mb-5 ctn-home-search d-none d-lg-block">
-        <div class="container bg-light">
+    <div class="mb-3 mt-2 d-none d-lg-block">
+        <div class="container bg-dark">
             <form method="get" action="{{url('search')}}">
                 <div class="row ml-5 mr-5">
                     <div class="col-md-5">
-                        <div class="form-group mt-5 mb-5">
+                        <div class="form-group mt-3 mb-3">
                             <select name="place_id" class="form-control">
                                 <option value="all">@lang('messages.home_select_place')</option>
                                 @foreach(\App\Model\place_tbl::listSearch() as $items)
@@ -31,7 +20,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="form-group mt-5 mb-5">
+                        <div class="form-group mt-3 mb-3">
                             <select name="category" class="form-control">
                                 <option value="all">@lang('messages.home_select_heritage')</option>
                                 @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
@@ -54,8 +43,8 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group mt-5 mb-5">
-                            <button class="btn btn-block btn-dark">@lang('messages.home_select_search')</button>
+                        <div class="form-group mt-3 mb-3">
+                            <button class="btn btn-block btn-warning">@lang('messages.home_select_search')</button>
                         </div>
                     </div>
                 </div>
@@ -64,8 +53,8 @@
     </div>
 
     {{--mobile view--}}
-    <div class="mb-5 ctn-home-search d-lg-none">
-        <div class="container bg-light">
+    <div class="mb-3 d-lg-none">
+        <div class="container bg-dark">
             <form action="{{url('search')}}">
                 <div class="row">
                     <div class="col-md-12">
@@ -103,7 +92,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <button class="btn btn-block btn-dark text-uppercase">@lang('messages.home_select_search')</button>
+                            <button class="btn btn-block btn-warning text-uppercase">@lang('messages.home_select_search')</button>
                         </div>
                     </div>
                 </div>
@@ -117,7 +106,7 @@
         <!-- List Museum -->
         <div class="row">
             <div class="col-md-12">
-                <h2>@lang('messages.home_result_search')</h2>
+                <h2 class="text-capitalize">@lang('messages.home_result_search') {{$category == "all" ? "" : $category}}</h2>
                 <hr>
             </div>
             @forelse($data as $list)

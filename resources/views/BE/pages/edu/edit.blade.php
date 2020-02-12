@@ -69,22 +69,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Closing Hours (bahasa inggris): </label>
-                                        <input type="text" name="close_en" class="form-control" value="{{$detail->close_en}}" required>
-                                        <small class="text-danger">example value : National holiday</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Closing Hours (bahasa indonesia): </label>
-                                        <input type="text" name="close_ind" class="form-control" value="{{$detail->close_ind}}" required>
-                                        <small class="text-danger">example value : Hari libur nasional</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Province : </label>
@@ -191,6 +175,23 @@
                                         </div>
                                     </div>
 
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Closing Hours (bahasa indonesia): </label>
+                                        <input type="text" name="close_ind" class="form-control" value="{{$detail->close_ind}}" required>
+                                        <small class="text-danger">example value : Senin - Sabtu</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Closing Hours (bahasa inggris): </label>
+                                        <input type="text" name="close_en" class="form-control" value="{{$detail->close_en}}" required>
+                                        <small class="text-danger">example value : Monday - Saturday</small>
+                                    </div>
                                 </div>
                             </div>
 

@@ -25,11 +25,11 @@ class EventController extends Controller
     {
         if(auth('admin')->user()->is_admin_master == "Y")
         {
-            $data = content_event_tbl::select(['content_event.*', 'content.name', 'place.place_ind', 'is_publish'])
+            $data = content_event_tbl::select(['content_event.*', 'content_event.name as event_name', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_event.content_id')
                 ->join('place', 'place.id', '=', 'content_event.place_id');
         }else{
-            $data = content_event_tbl::select(['content_event.*', 'content.name', 'place.place_ind', 'is_publish'])
+            $data = content_event_tbl::select(['content_event.*', 'content_event.name as event_name', 'content.name', 'place.place_ind', 'is_publish'])
                 ->join('content', 'content.id', '=', 'content_event.content_id')
                 ->join('place', 'place.id', '=', 'content_event.place_id')
                 ->where('institutional_id', auth('admin')->user()->institutional_id)

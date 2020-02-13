@@ -242,7 +242,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Opening Hours : </label>
-                                                <input type="text" name="opening_hour" class="form-control" value="{{$detail->opening_day_en}}">
+                                                <input type="text" name="opening_hour" class="form-control" value="{{$detail->opening_hour}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>

@@ -227,7 +227,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("palace", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -279,7 +279,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("temple", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -331,7 +331,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("archive", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -435,7 +435,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("gallery", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -487,7 +487,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("community", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -539,7 +539,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("personal-activities", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -694,7 +694,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("site", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -746,7 +746,7 @@
                     {{--</form>--}}
                 </div>
                 @foreach(\App\Model\content_tbl::listContentCategory("education-institution", 3) as $list)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-2">
                         <div class="card h-100">
                             <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                                 <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -842,7 +842,7 @@
             </div>
             @foreach($news as $item)
                 {{--desktop view--}}
-                <div class="col-md-12 mb-4 d-none d-lg-block">
+                <div class="col-md-12 mb-2 d-none d-lg-block">
                     <div class="card">
                         <div class="row no-gutters">
                             <div class="col-md-3">
@@ -867,7 +867,7 @@
                 </div>
 
                 {{--mobile view--}}
-                <div class="col-md-12 mb-5 d-lg-none">
+                <div class="col-md-12 mb-2 d-lg-none">
                     <div class="card h-100">
                         <a href="{{url('news/detail/'.$item->id)}}" class="text-dark">
                             <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">

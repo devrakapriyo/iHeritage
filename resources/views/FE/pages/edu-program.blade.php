@@ -87,7 +87,7 @@
 
         <div class="row mb-5 mt-4">
             @forelse($data as $item)
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="{{url('education-program/detail/'.$item->seo.'/'.$item->id)}}" class="text-dark">
                             <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">

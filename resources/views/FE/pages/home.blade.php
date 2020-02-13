@@ -64,50 +64,52 @@
     </div>
 
     {{--mobile view--}}
-    <div class="mb-5 ctn-home-search d-lg-none">
-        <div class="container bg-light">
-            <form method="get" action="{{url('search')}}">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group mt-3">
-                            <select name="place_id" class="form-control">
-                                <option value="all">@lang('messages.home_select_place')</option>
-                                @foreach(\App\Model\place_tbl::listSearch() as $items)
-                                    <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
-                                @endforeach
-                            </select>
+    <div class="mb-5 ctn-home-search container d-lg-none">
+        <div class="card bg-light">
+            <div class="card-body">
+                <form method="get" action="{{url('search')}}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mt-3">
+                                <select name="place_id" class="form-control">
+                                    <option value="all">@lang('messages.home_select_place')</option>
+                                    @foreach(\App\Model\place_tbl::listSearch() as $items)
+                                        <option value="{{$items->id}}">{{App::isLocale('id') ? $items->place_ind : $items->place_en}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <select name="category" class="form-control">
-                                <option value="all">@lang('messages.home_select_heritage')</option>
-                                @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
-                                    <option value="{{\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category}}">@lang('messages.'.\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category)</option>
-                                @endforeach
-                                {{--<option value="museum">@lang('messages.category_museum')</option>--}}
-                                {{--<option value="palace">@lang('messages.category_palace')</option>--}}
-                                {{--<option value="temple">@lang('messages.category_temple')</option>--}}
-                                {{--<option value="archive">@lang('messages.category_archive')</option>--}}
-                                {{--<option value="library">@lang('messages.category_library')</option>--}}
-                                {{--<option value="gallery">@lang('messages.category_gallery')</option>--}}
-                                {{--<option value="community">@lang('messages.category_community')</option>--}}
-                                {{--<option value="personal-activities">@lang('messages.category_personal_activities')</option>--}}
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select name="category" class="form-control">
+                                    <option value="all">@lang('messages.home_select_heritage')</option>
+                                    @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
+                                        <option value="{{\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category}}">@lang('messages.'.\App\Model\category_content_tbl::getData($institution->category_ctn_id, "category")->category)</option>
+                                    @endforeach
+                                    {{--<option value="museum">@lang('messages.category_museum')</option>--}}
+                                    {{--<option value="palace">@lang('messages.category_palace')</option>--}}
+                                    {{--<option value="temple">@lang('messages.category_temple')</option>--}}
+                                    {{--<option value="archive">@lang('messages.category_archive')</option>--}}
+                                    {{--<option value="library">@lang('messages.category_library')</option>--}}
+                                    {{--<option value="gallery">@lang('messages.category_gallery')</option>--}}
+                                    {{--<option value="community">@lang('messages.category_community')</option>--}}
+                                    {{--<option value="personal-activities">@lang('messages.category_personal_activities')</option>--}}
 
-                                {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
-                                {{--<option value="historical-building">@lang('messages.category_historical_building')</option>--}}
-                                {{--<option value="site">@lang('messages.category_site')</option>--}}
-                                {{--<option value="education-institution">@lang('messages.category_education_institution')</option>--}}
-                            </select>
+                                    {{--<option value="nature">@lang('messages.category_natural_place')</option>--}}
+                                    {{--<option value="historical-building">@lang('messages.category_historical_building')</option>--}}
+                                    {{--<option value="site">@lang('messages.category_site')</option>--}}
+                                    {{--<option value="education-institution">@lang('messages.category_education_institution')</option>--}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <button class="btn btn-block btn-dark text-uppercase">@lang('messages.home_select_search')</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <button class="btn btn-block btn-dark text-uppercase">@lang('messages.home_select_search')</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 

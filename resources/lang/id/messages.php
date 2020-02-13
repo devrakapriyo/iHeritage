@@ -50,8 +50,8 @@ return [
     'nav_menu_edu_pro' => 'Edukasi',
     'nav_menu_vr' => 'Virtual Tour',
 
-    'home_select_place' => 'Semua Provinsi di Indonesia',
-    'home_select_heritage' => 'Semua Institusi di Indonesia',
+    'home_select_place' => 'Provinsi',
+    'home_select_heritage' => 'Institusi',
     'home_select_search' => 'Cari',
     'home_more_search' => 'Lihat Semua',
 
@@ -89,7 +89,7 @@ return [
     'collection_place' => 'Provinsi',
     'collection_physical' => 'Deskripsi Fisik',
     'collection_publisher' => 'Penerbit',
-    'collection_institution' => 'Institusi Pemilik',
+    'collection_institution' => 'Institusi',
     'collection_link' => 'Tautan URL',
     'collection_btn_view' => 'LIHAT KOLEKSI LAYAR PENUH',
     'collection_manuscript' => 'Naskah Kuno',

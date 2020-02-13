@@ -50,8 +50,8 @@ return [
     'nav_menu_edu_pro' => 'Education Program',
     'nav_menu_vr' => 'Virtual Tour',
 
-    'home_select_place' => 'All Province in Indonesia',
-    'home_select_heritage' => 'All Institution in Indonesia',
+    'home_select_place' => 'Province',
+    'home_select_heritage' => 'Institution',
     'home_select_search' => 'Search',
     'home_more_search' => 'See All',
 
@@ -89,7 +89,7 @@ return [
     'collection_place' => 'Place/Province',
     'collection_physical' => 'Physical Description',
     'collection_publisher' => 'Publisher',
-    'collection_institution' => 'Institution Owner',
+    'collection_institution' => 'Institution',
     'collection_link' => 'Link URL',
     'collection_btn_view' => 'VIEW FULL SCREEN COLLECTION',
     'collection_manuscript' => 'Manuscript',

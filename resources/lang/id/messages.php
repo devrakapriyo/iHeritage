@@ -159,6 +159,8 @@ return [
 
     // page about us
     'about_title' => 'Tentang Kami',
+    'about_supported_by' => 'Didukung oleh :',
+    'about_our_partners' => 'Mitra kami :',
 
     // page our services
     'services_title' => 'Solusi Kami',

@@ -15,12 +15,16 @@
                 <img src="{{$data->banner}}" class="img-fluid" alt="{{$data->banner}}">
                 <div class="row">
                     <div class="col-md-6">
+                        <p>@lang('messages.about_supported_by')</p>
                         <a href="https://pmli.co.id" target="_blank">
-                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:145px;height:88px;margin-left:20px;">
+                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:83px;">
                         </a>
                     </div>
                 </div>
-                <div class="row mt-4">
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <p>@lang('messages.about_our_partners')</p>
+                    </div>
                     <div class="col-md-3">
                         <a href="" target="_blank">
                             {{--desktop--}}

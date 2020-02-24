@@ -159,6 +159,8 @@ return [
 
     // page about us
     'about_title' => 'About Us',
+    'about_supported_by' => 'Supported by :',
+    'about_our_partners' => 'Our partners :',
 
     // page our services
     'services_title' => 'Our Solutions',

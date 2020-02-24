@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <a href="https://pmli.co.id" target="_blank">
-                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:145px;height:80px;margin-left:20px;">
+                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:145px;height:88px;margin-left:20px;">
                         </a>
                     </div>
                 </div>

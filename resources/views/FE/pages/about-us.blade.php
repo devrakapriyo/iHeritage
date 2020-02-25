@@ -17,7 +17,7 @@
                     <div class="col-md-6">
                         <p>@lang('messages.about_supported_by')</p>
                         <a href="https://pmli.co.id" target="_blank">
-                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:83px;">
+                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;">
                         </a>
                     </div>
                 </div>

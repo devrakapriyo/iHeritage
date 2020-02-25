@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/messages.php" afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/id/messages.php" afterPath="$PROJECT_DIR$/resources/lang/id/messages.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php" afterPath="$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,16 +57,17 @@
       <file leaf-file-name="about-us.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="104" lean-forward="false" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
+            <state relative-caret-position="379">
+              <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
               <folding>
-                <element signature="e#1396#1427#0#HTML" expanded="true" />
-                <element signature="e#1559#1589#0#HTML" expanded="true" />
-                <element signature="e#1881#1912#0#HTML" expanded="true" />
-                <element signature="e#2045#2075#0#HTML" expanded="true" />
-                <element signature="e#2368#2399#0#HTML" expanded="true" />
-                <element signature="e#2533#2563#0#HTML" expanded="true" />
-                <element signature="e#2858#2889#0#HTML" expanded="true" />
+                <element signature="e#872#904#0#HTML" expanded="true" />
+                <element signature="e#1397#1428#0#HTML" expanded="true" />
+                <element signature="e#1561#1591#0#HTML" expanded="true" />
+                <element signature="e#1884#1915#0#HTML" expanded="true" />
+                <element signature="e#2049#2079#0#HTML" expanded="true" />
+                <element signature="e#2374#2405#0#HTML" expanded="true" />
+                <element signature="e#2541#2571#0#HTML" expanded="true" />
+                <element signature="e#2862#2893#0#HTML" expanded="true" />
                 <element signature="e#3025#3055#0#HTML" expanded="true" />
                 <element signature="e#3429#3449#0#HTML" expanded="true" />
               </folding>
@@ -482,12 +481,12 @@
       <workItem from="1581330172048" duration="6754000" />
       <workItem from="1581557754989" duration="8152000" />
       <workItem from="1581905088537" duration="263000" />
-      <workItem from="1582508894315" duration="3714000" />
+      <workItem from="1582508894315" duration="4067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437208000" />
+    <option name="totallyTimeSpent" value="437561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -924,16 +923,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="104" lean-forward="false" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
+        <state relative-caret-position="379">
+          <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
           <folding>
-            <element signature="e#1396#1427#0#HTML" expanded="true" />
-            <element signature="e#1559#1589#0#HTML" expanded="true" />
-            <element signature="e#1881#1912#0#HTML" expanded="true" />
-            <element signature="e#2045#2075#0#HTML" expanded="true" />
-            <element signature="e#2368#2399#0#HTML" expanded="true" />
-            <element signature="e#2533#2563#0#HTML" expanded="true" />
-            <element signature="e#2858#2889#0#HTML" expanded="true" />
+            <element signature="e#872#904#0#HTML" expanded="true" />
+            <element signature="e#1397#1428#0#HTML" expanded="true" />
+            <element signature="e#1561#1591#0#HTML" expanded="true" />
+            <element signature="e#1884#1915#0#HTML" expanded="true" />
+            <element signature="e#2049#2079#0#HTML" expanded="true" />
+            <element signature="e#2374#2405#0#HTML" expanded="true" />
+            <element signature="e#2541#2571#0#HTML" expanded="true" />
+            <element signature="e#2862#2893#0#HTML" expanded="true" />
             <element signature="e#3025#3055#0#HTML" expanded="true" />
             <element signature="e#3429#3449#0#HTML" expanded="true" />
           </folding>

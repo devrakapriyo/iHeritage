@@ -28,15 +28,6 @@
                     <div class="col-md-3">
                         <a href="" target="_blank">
                             {{--desktop--}}
-                            <img src="{{asset('img/AMI.jpg')}}" class="img d-none d-lg-block" style="width:100%;height:80px;">
-
-                            {{--mobile--}}
-                            <img src="{{asset('img/AMI.jpg')}}" class="img d-lg-none" style="width:50%;height:80px;">
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="" target="_blank">
-                            {{--desktop--}}
                             <img src="{{asset('img/MAKN.png')}}" class="img d-none d-lg-block" style="width:100%;height:80px;">
 
                             {{--mobile--}}
@@ -59,6 +50,15 @@
 
                             {{--mobile--}}
                             <img src="{{asset('img/AMI-DKI.png')}}" class="img d-lg-none" style="width:50%;height:80px;">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="" target="_blank">
+                            {{--desktop--}}
+                            <img src="{{asset('img/AMI.jpg')}}" class="img d-none d-lg-block" style="width:100%;height:80px;">
+
+                            {{--mobile--}}
+                            <img src="{{asset('img/AMI.jpg')}}" class="img d-lg-none" style="width:50%;height:80px;">
                         </a>
                     </div>
                 </div>

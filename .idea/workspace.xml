@@ -57,19 +57,24 @@
       <file leaf-file-name="about-us.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="71" column="120" lean-forward="false" selection-start-line="71" selection-start-column="120" selection-end-line="71" selection-end-column="120" />
+            <state relative-caret-position="146">
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="22" selection-end-column="26" />
               <folding>
-                <element signature="e#872#921#0#HTML" expanded="true" />
-                <element signature="e#1414#1461#0#HTML" expanded="true" />
-                <element signature="e#1594#1642#0#HTML" expanded="true" />
-                <element signature="e#1935#1966#0#HTML" expanded="true" />
-                <element signature="e#2100#2147#0#HTML" expanded="true" />
-                <element signature="e#2442#2473#0#HTML" expanded="true" />
-                <element signature="e#2609#2656#0#HTML" expanded="true" />
-                <element signature="e#2947#2978#0#HTML" expanded="true" />
-                <element signature="e#3110#3157#0#HTML" expanded="true" />
-                <element signature="e#3581#3612#0#HTML" expanded="true" />
+                <element signature="e#1488#1535#0#HTML" expanded="true" />
+                <element signature="e#1684#1732#0#HTML" expanded="true" />
+                <element signature="e#1875#1923#0#HTML" expanded="true" />
+                <element signature="e#2226#2257#0#HTML" expanded="true" />
+                <element signature="e#2407#2438#0#HTML" expanded="true" />
+                <element signature="e#2582#2629#0#HTML" expanded="true" />
+                <element signature="e#2934#2965#0#HTML" expanded="true" />
+                <element signature="e#3117#3148#0#HTML" expanded="true" />
+                <element signature="e#3294#3341#0#HTML" expanded="true" />
+                <element signature="e#3642#3673#0#HTML" expanded="true" />
+                <element signature="e#3821#3852#0#HTML" expanded="true" />
+                <element signature="e#3994#4042#0#HTML" expanded="true" />
+                <element signature="e#4476#4507#0#HTML" expanded="true" />
+                <element signature="e#4662#4692#0#HTML" expanded="true" />
+                <element signature="e#4841#4871#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -215,10 +220,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="726" />
-    <option name="y" value="23" />
-    <option name="width" value="714" />
-    <option name="height" value="821" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -496,12 +499,12 @@
       <workItem from="1581330172048" duration="6754000" />
       <workItem from="1581557754989" duration="8152000" />
       <workItem from="1581905088537" duration="263000" />
-      <workItem from="1582508894315" duration="5646000" />
+      <workItem from="1582508894315" duration="6976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439140000" />
+    <option name="totallyTimeSpent" value="440470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -941,19 +944,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="71" column="120" lean-forward="false" selection-start-line="71" selection-start-column="120" selection-end-line="71" selection-end-column="120" />
+        <state relative-caret-position="146">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="22" selection-end-column="26" />
           <folding>
-            <element signature="e#872#921#0#HTML" expanded="true" />
-            <element signature="e#1414#1461#0#HTML" expanded="true" />
-            <element signature="e#1594#1642#0#HTML" expanded="true" />
-            <element signature="e#1935#1966#0#HTML" expanded="true" />
-            <element signature="e#2100#2147#0#HTML" expanded="true" />
-            <element signature="e#2442#2473#0#HTML" expanded="true" />
-            <element signature="e#2609#2656#0#HTML" expanded="true" />
-            <element signature="e#2947#2978#0#HTML" expanded="true" />
-            <element signature="e#3110#3157#0#HTML" expanded="true" />
-            <element signature="e#3581#3612#0#HTML" expanded="true" />
+            <element signature="e#1488#1535#0#HTML" expanded="true" />
+            <element signature="e#1684#1732#0#HTML" expanded="true" />
+            <element signature="e#1875#1923#0#HTML" expanded="true" />
+            <element signature="e#2226#2257#0#HTML" expanded="true" />
+            <element signature="e#2407#2438#0#HTML" expanded="true" />
+            <element signature="e#2582#2629#0#HTML" expanded="true" />
+            <element signature="e#2934#2965#0#HTML" expanded="true" />
+            <element signature="e#3117#3148#0#HTML" expanded="true" />
+            <element signature="e#3294#3341#0#HTML" expanded="true" />
+            <element signature="e#3642#3673#0#HTML" expanded="true" />
+            <element signature="e#3821#3852#0#HTML" expanded="true" />
+            <element signature="e#3994#4042#0#HTML" expanded="true" />
+            <element signature="e#4476#4507#0#HTML" expanded="true" />
+            <element signature="e#4662#4692#0#HTML" expanded="true" />
+            <element signature="e#4841#4871#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

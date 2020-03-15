@@ -14,12 +14,12 @@
             <div class="col-md-6">
                 <img src="{{$data->banner}}" class="img-fluid" alt="{{$data->banner}}">
                 {{--<div class="row">--}}
-                    {{--<div class="col-md-6">--}}
-                        {{--<p>@lang('messages.about_supported_by')</p>--}}
-                        {{--<a href="https://pmli.co.id" target="_blank">--}}
-                            {{--<img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;margin-left:16px;">--}}
-                        {{--</a>--}}
-                    {{--</div>--}}
+                {{--<div class="col-md-6">--}}
+                {{--<p>@lang('messages.about_supported_by')</p>--}}
+                {{--<a href="https://pmli.co.id" target="_blank">--}}
+                {{--<img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;margin-left:16px;">--}}
+                {{--</a>--}}
+                {{--</div>--}}
                 {{--</div>--}}
                 <div class="row mt-5">
                     <div class="col-md-12">
@@ -28,6 +28,14 @@
                     <div class="col-md-3">
                         <a href="" target="_blank">
                             {{--desktop--}}
+                            {{--<a href="https://pmli.co.id" target="_blank">--}}
+                                <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;margin-left:16px;">
+                            {{--</a>--}}
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        {{--<a href="" target="_blank">--}}
+                            {{--desktop--}}
                             <img src="{{asset('img/MAKN.png')}}" class="img d-none d-lg-block d-sm-none" style="width:80%;height:80px;margin-left:16px;">
 
                             {{--iPad--}}
@@ -35,10 +43,10 @@
 
                             {{--mobile--}}
                             <img src="{{asset('img/MAKN.png')}}" class="img d-lg-none d-sm-none" style="width:40%;height:130px;margin-left:16px;">
-                        </a>
+                        {{--</a>--}}
                     </div>
                     <div class="col-md-3">
-                        <a href="" target="_blank">
+                        {{--<a href="" target="_blank">--}}
                             {{--desktop--}}
                             <img src="{{asset('img/PaSTI.jpg')}}" class="img d-none d-lg-block d-sm-none" style="width:100%;height:80px;">
 
@@ -47,10 +55,10 @@
 
                             {{--mobile--}}
                             <img src="{{asset('img/PaSTI.jpg')}}" class="img d-lg-none d-sm-none" style="width:50%;height:80px;margin-left:16px;">
-                        </a>
+                        {{--</a>--}}
                     </div>
                     <div class="col-md-3">
-                        <a href="" target="_blank">
+                        {{--<a href="" target="_blank">--}}
                             {{--desktop--}}
                             <img src="{{asset('img/AMI-DKI.png')}}" class="img d-none d-lg-block d-sm-none" style="width:100%;height:80px;">
 
@@ -59,10 +67,12 @@
 
                             {{--mobile--}}
                             <img src="{{asset('img/AMI-DKI.png')}}" class="img d-lg-none d-sm-none" style="width:50%;height:80px;margin-left:16px;">
-                        </a>
+                        {{--</a>--}}
                     </div>
+                </div>
+                <div class="row mt-3">
                     <div class="col-md-3">
-                        <a href="" target="_blank">
+                        {{--<a href="" target="_blank">--}}
                             {{--desktop--}}
                             <img src="{{asset('img/AMI.jpg')}}" class="img d-none d-lg-block d-sm-none" style="width:100%;height:80px;">
 
@@ -71,7 +81,7 @@
 
                             {{--mobile--}}
                             <img src="{{asset('img/AMI.jpg')}}" class="img d-lg-none d-sm-none" style="width:50%;height:80px;margin-left:16px;;">
-                        </a>
+                        {{--</a>--}}
                     </div>
                 </div>
                 <div class="row mt-4">

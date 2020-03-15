@@ -26,12 +26,10 @@
                         <p>@lang('messages.about_our_partners')</p>
                     </div>
                     <div class="col-md-3">
-                        <a href="" target="_blank">
-                            {{--desktop--}}
-                            {{--<a href="https://pmli.co.id" target="_blank">--}}
-                                <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;margin-left:16px;">
-                            {{--</a>--}}
-                        </a>
+                        {{--desktop--}}
+                        {{--<a href="https://pmli.co.id" target="_blank">--}}
+                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;margin-left:16px;">
+                        {{--</a>--}}
                     </div>
                     <div class="col-md-3">
                         {{--<a href="" target="_blank">--}}

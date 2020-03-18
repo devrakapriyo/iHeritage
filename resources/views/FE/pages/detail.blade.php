@@ -338,7 +338,7 @@
             <div class="card mt-3">
                 <div class="card-body">
                     <h5 class="card-title">@lang('messages.museum_visiting_price')</h5>
-                    @if(($detail->price_child == 0) && ($detail->price_young == 0) && ($detail->price_old == 0))
+                    @if(($detail->price_student == 0) && ($detail->price_college_student == 0) && ($detail->price_adult == 0))
                         <strong class="text-success">@lang('messages.event_free_price')</strong>
                     @else
                         @lang('messages.museum_visiting_student') : {!! "Rp. ".number_format($detail->price_student) !!}<br>

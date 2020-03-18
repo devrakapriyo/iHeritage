@@ -150,7 +150,7 @@ return [
     'museum_close' => '(CLOSE)',
 
     'museum_visiting_order' => 'Visiting Order',
-    'museum_visiting_price' => 'Ticket Prices',
+    'museum_visiting_price' => 'Admission',
     'museum_visiting_student' => 'Student',
     'museum_visiting_college_student' => 'College Student',
     'museum_visiting_adult' => 'Adult',

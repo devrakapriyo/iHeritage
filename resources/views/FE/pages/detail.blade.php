@@ -341,9 +341,9 @@
                     @if(($detail->price_student == 0) && ($detail->price_college_student == 0) && ($detail->price_adult == 0))
                         <strong class="text-success">@lang('messages.event_free_price')</strong>
                     @else
-                        @lang('messages.museum_visiting_student') : {!! "Rp. ".number_format($detail->price_student) !!}<br>
+                        @lang('messages.museum_visiting_adult') : {!! "Rp. ".number_format($detail->price_adult) !!}<br>
                         @lang('messages.museum_visiting_college_student') : {!! "Rp. ".number_format($detail->price_college_student) !!}<br>
-                        @lang('messages.museum_visiting_adult') : {!! "Rp. ".number_format($detail->price_adult) !!}
+                        @lang('messages.museum_visiting_student') : {!! "Rp. ".number_format($detail->price_student) !!}
                     @endif
                 </div>
             </div>

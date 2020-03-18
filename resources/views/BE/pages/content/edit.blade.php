@@ -170,8 +170,8 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Ticket Price Foreign Tourists : </label>
-                                            <input type="text" name="price_student" value="{{$detail->price_student}}" class="form-control">
+                                            <label>Ticket Price Adult : </label>
+                                            <input type="text" name="price_adult" value="{{$detail->price_adult}}" class="form-control">
                                             <small class="text-danger">if the event is free then empty it</small>
                                         </div>
                                     </div>
@@ -184,8 +184,8 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Ticket Price Adult : </label>
-                                            <input type="text" name="price_adult" value="{{$detail->price_adult}}" class="form-control">
+                                            <label>Ticket Price Foreign Tourists : </label>
+                                            <input type="text" name="price_student" value="{{$detail->price_student}}" class="form-control">
                                             <small class="text-danger">if the event is free then empty it</small>
                                         </div>
                                     </div>

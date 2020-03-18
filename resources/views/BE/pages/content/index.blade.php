@@ -46,6 +46,7 @@
                                 <th>Name</th>
                                 <th>Location</th>
                                 <th>Description</th>
+                                <th>Price</th>
                                 <th></th>
                                 <th></th>
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>
@@ -74,6 +75,7 @@
                 { data: 'name', name: 'name' },
                 { data: 'location', name: 'location' },
                 { data: 'long_description_en', name: 'long_description_en' },
+                { data: 'price', name: 'price', orderable: false, searchable: false},
                 { data: 'gallery', name: 'gallery', orderable: false, searchable: false},
                 { data: 'collection', name: 'collection', orderable: false, searchable: false},
                 { data: 'action', name: 'action', orderable: false, searchable: false}

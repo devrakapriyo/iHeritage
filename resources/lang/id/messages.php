@@ -150,6 +150,10 @@ return [
     'museum_close' => '(TUTUP)',
 
     'museum_visiting_order' => 'Pesan Kunjungan',
+    'museum_visiting_price' => 'Harga Tiket',
+    'museum_visiting_student' => 'Pelajar',
+    'museum_visiting_college_student' => 'Mahasiswa',
+    'museum_visiting_adult' => 'Dewasa',
     'museum_detail_visiting_order' => 'Pendaftaran',
     'museum_institution' => 'Institusi atau Nama Pribadi',
     'museum_phone' => 'Kontak Handphone',

@@ -51,6 +51,14 @@ class ContentController extends Controller
                 $substr = substr($data->long_description_ind, 0, 100);
                 return $substr."<a href='".route('content-edit', ['category'=>$category, 'id'=>$data->id])."'>...readmore</a>";
             })
+            ->addColumn('price', function ($data) use ($category){
+                if(($category == "museum") || ($category == "gallery") || ($category == "archive") || ($category == "palace") || ($category == "site") || ($category == "temple"))
+                {
+                    return "Student : Rp. ".number_format($data->price_student)."<br> College Student : Rp. ".number_format($data->price_college_student)."<br> Adult : Rp. ".number_format($data->price_adult);
+                }else{
+                    return "Ticket price feature is not available";
+                }
+            })
             ->addColumn('gallery', function ($data) use ($category) {
                 //$btn_gallery = '<a href="'.route('content-gallery', ['category'=>$category, 'id'=>$data->id]).'" class="btn btn-xs btn-success" title="add new photo?">'.content_gallery_tbl::countAlbum($data->id).' photo</a>';
                 $btn_gallery = '<span class="badge badge-secondary">'.content_gallery_tbl::countAlbum($data->id).' photo</span>';
@@ -79,7 +87,7 @@ class ContentController extends Controller
                 }
                 return $btn;
             })
-            ->rawColumns(['long_description_en','long_description_ind','gallery','collection','action'])
+            ->rawColumns(['long_description_en','long_description_ind','price','gallery','collection','action'])
             ->make(true);
     }
 
@@ -174,6 +182,9 @@ class ContentController extends Controller
             $detail->opening_hour = $request->opening_hour;
             $detail->close_en = $request->close_en;
             $detail->close_ind = $request->close_ind;
+            $detail->price_student = $request->price_student;
+            $detail->price_college_student = $request->price_college_student;
+            $detail->price_adult = $request->price_adult;
             $detail->save();
         }catch (\Exception $exception){
             DB::rollback();
@@ -264,6 +275,9 @@ class ContentController extends Controller
                     'opening_hour'=>$request->opening_hour,
                     'close_en'=>$request->close_en,
                     'close_ind'=>$request->close_ind,
+                    'price_student'=>$request->price_student,
+                    'price_college_student'=>$request->price_college_student,
+                    'price_adult'=>$request->price_adult
                 ]);
         }catch (\Exception $exception){
             DB::rollback();

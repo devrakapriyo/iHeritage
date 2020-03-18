@@ -150,6 +150,10 @@ return [
     'museum_close' => '(CLOSE)',
 
     'museum_visiting_order' => 'Visiting Order',
+    'museum_visiting_price' => 'Ticket Prices',
+    'museum_visiting_student' => 'Student',
+    'museum_visiting_college_student' => 'College Student',
+    'museum_visiting_adult' => 'Adult',
     'museum_detail_visiting_order' => 'Registration',
     'museum_institution' => 'Institution or Personal Name',
     'museum_phone' => 'Contact Phone',

@@ -35,7 +35,7 @@
             </div>
 
             <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='hide'><i class="fa fa-minus fa-2x"></i></a>
-            <a class='btn btn-block btn-warning mt-3 text-uppercase' id='show'><i class="fa fa-plus fa-2x"></i></a>
+            <a class='btn btn-block btn-light mt-3 text-uppercase' id='show' style="border: 1px #bdc3c7 solid;"><i class="fa fa-plus fa-2x"></i></a>
 
             {{--collection--}}
             @if(count($collection) > 0)
@@ -333,6 +333,21 @@
                     </li>
                 </ul>
             </div>
+
+            @if(($detail->category_ctn_id == 1) || ($detail->category_ctn_id == 4) || ($detail->category_ctn_id == 5) || ($detail->category_ctn_id == 7) || ($detail->category_ctn_id == 12) || ($detail->category_ctn_id == 6))
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">@lang('messages.museum_visiting_price')</h5>
+                    @if(($detail->price_child == 0) && ($detail->price_young == 0) && ($detail->price_old == 0))
+                        <strong class="text-success">@lang('messages.event_free_price')</strong>
+                    @else
+                        @lang('messages.museum_visiting_student') : {!! "Rp. ".number_format($detail->price_student) !!}<br>
+                        @lang('messages.museum_visiting_college_student') : {!! "Rp. ".number_format($detail->price_college_student) !!}<br>
+                        @lang('messages.museum_visiting_adult') : {!! "Rp. ".number_format($detail->price_adult) !!}
+                    @endif
+                </div>
+            </div>
+            @endif
 
             <div class="card mt-3">
                 <div class="card-body">

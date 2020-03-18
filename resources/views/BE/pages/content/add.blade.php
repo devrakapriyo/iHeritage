@@ -170,14 +170,14 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Ticket Price Student : </label>
+                                    <label>Ticket Price Foreign Tourists : </label>
                                     <input type="text" name="price_student" class="form-control">
                                     <small class="text-danger">if the event is free then empty it</small>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Ticket Price College Student : </label>
+                                    <label>Ticket Price Kids : </label>
                                     <input type="text" name="price_college_student" class="form-control">
                                     <small class="text-danger">if the event is free then empty it</small>
                                 </div>

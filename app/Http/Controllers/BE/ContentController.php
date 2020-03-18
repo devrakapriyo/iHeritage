@@ -54,7 +54,7 @@ class ContentController extends Controller
             ->addColumn('price', function ($data) use ($category){
                 if(($category == "museum") || ($category == "gallery") || ($category == "archive") || ($category == "palace") || ($category == "site") || ($category == "temple"))
                 {
-                    return "Student : Rp. ".number_format($data->price_student)."<br> College Student : Rp. ".number_format($data->price_college_student)."<br> Adult : Rp. ".number_format($data->price_adult);
+                    return "Foreign Tourists : Rp. ".number_format($data->price_student)."<br> Kids : Rp. ".number_format($data->price_college_student)."<br> Adult : Rp. ".number_format($data->price_adult);
                 }else{
                     return "Ticket price feature is not available";
                 }

@@ -151,8 +151,8 @@ return [
 
     'museum_visiting_order' => 'Visiting Order',
     'museum_visiting_price' => 'Admission',
-    'museum_visiting_student' => 'Student',
-    'museum_visiting_college_student' => 'College Student',
+    'museum_visiting_student' => 'Foreign Tourists',
+    'museum_visiting_college_student' => 'Kids',
     'museum_visiting_adult' => 'Adult',
     'museum_detail_visiting_order' => 'Registration',
     'museum_institution' => 'Institution or Personal Name',

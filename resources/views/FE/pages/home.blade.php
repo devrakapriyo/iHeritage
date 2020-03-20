@@ -134,8 +134,8 @@
                     {{--</div>--}}
                 {{--</form>--}}
             </div>
-            @foreach(\App\Model\content_tbl::listContentCategory("museum", 3) as $list)
-                <div class="col-md-4 mb-2">
+            @foreach(\App\Model\content_tbl::listContentCategory("museum", 6) as $list)
+                <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="{{url('content/'.$list->seo.'/'.$list->id)}}" class="text-dark">
                             <img class="card-img-top" src="{{$list->photo}}" alt="" height="200" widht="400">
@@ -160,7 +160,7 @@
                     </div>
                 </div>
             @endforeach
-            @if(count($museum) > 3)
+            @if(count($museum) > 6)
                 <div class="col-md-12">
                     <a href="{{url('search-instantion/museum')}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') Museum</a>
                 </div>

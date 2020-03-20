@@ -34,7 +34,7 @@
                 {!! $text_nonrender !!}
             </div>
 
-            <a class='btn btn-block btn-dark text-white mt-3 text-uppercase' id='hide'><i class="fa fa-minus fa-2x"></i></a>
+            <a class='btn btn-block btn-light mt-3 text-uppercase' id='hide' style="border: 1px #bdc3c7 solid;"><i class="fa fa-minus fa-2x"></i></a>
             <a class='btn btn-block btn-light mt-3 text-uppercase' id='show' style="border: 1px #bdc3c7 solid;"><i class="fa fa-plus fa-2x"></i></a>
 
             {{--collection--}}

@@ -161,7 +161,7 @@ class InterfaceController extends Controller
     public function home()
     {
         $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
-        $museum = $this->listContent("museum", 4);
+        $museum = $this->listContent("museum", 7);
         $library = $this->listContent("library", 4);
         $gallery = $this->listContent("gallery", 4);
         $archive = $this->listContent("archive", 4);

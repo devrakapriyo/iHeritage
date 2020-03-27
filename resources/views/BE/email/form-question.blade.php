@@ -1,12 +1,12 @@
 <body>
 <h3>hai, {{$nama}}</h3>
 <p>
-    How are you today? there is good news for those of you who have asked about the iHeritage.id platform {{$judul_pertanyaan}}, with questions<br>
+    @lang('messages_be.email_form_question_one') {{$judul_pertanyaan}}, @lang('messages_be.email_form_question_two')<br>
     "{!! $pertanyaan !!}"
 </p>
-<p>this is the answer</p>
+<p>@lang('messages_be.email_form_answer')</p>
 {!! $response !!}
 <p>
-    Thank you for your attention.
+    @lang('messages_be.email_thank')
 </p>
 </body>

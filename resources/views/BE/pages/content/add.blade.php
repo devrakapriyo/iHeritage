@@ -34,8 +34,8 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">add new institution</h6>
-                    <a href="{{route('content-pages', ['category'=>$category])}}" class="btn btn-success text-capitalize">list institution {{str_replace("-", " ",$category)}}</a>
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.content_add')</h6>
+                    <a href="{{route('content-pages', ['category'=>$category])}}" class="btn btn-success text-capitalize">@lang('messages_be.content_list') {{str_replace("-", " ",$category)}}</a>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -44,13 +44,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name (Bahasa Indonesia): </label>
+                                    <label>@lang('messages_be.content_input_name') (Bahasa Indonesia): </label>
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name (Bahasa Inggris): </label>
+                                    <label>@lang('messages_be.content_input_name') (Bahasa Inggris): </label>
                                     <input type="text" name="name_en" class="form-control" required>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Province : </label>
+                                    <label>@lang('messages.home_select_place') : </label>
                                     <select name="place_id" class="form-control" required>
                                         <option value=""></option>
                                         @foreach(App\Model\place_tbl::listSearch() as $item)
@@ -77,13 +77,13 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Town Location : </label>
+                                    <label>@lang('messages_be.content_input_town') : </label>
                                     <input type="text" name="location" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name Location :</label>
+                                    <label>@lang('messages_be.content_input_location') :</label>
                                     <input type="text" name="map_area_detail" class="form-control" id="location" value="Istana Bogor, Indonesia" onchange="check_location()" required>
                                     <input type="hidden" name="latitude_detail" id="latitude">
                                     <input type="hidden" name="longitude_detail" id="longitude">
@@ -104,7 +104,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Street Address : </label>
+                                    <label>@lang('messages_be.content_input_street') : </label>
                                     <textarea name="address" class="form-control" row="3" required></textarea>
                                 </div>
                             </div>
@@ -126,13 +126,13 @@
                             {{--@endif--}}
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Contact Phone : </label>
+                                    <label>Phone : </label>
                                     <input type="text" name="phone" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Contact Email : </label>
+                                    <label>Email : </label>
                                     <input type="email" name="email" class="form-control" required>
                                 </div>
                             </div>
@@ -154,13 +154,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (Bahasa Indonesia): </label>
+                                    <label>@lang('messages_be.content_input_description') (Bahasa Indonesia): </label>
                                     <textarea name="long_description_ind" class="form-control text-editor" row="5" required></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (Bahasa Inggris): </label>
+                                    <label>@lang('messages_be.content_input_description') (Bahasa Inggris): </label>
                                     <textarea name="long_description_en" class="form-control text-editor" row="5" required></textarea>
                                 </div>
                             </div>
@@ -170,23 +170,23 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Ticket Price Adult : </label>
+                                    <label>@lang('messages_be.content_input_ticket_adult') : </label>
                                     <input type="text" name="price_adult" class="form-control">
-                                    <small class="text-danger">if the event is free then empty it</small>
+                                    <small class="text-danger">@lang('messages_be.info_free')</small>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Ticket Price Kids : </label>
+                                    <label>@lang('messages_be.content_input_ticket_kids') : </label>
                                     <input type="text" name="price_college_student" class="form-control">
-                                    <small class="text-danger">if the event is free then empty it</small>
+                                    <small class="text-danger">@lang('messages_be.info_free')</small>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Ticket Price Foreign Tourists : </label>
+                                    <label>@lang('messages_be.content_input_ticket_tourists') : </label>
                                     <input type="text" name="price_student" class="form-control">
-                                    <small class="text-danger">if the event is free then empty it</small>
+                                    <small class="text-danger">@lang('messages_be.info_free')</small>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary text-capitalize">open schedule</h6>
+                                <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.info_schedule')</h6>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
@@ -253,21 +253,21 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Opening Days (bahasa indonesia): </label>
+                                            <label>@lang('messages_be.info_opening_day') (bahasa indonesia): </label>
                                             <input type="text" name="opening_day_ind" class="form-control">
                                             <small class="text-danger">example value : Selasa sampai Minggu</small>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Opening Days (bahasa inggris): </label>
+                                            <label>@lang('messages_be.info_opening_day') (bahasa inggris): </label>
                                             <input type="text" name="opening_day_en" class="form-control">
                                             <small class="text-danger">example value : Tuesday to Sunday</small>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Opening Hours : </label>
+                                            <label>@lang('messages_be.info_opening_hour') : </label>
                                             <input type="text" name="opening_hour" class="form-control">
                                             <small class="text-danger">example value : 09:00 - 15:00</small>
                                         </div>
@@ -276,13 +276,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Closing Days (bahasa indonesia): </label>
+                                            <label>@lang('messages_be.info_closing_day') (bahasa indonesia): </label>
                                             <input type="text" name="close_ind" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Closing Days (bahasa inggris): </label>
+                                            <label>@lang('messages_be.info_closing_day') (bahasa inggris): </label>
                                             <input type="text" name="close_en" class="form-control">
                                         </div>
                                     </div>

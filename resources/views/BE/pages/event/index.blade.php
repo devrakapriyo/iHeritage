@@ -11,7 +11,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800 text-capitalize">event</h1>
+        <h1 class="h3 mb-0 text-gray-800 text-capitalize">@lang('messages_be.event_title')</h1>
     </div>
 
     <!-- Content Row -->
@@ -22,9 +22,9 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">data event</h6>
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.event_list')</h6>
                     @if(\App\Model\content_tbl::select('id')->where('institutional_id', auth('admin')->user()->institutional_id)->first())
-                        <a href="{{route('event-add')}}" class="btn btn-primary">Add new event</a>
+                        <a href="{{route('event-add')}}" class="btn btn-primary">@lang('messages_be.event_add')</a>
                     @endif
                 </div>
                 <!-- Card Body -->
@@ -32,12 +32,12 @@
                     <table class="table" id="datatable">
                         <thead>
                             <tr>
-                                <th>Institution</th>
-                                <th>Name Event</th>
-                                <th>Place</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Price</th>
+                                <th>@lang('messages.home_select_heritage')</th>
+                                <th>@lang('messages_be.event_input_name')</th>
+                                <th>@lang('messages.home_select_place')</th>
+                                <th>@lang('messages_be.event_input_start')</th>
+                                <th>@lang('messages_be.event_input_end')</th>
+                                <th>@lang('messages_be.info_price')</th>
                                 {{--<th>Close Registration</th>--}}
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>
                             </tr>

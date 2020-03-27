@@ -206,7 +206,7 @@ return [
     'category' => 'Category',
     'category_museum' => 'Museum',
     'category_library' => 'Library',
-    'category_gallery' => 'Library',
+    'category_gallery' => 'Gallery',
     'category_archive' => 'Archive',
     'category_temple' => 'Temple',
     'category_palace' => 'Palace',

@@ -20,7 +20,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800 text-capitalize">collection</h1>
+            <h1 class="h3 mb-0 text-gray-800 text-capitalize">>@lang('messages.heritage_title')</h1>
         </div>
 
         <!-- Content Row -->
@@ -31,8 +31,8 @@
                 <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">edit collection</h6>
-                    <a href="{{route('collection-pages')}}" class="btn btn-success text-capitalize">list collection</a>
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.collection_edit')</h6>
+                    <a href="{{route('collection-pages')}}" class="btn btn-success text-capitalize">@lang('messages_be.collection_list')</a>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -41,7 +41,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Institution :</label>
+                                    <label>@lang('messages.collection_institution') :</label>
                                     <input type="text" name="content_id" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
                                 </div>
                             </div>
@@ -49,13 +49,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name Collection (Bahasa Indonesia): </label>
+                                    <label>@lang('messages_be.collection_input_name') (Bahasa Indonesia): </label>
                                     <input type="text" name="name" class="form-control" value="{{$detail->name}}" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name Collection (Bahasa Inggris): </label>
+                                    <label>@lang('messages_be.collection_input_name') (Bahasa Inggris): </label>
                                     <input type="text" name="name_en" class="form-control" value="{{$detail->name_en}}" required>
                                 </div>
                             </div>
@@ -117,25 +117,25 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Creator : </label>
+                                    <label>@lang('messages.collection_creator') : </label>
                                     <input type="text" name="creator" class="form-control" value="{{$detail->creator}}">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Created Year : </label>
+                                    <label>@lang('messages.collection_year') : </label>
                                     <input type="text" name="created_year" class="form-control" value="{{$detail->created_year}}">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Language : </label>
+                                    <label>@lang('messages.collection_lang') : </label>
                                     <input type="text" name="lang" class="form-control" value="{{$detail->lang}}">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Topic : </label>
+                                    <label>@lang('messages.collection_topic') : </label>
                                     <select name="topic" class="form-control" required>
                                         <option value="{{$detail->topic}}">@lang('messages.'.$detail->topic)</option>
                                         <option value="collection_manuscript">@lang('messages.collection_manuscript')</option>
@@ -177,13 +177,13 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Publisher : </label>
+                                    <label>@lang('messages.collection_publisher') : </label>
                                     <input type="text" name="publisher" class="form-control" value="{{$detail->publisher}}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Institution Owner : </label>
+                                    <label>@lang('messages.institutional_name') : </label>
                                     <input type="text" name="institution_owner" class="form-control" value="{{$detail->institution_owner}}">
                                 </div>
                             </div>
@@ -197,7 +197,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Place : </label>
+                                    <label>@lang('messages.home_select_place') : </label>
                                     <select name="place_id" class="form-control">
                                         <option value=""></option>
                                         @foreach(App\Model\place_tbl::listSearch() as $item)
@@ -208,7 +208,7 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="form-group">
-                                    <label>Address:</label>
+                                    <label>@lang('messages.collection_address') :</label>
                                     <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()">
                                     <input type="hidden" name="latitude_detail" id="latitude" value="{{$detail->latitude_detail}}">
                                     <input type="hidden" name="longitude_detail" id="longitude" value="{{$detail->longitude_detail}}">
@@ -229,7 +229,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Physical Description :</label>
+                                    <label>@lang('messages.collection_physical') :</label>
                                     <input type="text" name="physical_description" class="form-control" value="{{$detail->physical_description}}">
                                 </div>
                             </div>
@@ -237,13 +237,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (bahasa indonesia):</label>
+                                    <label>@lang('messages_be.collection_input_description') (bahasa indonesia):</label>
                                     <textarea name="description_ind" class="form-control text-editor" rows="5">{!! $detail->description_ind !!}</textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (bahasa inggris):</label>
+                                    <label>@lang('messages_be.collection_input_description') (bahasa inggris):</label>
                                     <textarea name="description_en" class="form-control text-editor" rows="5">{!! $detail->description_en !!}</textarea>
                                 </div>
                             </div>

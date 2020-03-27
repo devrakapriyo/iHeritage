@@ -15,10 +15,17 @@ class VrController extends Controller
 
     public function vr_get()
     {
-        $data = content_detail_tbl::select(['name','url_vr'])
-            ->join('content', 'content.id', '=', 'content_detail.content_id')
-            ->whereNotNull('url_vr')
-            ->where('institutional_id', auth('admin')->user()->institutional_id);
+        if(auth('admin')->user()->is_admin_master == "Y")
+        {
+            $data = content_detail_tbl::select(['name','url_vr'])
+                ->join('content', 'content.id', '=', 'content_detail.content_id')
+                ->whereNotNull('url_vr');
+        }else{
+            $data = content_detail_tbl::select(['name','url_vr'])
+                ->join('content', 'content.id', '=', 'content_detail.content_id')
+                ->whereNotNull('url_vr')
+                ->where('institutional_id', auth('admin')->user()->institutional_id);
+        }
         return Datatables::of($data)
             ->editColumn('url_vr', function ($data){
                 return "<a href='".$data->url_vr."' target='_blank'>".$data->url_vr."</a>";

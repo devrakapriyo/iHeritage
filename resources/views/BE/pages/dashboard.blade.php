@@ -58,7 +58,7 @@
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Visitor Today</div>
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">@lang('messages_be.dashboard_visiting')</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Model\visitor_counting::visitor_perday($institutional_id)}}</div>
             </div>
             <div class="col-auto">
@@ -75,7 +75,7 @@
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Heritage Collection</div>
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">@lang('messages_be.dashboard_collection')</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Model\content_collection_tbl::countCollection(auth('admin')->user()->is_admin_master, auth('admin')->user()->institutional_id)}}</div>
             </div>
             <div class="col-auto">
@@ -93,7 +93,7 @@
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Process Approval Admin Institution</div>
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">@lang('messages_be.dashboard_approval')</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\User::countWaitingAppr()}}</div>
@@ -142,7 +142,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Visitor</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">@lang('messages_be.dashboard_visitor')</h6>
                     {{--<div class="dropdown no-arrow">--}}
                     {{--<a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
                         {{--<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>--}}

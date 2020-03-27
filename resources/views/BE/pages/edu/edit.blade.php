@@ -20,7 +20,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800 text-capitalize">education program</h1>
+            <h1 class="h3 mb-0 text-gray-800 text-capitalize">@lang('messages_be.education_title')</h1>
         </div>
 
         <!-- Content Row -->
@@ -31,8 +31,8 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">add new education program</h6>
-                        <a href="{{route('edu-page')}}" class="btn btn-success text-capitalize">list education program</a>
+                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.education_edit')</h6>
+                        <a href="{{route('edu-page')}}" class="btn btn-success text-capitalize">@lang('messages_be.education_list')</a>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Institution : </label>
+                                        <label>@lang('messages.home_select_heritage') : </label>
                                         <input type="text" class="form-control" value="{{\App\Model\institutional::getName($detail->content_id)}}" readonly>
                                     </div>
                                 </div>
@@ -49,13 +49,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Name Education Program (Bahasa Indonesia): </label>
+                                        <label>@lang('messages_be.education_input_name') (Bahasa Indonesia): </label>
                                         <input type="text" name="name" class="form-control" value="{{$detail->name}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Name Education Program (Bahasa Inggris): </label>
+                                        <label>@lang('messages_be.education_input_name') (Bahasa Inggris): </label>
                                         <input type="text" name="name_en" class="form-control" value="{{$detail->name_en}}" required>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Banner Education Program : </label>
+                                        <label>Banner : </label>
                                         <input type="file" name="banner" class="form-control">
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Province : </label>
+                                        <label>@lang('messages.home_select_place') : </label>
                                         <select name="place_id" class="form-control" required>
                                             <option value=""></option>
                                             @foreach(App\Model\place_tbl::listSearch() as $item)
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label>Name Location :</label>
+                                        <label>@lang('messages_be.content_input_location') :</label>
                                         <input type="text" name="map_area_detail" class="form-control" id="location" value="{{$detail->map_area_detail}}" onchange="check_location()" required>
                                         <input type="hidden" name="latitude_detail" id="latitude" value="{{$detail->latitude_detail}}">
                                         <input type="hidden" name="longitude_detail" id="longitude" value="{{$detail->longitude_detail}}">
@@ -104,13 +104,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Description (Bahasa Indonesia): </label>
+                                        <label>@lang('messages_be.content_input_description') (Bahasa Indonesia): </label>
                                         <textarea name="description_ind" class="form-control text-editor" row="3">{!! $detail->description_ind !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Description (Bahasa Inggris): </label>
+                                        <label>@lang('messages_be.content_input_description') (Bahasa Inggris): </label>
                                         <textarea name="description_en" class="form-control text-editor" row="3">{!! $detail->description_en !!}</textarea>
                                     </div>
                                 </div>
@@ -119,56 +119,56 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">open schedule</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.info_schedule')</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Sunday : </label>
+                                                <label>@lang('messages.museum_information_sunday') : </label>
                                                 <input type="text" name="opening_sunday" class="form-control" value="{{$detail->opening_sunday}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Monday : </label>
+                                                <label>@lang('messages.museum_information_monday') : </label>
                                                 <input type="text" name="opening_monday" class="form-control" value="{{$detail->opening_monday}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Tuesday : </label>
+                                                <label>@lang('messages.museum_information_tuesday') : </label>
                                                 <input type="text" name="opening_tuesday" class="form-control" value="{{$detail->opening_tuesday}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Wednesday : </label>
+                                                <label>@lang('messages.museum_information_wednesday') : </label>
                                                 <input type="text" name="opening_wednesday" class="form-control" value="{{$detail->opening_wednesday}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Thursday : </label>
+                                                <label>@lang('messages.museum_information_thursday') : </label>
                                                 <input type="text" name="opening_thursday" class="form-control" value="{{$detail->opening_thursday}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Friday : </label>
+                                                <label>@lang('messages.museum_information_friday') : </label>
                                                 <input type="text" name="opening_friday" class="form-control" value="{{$detail->opening_friday}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>Saturday : </label>
+                                                <label>@lang('messages.museum_information_saturday') : </label>
                                                 <input type="text" name="opening_saturday" class="form-control" value="{{$detail->opening_saturday}}">
                                                 <small class="text-danger">example value : 09:00 - 15:00</small>
                                             </div>
@@ -181,14 +181,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Closing Hours (bahasa indonesia): </label>
+                                        <label>@lang('messages_be.info_closing_day') (bahasa indonesia): </label>
                                         <input type="text" name="close_ind" class="form-control" value="{{$detail->close_ind}}" required>
                                         <small class="text-danger">example value : Senin - Sabtu</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Closing Hours (bahasa inggris): </label>
+                                        <label>@lang('messages_be.info_closing_day') (bahasa inggris): </label>
                                         <input type="text" name="close_en" class="form-control" value="{{$detail->close_en}}" required>
                                         <small class="text-danger">example value : Monday - Saturday</small>
                                     </div>

@@ -1,12 +1,13 @@
 <body>
 <h3>hai, {{$name}}</h3>
 <p>
-    info, your password the {{$role}} account<br>
+    @lang('messages_be.email_reset_one') {{$role}} @lang('messages_be.email_reset_two')<br>
     password : {{$password}}
 </p>
-<p>Let us explore the extraordinary heritage of the nation to push the boundaries of understanding in the past and today.</p>
-iHeritage.id
 <p>
-    Thank you for your attention.
+    @lang('messages_be.email_iheritage')
+</p>
+<p>
+    @lang('messages_be.email_thank')
 </p>
 </body>

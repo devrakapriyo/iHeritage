@@ -7,7 +7,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800 text-capitalize">users management</h1>
+        <h1 class="h3 mb-0 text-gray-800 text-capitalize">@lang('messages_be.user_title')</h1>
     </div>
 
     <!-- Content Row -->
@@ -18,8 +18,8 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">add new user</h6>
-                    <a href="{{route('users-pages')}}" class="btn btn-success text-capitalize">list users</a>
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.user_add')</h6>
+                    <a href="{{route('users-pages')}}" class="btn btn-success text-capitalize">@lang('messages_be.user_list')</a>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name : </label>
+                                    <label>@lang('messages_be.user_input_name') : </label>
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Phone Number : </label>
+                                    <label>Phone : </label>
                                     <input type="text" name="phone" class="form-control" required>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Institutional : </label>
+                                    <label>@lang('messages.home_select_heritage') : </label>
                                     <select class="form-control" name="institutional" required>
                                         <option value=""></option>
                                         @foreach(\App\Model\institutional::listInstitutional() as $items)

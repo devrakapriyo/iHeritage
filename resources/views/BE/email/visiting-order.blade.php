@@ -1,15 +1,15 @@
 <body>
 <h3>hai, {{$institutional_name}}</h3>
 <p>
-    Booking Code : {{$code_booking}}<br>
+    @lang('messages_be.email_visiting_code') : {{$code_booking}}<br>
     Phone : {{$phone}}<br>
-    Date Visit : {{$date}}<br>
-    Numbers of Visitor : {{$pax}}<br>
-    Information : {{$information}}
+    @lang('messages_be.email_visiting_date') : {{$date}}<br>
+    @lang('messages_be.email_visiting_number') : {{$pax}}<br>
+    @lang('messages_be.email_visiting_information') : {{$information}}
 </p>
-<p>this is the Message Response</p>
+<p>@lang('messages_be.email_form_answer')</p>
 {{$messages_response}}
 <p>
-    Thank you for your attention.
+    @lang('messages_be.email_thank')
 </p>
 </body>

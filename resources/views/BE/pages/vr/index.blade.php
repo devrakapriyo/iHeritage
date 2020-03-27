@@ -11,7 +11,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800 text-capitalize">virtual reality</h1>
+            <h1 class="h3 mb-0 text-gray-800 text-capitalize">@lang('messages_be.vr_title')</h1>
         </div>
 
         <!-- Content Row -->
@@ -22,14 +22,14 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">list virtual reality</h6>
+                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.vr_list')</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <table class="table" id="datatable">
                             <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>@lang('messages.home_select_heritage')</th>
                                 <th>Link</th>
                             </tr>
                             </thead>

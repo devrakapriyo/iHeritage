@@ -13,10 +13,10 @@
             </div>
             <form class="form-signin" action="{{url('reset-password/'.$role)}}" method="post">
                 @csrf
-                <p class="text-center">Reset Password Account {{$role}}</p>
+                <p class="text-center">@lang('messages_be.reset_msg_text') {{$role}}</p>
                 <div class="form-label-group">
                     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    <label for="inputEmail">Email address</label>
+                    <label for="inputEmail">Email</label>
                 </div>
 
                 <button class="btn btn-lg btn-dark btn-block text-uppercase">@lang('messages.btn_reset_password')</button>

@@ -25,16 +25,16 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">data content</h6>
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.content_list')</h6>
                     @php
                         $auth = auth('admin')->user();
                         $content = App\Model\content_tbl::select('institutional_id')->where('institutional_id', $auth->institutional_id)->first();
                     @endphp
                     @if($auth->is_admin_master == "Y")
-                        <a href="{{route('content-add', ['category'=>$category])}}" class="btn btn-primary">Add new content</a>
+                        <a href="{{route('content-add', ['category'=>$category])}}" class="btn btn-primary">@lang('messages_be.content_add')</a>
                     @else
                         @if(empty($content))
-                            <a href="{{route('content-add', ['category'=>$category])}}" class="btn btn-primary">Add new content</a>
+                            <a href="{{route('content-add', ['category'=>$category])}}" class="btn btn-primary">@lang('messages_be.content_add')</a>
                         @endif
                     @endif
                 </div>
@@ -43,10 +43,10 @@
                     <table class="table" id="datatable">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Location</th>
-                                <th>Description</th>
-                                <th>Price</th>
+                                <th>@lang('messages_be.content_input_name')</th>
+                                <th>@lang('messages_be.content_input_town')</th>
+                                <th>@lang('messages_be.content_input_description')</th>
+                                <th>@lang('messages_be.info_price')</th>
                                 <th></th>
                                 <th></th>
                                 <th><i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i></th>

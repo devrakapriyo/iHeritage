@@ -18,7 +18,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">Pages Home</h6>
+                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.admin_title')</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -27,13 +27,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Title Content Home Page (bahasa indonesia) : </label>
+                                        <label>@lang('messages_be.admin_input_title') (bahasa indonesia) : </label>
                                         <input type="text" name="title_ind" class="form-control" value="{{$data->title_ind}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Title Content Home Page (bahasa inggris) : </label>
+                                        <label>@lang('messages_be.admin_input_title') (bahasa inggris) : </label>
                                         <input type="text" name="title_en" class="form-control" value="{{$data->title_en}}" required>
                                     </div>
                                 </div>
@@ -41,13 +41,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Title Content Home Page (bahasa indonesia) : </label>
+                                        <label>@lang('messages_be.admin_input_description') (bahasa indonesia) : </label>
                                         <textarea name="description_ind" class="form-control text-editor" rows="5" required>{{$data->description_ind}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Title Content Home Page (bahasa inggris) : </label>
+                                        <label>@lang('messages_be.admin_input_description') (bahasa inggris) : </label>
                                         <textarea name="description_en" class="form-control text-editor" rows="5" required>{{$data->description_en}}</textarea>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">Page About Us</h6>
+                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.admin_about')</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -90,13 +90,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Description Page About (bahasa indonesia) : </label>
+                                        <label>@lang('messages_be.admin_input_description') (bahasa indonesia) : </label>
                                         <textarea name="about_us_ind" class="form-control text-editor" rows="5" required>{{$data->about_us_ind}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Description Page About (bahasa inggris) : </label>
+                                        <label>@lang('messages_be.admin_input_description') (bahasa inggris) : </label>
                                         <textarea name="about_us_en" class="form-control text-editor" rows="5" required>{{$data->about_us_en}}</textarea>
                                     </div>
                                 </div>

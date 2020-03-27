@@ -26,7 +26,7 @@
                             @csrf
                             <div class="form-group">
                                 <label>@lang('messages.full_name')</label>
-                                <input type="text" name="name" class="form-control" value="{{auth('admin')->user()->name}}" placeholder="Masukan nama lengkap anda..." required>
+                                <input type="text" name="name" class="form-control" value="{{auth('admin')->user()->name}}" placeholder="@lang('messages_be.profil_input_name')" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>

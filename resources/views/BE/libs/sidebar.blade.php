@@ -61,14 +61,17 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Content
+        @lang('messages_be.sidebar_content')
+        @lang('messages_be.sidebar_setting_pages')
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Setting Pages</span>
+            <span>
+                @lang('messages_be.sidebar_setting_pages')
+            </span>
         </a>
         <div id="collapsePages" class="collapse @yield('ctn-pgs')" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -89,18 +92,18 @@
                     //$ebook = \App\Model\content_tbl::countWaitingAppr("ebook");
                 @endphp
                 @if($auth->is_admin_master == "Y")
-                    <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">Museum @if($notif_museum != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_museum}}</span>@endif</a>
-                    <a class="collapse-item @yield('library')" href="{{route('content-pages', ['category'=>'library'])}}">Library @if($notif_library != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_library}}</span>@endif</a>
-                    <a class="collapse-item @yield('gallery')" href="{{route('content-pages', ['category'=>'gallery'])}}">Gallery @if($notif_gallery != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_gallery}}</span>@endif</a>
-                    <a class="collapse-item @yield('archive')" href="{{route('content-pages', ['category'=>'archive'])}}">Archive @if($notif_archive != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_archive}}</span>@endif</a>
-                    <a class="collapse-item @yield('community')" href="{{route('content-pages', ['category'=>'community'])}}">Community @if($notif_comunity != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_comunity}}</span>@endif</a>
-                    <a class="collapse-item @yield('temple')" href="{{route('content-pages', ['category'=>'temple'])}}">Temple @if($notif_temple != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_temple}}</span>@endif</a>
-                    <a class="collapse-item @yield('palace')" href="{{route('content-pages', ['category'=>'palace'])}}">Palace @if($notif_palace != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_palace}}</span>@endif</a>
+                    <a class="collapse-item @yield('museum')" href="{{route('content-pages', ['category'=>'museum'])}}">@lang('messages.category_museum') @if($notif_museum != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_museum}}</span>@endif</a>
+                    <a class="collapse-item @yield('library')" href="{{route('content-pages', ['category'=>'library'])}}">@lang('messages.category_library') @if($notif_library != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_library}}</span>@endif</a>
+                    <a class="collapse-item @yield('gallery')" href="{{route('content-pages', ['category'=>'gallery'])}}">@lang('messages.category_gallery') @if($notif_gallery != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_gallery}}</span>@endif</a>
+                    <a class="collapse-item @yield('archive')" href="{{route('content-pages', ['category'=>'archive'])}}">@lang('messages.category_archive') @if($notif_archive != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_archive}}</span>@endif</a>
+                    <a class="collapse-item @yield('community')" href="{{route('content-pages', ['category'=>'community'])}}">@lang('messages.category_community') @if($notif_comunity != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_comunity}}</span>@endif</a>
+                    <a class="collapse-item @yield('temple')" href="{{route('content-pages', ['category'=>'temple'])}}">@lang('messages.category_temple') @if($notif_temple != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_temple}}</span>@endif</a>
+                    <a class="collapse-item @yield('palace')" href="{{route('content-pages', ['category'=>'palace'])}}">@lang('messages.category_palace') @if($notif_palace != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_palace}}</span>@endif</a>
                     {{--<a class="collapse-item @yield('nature')" href="{{route('content-pages', ['category'=>'nature'])}}">Nature @if($notif_nature != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_nature}}</span>@endif</a>--}}
                     {{--<a class="collapse-item @yield('historical-building')" href="{{route('content-pages', ['category'=>'historical-building'])}}">Historical Building @if($notif_historical != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_historical}}</span>@endif</a>--}}
-                    <a class="collapse-item @yield('personal-activities')" href="{{route('content-pages', ['category'=>'personal-activities'])}}">Personal Activities @if($notif_personal_activities != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_personal_activities}}</span>@endif</a>
-                    <a class="collapse-item @yield('site')" href="{{route('content-pages', ['category'=>'site'])}}">Site @if($notif_site != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_site}}</span>@endif</a>
-                    <a class="collapse-item @yield('education-institution')" href="{{route('content-pages', ['category'=>'education-institution'])}}">Education Institution @if($education_institution != 0)<span class="badge badge-warning" title="waiting approve">{{$education_institution}}</span>@endif</a>
+                    <a class="collapse-item @yield('personal-activities')" href="{{route('content-pages', ['category'=>'personal-activities'])}}">@lang('messages.category_personal_activities') @if($notif_personal_activities != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_personal_activities}}</span>@endif</a>
+                    <a class="collapse-item @yield('site')" href="{{route('content-pages', ['category'=>'site'])}}">@lang('messages.category_site') @if($notif_site != 0)<span class="badge badge-warning" title="waiting approve">{{$notif_site}}</span>@endif</a>
+                    <a class="collapse-item @yield('education-institution')" href="{{route('content-pages', ['category'=>'education-institution'])}}">@lang('messages.category_education_institution') @if($education_institution != 0)<span class="badge badge-warning" title="waiting approve">{{$education_institution}}</span>@endif</a>
                     {{--<a class="collapse-item @yield('ebook')" href="{{route('content-pages', ['category'=>'ebook'])}}">eBook @if($ebook != 0)<span class="badge badge-warning" title="waiting approve">{{$ebook}}</span>@endif</a>--}}
                 @else
                     <a class="collapse-item @yield($category) text-capitalize" href="{{route('content-pages', ['category'=>$category])}}">{{str_replace("-", " ",$category)}}</a>
@@ -113,7 +116,7 @@
     <li class="nav-item @yield('collection')">
         <a class="nav-link" href="{{route('collection-pages')}}">
             <i class="fas fa-fw fa-atlas"></i>
-            <span>Collection</span>
+            <span>@lang('messages.nav_menu_heritage')</span>
         </a>
     </li>
 
@@ -121,7 +124,7 @@
     <li class="nav-item @yield('photo')">
         <a class="nav-link" href="{{route('gallery-pages')}}">
             <i class="fas fa-fw fa-atlas"></i>
-            <span>Photo</span>
+            <span>@lang('messages_be.sidebar_gallery')</span>
         </a>
     </li>
 
@@ -129,7 +132,7 @@
     <li class="nav-item @yield('vr')">
         <a class="nav-link" href="{{route('vr-page')}}">
             <i class="fas fa-fw fa-atlas"></i>
-            <span>Virtual Reality Tour 360<sup>o</sup></span>
+            <span>@lang('messages_be.sidebar_vr')<sup>o</sup></span>
         </a>
     </li>
 
@@ -137,7 +140,7 @@
     <li class="nav-item @yield('event')">
         <a class="nav-link" href="{{route('event-page')}}">
             <i class="fas fa-fw fa-compass"></i>
-            <span>Event</span>
+            <span>@lang('messages_be.sidebar_event')</span>
         </a>
     </li>
 
@@ -145,7 +148,7 @@
     <li class="nav-item @yield('edu-program')">
         <a class="nav-link" href="{{route('edu-page')}}">
             <i class="fas fa-fw fa-book-reader"></i>
-            <span>Education Program</span>
+            <span>@lang('messages_be.sidebar_education_program')</span>
         </a>
     </li>
 
@@ -153,7 +156,7 @@
     <li class="nav-item @yield('content-visiting')">
         <a class="nav-link" href="{{route('content-visiting')}}">
             <i class="fas fa-fw fa-book-reader"></i>
-            <span>Visiting Order</span>
+            <span>@lang('messages_be.sidebar_visiting_order')</span>
         </a>
     </li>
 
@@ -171,25 +174,25 @@
             <li class="nav-item @yield('heritage')">
                 <a class="nav-link" href="{{route('heritage-pages')}}">
                     <i class="fas fa-fw fa-university"></i>
-                    <span>About Heritage</span>
+                    <span>@lang('messages_be.sidebar_about_iheritage')</span>
                 </a>
             </li>
             <li class="nav-item @yield('our-services')">
                 <a class="nav-link" href="{{route('our-services-pages')}}">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>List Our Services</span>
+                    <span>@lang('messages_be.sidebar_services')</span>
                 </a>
             </li>
             <li class="nav-item @yield('news')">
                 <a class="nav-link" href="{{route('news-pages')}}">
                     <i class="fas fa-fw fa-newspaper"></i>
-                    <span>List News & Article</span>
+                    <span>@lang('messages_be.sidebar_news')</span>
                 </a>
             </li>
             <li class="nav-item @yield('form-question')">
                 <a class="nav-link" href="{{route('form-question-pages')}}">
                     <i class="fas fa-fw fa-question-circle"></i>
-                    <span>List Form Question</span>
+                    <span>@lang('messages_be.sidebar_question')</span>
                 </a>
             </li>
         @endif
@@ -200,7 +203,7 @@
                 <a class="nav-link" href="{{route('users-pages')}}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>
-                        List Users
+                        @lang('messages_be.sidebar_list_user')
                         @if($auth->is_admin_master == "Y")
                             @if($notif_user != 0)
                                 <span class="badge badge-warning" title="waiting approve">{{$notif_user}}</span>

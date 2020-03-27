@@ -2,19 +2,20 @@
 <h3>hai, {{$name}}</h3>
 @if($active == "N")
     <p>
-        Congratulations your account has been saved, please wait for admin confirmation to activate the account<br>
+        @lang('messages_be.email_register_congratulation_title')<br>
     </p>
 @else
     <p>
-        Congratulations your account has been active at iHeritage.id as an {{$role}}<br>
+        @lang('messages_be.email_register_congratulation') {{$role}}<br>
         Email : {{$email}}<br>
         Password : {{$password}}<br>
         Link : {{$link}}<br>
     </p>
 @endif
-<p>Let us explore the extraordinary heritage of the nation to push the boundaries of understanding in the past and today.</p>
-iHeritage.id
 <p>
-    Thank you for your attention.
+    @lang('messages_be.email_iheritage')
+</p>
+<p>
+    @lang('messages_be.email_thank')
 </p>
 </body>

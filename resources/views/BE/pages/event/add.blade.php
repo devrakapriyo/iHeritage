@@ -20,7 +20,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800 text-capitalize">event</h1>
+        <h1 class="h3 mb-0 text-gray-800 text-capitalize">@lang('messages_be.event_title')</h1>
     </div>
 
     <!-- Content Row -->
@@ -33,8 +33,8 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">add new event</h6>
-                    <a href="{{route('event-page')}}" class="btn btn-success text-capitalize">list event</a>
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.event_add')</h6>
+                    <a href="{{route('event-page')}}" class="btn btn-success text-capitalize">@lang('messages_be.event_list')</a>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -43,7 +43,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Institution : </label>
+                                    <label>@lang('messages.home_select_heritage') : </label>
                                     @if(auth('admin')->user()->is_admin_master == "Y")
                                         <select name="content_id" class="form-control" required>
                                             <option value=""></option>
@@ -61,13 +61,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name Event (Bahasa Indonesia): </label>
+                                    <label>@lang('messages_be.event_input_name') (Bahasa Indonesia): </label>
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name Event (Bahasa Inggris): </label>
+                                    <label>@lang('messages_be.event_input_name') (Bahasa Inggris): </label>
                                     <input type="text" name="name_en" class="form-control" required>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Banner Event : </label>
+                                    <label>Banner : </label>
                                     <input type="file" name="banner" class="form-control" required>
                                 </div>
                             </div>
@@ -83,13 +83,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Start Date : </label>
+                                    <label>@lang('messages_be.event_input_start') : </label>
                                     <input type="date" name="start_date" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>End Date : </label>
+                                    <label>@lang('messages_be.event_input_end') : </label>
                                     <input type="date" name="end_date" class="form-control" required>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Province : </label>
+                                    <label>@lang('messages.home_select_place') : </label>
                                     <select name="place_id" class="form-control" required>
                                         <option value=""></option>
                                         @foreach(App\Model\place_tbl::listSearch() as $item)
@@ -108,7 +108,7 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="form-group">
-                                    <label>Location Name :</label>
+                                    <label>@lang('messages_be.content_input_location') :</label>
                                     <input type="text" name="map_area_detail" class="form-control" id="location" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "map_area_detail")}}" onchange="check_location()" required>
                                     <input type="hidden" name="latitude_detail" id="latitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "latitude_detail")}}">
                                     <input type="hidden" name="longitude_detail" id="longitude" value="{{\App\Model\content_detail_tbl::fieldContent($content_id, "latitude_detail")}}">
@@ -130,7 +130,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Ticket Price : </label>
+                                    <label>@lang('messages_be.info_price') : </label>
                                     <input type="text" name="price" class="form-control">
                                     <small class="text-danger">if the event is free then empty it</small>
                                 </div>
@@ -160,13 +160,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (Bahasa Indonesia): </label>
+                                    <label>@lang('messages_be.content_input_description') (Bahasa Indonesia): </label>
                                     <textarea name="long_description_ind" class="form-control text-editor" row="5"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Description (Bahasa Inggris): </label>
+                                    <label>@lang('messages_be.content_input_description') (Bahasa Inggris): </label>
                                     <textarea name="long_description_en" class="form-control text-editor" row="5"></textarea>
                                 </div>
                             </div>

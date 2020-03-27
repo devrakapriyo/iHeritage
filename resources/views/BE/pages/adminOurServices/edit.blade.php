@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800 text-capitalize">our services</h1>
+            <h1 class="h3 mb-0 text-gray-800 text-capitalize">@lang('messages_be.service_title')</h1>
         </div>
 
         <!-- Content Row -->
@@ -18,8 +18,8 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">edit service</h6>
-                        <a href="{{route('our-services-pages')}}" class="btn btn-success text-capitalize">list services</a>
+                        <h6 class="m-0 font-weight-bold text-primary text-capitalize">@lang('messages_be.service_edit')</h6>
+                        <a href="{{route('our-services-pages')}}" class="btn btn-success text-capitalize">@lang('messages_be.service_list')</a>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -28,13 +28,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Title Service (bahasa indonesia) : </label>
+                                        <label>@lang('messages_be.service_input_title') (bahasa indonesia) : </label>
                                         <input type="text" name="title_ind" class="form-control" value="{{$data->title_ind}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Title Service (bahasa inggriss) : </label>
+                                        <label>@lang('messages_be.service_input_title') (bahasa inggriss) : </label>
                                         <input type="text" name="title_en" class="form-control" value="{{$data->title_en}}" required>
                                     </div>
                                 </div>
@@ -42,13 +42,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Description (bahasa indonesia) : </label>
+                                        <label>@lang('messages_be.service_input_description') (bahasa indonesia) : </label>
                                         <textarea name="description_ind" class="form-control text-editor" required>{{$data->description_ind}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Description (bahasa inggriss) : </label>
+                                        <label>@lang('messages_be.service_input_description') (bahasa inggriss) : </label>
                                         <textarea name="description_en" class="form-control text-editor" required>{{$data->description_en}}</textarea>
                                     </div>
                                 </div>

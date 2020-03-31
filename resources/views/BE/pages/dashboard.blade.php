@@ -171,6 +171,8 @@
     <!-- Content Row -->
 
     @if(auth('admin')->user()->institutional_id == 3)
+
+        {{--CHART FEB--}}
         <div class="row">
 
             <!-- Area Chart -->
@@ -216,6 +218,7 @@
             {{--</div>--}}
         </div>
 
+        {{--CHART MAR--}}
         @if(date("m") > "03")
             <div class="row">
 

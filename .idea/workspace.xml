@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/visitor_counting.php" afterPath="$PROJECT_DIR$/app/Model/visitor_counting.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/BE/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/BE/pages/dashboard.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,12 +50,12 @@
       <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="218" column="23" lean-forward="false" selection-start-line="218" selection-start-column="23" selection-end-line="218" selection-end-column="23" />
+            <state relative-caret-position="194">
+              <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
               <folding>
-                <element signature="e#9856#9891#0#HTML" expanded="true" />
-                <element signature="e#12577#12612#0#HTML" expanded="true" />
-                <element signature="e#14982#15017#0#HTML" expanded="true" />
+                <element signature="e#9883#9918#0#HTML" expanded="true" />
+                <element signature="e#12630#12665#0#HTML" expanded="true" />
+                <element signature="e#15035#15070#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -470,12 +468,12 @@
       <workItem from="1582508894315" duration="7105000" />
       <workItem from="1583921454911" duration="2403000" />
       <workItem from="1584437121603" duration="27566000" />
-      <workItem from="1585565706027" duration="4910000" />
+      <workItem from="1585565706027" duration="4987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475478000" />
+    <option name="totallyTimeSpent" value="475555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -923,12 +921,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/BE/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="218" column="23" lean-forward="false" selection-start-line="218" selection-start-column="23" selection-end-line="218" selection-end-column="23" />
+        <state relative-caret-position="194">
+          <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
           <folding>
-            <element signature="e#9856#9891#0#HTML" expanded="true" />
-            <element signature="e#12577#12612#0#HTML" expanded="true" />
-            <element signature="e#14982#15017#0#HTML" expanded="true" />
+            <element signature="e#9883#9918#0#HTML" expanded="true" />
+            <element signature="e#12630#12665#0#HTML" expanded="true" />
+            <element signature="e#15035#15070#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

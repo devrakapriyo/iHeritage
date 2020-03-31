@@ -13,12 +13,11 @@
 
 <!-- Page Content -->
 <div class="container mt-5 mb-5">
-    <div class="row mt-2">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-8 mt-2">
             <h2 class="text-capitalize">{{App::isLocale('id') ? $detail->name : $detail->name_en}}</h2>
-
             {{--@php--}}
-            {{--$text = App::isLocale('id') ? $detail->short_description_ind : $detail->short_description_en;--}}
+                {{--$text = App::isLocale('id') ? $detail->short_description_ind : $detail->short_description_en;--}}
             {{--@endphp--}}
             {{--<small>{{$text}}</small>--}}
             <hr>
@@ -70,11 +69,11 @@
                                         </small>
                                         {{--<hr>--}}
                                         {{--<p class="card-text">--}}
-                                        {{--@php--}}
-                                        {{--$text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);--}}
-                                        {{--$limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('collection/detail/'.$item->id)."'> ...readmore</a>" : $text;--}}
-                                        {{--@endphp--}}
-                                        {{--{!! $limit_text !!}--}}
+                                            {{--@php--}}
+                                                {{--$text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);--}}
+                                                {{--$limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('collection/detail/'.$item->id)."'> ...readmore</a>" : $text;--}}
+                                            {{--@endphp--}}
+                                            {{--{!! $limit_text !!}--}}
                                         {{--</p>--}}
                                     </div>
                                 </a>
@@ -103,14 +102,23 @@
                                     <img class="card-img-top" src="{{$item->banner}}" alt="" height="200" widht="400">
                                     <div class="card-body">
                                         <h5 class="card-title">{{App::isLocale('id') ? $item->name : $item->name_en}}</h5>
+                                        <p class="card-text">
+                                            <small class="card-text text-uppercase">{{$item->map_area_detail}}</small>
+                                        </p>
+                                        @php
+                                            $text = App::isLocale('id') ? htmlspecialchars_decode($item->description_ind) : htmlspecialchars_decode($item->description_en);
+                                            $text = stripslashes($text);
+                                            $limit_text = strlen($text) > 150 ? substr($text, 0, 150)."<a href='".url('education-program/detail/'.$item->seo.'/'.$item->id)."'> ...readmore</a>" : $text;
+                                        @endphp
+                                        <p class="card-text">{!! $limit_text !!}</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     @endforeach
-                    @if(count($event) > 4)
+                    @if(count($education) > 4)
                         <div class="col-md-12">
-                            <a href="{{url('event-search?place_id=all&price=all&duration=all&institutional_id='.\App\Model\content_tbl::fieldContent($id, "institutional_id"))}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.event_title')</a>
+                            <a href="{{url('education-program-search?place_id=all&institutional_id='.\App\Model\content_tbl::fieldContent($id, "institutional_id"))}}" class="btn btn-dark btn-block mb-5">@lang('messages.home_more_search') @lang('messages.edu_title')</a>
                         </div>
                     @endif
                 </div>
@@ -231,14 +239,13 @@
                 </div>
             @endif
             {{--@if(count($gallery) > 3)--}}
-            {{--<div class="form-group">--}}
-            {{--<button class="btn btn-block btn-outline-dark text-capitalize">@lang('messages.museum_gallery_button')</button>--}}
-            {{--</div>--}}
+                {{--<div class="form-group">--}}
+                    {{--<button class="btn btn-block btn-outline-dark text-capitalize">@lang('messages.museum_gallery_button')</button>--}}
+                {{--</div>--}}
             {{--@endif--}}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mt-2">
             <div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q={{$detail->map_area_detail}}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">best wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:100%;}</style></div>
-
             <div class="form-group mt-3">
                 <h5>{{$detail->name}}</h5>
                 <span class="font-weight-lighter">{{$detail->address}}<br>
@@ -273,44 +280,44 @@
                 <ul class="list-group list-group-flush">
                     {{--@if(!empty($detail->opening_monday))--}}
                     {{--<li class="list-group-item">--}}
-                    {{--@lang('messages.museum_information_monday')<br>--}}
-                    {{--<strong>{{$detail->opening_monday}}</strong>--}}
+                        {{--@lang('messages.museum_information_monday')<br>--}}
+                        {{--<strong>{{$detail->opening_monday}}</strong>--}}
                     {{--</li>--}}
                     {{--@endif--}}
                     {{--@if(!empty($detail->opening_tuesday))--}}
                     {{--<li class="list-group-item">--}}
-                    {{--@lang('messages.museum_information_tuesday')<br>--}}
-                    {{--<strong>{{$detail->opening_tuesday}}</strong>--}}
+                        {{--@lang('messages.museum_information_tuesday')<br>--}}
+                        {{--<strong>{{$detail->opening_tuesday}}</strong>--}}
                     {{--</li>--}}
                     {{--@endif--}}
                     {{--@if(!empty($detail->opening_tuesday))--}}
                     {{--<li class="list-group-item">--}}
-                    {{--@lang('messages.museum_information_wednesday')<br>--}}
-                    {{--<strong>{{$detail->opening_tuesday}}</strong>--}}
+                        {{--@lang('messages.museum_information_wednesday')<br>--}}
+                        {{--<strong>{{$detail->opening_tuesday}}</strong>--}}
                     {{--</li>--}}
                     {{--@endif--}}
                     {{--@if(!empty($detail->opening_thursday))--}}
                     {{--<li class="list-group-item">--}}
-                    {{--@lang('messages.museum_information_thursday')<br>--}}
-                    {{--<strong>{{$detail->opening_thursday}}</strong>--}}
+                        {{--@lang('messages.museum_information_thursday')<br>--}}
+                        {{--<strong>{{$detail->opening_thursday}}</strong>--}}
                     {{--</li>--}}
                     {{--@endif--}}
                     {{--@if(!empty($detail->opening_friday))--}}
                     {{--<li class="list-group-item">--}}
-                    {{--@lang('messages.museum_information_friday')<br>--}}
-                    {{--<strong>{{$detail->opening_friday}}</strong>--}}
+                        {{--@lang('messages.museum_information_friday')<br>--}}
+                        {{--<strong>{{$detail->opening_friday}}</strong>--}}
                     {{--</li>--}}
                     {{--@endif--}}
                     {{--@if(!empty($detail->opening_saturday))--}}
                     {{--<li class="list-group-item">--}}
-                    {{--@lang('messages.museum_information_saturday')<br>--}}
-                    {{--<strong>{{$detail->opening_saturday}}</strong>--}}
+                        {{--@lang('messages.museum_information_saturday')<br>--}}
+                        {{--<strong>{{$detail->opening_saturday}}</strong>--}}
                     {{--</li>--}}
                     {{--@endif--}}
                     {{--@if(!empty($detail->opening_sunday))--}}
                     {{--<li class="list-group-item">--}}
-                    {{--@lang('messages.museum_information_sunday')<br>--}}
-                    {{--<strong>{{$detail->opening_sunday}}</strong>--}}
+                        {{--@lang('messages.museum_information_sunday')<br>--}}
+                        {{--<strong>{{$detail->opening_sunday}}</strong>--}}
                     {{--</li>--}}
                     {{--@endif--}}
                     <li class="list-group-item">
@@ -328,18 +335,18 @@
             </div>
 
             @if(($detail->category_ctn_id == 1) || ($detail->category_ctn_id == 4) || ($detail->category_ctn_id == 5) || ($detail->category_ctn_id == 7) || ($detail->category_ctn_id == 12) || ($detail->category_ctn_id == 6))
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title">@lang('messages.museum_visiting_price')</h5>
-                        @if(($detail->price_student == 0) && ($detail->price_college_student == 0) && ($detail->price_adult == 0))
-                            <strong class="text-success">@lang('messages.event_free_price')</strong>
-                        @else
-                            @lang('messages.museum_visiting_adult') : {!! "Rp. ".number_format($detail->price_adult) !!}<br>
-                            @lang('messages.museum_visiting_college_student') : {!! "Rp. ".number_format($detail->price_college_student) !!}<br>
-                            @lang('messages.museum_visiting_student') : {!! "Rp. ".number_format($detail->price_student) !!}
-                        @endif
-                    </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">@lang('messages.museum_visiting_price')</h5>
+                    @if(($detail->price_student == 0) && ($detail->price_college_student == 0) && ($detail->price_adult == 0))
+                        <strong class="text-success">@lang('messages.event_free_price')</strong>
+                    @else
+                        @lang('messages.museum_visiting_adult') : {!! "Rp. ".number_format($detail->price_adult) !!}<br>
+                        @lang('messages.museum_visiting_college_student') : {!! "Rp. ".number_format($detail->price_college_student) !!}<br>
+                        @lang('messages.museum_visiting_student') : {!! "Rp. ".number_format($detail->price_student) !!}
+                    @endif
                 </div>
+            </div>
             @endif
 
             <div class="card mt-3">
@@ -384,6 +391,8 @@
             </div>
         </div>
     </div>
+    <!-- /.row -->
+
 </div>
 <!-- /.container -->
 @endsection

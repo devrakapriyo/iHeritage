@@ -48,6 +48,9 @@ return [
     'dashboard_collection' => "Koleksi Pusaka",
     'dashboard_approval' => "Proses Persetujuan Institusi Admin",
     'dashboard_visitor' => "Pengunjung",
+    'dashboard_visitor_title' => "Jumlah pengunjung perhari",
+    'dashboard_visitor_month_feb' => "Februari",
+    'dashboard_visitor_month_mar' => "Maret",
 
     'profil_input_name' => "Masukan nama lengkap anda...",
 

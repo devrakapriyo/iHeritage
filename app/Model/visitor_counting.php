@@ -25,6 +25,30 @@ class visitor_counting extends Model
         }
     }
 
+    public static function visitorLineChartFeb($institutional_id)
+    {
+        $query = self::select(
+            DB::raw("date(created_at) as date"),
+            DB::raw("COUNT(id) as visit")
+        )
+            ->whereMonth('created_at', "02")
+            ->orderBy("created_at")
+            ->groupBy(DB::raw("date(created_at)"));
+
+        $query->when($institutional_id != "all", function ($q) use ($institutional_id) {
+            return $q->where('institutional_id', $institutional_id);
+        });
+
+        $visitor = $query->get();
+
+        $result[] = ['Date','Visitor '];
+        foreach ($visitor as $key => $value) {
+            $result[++$key] = [$value->date, (int)$value->visit];
+        }
+
+        return json_encode($result);
+    }
+
     public static function visitorLineChart($institutional_id)
     {
         $query = self::select(

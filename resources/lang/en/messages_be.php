@@ -48,6 +48,9 @@ return [
     'dashboard_collection' => "Heritage Collection",
     'dashboard_approval' => "Process Approval Admin Institution",
     'dashboard_visitor' => "Visitor",
+    'dashboard_visitor_title' => "Number of visitors per day",
+    'dashboard_visitor_month_feb' => "February",
+    'dashboard_visitor_month_mar' => "March",
 
     'profil_input_name' => "Enter your full name ...",
 

@@ -15,7 +15,15 @@ class content_tbl extends Model
 
     public static function listContentCategory($category, $limit)
     {
-        return self::select('content.*','category_content.category')->join('category_content','category_content.id',"=",'content.category_ctn_id')->where('category', $category)->where('content.is_active', "Y")->orderBy('content.created_at', 'desc')->take($limit)->get();
+        return self::select('content.*','category_content.category')
+            ->join('category_content','category_content.id',"=",'content.category_ctn_id')
+            ->join('institutional','institutional.id',"=",'content.institutional_id')
+            ->join('place','place.id',"=",'institutional.place_id')
+            ->where('category_content.category', $category)
+            ->where('content.is_active', "Y")
+            ->orderBy('place.id', 'asc')
+            ->take($limit)
+            ->get();
     }
 
     public static function content($user)

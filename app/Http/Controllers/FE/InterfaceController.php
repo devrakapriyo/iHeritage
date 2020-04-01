@@ -182,7 +182,8 @@ class InterfaceController extends Controller
     {
         $query = content_tbl::select('content.*','content_detail.place_id', 'institutional.category')
             ->join('institutional','institutional.id',"=",'content.institutional_id')
-            ->join('content_detail','content_detail.content_id',"=",'content.id');
+            ->join('content_detail','content_detail.content_id',"=",'content.id')
+            ->join('place','place.id',"=",'institutional.place_id');
 
         $query->when($request->category != "all", function ($q) use ($request) {
             return $q->where('institutional.category', $request->category);
@@ -193,7 +194,7 @@ class InterfaceController extends Controller
         });
 
         $data = $query->where('content.is_active', "Y")
-            ->orderBy('content.created_at', 'desc')
+            ->orderBy('place.id', 'asc')
             ->get();
         $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
         $category = $request->category;
@@ -205,11 +206,12 @@ class InterfaceController extends Controller
         $query = content_tbl::select('content.*','content_detail.place_id', 'institutional.category')
             ->join('institutional','institutional.id',"=",'content.institutional_id')
             ->join('content_detail','content_detail.content_id',"=",'content.id')
+            ->join('place','place.id',"=",'institutional.place_id')
             ->where('institutional.category', $instantion);
             //->where('content.name', 'like', "%".$request->name."%");
 
         $data = $query->where('content.is_active', "Y")
-            ->orderBy('content.created_at', 'desc')
+            ->orderBy('place.id', 'asc')
             ->get();
         $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
         $category = $instantion;

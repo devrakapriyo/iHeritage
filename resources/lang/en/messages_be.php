@@ -48,6 +48,8 @@ return [
     'dashboard_collection' => "Heritage Collection",
     'dashboard_approval' => "Process Approval Admin Institution",
     'dashboard_visitor' => "Visitor",
+    'dashboard_visitor_priode' => "Visitor Period",
+    'dashboard_visitor_filter_priode' => "Visitor Graph Period Filter",
     'dashboard_visitor_title' => "Number of visitors per day",
     'dashboard_visitor_month_feb' => "February",
     'dashboard_visitor_month_mar' => "March",
@@ -131,4 +133,7 @@ return [
     'info_price' => "Ticket Price",
     'info_input_limit' => "limit text 250 character",
     'info_switch_lang' => "Switch Language",
+    'info_from' => "From",
+    'info_to' => "To",
+    'info_btn_search' => "SEARCH",
 ];

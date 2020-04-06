@@ -76,6 +76,7 @@ Route::get('/dashboard/profile-admin', 'BE\IndexController@profileAdmin')->middl
 Route::post('/dashboard/profile-admin', 'BE\IndexController@profileAdminPost')->middleware('admin')->name('profile-post');
 
 Route::prefix('dashboard')->namespace('Admin')->middleware('admin')->group(function () {
+
     // heritage
     Route::get('/heritage', 'HeritageController@heritage_pages')->name('heritage-pages');
     Route::post('/heritage/update/{id}/{page}', 'HeritageController@heritage_update')->name('heritage-update');
@@ -106,7 +107,11 @@ Route::prefix('dashboard')->namespace('Admin')->middleware('admin')->group(funct
 });
 
 Route::prefix('dashboard')->namespace('BE')->middleware('admin')->group(function () {
+
+    // dashboard
     Route::get('/', 'IndexController@dashboard')->name('dashboard');
+    Route::get('/grafik', 'IndexController@dashboard_grafik')->name('dashboard-grafik');
+    Route::get('/filter-grafik', 'IndexController@dashboard_filter_grafik')->name('dashboard-filter-grafik');
     Route::get('/map/{location}', 'ContentController@get_map');
 
     // user management

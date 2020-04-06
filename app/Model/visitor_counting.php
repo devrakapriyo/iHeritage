@@ -97,6 +97,30 @@ class visitor_counting extends Model
         return json_encode($result);
     }
 
+    public static function visitorLineChartFilter($institutional_id, $from, $to)
+    {
+        $query = self::select(
+            DB::raw("date(created_at) as date"),
+            DB::raw("COUNT(id) as visit")
+        )
+            ->whereBetween('created_at', [$from, $to])
+            ->orderBy("created_at")
+            ->groupBy(DB::raw("date(created_at)"));
+
+        $query->when($institutional_id != "all", function ($q) use ($institutional_id) {
+            return $q->where('institutional_id', $institutional_id);
+        });
+
+        $visitor = $query->get();
+
+        $result[] = ['Date','Visitor '];
+        foreach ($visitor as $key => $value) {
+            $result[++$key] = [$value->date, (int)$value->visit];
+        }
+
+        return json_encode($result);
+    }
+
     public static function viewPieChart($institutional_id, $view)
     {
         $query = self::select('view');

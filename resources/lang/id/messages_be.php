@@ -48,6 +48,8 @@ return [
     'dashboard_collection' => "Koleksi Pusaka",
     'dashboard_approval' => "Proses Persetujuan Institusi Admin",
     'dashboard_visitor' => "Pengunjung",
+    'dashboard_visitor_priode' => "Periode Pengunjung",
+    'dashboard_visitor_filter_priode' => "Filter Periode Grafik Pengunjung",
     'dashboard_visitor_title' => "Jumlah pengunjung perhari",
     'dashboard_visitor_month_feb' => "Februari",
     'dashboard_visitor_month_mar' => "Maret",
@@ -132,4 +134,7 @@ return [
     'info_price' => "Harga Tiket",
     'info_input_limit' => "batasi teks 250 karakter",
     'info_switch_lang' => "Ubah Bahasa",
+    'info_from' => "Dari",
+    'info_to' => "Sampai",
+    'info_btn_search' => "CARI",
 ];

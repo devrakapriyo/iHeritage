@@ -234,7 +234,23 @@ class IndexController extends Controller
 
     public function dashboard()
     {
+        //$institutional_id = auth('admin')->user()->is_admin_master == "Y" ? "all" : auth('admin')->user()->institutional_id;
+        //return \App\Model\visitor_counting::visitorLineChart($institutional_id);
         return view('BE.pages.dashboard');
+    }
+
+    public function dashboard_grafik()
+    {
+        $institutional_id = auth('admin')->user()->is_admin_master == "Y" ? "all" : auth('admin')->user()->institutional_id;
+        return \App\Model\visitor_counting::visitorLineChart($institutional_id);
+    }
+
+    public function dashboard_filter_grafik(Request $request)
+    {
+        $grafik = \App\Model\visitor_counting::visitorLineChartFilter($request->institutional_id, $request->from, $request->to);
+        $from = $request->from;
+        $to = $request->to;
+        return view('BE.pages.dashboard-filter-grafik', compact('grafik', 'from', 'to'));
     }
 
     public function category_content()

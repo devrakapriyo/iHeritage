@@ -4,7 +4,7 @@
 @endsection
 @section('header')
     <!-- Datatable core CSS -->
-    <link href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -50,7 +50,7 @@
 @endsection
 @section('footer')
 <!-- Datatable core JavaScript -->
-<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 <script>
     $(function() {

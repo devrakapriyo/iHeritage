@@ -843,7 +843,7 @@
         <!-- /.row -->
 
         <!-- List News -->
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-12">
                 <h2>
                     <a href="{{url('news')}}" class="text-dark">

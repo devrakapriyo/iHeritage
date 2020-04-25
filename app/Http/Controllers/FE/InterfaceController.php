@@ -185,6 +185,10 @@ class InterfaceController extends Controller
             ->join('content_detail','content_detail.content_id',"=",'content.id')
             ->join('place','place.id',"=",'institutional.place_id');
 
+        $query->when($request->institution_name != "", function ($q) use ($request) {
+            return $q->where('content.name', 'like', "%".$request->institution_name."%");
+        });
+
         $query->when($request->category != "all", function ($q) use ($request) {
             return $q->where('institutional.category', $request->category);
         });

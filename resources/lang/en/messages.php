@@ -21,6 +21,7 @@ return [
     'institutional_name' => 'Institutional Name',
 
     // search
+    'input_search' => 'Look for the name of the institution here...',
     'title_search' => 'Sorry,',
     'msg_search' => 'The data you are looking for has not been found',
     'msg_search_event' => 'Please specify the time duration you are looking for',

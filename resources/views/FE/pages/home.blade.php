@@ -20,8 +20,8 @@
         <div class="container bg-light">
             <form method="get" action="{{url('search')}}">
                 <div class="row ml-5 mr-5">
-                    <div class="col-md-5">
-                        <div class="form-group mt-5 mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group mt-5">
                             <select name="place_id" class="form-control">
                                 <option value="all">@lang('messages.home_select_place')</option>
                                 @foreach(\App\Model\place_tbl::listSearch() as $items)
@@ -30,8 +30,8 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group mt-5 mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group mt-5">
                             <select name="category" class="form-control">
                                 <option value="all">@lang('messages.home_select_heritage')</option>
                                 @foreach(\App\Model\content_tbl::groupInstitution() as $institution)
@@ -53,8 +53,15 @@
                             </select>
                         </div>
                     </div>
+                </div>
+                <div class="row ml-5 mr-5">
+                    <div class="col-md-9">
+                        <div class="form-group mt-2 mb-5">
+                            <input type="text" name="institution_name" class="form-control" placeholder="@lang('messages.input_search')">
+                        </div>
+                    </div>
                     <div class="col-md-3">
-                        <div class="form-group mt-5 mb-5">
+                        <div class="form-group mt-2 mb-5">
                             <button class="btn btn-block btn-dark">@lang('messages.home_select_search')</button>
                         </div>
                     </div>
@@ -100,6 +107,11 @@
                                     {{--<option value="site">@lang('messages.category_site')</option>--}}
                                     {{--<option value="education-institution">@lang('messages.category_education_institution')</option>--}}
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="institution_name" class="form-control" placeholder="@lang('messages.input_search')">
                             </div>
                         </div>
                         <div class="col-md-12">

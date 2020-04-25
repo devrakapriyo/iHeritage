@@ -21,7 +21,7 @@ return [
     'institutional_name' => 'Nama Institusi',
 
     // search
-    'input_search' => 'Cari nama institusi disini...',
+    'input_search' => 'Pencarian bebas...',
     'title_search' => 'Maaf,',
     'msg_search' => 'Data yang anda cari belum ditemukan',
     'msg_search_event' => 'Silahkan tentukan durasi waktu yang Anda cari',

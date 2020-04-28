@@ -180,29 +180,94 @@ class InterfaceController extends Controller
 
     public function search(Request $request)
     {
-        $query = content_tbl::select('content.*','content_detail.place_id', 'institutional.category')
-            ->join('institutional','institutional.id',"=",'content.institutional_id')
-            ->join('content_detail','content_detail.content_id',"=",'content.id')
-            ->join('place','place.id',"=",'institutional.place_id');
+        if($request->input_search == "")
+        {
+            $query = content_tbl::select('content.*','content_detail.place_id', 'institutional.category')
+                ->join('institutional','institutional.id',"=",'content.institutional_id')
+                ->join('content_detail','content_detail.content_id',"=",'content.id')
+                ->join('place','place.id',"=",'institutional.place_id');
 
-        $query->when($request->institution_name != "", function ($q) use ($request) {
-            return $q->where('content.name', 'like', "%".$request->institution_name."%");
-        });
+            $query->when($request->category != "all", function ($q) use ($request) {
+                return $q->where('institutional.category', $request->category);
+            });
 
-        $query->when($request->category != "all", function ($q) use ($request) {
-            return $q->where('institutional.category', $request->category);
-        });
+            $query->when($request->place_id != "all", function ($q) use ($request) {
+                return $q->where('content_detail.place_id', $request->place_id);
+            });
 
-        $query->when($request->place_id != "all", function ($q) use ($request) {
-            return $q->where('content_detail.place_id', $request->place_id);
-        });
+            $data = $query->where('content.is_active', "Y")
+                ->orderBy('place.id', 'asc')
+                ->get();
+            $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
+            $category = $request->category;
+            return view('FE.pages.search', compact('data', 'about', 'category'));
+        }else{
+            $content = content_tbl::select('content.id', 'photo', 'name', 'name_en', 'seo', 'location')
+                ->join('institutional','institutional.id',"=",'content.institutional_id')
+                ->where('content.is_active', "Y")
+                ->where(function ($query) use ($request){
+                    $query->where('name', 'like', "%".$request->input_search."%")
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                })
+                ->orderBy('institutional.place_id', 'asc')
+                ->get();
+            if(empty($content))
+            {
+                $data_content = "";
+            }else{
+                $data_content = $content;
+            }
 
-        $data = $query->where('content.is_active', "Y")
-            ->orderBy('place.id', 'asc')
-            ->get();
-        $about = admin_heritage_tbl::select('title_en','title_ind','description_en','description_ind')->where('id',1)->first();
-        $category = $request->category;
-        return view('FE.pages.search', compact('data', 'about', 'category'));
+            $collection = content_collection_tbl::select('id', 'name', 'name_en', 'banner', 'media_type', 'topic', 'place_id')
+                ->where('is_active', "Y")
+                ->where(function ($query) use ($request){
+                    $query->where('name', 'like', "%".$request->input_search."%")
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                })
+                ->orderBy('place_id', 'asc')
+                ->get();
+            if(empty($collection))
+            {
+                $data_collection = "";
+            }else{
+                $data_collection = $collection;
+            }
+
+            $event = content_event_tbl::select('id', 'name', 'name_en', 'seo', 'start_date', 'banner', 'price', 'map_area_detail')
+                ->where('is_active', "Y")
+                ->where('is_publish', "Y")
+                ->where(function ($query) use ($request){
+                    $query->where('name', 'like', "%".$request->input_search."%")
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                })
+                ->orderBy('place_id', 'asc')
+                ->get();
+            if(empty($event))
+            {
+                $data_event = "";
+            }else{
+                $data_event = $event;
+            }
+
+            $education = content_edu_tbl::select('id', 'name', 'name_en', 'seo', 'banner', 'description_ind', 'description_en', 'map_area_detail')
+                ->where('is_active', "Y")
+                ->where('is_publish', "Y")
+                ->where(function ($query) use ($request){
+                    $query->where('name', 'like', "%".$request->input_search."%")
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                })
+                ->orderBy('place_id', 'asc')
+                ->get();
+            if(empty($education))
+            {
+                $data_education = "";
+            }else{
+                $data_education = $education;
+            }
+
+
+            return view('FE.pages.search-all', compact('data_content', 'data_collection', 'data_event', 'data_education'));
+        }
     }
 
     public function searchInstantion($instantion)

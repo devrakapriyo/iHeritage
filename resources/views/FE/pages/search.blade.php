@@ -47,7 +47,7 @@
                     <div class="row ml-5 mr-5">
                         <div class="col-md-9">
                             <div class="form-group mt-2 mb-5">
-                                <input type="text" name="institution_name" class="form-control" placeholder="@lang('messages.input_search')">
+                                <input type="text" name="input_search" class="form-control" placeholder="@lang('messages.input_search')">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -102,7 +102,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" name="institution_name" class="form-control" placeholder="@lang('messages.input_search')">
+                                <input type="text" name="input_search" class="form-control" placeholder="@lang('messages.input_search')">
                             </div>
                         </div>
                         <div class="col-md-12">

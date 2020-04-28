@@ -120,7 +120,7 @@
     <div class="container">
 
         <!-- List Content -->
-        @if($data_content != "")
+        @if(count($data_content) > 0)
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-capitalize">
@@ -166,7 +166,7 @@
         <!-- /.row -->
 
         <!-- List Collection -->
-        @if($data_collection != "")
+        @if(count($data_collection) > 0)
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-capitalize">
@@ -221,7 +221,7 @@
         <!-- /.row -->
 
         <!-- List Event -->
-        @if($data_event != "")
+        @if(count($data_event) > 0)
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-capitalize">
@@ -276,7 +276,7 @@
         <!-- /.row -->
 
         <!-- List Education -->
-        @if($data_education != "")
+        @if(count($data_education) > 0)
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-capitalize">

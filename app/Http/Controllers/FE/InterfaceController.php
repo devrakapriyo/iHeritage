@@ -202,7 +202,7 @@ class InterfaceController extends Controller
             $category = $request->category;
             return view('FE.pages.search', compact('data', 'about', 'category'));
         }else{
-            $content = content_tbl::select('content.id', 'photo', 'name', 'name_en', 'seo', 'location')
+            $data_content = content_tbl::select('content.id', 'photo', 'name', 'name_en', 'seo', 'location')
                 ->join('institutional','institutional.id',"=",'content.institutional_id')
                 ->where('content.is_active', "Y")
                 ->where(function ($query) use ($request){
@@ -211,14 +211,14 @@ class InterfaceController extends Controller
                 })
                 ->orderBy('institutional.place_id', 'asc')
                 ->get();
-            if(empty($content))
-            {
-                $data_content = "";
-            }else{
-                $data_content = $content;
-            }
+            //if(empty($content))
+            //{
+            //    $data_content = "";
+            //}else{
+            //    $data_content = $content;
+            //}
 
-            $collection = content_collection_tbl::select('id', 'name', 'name_en', 'banner', 'media_type', 'topic', 'place_id')
+            $data_collection = content_collection_tbl::select('id', 'name', 'name_en', 'banner', 'media_type', 'topic', 'place_id')
                 ->where('is_active', "Y")
                 ->where(function ($query) use ($request){
                     $query->where('name', 'like', "%".$request->input_search."%")
@@ -226,30 +226,14 @@ class InterfaceController extends Controller
                 })
                 ->orderBy('place_id', 'asc')
                 ->get();
-            if(empty($collection))
-            {
-                $data_collection = "";
-            }else{
-                $data_collection = $collection;
-            }
+            //if(empty($collection))
+            //{
+            //    $data_collection = "";
+            //}else{
+            //    $data_collection = $collection;
+            //}
 
-            $event = content_event_tbl::select('id', 'name', 'name_en', 'seo', 'start_date', 'banner', 'price', 'map_area_detail')
-                ->where('is_active', "Y")
-                ->where('is_publish', "Y")
-                ->where(function ($query) use ($request){
-                    $query->where('name', 'like', "%".$request->input_search."%")
-                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
-                })
-                ->orderBy('place_id', 'asc')
-                ->get();
-            if(empty($event))
-            {
-                $data_event = "";
-            }else{
-                $data_event = $event;
-            }
-
-            $education = content_edu_tbl::select('id', 'name', 'name_en', 'seo', 'banner', 'description_ind', 'description_en', 'map_area_detail')
+            $data_event = content_event_tbl::select('id', 'name', 'name_en', 'seo', 'start_date', 'banner', 'price', 'map_area_detail')
                 ->where('is_active', "Y")
                 ->where('is_publish', "Y")
                 ->where(function ($query) use ($request){
@@ -258,12 +242,28 @@ class InterfaceController extends Controller
                 })
                 ->orderBy('place_id', 'asc')
                 ->get();
-            if(empty($education))
-            {
-                $data_education = "";
-            }else{
-                $data_education = $education;
-            }
+            //if(empty($event))
+            //{
+            //    $data_event = "";
+            //}else{
+            //    $data_event = $event;
+            //}
+
+            $data_education = content_edu_tbl::select('id', 'name', 'name_en', 'seo', 'banner', 'description_ind', 'description_en', 'map_area_detail')
+                ->where('is_active', "Y")
+                ->where('is_publish', "Y")
+                ->where(function ($query) use ($request){
+                    $query->where('name', 'like', "%".$request->input_search."%")
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                })
+                ->orderBy('place_id', 'asc')
+                ->get();
+            //if(empty($education))
+            //{
+            //    $data_education = "";
+            //}else{
+            //    $data_education = $education;
+            //}
 
 
             return view('FE.pages.search-all', compact('data_content', 'data_collection', 'data_event', 'data_education'));

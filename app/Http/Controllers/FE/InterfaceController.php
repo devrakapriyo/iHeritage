@@ -202,69 +202,168 @@ class InterfaceController extends Controller
             $category = $request->category;
             return view('FE.pages.search', compact('data', 'about', 'category'));
         }else{
-            $data_content = content_tbl::select('content.id', 'photo', 'name', 'name_en', 'seo', 'location')
+            $data_content = content_tbl::select('content.id', 'photo', 'name', 'name_en', 'seo', 'location', 'institutional.category')
                 ->join('institutional','institutional.id',"=",'content.institutional_id')
+                ->join('place','place.id',"=",'institutional.place_id')
                 ->where('content.is_active', "Y")
                 ->where(function ($query) use ($request){
                     $query->where('name', 'like', "%".$request->input_search."%")
-                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('location', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_ind', 'like', "%".$request->input_search."%")
+                    ;
                 })
                 ->orderBy('institutional.place_id', 'asc')
                 ->get();
-            //if(empty($content))
-            //{
-            //    $data_content = "";
-            //}else{
-            //    $data_content = $content;
-            //}
 
-            $data_collection = content_collection_tbl::select('id', 'name', 'name_en', 'banner', 'media_type', 'topic', 'place_id')
-                ->where('is_active', "Y")
-                ->where(function ($query) use ($request){
-                    $query->where('name', 'like', "%".$request->input_search."%")
-                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+            if($request->input_search == "naskah")
+            {
+                $media_type = "document";
+            }elseif($request->input_search == "manuscript"){
+                $media_type = "document";
+            }elseif($request->input_search == "pdf"){
+                $media_type = "document";
+            }elseif($request->input_search == "rekaman"){
+                $media_type = "audio";
+            }elseif($request->input_search == "voice recording"){
+                $media_type = "audio";
+            }elseif($request->input_search == "gambar"){
+                $media_type = "image";
+            }elseif($request->input_search == "lukisan"){
+                $media_type = "image";
+            }elseif($request->input_search == "paint"){
+                $media_type = "image";
+            }elseif($request->input_search == "object"){
+                $media_type = "url";
+            }elseif($request->input_search == "objek"){
+                $media_type = "url";
+            }elseif($request->input_search == "html5"){
+                $media_type = "url";
+            }else{
+                $media_type = $request->input_search;
+            }
+
+            if($request->input_search == "naskah")
+            {
+                $topic = "collection_manuscript";
+            }elseif($request->input_search == "senjata"){
+                $topic = "collection_traditional_weapon";
+            }elseif($request->input_search == "musik"){
+                $topic = "collection_traditional_music";
+            }elseif($request->input_search == "keramik"){
+                $topic = "collection_ceramic";
+            }elseif($request->input_search == "lukisan"){
+                $topic = "collection_painting";
+            }elseif($request->input_search == "rumah"){
+                $topic = "collection_traditional_house";
+            }elseif($request->input_search == "pertunjukan"){
+                $topic = "collection_performing_arts";
+            }elseif($request->input_search == "candi"){
+                $topic = "collection_temple";
+            }elseif($request->input_search == "patung"){
+                $topic = "collection_statue";
+            }elseif($request->input_search == "mahkota"){
+                $topic = "collection_crown";
+            }elseif($request->input_search == "perhiasan"){
+                $topic = "collection_jewelry";
+            }elseif($request->input_search == "kendaraan"){
+                $topic = "collection_vehicle";
+            }elseif($request->input_search == "sastra"){
+                $topic = "collection_literature";
+            }elseif($request->input_search == "kain"){
+                $topic = "collection_traditional_cloth";
+            }elseif($request->input_search == "perhiasan"){
+                $topic = "collection_jewelry";
+            }elseif($request->input_search == "film"){
+                $topic = "collection_movie";
+            }elseif($request->input_search == "prasasti"){
+                $topic = "collection_inscription";
+            }elseif($request->input_search == "wayang"){
+                $topic = "collection_puppet";
+            }elseif($request->input_search == "topeng"){
+                $topic = "collection_mask";
+            }elseif($request->input_search == "tarian"){
+                $topic = "collection_dance";
+            }elseif($request->input_search == "beladiri"){
+                $topic = "collection_material_art";
+            }elseif($request->input_search == "sejarah"){
+                $topic = "collection_history";
+            }elseif($request->input_search == "gedung bersejarah"){
+                $topic = "collection_historic_building";
+            }elseif($request->input_search == "bangunan bersejarah"){
+                $topic = "collection_historical_building";
+            }elseif($request->input_search == "situs"){
+                $topic = "collection_site";
+            }elseif($request->input_search == "kuliner"){
+                $topic = "collection_culinary";
+            }elseif($request->input_search == "alat tukar"){
+                $topic = "collection_exchange";
+            }elseif($request->input_search == "medali"){
+                $topic = "collection_medal";
+            }elseif($request->input_search == "navigasi"){
+                $topic = "collection_navigation";
+            }elseif($request->input_search == "cerita rakyat"){
+                $topic = "collection_folklore";
+            }elseif($request->input_search == "wisata alamt"){
+                $topic = "collection_natural_place";
+            }elseif($request->input_search == "relief"){
+                $topic = "collection_relief";
+            }elseif($request->input_search == "katalog"){
+                $topic = "collection_catalog";
+            }else{
+                $topic = $request->input_search;
+            }
+            $data_collection = content_collection_tbl::select('content_collection.id', 'content_collection.name', 'content_collection.name_en', 'banner', 'media_type', 'topic', 'place_id')
+                ->join('content','content.id',"=",'content_collection.content_id')
+                ->join('place','place.id',"=",'content_collection.place_id')
+                ->where('content_collection.is_active', "Y")
+                ->where(function ($query) use ($request, $media_type, $topic){
+                    $query->where('content_collection.name', 'like', "%".$request->input_search."%")
+                        ->orWhere('media_type', 'like', "%".$media_type."%")
+                        ->orWhere('content_collection.name_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('topic', 'like', "%".$topic."%")
+                        ->orWhere('creator', 'like', "%".$request->input_search."%")
+                        ->orWhere('created_year', 'like', "%".$request->input_search."%")
+                        ->orWhere('lang', 'like', "%".$request->input_search."%")
+                        ->orWhere('institution_owner', 'like', "%".$request->input_search."%")
+                        ->orWhere('location', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_ind', 'like', "%".$request->input_search."%")
+                    ;
                 })
                 ->orderBy('place_id', 'asc')
                 ->get();
-            //if(empty($collection))
-            //{
-            //    $data_collection = "";
-            //}else{
-            //    $data_collection = $collection;
-            //}
 
-            $data_event = content_event_tbl::select('id', 'name', 'name_en', 'seo', 'start_date', 'banner', 'price', 'map_area_detail')
+            $data_event = content_event_tbl::select('content_event.id', 'name', 'name_en', 'seo', 'start_date', 'banner', 'price', 'map_area_detail')
+                ->join('place','place.id',"=",'content_event.place_id')
                 ->where('is_active', "Y")
                 ->where('is_publish', "Y")
                 ->where(function ($query) use ($request){
                     $query->where('name', 'like', "%".$request->input_search."%")
-                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('map_area_detail', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_ind', 'like', "%".$request->input_search."%")
+                    ;
                 })
                 ->orderBy('place_id', 'asc')
                 ->get();
-            //if(empty($event))
-            //{
-            //    $data_event = "";
-            //}else{
-            //    $data_event = $event;
-            //}
 
-            $data_education = content_edu_tbl::select('id', 'name', 'name_en', 'seo', 'banner', 'description_ind', 'description_en', 'map_area_detail')
+            $data_education = content_edu_tbl::select('content_edu_program.id', 'name', 'name_en', 'seo', 'banner', 'description_ind', 'description_en', 'map_area_detail')
+                ->join('place','place.id',"=",'content_edu_program.place_id')
                 ->where('is_active', "Y")
                 ->where('is_publish', "Y")
                 ->where(function ($query) use ($request){
                     $query->where('name', 'like', "%".$request->input_search."%")
-                        ->orWhere('name_en', 'like', "%".$request->input_search."%");
+                        ->orWhere('name_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('map_area_detail', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_en', 'like', "%".$request->input_search."%")
+                        ->orWhere('place_ind', 'like', "%".$request->input_search."%")
+                    ;
                 })
                 ->orderBy('place_id', 'asc')
                 ->get();
-            //if(empty($education))
-            //{
-            //    $data_education = "";
-            //}else{
-            //    $data_education = $education;
-            //}
-
 
             return view('FE.pages.search-all', compact('data_content', 'data_collection', 'data_event', 'data_education'));
         }

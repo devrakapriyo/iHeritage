@@ -25,12 +25,12 @@
                     <div class="col-md-12">
                         <p>@lang('messages.about_our_partners')</p>
                     </div>
-                    <div class="col-md-3">
+{{--                    <div class="col-md-3">--}}
                         {{--desktop--}}
                         {{--<a href="https://pmli.co.id" target="_blank">--}}
-                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;margin-left:16px;">
+{{--                            <img src="{{asset('img/PMLI.png')}}" class="img" style="width:130px;height:73px;margin-left:16px;">--}}
                         {{--</a>--}}
-                    </div>
+{{--                    </div>--}}
                     <div class="col-md-3">
                         {{--<a href="" target="_blank">--}}
                             {{--desktop--}}

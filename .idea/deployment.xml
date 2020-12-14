@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="IHERITAGE">
+  <component name="PublishConfigData" serverName="iHeritage">
     <serverData>
-      <paths name="IHERITAGE">
+      <paths name="iHeritage">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />

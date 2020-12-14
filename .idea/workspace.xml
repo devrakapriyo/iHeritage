@@ -2,73 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/iheritage-dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/iheritage-dev.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/FE/pages/guestBook/museum-rempah.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/FE/pages/about-us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FE/InterfaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>components</find>
-      <find>container</find>
-      <find>setOnLoadCallback</find>
-      <find>toolbar_div</find>
-      <find>search</find>
-      <find>search-name-institution</find>
-      <find>search-institution-name</find>
-      <find>institution-name</find>
-      <find>function search</find>
-      <find>search-instantion-name</find>
-      <find>searchInstantion</find>
-      <find>institution_name</find>
-      <find>$category</find>
-      <find>institusi</find>
-      <find>koleksi</find>
-      <find>colle</find>
-      <find>heritage_title</find>
-      <find>event</find>
-      <find>educa</find>
-      <find>null</find>
-      <find>collection_manuscript</find>
-      <find>collection_history</find>
-      <find>Sejarah</find>
-      <find>collection_statue</find>
-      <find>d-lg-none</find>
-      <find>background: url('{{$detail-&gt;photo}}') no-repeat center center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;</find>
-      <find>text/css</find>
-      <find>Jejaring</find>
-      <find>title_ind</find>
-      <find>logout_msg_title</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>our_services</replace>
-      <replace>adminNews</replace>
-      <replace>News</replace>
-      <replace>news</replace>
-      <replace>maintenance/vendor</replace>
-      <replace>App::isLocale('id') ? $detail-&gt;description_ind : $detail-&gt;description_en</replace>
-      <replace>auth('admin')-&gt;user()</replace>
-      <replace>strip_tags</replace>
-      <replace>$detail</replace>
-      <replace>Keraton</replace>
-      <replace>@lang('messages.home_more_search')</replace>
-      <replace>login</replace>
-      <replace>$grafik</replace>
-      <replace>search-institution-name</replace>
-      <replace>institution_name</replace>
-      <replace>input_search</replace>
-      <replace>&quot;&quot;</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -168,10 +117,6 @@
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
-  </component>
   <component name="ProjectId" id="1fw0y6UUJKGZKZJDIrlUgkJdcF0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -186,19 +131,26 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/BE/pages/collection" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/FE/pages" />
       <recent name="$PROJECT_DIR$/resources/views/BE/pages" />
       <recent name="$PROJECT_DIR$/resources/lang/id" />
       <recent name="$PROJECT_DIR$/resources/lang/en" />
       <recent name="$PROJECT_DIR$/resources/views/BE" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/FE/pages" />
+      <recent name="$PROJECT_DIR$/resources/views/BE/pages/collection" />
     </key>
   </component>
   <component name="RunManager">
@@ -273,11 +225,32 @@
       <workItem from="1592798866486" duration="674000" />
       <workItem from="1593615480673" duration="841000" />
       <workItem from="1593618170507" duration="819000" />
-      <workItem from="1597114100829" duration="72000" />
+      <workItem from="1597114100829" duration="570000" />
+      <workItem from="1601536287475" duration="8492000" />
+      <workItem from="1603902074689" duration="3399000" />
+      <workItem from="1607913786988" duration="2561000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="112" key="#Deployment" timestamp="1607915604416">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="112" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1607915604416" />
+    <state x="304" y="99" key="#SSH_Configurations" timestamp="1607915397982">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="304" y="99" key="#SSH_Configurations/0.0.1440.900@0.0.1440.900" timestamp="1607915397982" />
+    <state x="627" y="184" key="ftp.server.browser" timestamp="1607915588204">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="627" y="184" key="ftp.server.browser/0.0.1440.900@0.0.1440.900" timestamp="1607915588204" />
+    <state x="592" y="346" key="publish.login" timestamp="1607915110868">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="592" y="346" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1607915110868" />
   </component>
 </project>

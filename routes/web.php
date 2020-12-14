@@ -56,6 +56,9 @@ Route::namespace('FE')->group(function () {
     Route::get('/education-program', 'InterfaceController@educationProgram');
     Route::get('/education-program-search', 'InterfaceController@educationProgramSearch');
     Route::get('/education-program/detail/{seo}/{id}', 'InterfaceController@educationProgramDetail');
+
+    Route::get('/guest-book/{museum_name}', 'InterfaceController@guestBook');
+    Route::post('/guest-book/{museum_name}', 'InterfaceController@guestBookSave');
 });
 
 Route::get('/login', 'BE\IndexController@login')->name('login');

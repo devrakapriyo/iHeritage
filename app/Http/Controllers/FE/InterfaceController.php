@@ -11,6 +11,7 @@ use App\Model\content_edu_tbl;
 use App\Model\content_event_tbl;
 use App\Model\content_gallery_tbl;
 use App\Model\form_question_tbl;
+use App\Model\guest_book;
 use App\Model\institutional;
 use App\Model\visiting_order;
 use App\Model\visitor_counting;
@@ -688,5 +689,25 @@ class InterfaceController extends Controller
             ->first();
         visitor_counting::simpan(content_tbl::fieldContent($detail->content_id, "institutional_id"), $_SERVER['REMOTE_ADDR'], "education", $request->fullUrl());
         return view('FE.pages.edu-program-detail', compact('detail','id'));
+    }
+
+    public function guestBook($museum_name)
+    {
+        return view('FE.pages.guestBook.'.$museum_name, compact('museum_name'));
+    }
+
+    public function guestBookSave(Request $request, $museum_name)
+    {
+        $guest_book = guest_book::where('ip', $_SERVER['REMOTE_ADDR'])->where('name', $request->name)->whereDate('created_at', date("Y-m-d"))->first();
+        if(empty($guest_book))
+        {
+            $simpan = new guest_book;
+            $simpan->name = $request->name;
+            $simpan->institution = $request->institution;
+            $simpan->museum = $museum_name;
+            $simpan->ip = $_SERVER['REMOTE_ADDR'];
+            $simpan->save();
+        }
+        return redirect()->back();
     }
 }

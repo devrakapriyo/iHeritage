@@ -8,13 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>Buku Tamu Museum Rempah</title>
+    <title>Buku Tamu Pameran Memori Rempah Nusantara</title>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="#">
-            Museum Rempah
+            Pameran Memori Rempah Nusantara
         </a>
     </div>
 </nav>
@@ -31,6 +31,10 @@
                     <input type="text" name="name" class="form-control" required>
                 </div>
                 <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
                     <label>Instansi</label>
                     <input type="text" name="institution" class="form-control">
                 </div>
@@ -40,7 +44,7 @@
             </form>
         </div>
         <div class="card-footer">
-            <p class="text-right">Jumlah pengunjung Museum Rempah : {{number_format(\App\Model\guest_book::count_visitor($museum_name))}}</p>
+            <p class="text-right">Jumlah pengunjung Pameran Memori Rempah Nusantara : {{number_format(\App\Model\guest_book::count_visitor($museum_name))}}</p>
         </div>
     </div>
 </div>
@@ -50,5 +54,9 @@
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+{{--Custom script for sweetalert--}}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{--Custome script share sosmed--}}
+@include('sweet::alert')
 </body>
 </html>

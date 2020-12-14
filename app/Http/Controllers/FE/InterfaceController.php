@@ -703,11 +703,14 @@ class InterfaceController extends Controller
         {
             $simpan = new guest_book;
             $simpan->name = $request->name;
+            $simpan->email = $request->email;
             $simpan->institution = $request->institution;
             $simpan->museum = $museum_name;
             $simpan->ip = $_SERVER['REMOTE_ADDR'];
             $simpan->save();
         }
+
+        Alert::success('Terima Kasih dan Selamat Datang di Virtual Tour Memori Rempah Nusantara');
         return redirect()->back();
     }
 }

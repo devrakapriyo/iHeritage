@@ -31,6 +31,7 @@
                                 <th>Institution Visitor</th>
                                 <th>ip Visitor</th>
                                 <th>Visit to</th>
+                                <th>Date</th>
                             </tr>
                             </thead>
                         </table>
@@ -57,7 +58,8 @@
                     { data: 'email', name: 'email' },
                     { data: 'institution', name: 'institution' },
                     { data: 'ip', name: 'ip' },
-                    { data: 'museum', name: 'museum' }
+                    { data: 'museum', name: 'museum' },
+                    { data: 'created_at', name: 'created_at' }
                 ]
             });
         });

@@ -19,6 +19,7 @@ return [
     'sidebar_services' => "Daftar Layanan Kami",
     'sidebar_news' => "Daftar Berita & Artikel",
     'sidebar_question' => "Daftar Formulir Pertanyaan",
+    'sidebar_guest_book' => "Daftar Buku Tamu",
     'sidebar_list_user' => "Data User",
 
     'email_form_question_one' => "Apa kabarnya hari ini? ada kabar baik bagi Anda yang telah bertanya tentang platform iHeritage.id",

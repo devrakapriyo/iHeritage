@@ -5,6 +5,7 @@ namespace App\Http\Controllers\BE;
 use App\Model\category_content_tbl;
 use App\Model\content_detail_tbl;
 use App\Model\content_tbl;
+use App\Model\guest_book;
 use App\Model\institutional;
 use App\Model\log_error;
 use App\Model\visitor_counting;
@@ -329,5 +330,17 @@ class IndexController extends Controller
             Alert::success("Profile updated successfully");
         }
         return redirect()->back();
+    }
+
+    public function guest_book()
+    {
+        return view('BE.pages.guestBook.index');
+    }
+
+    public function guest_book_get()
+    {
+        $data = guest_book::select(['*'])->orderBy('created_at', 'DESC');
+        return Datatables::of($data)
+            ->make(true);
     }
 }

@@ -195,6 +195,12 @@
                     <span>@lang('messages_be.sidebar_question')</span>
                 </a>
             </li>
+                <li class="nav-item @yield('guest-book')">
+                <a class="nav-link" href="{{route('list-guest-book')}}">
+                    <i class="fas fa-fw fa-question-circle"></i>
+                    <span>@lang('messages_be.sidebar_guest_book')</span>
+                </a>
+            </li>
         @endif
             @php
                 $notif_user = \App\User::countWaitingAppr();

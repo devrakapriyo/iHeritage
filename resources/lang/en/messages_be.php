@@ -7,6 +7,7 @@ return [
     'logout_btn_logout' => "Logout",
 
     'reset_msg_text' => "Reset Password Account",
+    'reset_msg_text' => "Reset Password Account",
 
     'sidebar_content' => "Content",
     'sidebar_setting_pages' => "Setting Pages",
@@ -19,6 +20,7 @@ return [
     'sidebar_services' => "List Our Services",
     'sidebar_news' => "List News & Article",
     'sidebar_question' => "List Form Question",
+    'sidebar_guest_book' => "List Guest Book",
     'sidebar_list_user' => "List Users",
 
     'email_form_question_one' => "How are you today? there is good news for those of you who have asked about the iHeritage.id platform",

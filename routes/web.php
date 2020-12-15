@@ -193,4 +193,7 @@ Route::prefix('dashboard')->namespace('BE')->middleware('admin')->group(function
     Route::post('/education-program-page/update/{id}', 'EduController@edu_update')->name('edu-update');
     Route::get('/education-program-page/delete/{id}', 'EduController@edu_delete')->name('edu-delete');
     Route::get('/education-program-page/approve/{id}', 'EduController@edu_approve')->name('edu-approve');
+
+    Route::get('/guest-book-page', 'IndexController@guest_book')->name('list-guest-book');
+    Route::get('/guest-book-page/get', 'IndexController@guest_book_get')->name('list-guest-book-get');
 });

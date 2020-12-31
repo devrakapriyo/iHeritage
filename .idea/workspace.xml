@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c949ada5-c0ba-4c90-aa45-732cc2cd1d98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/BE/pages/guestBook/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/BE/pages/guestBook/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BE/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BE/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/BE/layout_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/BE/layout_register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/BE/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/BE/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/FE/pages/detail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +226,8 @@
       <workItem from="1597114100829" duration="570000" />
       <workItem from="1601536287475" duration="8492000" />
       <workItem from="1603902074689" duration="3399000" />
-      <workItem from="1607913786988" duration="6128000" />
+      <workItem from="1607913786988" duration="6675000" />
+      <workItem from="1609344801203" duration="3352000" />
     </task>
     <servers />
   </component>
@@ -238,6 +243,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="304" y="99" key="#SSH_Configurations/0.0.1440.900@0.0.1440.900" timestamp="1607915397982" />
+    <state x="450" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609398310455">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="450" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1609398310455" />
+    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609400515046">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1609400515046" />
     <state x="627" y="184" key="ftp.server.browser" timestamp="1607915588204">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

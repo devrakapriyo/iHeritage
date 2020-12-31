@@ -2,6 +2,9 @@
 @section('title')
     @lang('messages.register_admin')
 @endsection
+@section('header')
+    {!! ReCaptcha::htmlScriptTagJsApi() !!}
+@endsection
 @section('content')
     <div class="card card-signin my-5">
         <div class="card-body">
@@ -87,6 +90,12 @@
                 <div class="form-group">
                     <label for="inputAddress">@lang('messages.collection_address')</label>
                     <textarea name="address" id="inputAddress" class="form-control" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="captcha">Captcha</label>
+                    {!! htmlFormSnippet() !!}
+                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
                 </div>
 
                 <button class="btn btn-lg btn-warning btn-block text-uppercase">@lang('messages.btn_register')</button>

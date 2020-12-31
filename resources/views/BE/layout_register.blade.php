@@ -142,6 +142,7 @@
             }
         }
     </style>
+    @yield('header')
 </head>
 <body>
 <div class="container">

@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Yajra\Datatables\Datatables;
 
 use App\Model\users;
@@ -137,6 +138,17 @@ class IndexController extends Controller
             {
                 Alert::error('Institutional is already registered');
                 return redirect()->back();
+            }
+
+            $validator = Validator::make($request->all(), [
+                recaptchaFieldName() => recaptchaRuleName()
+            ]);
+
+            if ($validator->fails())
+            {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
             }
 
             $instansi = new institutional;
